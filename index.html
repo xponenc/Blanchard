@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/publications.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Blanchard Художественная галерея</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <nav class="header__nav  nav">
+        <div class="nav__container container">
+          <img src="img/main_logo.svg" alt="" class="header__logo">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#about" class="nav__link">О нас</a>
+            </li>
+            <li class="nav__item">
+              <a href="#gallery" class="nav__link">Галерея</a>
+            </li>
+            <li class="nav__item">
+              <a href="#catalog" class="nav__link">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="nav__link">События</a>
+            </li>
+            <li class="nav__item">
+              <a href="#publication" class="nav__link">Издания</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Проекты</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacts" class="nav__link">Контакты</a>
+            </li>
+          </ul>
+          <div class="nav__item">
+            <a href="" class="nav__link link_sign-in">Войти</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header__filter-search filter-search">
+        <div class="filter-search__container container">
+          <ul class="filter__list">
+            <li>
+              <label for="id-select_1" tabindex="0">
+                <select class="select" name="" id="id-select_1">
+                  <option value="">Реализм</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <label for="id-select_2" tabindex="0">
+                <select class="select" name="" id="id-select_2">
+                  <option value="">Импрессионизм</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <label for="id-select-3" tabindex="0">
+                <select class="select" name="" id="id-select-3">
+                  <option value="">Постимпрессионизм</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <label for="id-select-4" tabindex="0">
+                <select class="select" name="" id="id-select-4">
+                  <option value="">Авангард</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <label for="id-select-5" tabindex="0">
+                <select class="select" name="" id="id-select-5">
+                  <option value="">Футуризм</option>
+                </select>
+              </label>
+            </li>
+
+          </ul>
+          <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
+            <input required id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true"
+              type="search" placeholder="Поиск по сайту" name="search-string">
+            <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__slider swiper-container">
+          <div class="hero__swiper-wrapper swiper-wrapper">
+            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-1.jpg');">
+            </div>
+            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-2.jpg');">
+            </div>
+            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-3.jpg');">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        </div>
+        <div class="hero__info container">
+          <h1 class="visually-hidden">Blanchard Художественная галерея</h1>
+          <h2 class="hero__heading">Прикоснитесь к прекрасному</h2>
+          <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт
+            предпосылки для новых предложений.</p>
+          <a href="#" class="btn hero__btn" aria-label="Подписаться на рассылку">Подписаться на рассылку</a>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about__container container">
+        <h2 class="about__heading heading">О нас</h2>
+        <p class="about__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно
+          определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних
+          резервов и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта
+          влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает,
+          что высокое качество позиционных исследований создаёт необходимость включения в&nbsp;производственный план
+          целого ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов
+          и&nbsp;ресурсов. В&nbsp;рамках спецификации современных стандартов, действия представителей оппозиции набирают
+          популярность среди определенных слоев населения, а&nbsp;значит, должны быть разоблачены.</p>
+      </div>
+    </section>
+    <section class="gallery" id="gallery">
+      <div class="container gallery__container">
+        <div class="gallery__container__info info">
+          <h2 class="gallery__heading heading">Галерея</h2>
+          <div class="info__filter">
+            <h3 class="info__filter__heading">Фильтровать по:</h3>
+            <ul class="info__filter__list">
+              <li>
+                <label for="id-filter-1" tabindex="0">
+                  <select class="select" name="" id="id-filter-1">
+                    <option value="">Автор</option>
+                  </select>
+                </label>
+              </li>
+              <li>
+                <label for="id-filter-2" tabindex="0">
+                  <select class="filter__list__select select" name="" id="id-filter-2">
+                    <option value="">Направление</option>
+                  </select>
+                </label>
+              </li>
+              <li>
+                <label for="id-filter-3" tabindex="0">
+                  <select class="filter__list__select select" name="" id="id-filter-3">
+                    <option value="">Техника</option>
+                  </select>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <p class="infi__filter__text">
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний авторизуйтесь, либо
+            воспользуйтесь лицензией.
+          </p>
+        </div>
+        <div class="gallery__container__content content">
+          <div class="gallery__slider swiper-container">
+            <div class="gallery__swiper-wrapper swiper-wrapper">
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/1.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/2.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/3.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/4.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/5.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/6.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/7.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/8.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/9.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/10.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/11.jpg'); background-repeat: no-repeat;">
+              </div>
+              <div class="gallery__swiper-slide swiper-slide"
+                style="background-image: url('img/gallery/12.jpg'); background-repeat: no-repeat;">
+              </div>
+            </div>
+            <div class="gallery__slider__control">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="catalog__header">
+        <h2 class="gallery__heading heading">Каталог</h2>
+        <ul class="catalog__languages tabs">
+          <li class="tabs__item">
+            <button type="submit" class="btn tabs__btn tabs__btn_active" aria-label="Переключить на французский язык"
+              data-path="one">1 шаг</button>
+          </li>
+          <li class="tabs__item">
+            <button type="submit" class="btn tabs__btn" aria-label="Переключить на немецкий язык" data-path="two">2
+              шаг</button>
+          </li>
+          <li class="tabs__item">
+            <button type="submit" class="btn tabs__btn" aria-label="Переключить на итальянский язык" data-path="three">3
+              шаг</button>
+          </li>
+          <li class="tabs__item">
+            <button type="submit" class="btn tabs__btn" aria-label="Переключить на русский язык" data-path="four">4
+              шаг</button>
+          </li>
+          <li class="tabs__item">
+            <button type="submit" class="btn tabs__btn" aria-label="Переключить на бельгийский язык" data-path="four">4
+              шаг</button>
+          </li>
+        </ul>
+      </div>
+      <p class="catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
+        континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики
+        и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
+        нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены
+        на&nbsp;независимые элементы.</p>
+    </section>
+    <section class="events" id="events">
+      <div class="events__container container">
+        <h2 class="gallery__heading heading">События</h2>
+        <ul class="events__list">
+          <li class="events__item">
+            <div class="events__info">
+              <span class="events__place">Музей им. Щусева</span>
+              <span class="events__date">с 20 марта по 30 апреля</span>
+            </div>
+            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <p class="events__description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
+              продолжили его брат Давид и сын Ридольфо.
+            </p>
+            <a class="events__link" href="#">Подробнее</a>
+          </li>
+          <li class="events__item">
+            <span class="events__place">Музей им. Щусева</span>
+            <span class="events__date">с 20 марта по 30 апреля</span>
+            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <p class="events__description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
+              продолжили его брат Давид и сын Ридольфо.
+            </p>
+            <a class="events__link" href="#">Подробнее</a>
+          </li>
+          <li class="events__item">
+            <span class="events__place">Музей им. Щусева</span>
+            <span class="events__date">с 20 марта по 30 апреля</span>
+            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <p class="events__description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
+              продолжили его брат Давид и сын Ридольфо.
+            </p>
+            <a class="events__link" href="#">Подробнее</a>
+          </li>
+          <li class="events__item">
+            <span class="events__place">Музей им. Щусева</span>
+            <span class="events__date">с 20 марта по 30 апреля</span>
+            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <p class="events__description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
+              продолжили его брат Давид и сын Ридольфо.
+            </p>
+            <a class="events__link" href="#">Подробнее</a>
+          </li>
+        </ul>
+        <a class="btn btn_simple" href="">Все события</a>
+
+      </div>
+    </section>
+    <section class="publication" id="publication">
+      <div class="publication__container container">
+        <div class="publication__container__info">
+          <h2 class="publication__heading heading">Издания</h2>
+          <div class="publication__genre checkbox">
+            <h2 class="checkbox__heading">Категории:</h2>
+            <form class="checkbox__form" action="">
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Бестселлеры</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Искусство</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Архитектура</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Дизайн</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Мода</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Детям</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Художественная литература</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Публицистика</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Путеводители</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Философия</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Учебная литература</span>
+              </label>
+              <label class="checkbox__form__label" tabindex="0">
+                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
+                <span class="checkbox__form__text">Журналы и газеты</span>
+              </label>
+            </form>
+            <form class="publication__price" action="">
+              <input class="publication__price_from" type="text">
+              <input class="publication__price_to" type="text">
+            </form>
+          </div>
+        </div>
+        <div class="publication__container__content content">
+          <div class="content__slider">
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div class="projects__container container">
+        <h2 class="projects__heading heading">Проекты</h2>
+        <p class="projects__text">
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
+          фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны
+          с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает
+          их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское обеспечение нашей
+          деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет
+          сомнений, что действия представителей оппозиции могут быть рассмотрены исключительно в&nbsp;разрезе
+          маркетинговых и&nbsp;финансовых предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
+          представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
+          очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
+          Подробнее: blanchard-art.ru/projects/about
+        </p>
+        <div class="projects__partners partners">
+          <h3 class="projects__partners subheading">Партнёры проектов:</h3>
+          <div class="partners__container">
+            <div class="partners__slider swiper-container">
+              <div class="partners__swiper-wrapper swiper-wrapper">
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/freelands.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/ica.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/workhouse.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/1849.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/hiscox.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/camden.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/stassen.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/watts.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/esad.png'); background-repeat: no-repeat;">
+                </div>
+                <div class="partners__swiper-slide swiper-slide"
+                  style="background-image: url('img/partners/10.jpg'); background-repeat: no-repeat;">
+                </div>
+              </div>
+              <div class="partners__slider__control">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="contacts" id="contacts">
+        <div class="contacts__container">
+          <h2 class="contacts__heading heading container">Контакты</h2>
+          <div class="contacts__block">
+            <div class="contacts__info info">
+              <ul class="info__showroom">
+                <li class="info__showroom__item">
+                  <h3 class="showroom__title subheading">Шоурум №4</h3>
+                  <span class="showroom__adress">Леонтьевский переулок, дом 5, строение 1</span>
+                </li>
+              </ul>
+              <h3 class="contacts__heading subheading">Заказать обратный звонок</h3>
+              <form action="http://jsonplaceholder.typicode.com/posts" method="POST"
+                class="contacts__form contact-form">
+                <div class="contact-form__input-box">
+                  <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*">
+                  <label for="name" class="contact-form__label"></label>
+                </div>
+                <div class="contact-form__input-box">
+                  <input required id="phone" type="phone" name="phone" class="contact-form__input"
+                    placeholder="Телефон*">
+                  <label for="phone" class="contact-form__label"></label>
+                </div>
+                <div class="contact-form__box">
+                  <label class="form__checkbox">
+                    <input required type="checkbox" class="form__checkbox__input">
+                    <span class="form__checkbox__text">Согласен на обработку персональных данных</span>
+                  </label>
+                  <button type="submit" class="contact-form__btn btn btn_simple">Заказать</button>
+                </div>
+              </form>
+              <h3 class="contacts__heading subheading">Связаться в один клик</h3>
+              <ul class="contacts__messenger">
+                <li class="messenger__item"><a aria-label="Связаться в приложении WhatsApp" href=""
+                    class="messenger__link messenger__whatsapp"></a></li>
+                <li class="messenger__item"><a aria-label="Связаться в приложении Telegram" href=""
+                    class="messenger__link messenger__telegram"></a></li>
+              </ul>
+
+            </div>
+            <div class="contacts__map map yandex" id="mapYandex"></div>
+          </div>
+
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container container">
+      <img src="img/main_logo.svg" alt="" class="footer__logo">
+      <ul class="footer__social">
+        <li class="footer__social__item">
+          <a aria-label="Страница галереи Blanchard в социальной сети В Контакте" href=""
+            class="footer__social__link link_vk"></a>
+        </li>
+        <li class="footer__social__item">
+          <a aria-label="Страница галереи Blanchard в социальной сети Instagram" href=""
+            class="footer__social__link link_instagram"></a>
+        </li>
+        <li class="footer__social__item">
+          <a aria-label="Страница галереи Blanchard в социальной сети Facebook" href=""
+            class="footer__social__link link_fb"></a>
+        </li>
+      </ul>
+    </div>
+
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(init);
+
+    function init() {
+      var myMap = new ymaps.Map("mapYandex", {
+        center: [55.760091893815854, 37.63869358468625],
+        zoom: 14,
+        controls: []
+      }),
+        // Создаем геообъект с типом геометрии "Точка".
+        myGeoObject = new ymaps.GeoObject({
+          // Описание геометрии.
+          geometry: {
+            type: "Point",
+            coordinates: [55.75846806898367, 37.60108849999989]
+          },
+          // Свойства.
+          properties: {
+            // Контент метки.
+            iconContent: 'Леонтьевский переулок, дом 5, строение 1',
+            hintContent: 'Леонтьевский переулок, дом 5, строение 1',
+          }
+        }, {
+          // Опции.
+          // Иконка метки будет растягиваться под размер ее содержимого.
+          preset: 'islands#blackStretchyIcon',
+          // Метку можно перемещать.
+          draggable: true,
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'img/pin.svg',
+          // Размеры метки.
+          iconImageSize: [28, 40],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-14, -40]
+        });
+      myMap.geoObjects
+        .add(myGeoObject);
+    }
+  </script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      slidesPerColumn: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>

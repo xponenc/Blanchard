@@ -1,0 +1,10 @@
+.publication {
+  background-image: url('/img/publication-bgnd.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.publication__container {
+  color: var(--text-color-accent);
+}
