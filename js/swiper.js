@@ -31,7 +31,23 @@ const swiper2 = new Swiper('.gallery__slider', {
 });
 
 
-const swiper3 = new Swiper('.partners__slider', {
+const swiper3 = new Swiper('.publication__slider', {
+    loop: true,
+    slidesPerGroup: 3,
+    slidesPerView: 3,
+    spaceBetween: 50,
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+const swiper4 = new Swiper('.partners__slider', {
     loop: true,
     slidesPerGroup: 3,
     slidesPerView: 3,

@@ -31,7 +31,7 @@
 .hero__info {
   position: relative;
   overflow: hidden;
-  padding: 133px 0;
+  padding: 133px 15px;
   width: 100%;
   /* top: 0;
   width: max(51%, 920px);
@@ -57,12 +57,50 @@
   line-height: 30px;
   /* letter-spacing: 0.25px; */
   max-width: 600px;
-
 }
 
 .hero__btn {
+  position: relative;
   padding: 22.5px 35px;
-  background-color: var(--accent-color)
+  background-color: var(--accent-color);
+  border: 3px solid var(--accent-color);
+  box-sizing: border-box;
+}
+
+.hero__btn::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: -8px;
+  opacity: 0;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-radius: 110px;
+  border: 2px solid var(--link-hover-color);
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.hero__btn:focus::before {
+  opacity: 1;
+}
+
+.hero__btn:hover {
+  border-color: #D1A9F0;
+}
+
+.hero__btn:hover::before {
+  opacity: 0;
+}
+
+.hero__btn:active {
+  background-color: var(--active-color);
+}
+
+.hero__btn:active::before {
+  opacity: 0;
 }
 
 .about__text {

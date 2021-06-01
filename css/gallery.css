@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.gallery__container__content {
+.gallery__content {
   padding-top: 105px;
   padding-bottom: 80px;
   width: calc(100% - 450px);
@@ -43,13 +43,13 @@
   height: 100%;
 }
 
-.gallery__swiper-slide {
+.gallery__slide {
   /* margin-right: 50px;
   margin-bottom: 50px; */
   height: calc((100% - 50px) / 2);
 }
 
-.gallery__swiper-slide:nth-child(3n) {
+.gallery__slide:nth-child(3n) {
   margin-right: 0;
 }
 

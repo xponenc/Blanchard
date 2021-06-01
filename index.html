@@ -95,8 +95,10 @@
 
           </ul>
           <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-            <input required id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true"
-              type="search" placeholder="Поиск по сайту" name="search-string">
+            <label class="search__label" for="search">
+              <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
+                placeholder="Поиск по сайту" name="search-string">
+            </label>
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
         </div>
@@ -176,43 +178,43 @@
             воспользуйтесь лицензией.
           </p>
         </div>
-        <div class="gallery__container__content content">
+        <div class="gallery__content">
           <div class="gallery__slider swiper-container">
-            <div class="gallery__swiper-wrapper swiper-wrapper">
-              <div class="gallery__swiper-slide swiper-slide"
+            <div class="gallery__wrapper swiper-wrapper">
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/1.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/2.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/3.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/4.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/5.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/6.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/7.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/8.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/9.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/10.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/11.jpg'); background-repeat: no-repeat;">
               </div>
-              <div class="gallery__swiper-slide swiper-slide"
+              <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/12.jpg'); background-repeat: no-repeat;">
               </div>
             </div>
@@ -313,67 +315,164 @@
       <div class="publication__container container">
         <div class="publication__container__info">
           <h2 class="publication__heading heading">Издания</h2>
-          <div class="publication__genre checkbox">
-            <h2 class="checkbox__heading">Категории:</h2>
-            <form class="checkbox__form" action="">
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Бестселлеры</span>
+          <div class="publication__genre genre">
+            <h3 class="publication__subheading">Категории:</h3>
+            <form class="genre__form" action="">
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Бестселлеры</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Искусство</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Искусство</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Архитектура</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Архитектура</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Дизайн</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Дизайн</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Мода</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Мода</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Детям</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Детям</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Художественная литература</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Художественная литература</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Публицистика</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Публицистика</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Путеводители</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Путеводители</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Философия</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Философия</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Учебная литература</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Учебная литература</span>
               </label>
-              <label class="checkbox__form__label" tabindex="0">
-                <input type="checkbox" class="checkbox__form__input" tabindex="-1">
-                <span class="checkbox__form__text">Журналы и газеты</span>
+              <label class="genre__form__label" tabindex="0">
+                <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
+                <span class="genre__form__text">Журналы и газеты</span>
               </label>
             </form>
-            <form class="publication__price" action="">
-              <input class="publication__price_from" type="text">
-              <input class="publication__price_to" type="text">
-            </form>
+            <div class="publication__price price">
+              <span class="publication__subheading">Цена</span>
+              <form class="price__form" action="">
+                <span class="price__text">От</span>
+                <input class="price__input" type="text">
+                <span class="price__text">до</span>
+                <input class="price__input" type="text">
+                <span class="price__text">руб.</span>
+              </form>
+            </div>
           </div>
         </div>
-        <div class="publication__container__content content">
-          <div class="content__slider">
-
+        <div class="publication__content">
+          <div class="publication__slider swiper-container">
+            <div class="publication__slider__wrapper swiper-wrapper">
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_1">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Искусство цвета</span>
+                      <span class="pub-item__info__author">Иттен, Иоханнес</span>
+                    </div>
+                    <span class="pub-item__price">620 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_2">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Типографика</span>
+                      <span class="pub-item__info__author">Рудер, Эмиль </span>
+                    </div>
+                    <span class="pub-item__price">2 450 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_3">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Книга про буквы</span>
+                      <span class="pub-item__info__author">Гордон, Юрий</span>
+                    </div>
+                    <span class="pub-item__price">2 200 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_4">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Николай Ильин</span>
+                      <span class="pub-item__info__author">Кричевский, Владимир </span>
+                    </div>
+                    <span class="pub-item__price">1 100 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_5">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Модульные сетки в граф...</span>
+                      <span class="pub-item__info__author">Мюллер-Брокманн, Йозеф </span>
+                    </div>
+                    <span class="pub-item__price">1 450 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_6">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Эволюция графических ст...</span>
+                      <span class="pub-item__info__author">Хеллер, Чваст</span>
+                    </div>
+                    <span class="pub-item__price">3 200 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              <div class="publication__slide swiper-slide">
+                <div class="publication__slide__item pub-item slide_7">
+                  <div class="pub-item__info">
+                    <div class="pub-item__info__main">
+                      <span class="pub-item__info__title">Искусство и визуальное в...</span>
+                      <span class="pub-item__info__author">Арнхейм, Рудольф </span>
+                    </div>
+                    <span class="pub-item__price">2 200 руб</span>
+                  </div>
+                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                </div>
+              </div>
+              
+            </div>
+            <div class="publication__slider__control">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -410,8 +509,7 @@
               <div class="partners__swiper-slide swiper-slide"
                 style="background-image: url('img/partners/ica.png'); background-repeat: no-repeat;">
               </div>
-              <div class="partners__swiper-slide swiper-slide partner_workhouse"
-                >
+              <div class="partners__swiper-slide swiper-slide partner_workhouse">
               </div>
               <div class="partners__swiper-slide swiper-slide"
                 style="background-image: url('img/partners/1849.png'); background-repeat: no-repeat;">
