@@ -153,7 +153,29 @@ textarea:focus, input:focus {
 .btn_simple:active::before {
   opacity: 0;
 }
+
 .btn_simple:active::after {
+  opacity: 1;
+}
+
+.btn__to-top {
+	display: none;
+  position: fixed;
+	right: 40px;
+	bottom: 40px;
+  padding: 10px 15px;
+  color: var(--accent-color);
+  border-radius: 100px;
+  border: 2px solid var(--accent-color);
+	font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.btn__to-top:hover {
   opacity: 1;
 }
 

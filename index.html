@@ -24,117 +24,108 @@
 </head>
 
 <body>
+  <a href="#" class="btn__to-top">Наверх</a>
   <header class="header">
     <!-- <div class="header__container"> -->
-      <nav class="header__nav  nav">
-        <div class="nav__top">
-          <div class="nav__top__container container">
-            <img src="img/main_logo.svg" alt="" class="header__logo">
-            <ul class="nav__top__list">
-              <li class="nav__item">
-                <a href="#about" class="nav__link">О нас</a>
-              </li>
-              <li class="nav__item">
-                <a href="#gallery" class="nav__link">Галерея</a>
-              </li>
-              <li class="nav__item">
-                <a href="#catalog" class="nav__link">Каталог</a>
-              </li>
-              <li class="nav__item">
-                <a href="" class="nav__link">События</a>
-              </li>
-              <li class="nav__item">
-                <a href="#publication" class="nav__link">Издания</a>
-              </li>
-              <li class="nav__item">
-                <a href="#projects" class="nav__link">Проекты</a>
-              </li>
-              <li class="nav__item">
-                <a href="#contacts" class="nav__link">Контакты</a>
-              </li>
-            </ul>
-            <div class="nav__item">
-              <a href="" class="nav__link link_sign-in">Войти</a>
-            </div>
+    <nav class="header__nav  nav">
+      <div class="nav__top">
+        <div class="nav__top__container container">
+          <img src="img/main_logo.svg" alt="" class="header__logo">
+          <ul class="nav__top__list">
+            <li class="nav__item">
+              <a href="#about" class="nav__link">О нас</a>
+            </li>
+            <li class="nav__item">
+              <a href="#gallery" class="nav__link">Галерея</a>
+            </li>
+            <li class="nav__item">
+              <a href="#catalog" class="nav__link">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a href="#events" class="nav__link">События</a>
+            </li>
+            <li class="nav__item">
+              <a href="#publication" class="nav__link">Издания</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Проекты</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacts" class="nav__link">Контакты</a>
+            </li>
+          </ul>
+          <div class="nav__item">
+            <a href="" class="nav__link link_sign-in">Войти</a>
           </div>
         </div>
-        <div class="nav__bottom">
-          <div class="nav__bottom__container container">
-            <!-- <ul class="topmenu">
-              <li><a href="">Home</a></li>
-              <li><a href="">Shop</a></li>
-              <li><a href="" class="down">Blog</a>
-                <ul class="submenu">
-                  <li><a href="">Category</a></li>
-                  <li><a href="">Author</a></li>
-                  <li><a href="">Archive</a></li>
-                  <li><a href="">Tags</a></li>
-                </ul>
-              </li>
-              <li><a href="" class="down">Portfolio</a>
-                <ul class="nav__bottom__content sub-menu" id="nav__bottom__content" data-simplebar>
-                  <li class="sub-menu__item item_tinoretto">Тинторетто</li>
-                  <li class="sub-menu__item item_fridrih">Фридрих</li>
-                  <li class="sub-menu__item item_leonardo">Леонардо</li>
-                  <li class="sub-menu__item item_verrokko">Верроккьо</li>
-                  <li class="sub-menu__item item_leonardo">Леонардо</li>
-                  <li class="sub-menu__item item_verrokko">Верроккьо</li>
-                </ul>
-              </li>
-              <li><a href="">Contact</a></li>
-            </ul> -->
-            <ul class="nav__bottom__list">
-                <li class="nav__bottom__item">
-                  <a href="" class="nav__bottom__link">Реализм</a>
-                    <ul class="nav__bottom__content sub-menu" id="nav__bottom__content" data-simplebar>
-                      <li class="sub-menu__item item_tinoretto">Тинторетто</li>
-                      <li class="sub-menu__item item_fridrih">Фридрих</li>
-                      <li class="sub-menu__item item_leonardo">Леонардо</li>
-                      <li class="sub-menu__item item_verrokko">Верроккьо</li>
-                      <li class="sub-menu__item item_leonardo">Леонардо</li>
-                      <li class="sub-menu__item item_verrokko">Верроккьо</li>
-                    </ul>
-                </li>
-              <li>
-                <label for="id-select_2" tabindex="0">
-                  <select class="select" name="" id="id-select_2">
-                    <option value="">Импрессионизм</option>
-                  </select>
-                </label>
-              </li>
-              <li>
-                <label for="id-select-3" tabindex="0">
-                  <select class="select" name="" id="id-select-3">
-                    <option value="">Постимпрессионизм</option>
-                  </select>
-                </label>
-              </li>
-              <li>
-                <label for="id-select-4" tabindex="0">
-                  <select class="select" name="" id="id-select-4">
-                    <option value="">Авангард</option>
-                  </select>
-                </label>
-              </li>
-              <li>
-                <label for="id-select-5" tabindex="0">
-                  <select class="select" name="" id="id-select-5">
-                    <option value="">Футуризм</option>
-                  </select>
-                </label>
-              </li>
-  
-            </ul>
-            <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-              <label class="search__label" for="search">
-                <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
-                  placeholder="Поиск по сайту" name="search-string">
-              </label>
-              <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
-            </form>
-          </div>
+      </div>
+      <div class="nav__bottom">
+        <div class="nav__bottom__container container">
+          <ul class="nav__bottom__menu">
+            <li class="nav__bottom__item">
+              <span class="nav__bottom__link angle-down">Реализм</span>
+              <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
+                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
+                <li class="sub-menu__item item_fridrih">Фридрих</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+              </ul>
+            </li>
+            <li class="nav__bottom__item">
+              <span class="nav__bottom__link angle-down">Импрессионизм</span>
+              <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+              </ul>
+            </li>
+            <li class="nav__bottom__item">
+              <span class="nav__bottom__link angle-down">Постимпрессионизм</span>
+              <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
+                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
+                <li class="sub-menu__item item_fridrih">Фридрих</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+              </ul>
+            </li>
+            <li class="nav__bottom__item">
+              <span class="nav__bottom__link angle-down">Авангард</span>
+              <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
+                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
+                <li class="sub-menu__item item_fridrih">Фридрих</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+              </ul>
+            </li>
+            <li class="nav__bottom__item">
+              <span class="nav__bottom__link angle-down">Футуризм</span>
+              <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
+                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
+                <li class="sub-menu__item item_fridrih">Фридрих</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_leonardo">Леонардо</li>
+                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+              </ul>
+            </li>
+          </ul>
+          <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
+            <label class="search__label" for="search">
+              <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
+                placeholder="Поиск по сайту" name="search-string">
+            </label>
+            <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
     <!-- </div> -->
   </header>
   <main>
@@ -498,7 +489,7 @@
                   <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
                 </div>
               </div>
-              
+
             </div>
             <div class="publication__slider__control">
               <div class="swiper-button-prev"></div>
@@ -639,23 +630,27 @@
     </div>
 
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/submenu.js"></script>
+  <script src="js/scroll.js"></script>
+
   <!-- start SimpleBar.js -->
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
   <script>
     new SimpleBar(document.getElementById('nav__bottom__content'), {
-       autoHide: false,
-       scrollbarMaxSize: 28,
+      autoHide: false,
+      scrollbarMaxSize: 28,
     });
   </script>
   <noscript>
-      <style>
-          /**
+    <style>
+      /**
           * Reinstate scrolling for non-JS clients
           */
-          .simplebar-content-wrapper {
-              overflow: auto;
-          }
-      </style>
+      .simplebar-content-wrapper {
+        overflow: auto;
+      }
+    </style>
   </noscript>
   <!-- end SimpleBar.js -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -702,18 +697,6 @@
         .add(myGeoObject);
     }
   </script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      slidesPerColumn: 2,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
 </body>
 
 </html>
