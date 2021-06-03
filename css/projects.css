@@ -64,23 +64,6 @@
   visibility: visible;
 }
 
-.project__text__more {
-  color: var(--accent-color);
-  border-bottom: 1px solid transparent;
-  transition-property: color, border-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-}
-
-.project__text__more:focus, .project__text__more:hover {
-  border-color: var(--accent-color);
-}
-
-.project__text__more:active {
-  color: var(--active-color);
-  border-color: transparent;
-}
-
 .partners__slider {
   height: 150px;
   width: 100%;

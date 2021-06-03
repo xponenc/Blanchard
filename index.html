@@ -9,17 +9,24 @@
   <!-- start SimpleBar.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
   <!-- end SimpleBar.js -->
+  <!-- start Choices.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <!-- end Choices.js -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/start.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/catalog.css">
   <link rel="stylesheet" href="css/events.css">
   <link rel="stylesheet" href="css/publications.css">
   <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <title>Blanchard Художественная галерея</title>
 </head>
 
@@ -142,7 +149,7 @@
           </div>
           <div class="swiper-pagination"></div>
           <!-- <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div> -->
+            <div class="swiper-button-next"></div> -->
         </div>
         <div class="hero__info container">
           <h1 class="visually-hidden">Blanchard Художественная галерея</h1>
@@ -177,6 +184,9 @@
                 <label for="id-filter-1" tabindex="0">
                   <select class="select" name="" id="id-filter-1">
                     <option value="">Автор</option>
+                    <option value="1">Древесина</option>
+                    <option value="2">Металл</option>
+                    <option value="3">Камень</option>
                   </select>
                 </label>
               </li>
@@ -184,6 +194,9 @@
                 <label for="id-filter-2" tabindex="0">
                   <select class="filter__list__select select" name="" id="id-filter-2">
                     <option value="">Направление</option>
+                    <option value="1">Древесина</option>
+                    <option value="2">Металл</option>
+                    <option value="3">Камень</option>
                   </select>
                 </label>
               </li>
@@ -191,13 +204,17 @@
                 <label for="id-filter-3" tabindex="0">
                   <select class="filter__list__select select" name="" id="id-filter-3">
                     <option value="">Техника</option>
+                    <option value="1">Древесина</option>
+                    <option value="2">Металл</option>
+                    <option value="3">Камень</option>
                   </select>
                 </label>
               </li>
             </ul>
           </div>
-          <p class="infi__filter__text">
-            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний авторизуйтесь, либо
+          <p class="info__filter__text">
+            Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="blanchard-art.ru/projects/about"
+            class="http_link">авторизуйтесь</a>, либо
             воспользуйтесь лицензией.
           </p>
         </div>
@@ -276,6 +293,34 @@
               шаг</button>
           </li>
         </ul>
+        <div class="catalog__content"></div>  
+        <div class="catalog__info">
+          <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+              <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
+              Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+              condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
+              Nam mi. Proin viverra leo ut odio.</p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+              <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+              Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+              faucibus interdum tellus libero ac justo.</p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+              <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+              Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
         континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики
@@ -297,40 +342,61 @@
               Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
               продолжили его брат Давид и сын Ридольфо.
             </p>
-            <a class="events__link" href="#">Подробнее</a>
+            <a class="events__link http_link" href="#">Подробнее</a>
           </li>
+
           <li class="events__item">
-            <span class="events__place">Музей им. Щусева</span>
-            <span class="events__date">с 20 марта по 30 апреля</span>
-            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <div class="events__info">
+              <span class="events__place">ММОМА</span>
+              <span class="events__date">24 марта 19:00</span>
+            </div>
+            <h3 class="events__heading subheading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
             <p class="events__description">
-              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
-              продолжили его брат Давид и сын Ридольфо.
+              Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.
             </p>
-            <a class="events__link" href="#">Подробнее</a>
+            <a class="events__link http_link" href="#">Подробнее</a>
           </li>
+
           <li class="events__item">
-            <span class="events__place">Музей им. Щусева</span>
-            <span class="events__date">с 20 марта по 30 апреля</span>
-            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+            <div class="events__info">
+              <span class="events__place">Еврейский музей</span>
+              <span class="events__date">с 31 марта по 21 апреля</span>
+            </div>
+            <h3 class="events__heading subheading">Выставка «Формация 2020»</h3>
             <p class="events__description">
-              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
-              продолжили его брат Давид и сын Ридольфо.
+              Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений.
             </p>
-            <a class="events__link" href="#">Подробнее</a>
+            <a class="events__link http_link" href="#">Подробнее</a>
           </li>
-          <li class="events__item">
-            <span class="events__place">Музей им. Щусева</span>
-            <span class="events__date">с 20 марта по 30 апреля</span>
-            <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
+
+          <li class="events__item_overflow">
+            <div class="events__info">
+              <span class="events__place">Третьяковка на Крымском валу</span>
+              <span class="events__date">с 30 марта по 30 апреля</span>
+            </div>
+            <h3 class="events__heading subheading">XXIV Международная биеннале молодого искусства</h3>
             <p class="events__description">
-              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
-              продолжили его брат Давид и сын Ридольфо.
+              Внезапно, реплицированные с зарубежных источников, современные исследования.
             </p>
-            <a class="events__link" href="#">Подробнее</a>
+            <a class="events__link http_link" href="#">Подробнее</a>
           </li>
+
+          <li class="events__item_overflow">
+            <div class="events__info">
+              <span class="events__place">ММАМ</span>
+              <span class="events__date">с 8 апреля по 20 мая</span>
+            </div>
+            <h3 class="events__heading subheading">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+            <p class="events__description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.
+            </p>
+            <a class="events__link http_link" href="#">Подробнее</a>
+          </li>
+          
         </ul>
-        <a class="btn btn_simple" href="">Все события</a>
+        <div class="events__block-btn">
+          <a class="events__btn btn btn_simple" href="">Все события</a>
+        </div>
 
       </div>
     </section>
@@ -520,7 +586,7 @@
           представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
           очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
           Подробнее: <a href="blanchard-art.ru/projects/about"
-            class="project__text__more">blanchard-art.ru/projects/about</a>
+            class="http_link">blanchard-art.ru/projects/about</a>
         </p>
         <div class="projects__partners partners">
           <h3 class="projects__partners subheading">Партнёры проектов:</h3>
@@ -551,9 +617,6 @@
               </div>
               <div class="partners__swiper-slide swiper-slide"
                 style="background-image: url('img/partners/esad.png'); background-repeat: no-repeat;">
-              </div>
-              <div class="partners__swiper-slide swiper-slide"
-                style="background-image: url('img/partners/10.jpg'); background-repeat: no-repeat;">
               </div>
             </div>
             <div class="partners__slider__control">
@@ -628,75 +691,66 @@
         </li>
       </ul>
     </div>
-
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/submenu.js"></script>
-  <script src="js/scroll.js"></script>
 
-  <!-- start SimpleBar.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="js/submenu.js"></script>
+  <script src="js/site_scrolling.js"></script>
+
+  <!-- SimpleBar.js -->
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-  <script>
-    new SimpleBar(document.getElementById('nav__bottom__content'), {
-      autoHide: false,
-      scrollbarMaxSize: 28,
-    });
-  </script>
+  <script src="js/submenu_scroll.js"></script>
   <noscript>
     <style>
       /**
-          * Reinstate scrolling for non-JS clients
-          */
+      * Reinstate scrolling for non-JS clients
+      */
       .simplebar-content-wrapper {
         overflow: auto;
       }
     </style>
   </noscript>
-  <!-- end SimpleBar.js -->
+
+  <!-- Swiper-Slider -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/swiper.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
-  <script type="text/javascript">
-    ymaps.ready(init);
 
-    function init() {
-      var myMap = new ymaps.Map("mapYandex", {
-        center: [55.760091893815854, 37.63869358468625],
-        zoom: 14,
-        controls: []
-      }),
-        // Создаем геообъект с типом геометрии "Точка".
-        myGeoObject = new ymaps.GeoObject({
-          // Описание геометрии.
-          geometry: {
-            type: "Point",
-            coordinates: [55.75846806898367, 37.60108849999989]
-          },
-          // Свойства.
-          properties: {
-            // Контент метки.
-            iconContent: 'Леонтьевский переулок, дом 5, строение 1',
-            hintContent: 'Леонтьевский переулок, дом 5, строение 1',
-          }
-        }, {
-          // Опции.
-          // Иконка метки будет растягиваться под размер ее содержимого.
-          preset: 'islands#blackStretchyIcon',
-          // Метку можно перемещать.
-          draggable: true,
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: 'img/pin.svg',
-          // Размеры метки.
-          iconImageSize: [28, 40],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-14, -40]
-        });
-      myMap.geoObjects
-        .add(myGeoObject);
-    }
+  <!-- start Choices.js -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  <script>
+    const element1 = document.querySelector('#id-filter-1');
+    const choices1 = new Choices(element1, {
+      searchEnabled: false,
+      itemSelectText: 'Автор',
+      position: 'bottom',
+    });
+    const element2 = document.querySelector('#id-filter-2');
+    const choices2 = new Choices(element2, {
+      searchEnabled: false,
+      itemSelectText: 'Направление',
+      position: 'bottom',
+    });
+    const element3 = document.querySelector('#id-filter-3');
+    const choices3 = new Choices(element3, {
+      searchEnabled: false,
+      itemSelectText: 'Техника',
+      position: 'bottom',
+    });
   </script>
+  <!-- end Choices.js -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/events_item_show.js"></script>
+
+
+  <!-- Yandex Map -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="js/yandex_map.js" type="text/javascript"></script>
+  <script>
+    $( "#accordion" ).accordion();
+    </script>
 </body>
 
 </html>

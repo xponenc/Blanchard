@@ -19,6 +19,7 @@
 }
 
 body {
+  /* position: relative; */
   background-color: var(--main-bg-color);
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -66,6 +67,7 @@ textarea:focus, input:focus {
 }
 
 .heading {
+  margin-bottom: 17px;
   font-size: 48px;
   font-weight: 400;
   font-style: normal;
@@ -177,6 +179,28 @@ textarea:focus, input:focus {
 
 .btn__to-top:hover {
   opacity: 1;
+}
+
+.http_link {
+  color: var(--accent-color);
+  border-bottom: 1px solid transparent;
+  transition-property: color, border-color, outline;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.http_link:focus {
+  outline: 2px solid var(--active-color);
+}
+
+.http_link:hover {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.http_link:active {
+  color: var(--active-color);
+  border-color: var(--active-color);
 }
 
 .clearfix::after {

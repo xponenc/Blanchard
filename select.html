@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+</head>
+
+<body>
+
+    <div class="select-container">
+        <label for="id-select" tabindex="0"></label>
+
+        <select class="select" name="" id="id-select">
+            <option value="">Материал</option>
+            <option value="">Древесина</option>
+            <option value="">Металл</option>
+            <option value="">Камень</option>
+            <option value="">Пластик</option>
+            <option value="">Композитный</option>
+            <option value="">Гипс</option>
+        </select>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <script>
+        const element = document.querySelector('#id-select');
+        const choices = new Choices(element, {
+            searchEnabled: false,
+            itemSelectText: '',
+            position: 'bottom',
+        });
+    </script>
+</body>
+
+</html>

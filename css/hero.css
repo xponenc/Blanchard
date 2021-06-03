@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  transform: translateY(-70px);
+  margin-bottom: 78px;
 }
 
 .hero__container {
@@ -8,8 +8,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  /* position: relative; */
   padding: 0;
-  min-height: 620px;
+  min-height: 800px;
 }
 
 .hero__slider {
@@ -18,6 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  
 }
 
 .hero__swiper-slide {
@@ -31,23 +33,20 @@
 .hero__info {
   position: relative;
   overflow: hidden;
-  padding: 133px 15px;
+  padding: 241px 15px 100px 15px;
   width: 100%;
-  /* top: 0;
-  width: max(51%, 920px);
-  height: calc(100% - 50px); */
   z-index: 1;
-  /* padding: 102px 5px 41px 79px; */
   color: #fff;
 }
 
 .hero__heading {
   margin-bottom: 20px;
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 100%;
   font-size: 72px;
   font-weight: 700;
   line-height: 82.8px;
-  /* letter-spacing: -0.8px; */
-  max-width: 600px;
 }
 
 .hero__text {
@@ -61,7 +60,7 @@
 
 .hero__btn {
   position: relative;
-  padding: 22.5px 35px;
+  padding: 19.5px 32px;
   background-color: var(--accent-color);
   border: 3px solid var(--accent-color);
   box-sizing: border-box;
@@ -103,6 +102,3 @@
   opacity: 0;
 }
 
-.about__text {
-  max-width: 1082px;
-}

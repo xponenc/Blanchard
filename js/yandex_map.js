@@ -2,24 +2,22 @@ ymaps.ready(init);
 
 function init() {
   var myMap = new ymaps.Map("mapYandex", {
-    center: [48.872185, 2.354215],
-    zoom: 16,
+    center: [55.760091893815854, 37.63869358468625],
+    zoom: 14,
     controls: []
   }),
-
     // Создаем геообъект с типом геометрии "Точка".
     myGeoObject = new ymaps.GeoObject({
       // Описание геометрии.
       geometry: {
         type: "Point",
-        coordinates: [48.872185, 2.354215]
+        coordinates: [55.75846806898367, 37.60108849999989]
       },
       // Свойства.
       properties: {
         // Контент метки.
-        iconContent: 'Франция, Иль-де-Франс, Париж, X округ Парижа, улица дю Фобур Сен Дени  54',
-        hintContent: 'Франция, Иль-де-Франс, Париж, X округ Парижа, улица дю Фобур Сен Дени  54',
-
+        iconContent: 'Леонтьевский переулок, дом 5, строение 1',
+        hintContent: 'Леонтьевский переулок, дом 5, строение 1',
       }
     }, {
       // Опции.
@@ -35,10 +33,7 @@ function init() {
       // Смещение левого верхнего угла иконки относительно
       // её "ножки" (точки привязки).
       iconImageOffset: [-14, -40]
-
     });
-
-
   myMap.geoObjects
     .add(myGeoObject);
 }
