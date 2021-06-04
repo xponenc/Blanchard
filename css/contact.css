@@ -4,26 +4,34 @@
 }
 
 .contacts__info {
-  padding: 124px 122px 124px 160px;
-  max-width: 682px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 124px 122px 113px 160px;
+  max-width: 700px;
   border: 1px solid var(--muted-color);
 }
 
 .info__showroom__item {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
-.contact__heading {
-  margin-bottom: 30px;
+.showroom__title {
+  margin-bottom: 1px;
+}
+.contacts__subheading {
+  margin-bottom: 16px;
   font-weight: 400;
+  /* letter-spacing: 1px; */
 }
 
 .contact-form {
-  margin-bottom: 38px;
+  margin-bottom: 33px;
 }
 
 .contact-form__input {
-  margin-bottom: 30px;
+  margin-bottom: 23px;
   padding: 5px 30px;
   width: 400px;
   height: 40px;

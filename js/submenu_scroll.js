@@ -1,4 +1,6 @@
-new SimpleBar(document.querySelector('.nav__bottom__sub-menu'), {
-    autoHide: false,
-    scrollbarMaxSize: 28,
+  $('.nav__bottom__sub-menu').each(function (index, element){
+    new SimpleBar(element, {
+      autoHide: false,
+      scrollbarMaxSize: 28,
+    });
   });

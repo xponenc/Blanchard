@@ -6,6 +6,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 140px;
 }
 
 .footer__logo {
@@ -15,7 +16,8 @@
 
 .footer__social {
   display: flex;
-  padding: 47px 0;
+  padding: 0 0;
+  max-height: 46px;
 }
 
 .footer__social__item:not(:last-child) {
@@ -27,7 +29,7 @@
   width: 45.4px;
   height: 45.4px;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
 }
 
 .link_vk {

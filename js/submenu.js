@@ -1,22 +1,24 @@
 $(document).ready(function(){
+  // console.log('старт')
   $('.nav__bottom__link').on('click', function(){
-    
-    $('.nav__bottom__link').addClass('angle-down')
-    $('.nav__bottom__link').removeClass('angle-up')
-    $('.nav__bottom__sub-menu').removeClass('sub-menu_active')
-    console.log($(this).hasClass('angle-down'))
-    // if ($(this).hasClass('angle-down')) {
-    //   console.log('angle-down')
-    //   $(this).addClass('angle-up');
-    //   $(this).removeClass('angle-down');
-    //   $(this).next().addClass('sub-menu_active')
-    // } else {
-    //   $(this).removeClass('angle-up');
-    //   $(this).addClass('angle-down');
-    //   $(this).next().removeClass('sub-menu_active')
-    // }
-    $(this).removeClass('angle-up');
-    //   $(this).addClass('angle-down');
-    //   $(this).next().removeClass('sub-menu_active')
+    // console.log('click')
+    const btn = this
+    // console.log(btn)
+    $('.nav__bottom__link').each(function (index, element){
+      // console.log(btn)
+      // console.log(element)
+      if (element === btn) {
+        // console.log('true')
+        $(element).toggleClass('angle-up');
+        $(element).toggleClass('angle-down');
+        $(element).next().toggleClass('sub-menu_active')
+      } else {
+        // console.log('false')
+        $(element).addClass('angle-down')
+        $(element).removeClass('angle-up')
+        $(element).next().removeClass('sub-menu_active')
+      }
+    });
+
   });
-})
+});

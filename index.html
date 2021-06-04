@@ -83,19 +83,19 @@
             <li class="nav__bottom__item">
               <span class="nav__bottom__link angle-down">Импрессионизм</span>
               <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_leonardo">Леонардо</li>
-                <li class="sub-menu__item item_verrokko">Верроккьо</li>
-                <li class="sub-menu__item item_leonardo">Леонардо</li>
-                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_mone">Моне</li>
+                <li class="sub-menu__item item_sisley">Сислей</li>
+                <li class="sub-menu__item item_mane">Мане</li>
+                <li class="sub-menu__item item_renuar">Ренуар</li>
               </ul>
             </li>
             <li class="nav__bottom__item">
               <span class="nav__bottom__link angle-down">Постимпрессионизм</span>
               <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
-                <li class="sub-menu__item item_fridrih">Фридрих</li>
-                <li class="sub-menu__item item_leonardo">Леонардо</li>
-                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_vangog">Ван Гог</li>
+                <li class="sub-menu__item item_sezann">Сезанн</li>
+                <li class="sub-menu__item item_gogen">Гоген</li>
+                <li class="sub-menu__item item_sera">Сёра</li>
                 <li class="sub-menu__item item_leonardo">Леонардо</li>
                 <li class="sub-menu__item item_verrokko">Верроккьо</li>
               </ul>
@@ -103,10 +103,10 @@
             <li class="nav__bottom__item">
               <span class="nav__bottom__link angle-down">Авангард</span>
               <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
-                <li class="sub-menu__item item_fridrih">Фридрих</li>
-                <li class="sub-menu__item item_leonardo">Леонардо</li>
-                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_kandinskii">Кандинский</li>
+                <li class="sub-menu__item item_marinetti">Маринетти</li>
+                <li class="sub-menu__item item_malevich">Малевич</li>
+                <li class="sub-menu__item item_pikasso">Пикассо</li>
                 <li class="sub-menu__item item_leonardo">Леонардо</li>
                 <li class="sub-menu__item item_verrokko">Верроккьо</li>
               </ul>
@@ -114,19 +114,19 @@
             <li class="nav__bottom__item">
               <span class="nav__bottom__link angle-down">Футуризм</span>
               <ul class="nav__bottom__sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_tinoretto">Тинторетто</li>
-                <li class="sub-menu__item item_fridrih">Фридрих</li>
-                <li class="sub-menu__item item_leonardo">Леонардо</li>
-                <li class="sub-menu__item item_verrokko">Верроккьо</li>
+                <li class="sub-menu__item item_karra">Карра</li>
+                <li class="sub-menu__item item_pratella">Прателла</li>
+                <li class="sub-menu__item item_severini">Северини</li>
+                <li class="sub-menu__item item_balla">Балла</li>
                 <li class="sub-menu__item item_leonardo">Леонардо</li>
                 <li class="sub-menu__item item_verrokko">Верроккьо</li>
               </ul>
             </li>
           </ul>
           <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
+            <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
+              placeholder="Поиск по сайту" name="search-string">
             <label class="search__label" for="search">
-              <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
-                placeholder="Поиск по сайту" name="search-string">
             </label>
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
@@ -258,42 +258,55 @@
                 style="background-image: url('img/gallery/12.jpg'); background-repeat: no-repeat;">
               </div>
             </div>
-            <div class="gallery__slider__control">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
-            </div>
+          </div>
+          <div class="gallery__slider__control swiper-navigation">
+            <button class="swiper__btn btn_prev"></button>
+            <div class="block-pagination"></div>
+            <button class="swiper__btn btn_next"></button>
           </div>
         </div>
       </div>
     </section>
 
     <section class="catalog" id="catalog">
-      <div class="catalog__header">
-        <h2 class="gallery__heading heading">Каталог</h2>
-        <ul class="catalog__languages tabs">
-          <li class="tabs__item">
-            <button type="submit" class="btn tabs__btn tabs__btn_active" aria-label="Переключить на французский язык"
-              data-path="one">1 шаг</button>
-          </li>
-          <li class="tabs__item">
-            <button type="submit" class="btn tabs__btn" aria-label="Переключить на немецкий язык" data-path="two">2
-              шаг</button>
-          </li>
-          <li class="tabs__item">
-            <button type="submit" class="btn tabs__btn" aria-label="Переключить на итальянский язык" data-path="three">3
-              шаг</button>
-          </li>
-          <li class="tabs__item">
-            <button type="submit" class="btn tabs__btn" aria-label="Переключить на русский язык" data-path="four">4
-              шаг</button>
-          </li>
-          <li class="tabs__item">
-            <button type="submit" class="btn tabs__btn" aria-label="Переключить на бельгийский язык" data-path="four">4
-              шаг</button>
-          </li>
-        </ul>
-        <div class="catalog__content"></div>
+      <div class="catalog__header container">
+        <div class="catalog__header__top">
+          <h2 class="catalog__heading heading">Каталог</h2>
+          <ul class="catalog__languages tabs">
+            <li class="tabs__item">
+              <button type="submit" class="btn tabs__btn tabs_fr tabs__btn_active" aria-label="Переключить на французский язык"
+                data-path="one"></button>
+            </li>
+            <li class="tabs__item">
+              <button type="submit" class="btn tabs__btn tabs_de" aria-label="Переключить на немецкий язык" data-path="two">2
+                шаг</button>
+            </li>
+            <li class="tabs__item">
+              <button type="submit" class="btn tabs__btn tanbs_it" aria-label="Переключить на итальянский язык" data-path="three">3
+                шаг</button>
+            </li>
+            <li class="tabs__item">
+              <button type="submit" class="btn tabs__btn tabs_ru" aria-label="Переключить на русский язык" data-path="four">4
+                шаг</button>
+            </li>
+            <li class="tabs__item">
+              <button type="submit" class="btn tabs__btn tabs_be" aria-label="Переключить на бельгийский язык" data-path="four">4
+                шаг</button>
+            </li>
+          </ul>
+        </div>
+        <p class="catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
+          континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы
+          этики
+          и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
+          нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены
+          на&nbsp;независимые элементы.</p>
+      </div>
+      <div class="catalog__container container">
+        <div class="catalog__content">
+
+
+        </div>
         <div class="catalog__info">
           <div id="accordion">
             <h3>Section 1</h3>
@@ -321,12 +334,8 @@
             </div>
           </div>
         </div>
+
       </div>
-      <p class="catalog__text">Акционеры крупнейших компаний, которые представляют собой яркий пример
-        континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики
-        и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
-        нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены
-        на&nbsp;независимые элементы.</p>
     </section>
     <section class="events" id="events">
       <div class="events__container container">
@@ -415,7 +424,7 @@
     </section>
     <section class="publication" id="publication">
       <div class="publication__container container">
-        <div class="publication__container__info">
+        <div class="publication__info">
           <h2 class="publication__heading heading">Издания</h2>
           <div class="publication__genre genre">
             <h3 class="publication__subheading">Категории:</h3>
@@ -470,12 +479,12 @@
               </label>
             </form>
             <div class="publication__price price">
-              <span class="publication__subheading">Цена</span>
+              <span class="publication__price__subheading">Цена</span>
               <form class="price__form" action="">
                 <span class="price__text">От</span>
-                <input class="price__input" type="text">
+                <input class="price__input" type="text" placeholder="50">
                 <span class="price__text">до</span>
-                <input class="price__input" type="text">
+                <input class="price__input" type="text" placeholder="25 000">
                 <span class="price__text">руб.</span>
               </form>
             </div>
@@ -568,13 +577,12 @@
                   <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
                 </div>
               </div>
-
             </div>
-            <div class="publication__slider__control">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
-            </div>
+          </div>
+          <div class="publication__slider__control">
+            <button class="swiper__btn btn_prev"></button>
+            <div class="block-pagination"></div>
+            <button class="swiper__btn btn_next"></button>
           </div>
         </div>
       </div>
@@ -601,12 +609,12 @@
           Подробнее: <a href="blanchard-art.ru/projects/about" class="http_link">blanchard-art.ru/projects/about</a>
         </p>
         <div class="projects__partners partners">
-          <h3 class="projects__partners subheading">Партнёры проектов:</h3>
+          <h3 class="projects__partners__subheading subheading">Партнёры проектов:</h3>
           <div class="partners__slider swiper-container">
             <div class="partners__swiper-wrapper swiper-wrapper">
               <div class="partners__swiper-slide swiper-slide partner_workhouse">
               </div>
-              <div class="partners__swiper-slide swiper-slide partner_ica"> 
+              <div class="partners__swiper-slide swiper-slide partner_ica">
               </div>
               <div class="partners__swiper-slide swiper-slide partner_workhouse">
               </div>
@@ -625,56 +633,54 @@
             </div>
           </div>
           <div class="partners__slider__control swiper-navigation">
-            <button class="swiper__btn btn_prev" id="swiperPrev"></button>
-            <button class="swiper__btn btn_next" id="swiperNext"></button>
+            <button class="swiper__btn btn_prev"></button>
+            <button class="swiper__btn btn_next"></button>
           </div>
         </div>
       </div>
-      <section class="contacts" id="contacts">
-        <div class="contacts__container">
-          <h2 class="contacts__heading heading container">Контакты</h2>
-          <div class="contacts__block">
-            <div class="contacts__info info">
-              <ul class="info__showroom">
-                <li class="info__showroom__item">
-                  <h3 class="showroom__title subheading">Шоурум №4</h3>
-                  <span class="showroom__adress">Леонтьевский переулок, дом 5, строение 1</span>
-                </li>
-              </ul>
-              <h3 class="contacts__heading subheading">Заказать обратный звонок</h3>
-              <form action="http://jsonplaceholder.typicode.com/posts" method="POST"
-                class="contacts__form contact-form">
-                <div class="contact-form__input-box">
-                  <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*">
-                  <label for="name" class="contact-form__label"></label>
-                </div>
-                <div class="contact-form__input-box">
-                  <input required id="phone" type="phone" name="phone" class="contact-form__input"
-                    placeholder="Телефон*">
-                  <label for="phone" class="contact-form__label"></label>
-                </div>
-                <div class="contact-form__box">
-                  <label class="form__checkbox">
-                    <input required type="checkbox" class="form__checkbox__input">
-                    <span class="form__checkbox__text">Согласен на обработку персональных данных</span>
-                  </label>
-                  <button type="submit" class="contact-form__btn btn btn_simple">Заказать</button>
-                </div>
-              </form>
-              <h3 class="contacts__heading subheading">Связаться в один клик</h3>
-              <ul class="contacts__messenger">
-                <li class="messenger__item"><a aria-label="Связаться в приложении WhatsApp" href=""
-                    class="messenger__link messenger__whatsapp"></a></li>
-                <li class="messenger__item"><a aria-label="Связаться в приложении Telegram" href=""
-                    class="messenger__link messenger__telegram"></a></li>
-              </ul>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="contacts__container">
+        <h2 class="contacts__heading heading container">Контакты</h2>
+        <div class="contacts__block">
+          <div class="contacts__info info">
+            <ul class="info__showroom">
+              <li class="info__showroom__item">
+                <h3 class="showroom__title subheading">Шоурум №4</h3>
+                <span class="showroom__adress">Леонтьевский переулок, дом 5, строение 1</span>
+              </li>
+            </ul>
+            <h3 class="contacts__subheading subheading">Заказать обратный звонок</h3>
+            <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="contacts__form contact-form">
+              <div class="contact-form__input-box">
+                <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*">
+                <label for="name" class="contact-form__label"></label>
+              </div>
+              <div class="contact-form__input-box">
+                <input required id="phone" type="phone" name="phone" class="contact-form__input" placeholder="Телефон*">
+                <label for="phone" class="contact-form__label"></label>
+              </div>
+              <div class="contact-form__box">
+                <label class="form__checkbox">
+                  <input required type="checkbox" class="form__checkbox__input">
+                  <span class="form__checkbox__text">Согласен на обработку персональных данных</span>
+                </label>
+                <button type="submit" class="contact-form__btn btn btn_simple">Заказать</button>
+              </div>
+            </form>
+            <h3 class="contacts__subheading subheading">Связаться в один клик</h3>
+            <ul class="contacts__messenger">
+              <li class="messenger__item"><a aria-label="Связаться в приложении WhatsApp" href=""
+                  class="messenger__link messenger__whatsapp"></a></li>
+              <li class="messenger__item"><a aria-label="Связаться в приложении Telegram" href=""
+                  class="messenger__link messenger__telegram"></a></li>
+            </ul>
 
-            </div>
-            <div class="contacts__map map yandex" id="mapYandex"></div>
           </div>
-
+          <div class="contacts__map map yandex" id="mapYandex"></div>
         </div>
-      </section>
+
+      </div>
     </section>
   </main>
   <footer class="footer">

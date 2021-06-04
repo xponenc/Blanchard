@@ -1,4 +1,8 @@
+.projects {
+  margin-bottom: 29px;
+}
 .projects__text {
+  margin-bottom: 20px;
   max-width: 1080px;
 }
 
@@ -65,6 +69,10 @@
 }
 .projects__partners {
 }
+
+.projects__partners__subheading {
+  margin-bottom: 22px;
+}
 .partners__slider {
   height: 150px;
   max-width: 1450px;
@@ -73,12 +81,12 @@
 
 .partners__slider__control {
   position: relative;
-  top: -98px;
-  left: -5px;
+  top: -100px;
+  left: 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1600px;
+  width: 1602px;
   height: 50px;
 }
 
