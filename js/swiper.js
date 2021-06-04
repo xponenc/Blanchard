@@ -33,6 +33,7 @@ const swiper2 = new Swiper('.gallery__slider', {
 
 const swiper3 = new Swiper('.publication__slider', {
     loop: true,
+    loopFillGroupWithBlank: true,
     slidesPerGroup: 3,
     slidesPerView: 3,
     spaceBetween: 50,
@@ -62,3 +63,16 @@ const swiper4 = new Swiper('.partners__slider', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+const swiperPrev = document.getElementById('swiperPrev')
+const swiperNext = document.getElementById('swiperNext')
+
+swiperPrev.addEventListener('click', () => {
+    swiper4.slidePrev();
+})
+swiperNext.addEventListener('click', () => {
+    swiper4.slideNext();
+})
+
+
+
