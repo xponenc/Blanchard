@@ -140,11 +140,11 @@
       <div class="hero__container">
         <div class="hero__slider swiper-container">
           <div class="hero__swiper-wrapper swiper-wrapper">
-            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-1.jpg');">
+            <div class="hero__swiper-slide swiper-slide main_slide-1">
             </div>
-            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-2.jpg');">
+            <div class="hero__swiper-slide swiper-slide main_slide-2">
             </div>
-            <div class="hero__swiper-slide swiper-slide" style="background-image: url('img/main_banner-3.jpg');">
+            <div class="hero__swiper-slide swiper-slide main_slide-3">
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -274,24 +274,24 @@
           <h2 class="catalog__heading heading">Каталог</h2>
           <ul class="catalog__languages tabs">
             <li class="tabs__item">
-              <button type="submit" class="btn tabs__btn tabs_fr tabs__btn_active" aria-label="Переключить на французский язык"
-                data-path="one"></button>
+              <button type="submit" class="btn tabs__lang-btn tabs_fr" aria-label="Переключить на французский язык"
+                data-path="fr"></button>
             </li>
             <li class="tabs__item">
-              <button type="submit" class="btn tabs__btn tabs_de" aria-label="Переключить на немецкий язык" data-path="two">2
-                шаг</button>
+              <button type="submit" class="btn tabs__lang-btn tabs_de" aria-label="Переключить на немецкий язык"
+                data-path="de"></button>
             </li>
             <li class="tabs__item">
-              <button type="submit" class="btn tabs__btn tanbs_it" aria-label="Переключить на итальянский язык" data-path="three">3
-                шаг</button>
+              <button type="submit" class="btn tabs__lang-btn tabs_it" aria-label="Переключить на итальянский язык"
+                data-path="it"></button>
             </li>
             <li class="tabs__item">
-              <button type="submit" class="btn tabs__btn tabs_ru" aria-label="Переключить на русский язык" data-path="four">4
-                шаг</button>
+              <button type="submit" class="btn tabs__lang-btn tabs_ru tabs__lang-btn_active"
+                aria-label="Переключить на русский язык" data-path="ru"></button>
             </li>
             <li class="tabs__item">
-              <button type="submit" class="btn tabs__btn tabs_be" aria-label="Переключить на бельгийский язык" data-path="four">4
-                шаг</button>
+              <button type="submit" class="btn tabs__lang-btn tabs_be" aria-label="Переключить на бельгийский язык"
+                data-path="be"></button>
             </li>
           </ul>
         </div>
@@ -303,115 +303,379 @@
           на&nbsp;независимые элементы.</p>
       </div>
       <div class="catalog__container container">
-        <div class="catalog__content">
-
-
+        <div class="catalog__language" data-target="fr">
+          FRANCE
         </div>
-        <div class="catalog__info">
-          <div id="accordion">
-            <h3>Section 1</h3>
-            <div>
-              <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
-                Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
-                condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
-                Nam mi. Proin viverra leo ut odio.</p>
+        <div class="catalog__language" data-target="de">
+          DEUTCH
+        </div>
+        <div class="catalog__language" data-target="it">
+          ITALIANO
+        </div>
+        <div class="catalog__language catalog__language_active" data-target="ru">
+          <div class="catalog__content">
+            
+            <div class="catalog__content__author author" data-target="author-id-1">Бенедетто ди Биндо</div>
+            <div class="catalog__content__author author" data-target="author-id-2">Бергоньоне, Амброджо</div>
+            <div class="catalog__content__author author" data-target="author-id-3">Биссоло, Франческо</div>
+            <div class="catalog__content__author author" data-target="author-id-4">Больтраффио, Джованни</div>
+            <div class="catalog__content__author author" data-target="author-id-5">Бонсиньори, Франческо</div>
+            <div class="catalog__content__author author" data-target="author-id-6">Боттичини, Рафаэлло</div>
+            <div class="catalog__content__author author" data-target="author-id-7">Брамантино</div>
+            <div class="catalog__content__author author" data-target="author-id-8">Бреа, Людовико</div>
+            <div class="catalog__content__author author" data-target="author-id-9">Бьяджо д’Антонио Туччи</div>
+            <div class="catalog__content__author author" data-target="author-id-10">Веккьетта</div>
+            <div class="catalog__content__author author" data-target="author-id-11">Андреа Верроккьо</div>
+            <div class="catalog__content__author author author_active" data-target="author-id-12">
+              <img src="img/catalog/authors/author-id-12.jpg" alt="Доменико Гирландайо" class="author__image">
+              <h3 class="author__name">Доменико Гирландайо</h3>
+              <span class="author_years-life">2 июня 1448 — 11 января 1494.</span>
+              <p class="author__about">Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный
+                Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых
+                выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли
+                выступают знатные граждане Флоренции в костюмах того времени).</p>
             </div>
-            <h3>Section 2</h3>
-            <div>
-              <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
-                Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
-                faucibus interdum tellus libero ac justo.</p>
-            </div>
-            <h3>Section 3</h3>
-            <div>
-              <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-                Quisque lobortis.Phasellus pellentesque purus in massa.</p>
-              <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-              </ul>
-            </div>
+            <div class="catalog__content__author author" data-target="author-id-13">Беноццо Гоццоли</div>
+            <div class="catalog__content__author author" data-target="author-id-14">Граначчи, Франческо</div>
+            <div class="catalog__content__author author" data-target="author-id-15">Грегорио ди Чекко</div>
+            <div class="catalog__content__author author" data-target="author-id-16">Джованни да Удине</div>
+            <div class="catalog__content__author author" data-target="author-id-17">Джованни ди Паоло</div>
+            <div class="catalog__content__author author" data-target="author-id-18">Джорджоне</div>
+            <div class="catalog__content__author author" data-target="author-id-19">Парентино, Бернардо</div>
+            <div class="catalog__content__author author" data-target="author-id-20">Пезеллино</div>
+            <div class="catalog__content__author author" data-target="author-id-21">Пьетро Перуджино</div>
+            <div class="catalog__content__author author" data-target="author-id-22">Перуцци, Бальдассаре</div>
+            <div class="catalog__content__author author" data-target="author-id-23">Пизанелло</div>
+            <div class="catalog__content__author author" data-target="author-id-24">Пинтуриккьо</div>
+
+          </div>
+          <div class="catalog__info">
+            <ul id="accordion" class="catalog__info__accordion accordion" aria-label="Список авторов">
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-1" aria-expanded="false">
+                  <span class="accordion__subheading">C 1400 по 1499 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-1">
+                  <table class="catalog__info__table authors__table">
+                    <col class="authors__col-1">
+                    <col class="authors__col-2">
+                    <col class="authors__col-3">
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Бенедетто ди Биндо" data-path="author-id-1">
+                          Бенедетто ди Биндо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Веккьетта" data-path="author-id-10">
+                          Веккьетта
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Парентино, Бернардо" data-path="author-id-19">
+                          Парентино, Бернардо
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Бергоньоне, Амброджо" data-path="author-id-2">
+                          Бергоньоне, Амброджо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Андреа Верроккьо" data-path="author-id-11">
+                          Андреа Верроккьо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Пезеллино" data-path="author-id-20">
+                          Пезеллино
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Биссоло, Франческо" data-path="author-id-3">
+                          Биссоло, Франческо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Доменико Гирландайо" data-path="author-id-12">
+                          Доменико Гирландайо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Пьетро Перуджино" data-path="author-id-21">
+                          Пьетро Перуджино
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Больтраффио, Джованни" data-path="author-id-4">
+                          Больтраффио, Джованни
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Беноццо Гоццоли" data-path="author-id-13">
+                          Беноццо Гоццоли
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Перуцци, Бальдассаре" data-path="author-id-22">
+                          Перуцци, Бальдассаре
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике >Бонсиньори, Франческо" data-path="author-id-5">
+                          Бонсиньори, Франческо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Граначчи, Франческо" data-path="author-id-14">
+                          Граначчи, Франческо
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Пизанелло" data-path="author-id-23">
+                          Пизанелло
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Боттичини, Рафаэлло" data-path="author-id-6">
+                          Боттичини, Рафаэлло
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Грегорио ди Чекко" data-path="author-id-15">
+                          Грегорио ди Чекко
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Пинтуриккьо" data-path="author-id-24">
+                          Пинтуриккьо
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Брамантино" data-path="author-id-7">
+                          Брамантино
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Джованни да Удине" data-path="author-id-16">
+                          Джованни да Удине
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Бреа, Людовико" data-path="author-id-8">
+                          Бреа, Людовико
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Джованни ди Паоло" data-path="author-id-17">
+                          Джованни ди Паоло
+                        </button>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Бьяджо д’Антонио Туччи" data-path="author-id-9">
+                          Бьяджо д’Антонио Туччи
+                        </button>
+                      </th>
+                      <th>
+                        <button type="submit" class="btn tabs__author-btn http_link"
+                          aria-label="Информация о художнике Джорджоне" data-path="author-id-18">
+                          Джорджоне
+                        </button>
+                      </th>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-2" aria-expanded="false">
+                  <span class="accordion__subheading">C 1500 по 1599 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-2">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-3" aria-expanded="false">
+                  <span class="accordion__subheading">C 1600 по 1699 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-3">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-4" aria-expanded="false">
+                  <span class="accordion__subheading">C 1700 по 1799 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-4">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-5" aria-expanded="false">
+                  <span class="accordion__subheading">C 1800 по 1899 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-5">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-6" aria-expanded="false">
+                  <span class="accordion__subheading">C 1900 по 1999 гг.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-6">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+              <li tabindex="0" class="accordion__item">
+                <button class="btn accordion__btn" aria-controls="content-7" aria-expanded="false">
+                  <span class="accordion__subheading">C 2000 г.</span>
+                  <span class="accordion__icon"></span>
+                </button>
+                <div class="accordion__content" aria-hidden="true" id="content-7">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
+                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
+                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-
+        <div class="catalog__language" data-target="be">
+          Бельгиш?
+        </div>
       </div>
     </section>
     <section class="events" id="events">
       <div class="events__container container">
-        <h2 class="gallery__heading heading">События</h2>
+        <h2 class="events__heading heading">События</h2>
         <ul class="events__list">
-          <li class="events__item">
-            <div class="events__item__block">
-              <div class="events__info">
-                <span class="events__place">Музей им. Щусева</span>
-                <span class="events__date">с 20 марта по 30 апреля</span>
+          <li class="events__item event">
+            <div class="event__block">
+              <div class="event__info">
+                <span class="event__place">Музей им. Щусева</span>
+                <span class="event__date">с 20 марта по 30 апреля</span>
               </div>
-              <h3 class="events__heading subheading">Книжная гравюра в живом восприятии</h3>
-              <p class="events__description">
+              <h3 class="event__subheading subheading">Книжная гравюра в живом восприятии</h3>
+              <p class="event__description">
                 Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
                 продолжили его брат Давид и сын Ридольфо.
               </p>
-              <a class="events__link http_link" href="#">Подробнее</a>
+              <a class="event__link http_link" href="#">Подробнее</a>
             </div>
           </li>
 
-          <li class="events__item">
-            <div class="events__item__block">
-              <div class="events__info">
-                <span class="events__place">ММОМА</span>
-                <span class="events__date">24 марта 19:00</span>
+          <li class="events__item event">
+            <div class="event__block">
+              <div class="event__info">
+                <span class="event__place">ММОМА</span>
+                <span class="event__date">24 марта 19:00</span>
               </div>
-              <h3 class="events__heading subheading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
-              <p class="events__description">
+              <h3 class="event__subheading subheading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+              <p class="event__description">
                 Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
                 факта.
               </p>
-              <a class="events__link http_link" href="#">Подробнее</a>
+              <a class="event__link http_link" href="#">Подробнее</a>
             </div>
           </li>
 
-          <li class="events__item">
-            <div class="events__item__block">
-              <div class="events__info">
-                <span class="events__place">Еврейский музей</span>
-                <span class="events__date">с 31 марта по 21 апреля</span>
+          <li class="events__item event">
+            <div class="event__block">
+              <div class="event__info">
+                <span class="event__place">Еврейский музей</span>
+                <span class="event__date">с 31 марта по 21 апреля</span>
               </div>
-              <h3 class="events__heading subheading">Выставка «Формация 2020»</h3>
-              <p class="events__description">
+              <h3 class="event__subheading subheading">Выставка «Формация 2020»</h3>
+              <p class="event__description">
                 Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в
                 формировании глубокомысленных рассуждений.
               </p>
-              <a class="events__link http_link" href="#">Подробнее</a>
+              <a class="event__link http_link" href="#">Подробнее</a>
             </div>
           </li>
 
-          <li class="events__item events__item_overflow">
-            <div class="events__item__block">
-              <div class="events__info">
-                <span class="events__place">Третьяковка на Крымском валу</span>
-                <span class="events__date">с 30 марта по 30 апреля</span>
+          <li class="events__item events__item_overflow event">
+            <div class="event__block">
+              <div class="event__info">
+                <span class="event__place">Третьяковка на Крымском валу</span>
+                <span class="event__date">с 30 марта по 30 апреля</span>
               </div>
-              <h3 class="events__heading subheading">XXIV Международная биеннале молодого искусства</h3>
-              <p class="events__description">
+              <h3 class="event__subheading subheading">XXIV Международная биеннале молодого искусства</h3>
+              <p class="event__description">
                 Внезапно, реплицированные с зарубежных источников, современные исследования.
               </p>
-              <a class="events__link http_link" href="#">Подробнее</a>
+              <a class="event__link http_link" href="#">Подробнее</a>
             </div>
           </li>
 
-          <li class="events__item events__item_overflow">
-            <div class="events__item__block">
-              <div class="events__info">
-                <span class="events__place">ММАМ</span>
-                <span class="events__date">с 8 апреля по 20 мая</span>
+          <li class="events__item events__item_overflow event">
+            <div class="event__block">
+              <div class="event__info">
+                <span class="event__place">ММАМ</span>
+                <span class="event__date">с 8 апреля по 20 мая</span>
               </div>
-              <h3 class="events__heading subheading">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
-              <p class="events__description">
+              <h3 class="event__subheading subheading">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+              <p class="event__description">
                 Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую
                 продолжили его брат Давид и сын Ридольфо.
               </p>
-              <a class="events__link http_link" href="#">Подробнее</a>
+              <a class="event__link http_link" href="#">Подробнее</a>
             </div>
           </li>
 
@@ -597,7 +861,7 @@
           их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class="tooltip"
             tabindex="0">
             <span class="tooltiptext">Пример современных тенденций - современная методология
-              разработки</span></span>обеспечение нашей
+              разработки</span></span> обеспечение нашей
           деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет
           сомнений, что действия представителей оппозиции могут быть рассмотрены <span class="tooltip"
             tabindex="0"><span class="tooltiptext">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
@@ -750,7 +1014,9 @@
     });
   </script>
   <!-- end Choices.js -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/accordion.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/events_item_show.js"></script>
 

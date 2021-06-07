@@ -1,16 +1,20 @@
 const swiper = new Swiper('.hero__slider', {
     loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
     autoplay: {
-        delay: 3000,
+        delay: 9000,
     },
-    pagination: {
-        // el: '.swiper-pagination',
-        // clickable: true,
-    },
-    navigation: {
-        // nextEl: '.swiper-button-next',
-        // prevEl: '.swiper-button-prev',
-    },
+    // pagination: {
+    //     // el: '.swiper-pagination',
+    //     // clickable: true,
+    // },
+    // navigation: {
+    //     // nextEl: '.swiper-button-next',
+    //     // prevEl: '.swiper-button-prev',
+    // },
 });
 
 const swiper2 = new Swiper('.gallery__slider', {
@@ -38,7 +42,7 @@ const swiper3 = new Swiper('.publication__slider', {
     slidesPerView: 3,
     spaceBetween: 50,
     pagination: {
-        el: ".swiper-pagination",
+        el: ".publication__slider__control .block-pagination",
         type: "fraction",
         clickable: true,
     },

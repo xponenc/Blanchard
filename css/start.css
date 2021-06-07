@@ -161,15 +161,15 @@ textarea:focus, input:focus {
 }
 
 .btn__to-top {
-	display: none;
+  display: none;
   position: fixed;
-	right: 40px;
-	bottom: 40px;
+  right: 40px;
+  bottom: 40px;
   padding: 10px 15px;
   color: var(--accent-color);
   border-radius: 100px;
   border: 2px solid var(--accent-color);
-	font-size: 16px;
+  font-size: 16px;
   cursor: pointer;
   opacity: 0.5;
   transition-property: opacity;

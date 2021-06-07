@@ -11,7 +11,7 @@ function init() {
       // Описание геометрии.
       geometry: {
         type: "Point",
-        coordinates: [55.75846806898367, 37.60108849999989]
+        coordinates: [55.75797806898367, 37.59380849999989]
       },
       // Свойства.
       properties: {
@@ -29,10 +29,10 @@ function init() {
       // Своё изображение иконки метки.
       iconImageHref: 'img/pin.svg',
       // Размеры метки.
-      iconImageSize: [28, 40],
+      iconImageSize: [20, 20],
       // Смещение левого верхнего угла иконки относительно
       // её "ножки" (точки привязки).
-      iconImageOffset: [-14, -40]
+      iconImageOffset: [-10, -10]
     });
   myMap.geoObjects
     .add(myGeoObject);
