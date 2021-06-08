@@ -240,12 +240,7 @@
 }
 
 .publication__slider__control {
-  position: relative;
-  top: -635px;
+  top: -69px;
   left: 15px;
-  display: flex;
-  align-items: center;
-  width: 150px;
-  height: 50px;
 }
 

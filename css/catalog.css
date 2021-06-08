@@ -36,7 +36,7 @@
     background-position: center center;
     background-size: 46px 46px;
     background-repeat: no-repeat;
-    transition-property: background-color, border-color;
+    transition-property: background-color, border-color, filter;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;
 }
@@ -65,13 +65,16 @@
     background-image: url('/img/catalog/be.png');
 }
 
-.tabs__lang-btn:focus, .tabs__lang-btn:hover {
+.tabs__lang-btn:focus {
     border-color: var(--accent-color);
+}
+
+.tabs__lang-btn:hover {
+    filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
 .tabs__lang-btn:active {
     border-color: var(--active-color);
-    background-color: rgba(194, 131, 243, 0.4);
 }
 
 .catalog__text {
@@ -138,6 +141,7 @@
 }
 
 .accordion__item {
+    position: relative;
     margin-top: -1px;
     outline: none;
     border-top: 1px solid transparent;
@@ -147,22 +151,31 @@
     transition-duration: 0.3s;
 }
 
-.accordion__item::before {
+.accordion__btn::after {
     content: '';
     position: absolute;
     top: -7px;
     left: -5px;
     bottom: -7px;
     right: -5px;
+    border-radius: 0;
     border: 2px solid transparent;
     transition-property: border-color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;
 }
 
-.accordion__item:focus::before {
+.accordion__item:focus .accordion__btn::after {
     border-color: var(--accent-color);
 }
+
+/* .accordion__item .accordion__btn.ui-accordion-header.ui-state-active {
+    border-color: transparent;
+} */
+
+/* .accordion__item:focus::before {
+    border-color: var(--accent-color) !important;
+} */
 
 .accordion__item:hover {
     border-top: 1px solid var(--accent-color);
@@ -196,7 +209,7 @@
 
 .catalog__info__accordion .accordion__item .ui-accordion-content {
     margin-bottom: -1px;
-    padding: 25px 0 25px 0;
+    padding: 25px 0 25px 3px;
     border: none;
     border-radius: 0;
     border-top: 1px solid transparent;
@@ -324,9 +337,28 @@
     border: none;
     border-radius: 0;
     border-bottom: 1px solid transparent;
+    transition-property: color, border-color, outline;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .catalog__info__table th {
     font-size: 16px;
     line-height: 32px;
+}
+
+.catalog__info__table .tabs__author-btn:focus {
+    outline: 2px solid var(--active-color);
+    outline-offset: 2px;
+}
+
+.catalog__info__table .tabs__author-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    outline: none;
+}
+
+.catalog__info__table .tabs__author-btn:active {
+    color: var(--active-color);
+    border-color: transparent;
 }

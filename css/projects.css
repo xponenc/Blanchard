@@ -80,30 +80,17 @@
 }
 
 .partners__slider__control {
-  position: relative;
   top: -100px;
   left: 1px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 1602px;
-  height: 50px;
 }
 
 .swiper__btn {
-  /* top: 0; */
-  width: 30px;
-  height: 30px;
-  outline: none;
   background-color: #ECECEC;
   border: 2px solid #ECECEC;
-  border-radius: 50%;
-  transition-property: background-color, border-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
 }
 
-.btn_prev::before, .btn_next::before, .btn_prev::after, .btn_next::after {
+/* .btn_prev::before, .btn_next::before, .btn_prev::after, .btn_next::after {
   content: '';
   position: relative;
   display: inline-block;
@@ -112,17 +99,17 @@
   height: 10px;
   background-repeat: no-repeat;
   background-position: center center;
-}
+} */
 
 .btn_prev::before {
-  opacity: 1;
-  left: 14%;
+  /* opacity: 1;
+  left: 14%; */
   background-image: url('/img/swiper_prev_dark.svg');
 }
 
 .btn_next::before {
-  opacity: 1;
-  left: 21%;
+  /* opacity: 1;
+  left: 21%; */
   background-image: url('/img/swiper_next_dark.svg');
 }
 
@@ -138,14 +125,14 @@
   background-image: url('/img/swiper_next.svg');
 }
 
-.swiper__btn:focus {
+/* .swiper__btn:focus {
   border-color: var(--active-color);
 }
 
 .swiper__btn:hover {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-}
+} */
 
 .btn_prev:hover::before, .btn_prev:active::before,
 .btn_next:hover::before, .btn_next:active::before {
@@ -157,10 +144,10 @@
   opacity: 1;
 }
 
-.swiper__btn:active {
+/* .swiper__btn:active {
   background-color: var(--active-color);
   border-color: #D1A9F0;
-}
+} */
 
 .partners__swiper-slide {
   cursor: pointer;

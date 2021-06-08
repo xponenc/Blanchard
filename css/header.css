@@ -73,6 +73,7 @@
 
 .link_sign-in {
   position: relative;
+  padding-left: 28px;
   font-weight: 400;
 }
 
@@ -80,8 +81,8 @@
   content: '';
   position: absolute;
   display: inline-block;
-  top: 25%;
-  left: -17.5px;
+  top: 29%;
+  left: -1.5px;
   width: 17.5px;
   height: 13px;
   background-position: center right;
@@ -97,8 +98,8 @@
   content: '';
   position: absolute;
   display: inline-block;
-  top: 25%;
-  left: -17.5px;
+  top: 29%;
+  left: -1.5px;
   width: 18px;
   height: 13px;
   opacity: 0;
@@ -226,38 +227,44 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
-  cursor: pointer;
+  /* cursor: pointer; */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition-property: outline;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
 }
 
 .sub-menu__item:last-child {
   margin-bottom: 0;
 }
 
-.sub-menu__item::after {
-  content: '';
+.sub-menu__link:hover::before, .sub-menu__link:focus::before {
+  outline-color: var(--accent-color);
+
+}
+
+.sub-menu__link:active::before {
+  outline-color: #D1A9F0;
+  background-color: rgba(194, 131, 243, 0.4);
+}
+
+.sub-menu__link::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(194, 131, 243, 0.4);
-  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  transition-property: outline-color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+
 }
 
-.sub-menu__item:hover {
-  outline: 2px solid var(--accent-color);
-}
-
-.sub-menu__item:active {
-  outline: 2px solid #D1A9F0;
-}
-
-.sub-menu__item:active::after {
-  opacity: 1;
-}
 
 .sub-menu_active {
   opacity: 1;
@@ -393,7 +400,7 @@
 }
 
 .search__input::placeholder {
-  opacity: 1;
+  opacity: 0.85;
   letter-spacing: 0.02em;
   color: var(--text-color-accent);
 }
@@ -416,27 +423,26 @@
   border-color: var(--active-color);
 }
 
-
-
-.search__label:focus-within .search__input:active {
+.search__input:focus {
   border-bottom-color: var(--text-color-accent);
 }
+
 
 .search__input:hover {
   border-bottom-color: var(--link-hover-color);
 }
 
+.search__input:focus .search__btn::before,
 .search__label:hover+.search__btn::before {
   opacity: 0;
 }
 
+.search__input:focus .search__btn::after,
 .search__label:hover+.search__btn::after {
   opacity: 1;
 }
 
-.search__input:active+.search__label {
-  background-color: tomato;
-}
+
 
 .search__btn {
   position: absolute;

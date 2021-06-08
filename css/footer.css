@@ -28,8 +28,19 @@
   display: inline-block;
   width: 45.4px;
   height: 45.4px;
+  border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center center;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.footer__social__link:focus, .footer__social__link:hover {
+  background-color: var(--accent-color);
+}
+.footer__social__link:active {
+  background-color: var(--active-color);
 }
 
 .link_vk {

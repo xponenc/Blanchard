@@ -7,21 +7,12 @@ const swiper = new Swiper('.hero__slider', {
     autoplay: {
         delay: 9000,
     },
-    // pagination: {
-    //     // el: '.swiper-pagination',
-    //     // clickable: true,
-    // },
-    // navigation: {
-    //     // nextEl: '.swiper-button-next',
-    //     // prevEl: '.swiper-button-prev',
-    // },
 });
 
 const swiper2 = new Swiper('.gallery__slider', {
-    loop: true,
-    loopFillGroupWithBlank: true,
     slidesPerView: 3,
     slidesPerColumn: 2,
+    slidesPerGroup: 3,
     spaceBetween: 50,
     pagination: {
         el: ".gallery__slider__control .block-pagination",
@@ -67,16 +58,6 @@ const swiper4 = new Swiper('.partners__slider', {
         prevEl: '.partners__slider__control .btn_prev',
     },
 });
-
-// const swiperPrev = document.getElementById('swiperPrev')
-// const swiperNext = document.getElementById('swiperNext')
-
-// swiperPrev.addEventListener('click', () => {
-//     swiper4.slidePrev();
-// })
-// swiperNext.addEventListener('click', () => {
-//     swiper4.slideNext();
-// })
 
 
 

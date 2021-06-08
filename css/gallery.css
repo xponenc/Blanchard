@@ -37,6 +37,10 @@
 
 /* Choises.js */
 
+.choices.is-focused.is-open .choices__list.choices__list--single, .choices:hover .choices__list.choices__list--single {
+  color: #fff;
+}
+
 .choices__inner {
   padding: 3px 7.5px 3px 12px;
   border-radius: 6px;
@@ -54,7 +58,7 @@
 /* границы верхнего поля при открытом селекте */
 
 .is-open .choices__inner {
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px;
   border-color: #fff;
 }
 
@@ -64,9 +68,10 @@
 }
 
 .choices__list {
+  color: #999;
   background-color: black;
   border-color: #fff;
-  border-radius: 0 0 6px 6px;
+  border-radius: 6px;
 }
 
 .choices__placeholder {
@@ -78,19 +83,20 @@
 }
 
 .choices__list--single {
-  padding: 4px 16px 2px 4px;
+  padding: 4px 16px 2px 3px;
 }
 
 /* Подсветка выбранного элемента */
 
 .choices__item--selectable {
-  transition-property: background-color;
+  transition-property: background-color, color;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
   background-color: var(--link-hover-color);
+  color: #fff;
 }
 
 /* itemSelectText - приведение к общей transition */
@@ -130,6 +136,11 @@
 .choices.is-focused.is-open::after {
   opacity: 1;
   top: 13px;
+}
+
+.choices__list--dropdown .choices__item {
+  padding: 3px 10px 3px 20px;
+  border-top: 1px solid #999;
 }
 
 /* end Choices.js */
@@ -205,18 +216,11 @@
 }
 
 .gallery__slider__control {
-  position: relative;
   top: -819px;
   left: 4px;
-  display: flex;
-  align-items: center;
-  width: 250px;
-  height: 50px;
 }
 
-
 .block-pagination {
-  text-align: center;
   width: 70px;
   height: 30px;
 }
