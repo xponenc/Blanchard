@@ -10,10 +10,32 @@ const swiper = new Swiper('.hero__slider', {
 });
 
 const swiper2 = new Swiper('.gallery__slider', {
-    slidesPerView: 3,
-    slidesPerColumn: 2,
-    slidesPerGroup: 3,
-    spaceBetween: 50,
+    slidesPerView: 1,
+    // slidesPerColumn: 2,
+    // slidesPerGroup: 3,
+    // spaceBetween: 50,
+    breakpoints: {
+        // // when window width is >= 320px
+        // 320: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 20
+        // },
+        // // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            slidesPerColumn: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 34,
+
+        },
+        // when window width is >= 640px
+        1360: {
+            slidesPerView: 3,
+            slidesPerColumn: 2,
+            slidesPerGroup: 3,
+            spaceBetween: 50,
+        }
+    },
     pagination: {
         el: ".gallery__slider__control .block-pagination",
         type: "fraction",

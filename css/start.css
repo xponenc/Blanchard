@@ -209,10 +209,10 @@ textarea:focus, input:focus {
   clear: both;
 }
 
-
 /* Блок управления пагинацией в сладйерах */
+
 .slider__control {
-  position: relative;
+  position: absolute;
   top: -100px;
   left: 1px;
   display: flex;
@@ -280,21 +280,21 @@ textarea:focus, input:focus {
 }
 
 /* Модальное окно */
+
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 100;
-  display: flex;  
+  display: flex;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 900px;
   max-width: 100%;
-  height: 400px;
+  height: 500px;
   max-height: 100%;
   background: white;
-  box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8);
 }
-
 
 .closed {
   display: none;
@@ -317,23 +317,63 @@ textarea:focus, input:focus {
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding: 20px 50px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.modal-guts__img {
+  width: 400px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.modal-guts__info {
+  padding: 121px 50px;
+  width: calc(100% - 400px);
+}
+
+.modal-guts__header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.modal-guts__subheader {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.modal-guts__sub-subheader {
+  font-size: 12px;
+  line-height: 16px;
+  color: #969696;
 }
 
 .modal__close-button {
   position: absolute;
-  
-  /* don't need to go crazy with z-index here, just sits over .modal-guts */
   z-index: 1;
-  
-  top: 10px;
-  
-  /* needs to look OK with or without scrollbar */
+  top: 20px;
   right: 20px;
-  
-  border: 0;
-  background: black;
-  color: white;
-  padding: 5px 10px;
-  font-size: 1.3rem;
+  width:  16px;
+  height: 16px;
+  border-radius: 50%;
+  background-image: url('/img/close_btn.svg');
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.modal__close-button:focus, .modal__close-button:hover {
+  transform: scale(1.05);
+}
+
+.modal__close-button:active {
+  transform: scale(1);
 }

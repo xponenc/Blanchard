@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/media.css">
+
 
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <title>Blanchard Художественная галерея</title>
@@ -40,31 +42,34 @@
     <nav class="header__nav  nav">
       <div class="nav__top">
         <div class="nav__top__container container">
+          <div class="header__nav__toggle toggle"><span class="toggle__span"></span></div>
           <img src="img/main_logo.svg" alt="" class="header__logo">
-          <ul class="nav__top__list">
-            <li class="nav__item">
-              <a href="#about" class="nav__link">О нас</a>
-            </li>
-            <li class="nav__item">
-              <a href="#gallery" class="nav__link">Галерея</a>
-            </li>
-            <li class="nav__item">
-              <a href="#catalog" class="nav__link">Каталог</a>
-            </li>
-            <li class="nav__item">
-              <a href="#events" class="nav__link">События</a>
-            </li>
-            <li class="nav__item">
-              <a href="#publication" class="nav__link">Издания</a>
-            </li>
-            <li class="nav__item">
-              <a href="#projects" class="nav__link">Проекты</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contacts" class="nav__link">Контакты</a>
-            </li>
-          </ul>
-          <a href="#catalog" class="nav__link link_sign-in">Войти</a>
+          <div class="header__nav__burger">
+            <ul class="nav__top__list">
+              <li class="nav__item">
+                <a href="#about" class="nav__link">О нас</a>
+              </li>
+              <li class="nav__item">
+                <a href="#gallery" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="#catalog" class="nav__link">Каталог</a>
+              </li>
+              <li class="nav__item">
+                <a href="#events" class="nav__link">События</a>
+              </li>
+              <li class="nav__item">
+                <a href="#publication" class="nav__link">Издания</a>
+              </li>
+              <li class="nav__item">
+                <a href="#projects" class="nav__link">Проекты</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+            <a href="#catalog" class="nav__link link_sign-in">Войти</a>
+          </div>
         </div>
       </div>
       <div class="nav__bottom">
@@ -210,16 +215,13 @@
             <div class="hero__swiper-slide swiper-slide main_slide-3">
             </div>
           </div>
-          <div class="swiper-pagination"></div>
-          <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
         </div>
         <div class="hero__info container">
           <h1 class="visually-hidden">Blanchard Художественная галерея</h1>
           <h2 class="hero__heading">Прикоснитесь к прекрасному</h2>
           <p class="hero__text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт
             предпосылки для новых предложений.</p>
-          <a href="#" class="btn hero__btn" aria-label="Подписаться на рассылку">Подписаться на рассылку</a>
+          <a href="#contacts" class="btn hero__btn" aria-label="Подписаться на рассылку">Подписаться на рассылку</a>
         </div>
       </div>
     </section>
@@ -251,13 +253,30 @@
           </p>
         </div>
         <div class="gallery__content">
+          <div class="gallery__slider__control slider__control swiper-navigation">
+            <button class="swiper__btn btn_prev"></button>
+            <div class="block-pagination"></div>
+            <button class="swiper__btn btn_next"></button>
+          </div>
           <div class="gallery__slider swiper-container">
             <div class="gallery__wrapper swiper-wrapper">
               <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/1.jpg'); background-repeat: no-repeat;">
+                <h1 class="gallery__slide__author">Казимир Малевич</h1>
+                <h2 class="gallery__slide__pict-name">“Женщина с граблями”</h2>
+                <h3 class="gallery__slide-create-years">1931-1932</h3>
+                <p class="gallery__slide__info">Картина из второй серии крестьянского цикла работ Казимира Малевича.
+                  Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после
+                  Берлинской и Варшавской выставок в 1927 году.</p>
               </div>
               <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/2.jpg'); background-repeat: no-repeat;">
+                <h1 class="gallery__slide__author">2 Казимир Малевич</h1>
+                <h2 class="gallery__slide__pict-name"> 2“Женщина с граблями”</h2>
+                <h3 class="gallery__slide-create-years"> 2 1931-1932</h3>
+                <p class="gallery__slide__info"> 222 Картина из второй серии крестьянского цикла работ Казимира
+                  Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян
+                  после Берлинской и Варшавской выставок в 1927 году.</p>
               </div>
               <div class="gallery__slide swiper-slide"
                 style="background-image: url('img/gallery/3.jpg'); background-repeat: no-repeat;">
@@ -344,11 +363,6 @@
                 style="background-image: url('img/gallery/30.jpg'); background-repeat: no-repeat;">
               </div>
             </div>
-          </div>
-          <div class="gallery__slider__control slider__control swiper-navigation">
-            <button class="swiper__btn btn_prev"></button>
-            <div class="block-pagination"></div>
-            <button class="swiper__btn btn_next"></button>
           </div>
         </div>
       </div>
@@ -444,173 +458,152 @@
                   <span class="accordion__icon"></span>
                 </button>
                 <div class="accordion__content" aria-hidden="true" id="content-1">
-                  <table class="catalog__info__table authors__table">
-                    <col class="authors__col-1">
-                    <col class="authors__col-2">
-                    <col class="authors__col-3">
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Бенедетто ди Биндо" data-path="author-id-1">
-                          Бенедетто ди Биндо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Веккьетта" data-path="author-id-10">
-                          Веккьетта
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Парентино, Бернардо" data-path="author-id-19">
-                          Парентино, Бернардо
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Бергоньоне, Амброджо" data-path="author-id-2">
-                          Бергоньоне, Амброджо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Андреа Верроккьо" data-path="author-id-11">
-                          Андреа Верроккьо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Пезеллино" data-path="author-id-20">
-                          Пезеллино
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Биссоло, Франческо" data-path="author-id-3">
-                          Биссоло, Франческо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Доменико Гирландайо" data-path="author-id-12">
-                          Доменико Гирландайо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Пьетро Перуджино" data-path="author-id-21">
-                          Пьетро Перуджино
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Больтраффио, Джованни" data-path="author-id-4">
-                          Больтраффио, Джованни
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Беноццо Гоццоли" data-path="author-id-13">
-                          Беноццо Гоццоли
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Перуцци, Бальдассаре" data-path="author-id-22">
-                          Перуцци, Бальдассаре
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике >Бонсиньори, Франческо" data-path="author-id-5">
-                          Бонсиньори, Франческо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Граначчи, Франческо" data-path="author-id-14">
-                          Граначчи, Франческо
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Пизанелло" data-path="author-id-23">
-                          Пизанелло
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Боттичини, Рафаэлло" data-path="author-id-6">
-                          Боттичини, Рафаэлло
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Грегорио ди Чекко" data-path="author-id-15">
-                          Грегорио ди Чекко
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Пинтуриккьо" data-path="author-id-24">
-                          Пинтуриккьо
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Брамантино" data-path="author-id-7">
-                          Брамантино
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Джованни да Удине" data-path="author-id-16">
-                          Джованни да Удине
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Бреа, Людовико" data-path="author-id-8">
-                          Бреа, Людовико
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Джованни ди Паоло" data-path="author-id-17">
-                          Джованни ди Паоло
-                        </button>
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Бьяджо д’Антонио Туччи" data-path="author-id-9">
-                          Бьяджо д’Антонио Туччи
-                        </button>
-                      </th>
-                      <th>
-                        <button type="submit" class="btn tabs__author-btn http_link"
-                          aria-label="Информация о художнике Джорджоне" data-path="author-id-18">
-                          Джорджоне
-                        </button>
-                      </th>
-                    </tr>
-                  </table>
+                  <ul class="catalog__info__list">
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бенедетто ди Биндо" data-path="author-id-1">
+                        Бенедетто ди Биндо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бергоньоне, Амброджо" data-path="author-id-2">
+                        Бергоньоне, Амброджо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Биссоло, Франческо" data-path="author-id-3">
+                        Биссоло, Франческо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Больтраффио, Джованни" data-path="author-id-4">
+                        Больтраффио, Джованни
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике >Бонсиньори, Франческо" data-path="author-id-5">
+                        Бонсиньори, Франческо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Боттичини, Рафаэлло" data-path="author-id-6">
+                        Боттичини, Рафаэлло
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Брамантино" data-path="author-id-7">
+                        Брамантино
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бреа, Людовико" data-path="author-id-8">
+                        Бреа, Людовико
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бьяджо д’Антонио Туччи" data-path="author-id-9">
+                        Бьяджо д’Антонио Туччи
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Веккьетта" data-path="author-id-10">
+                        Веккьетта
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Андреа Верроккьо" data-path="author-id-11">
+                        Андреа Верроккьо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link tabs__author-btn_active"
+                        aria-label="Информация о художнике Доменико Гирландайо" data-path="author-id-12">
+                        Доменико Гирландайо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Беноццо Гоццоли" data-path="author-id-13">
+                        Беноццо Гоццоли
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Граначчи, Франческо" data-path="author-id-14">
+                        Граначчи, Франческо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Грегорио ди Чекко" data-path="author-id-15">
+                        Грегорио ди Чекко
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Джованни да Удине" data-path="author-id-16">
+                        Джованни да Удине
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Джованни ди Паоло" data-path="author-id-17">
+                        Джованни ди Паоло
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Джорджоне" data-path="author-id-18">
+                        Джорджоне
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Парентино, Бернардо" data-path="author-id-19">
+                        Парентино, Бернардо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Пезеллино" data-path="author-id-20">
+                        Пезеллино
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Пьетро Перуджино" data-path="author-id-21">
+                        Пьетро Перуджино
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Перуцци, Бальдассаре" data-path="author-id-22">
+                        Перуцци, Бальдассаре
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Пизанелло" data-path="author-id-23">
+                        Пизанелло
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Пинтуриккьо" data-path="author-id-24">
+                        Пинтуриккьо
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </li>
               <li tabindex="0" class="accordion__item">
@@ -619,9 +612,26 @@
                   <span class="accordion__icon"></span>
                 </button>
                 <div class="accordion__content" aria-hidden="true" id="content-2">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque neque soluta eveniet, minus ducimus
-                    magni facilis tempore quia officiis laboriosam molestias necessitatibus commodi ipsum molestiae
-                    perspiciatis aperiam cumque! Commodi, qui.</p>
+                  <ul class="catalog__info__list">
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бенедетто ди Биндо" data-path="author-id-1">
+                        Бенедетто ди Биндо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Бергоньоне, Амброджо" data-path="author-id-2">
+                        Бергоньоне, Амброджо
+                      </button>
+                    </li>
+                    <li class="catalog__info__item">
+                      <button type="submit" class="btn tabs__author-btn http_link"
+                        aria-label="Информация о художнике Биссоло, Франческо" data-path="author-id-3">
+                        Биссоло, Франческо
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </li>
               <li tabindex="0" class="accordion__item">
@@ -1052,19 +1062,25 @@
       </ul>
     </div>
   </footer>
-  <div class="modal closed" id="modal">
-    <button class="modal__close-button" id="close-button"></button>
+  <div class="modal closed">
+    <button class="modal__close-button btn"></button>
     <div class="modal-guts">
-      <img src="" alt="" />
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae quasi ipsam exercitationem dolore illo, ducimus eos minus laboriosam corporis! Beatae, voluptatem ab? Neque suscipit nulla ratione cupiditate culpa laboriosam. Eum!
+      <div class="modal-guts__img"></div>
+      <!-- <img class="modal-guts__img" src="" alt=""/> -->
+      <div class="modal-guts__info">
+        <h1 class="modal-guts__header"></h1>
+        <h2 class="modal-guts__subheader"></h2>
+        <h3 class="modal-guts__sub-subheader"></h3>
+        <p class="modal-guts__description"></p>
+      </div>
     </div>
   </div>
-  <div class="modal-overlay closed" id="modal-overlay">
+  <div class="modal-overlay closed">
   </div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+  <script src="js/calc_author_list.js"></script>
   <script src="js/modal.js"></script>
 
   <script src="js/submenu.js"></script>

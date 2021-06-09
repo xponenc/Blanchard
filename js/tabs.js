@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.catalog__content__author').forEach(function (content) {
         content.classList.remove('author_active')
       })
-      document.querySelector(`[data-path="${path}"]`).classList.add('tabs__lang-btn_active')
+      document.querySelector(`[data-path="${path}"]`).classList.add('tabs__author-btn_active')
       document.querySelector(`[data-target="${path}"]`).classList.add('author_active')
     })
   })

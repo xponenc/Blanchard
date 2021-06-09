@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.nav__link').on('click', function(event){
+    $('.nav__link, .hero__btn').on('click', function(event){
         event.preventDefault();
         
         hrefId = $(this).attr('href')

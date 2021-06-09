@@ -314,26 +314,38 @@
     display: none;
 } */
 
-.catalog__info__table {
+.catalog__info__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
     width: 100%;
+    height: 290px;
 }
 
-.authors__col-1 {
+/* .authors__col-1 {
     width: 32%;
 }
 
 .authors__col-2 {
     width: 32%;
+} */
+
+.catalog__info__item {
+    min-width: 208px;
+    margin-right: 50px;
 }
 
-.catalog__info__table .tabs__author-btn {
+.catalog__info__item .tabs__author-btn {
     font-family: "Open Sans", sans-serif;
     color: var(--text-color-main);
     text-align: left;
-    font-size: 16px;
     font-weight: 400;
     font-style: normal;
     line-height: 29px;
+    /* line-height: 32px; */
+    font-size: 16px;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid transparent;
@@ -342,23 +354,25 @@
     transition-timing-function: ease-in-out;
 }
 
-.catalog__info__table th {
-    font-size: 16px;
-    line-height: 32px;
-}
 
-.catalog__info__table .tabs__author-btn:focus {
+.tabs__author-btn:focus {
     outline: 2px solid var(--active-color);
     outline-offset: 2px;
 }
 
-.catalog__info__table .tabs__author-btn:hover {
+.tabs__author-btn:hover {
     border-color: var(--accent-color);
     color: var(--accent-color);
     outline: none;
 }
 
-.catalog__info__table .tabs__author-btn:active {
+.tabs__author-btn:active {
     color: var(--active-color);
     border-color: transparent;
+}
+
+.catalog__info__item .tabs__author-btn.tabs__author-btn_active {
+    color: var(--active-color);
+    font-weight: 600;
+    outline: none;
 }
