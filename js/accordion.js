@@ -1,7 +1,7 @@
 $(function () {
   console.log('start')
     $("#accordion").accordion({
-        heightStyle: 'content',
+        heightStyle: 'auto',
         icons: false,
         header: '.accordion__btn',
     });
