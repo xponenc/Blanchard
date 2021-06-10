@@ -156,7 +156,8 @@
 }
 
 .publication__content {
-  padding-top: 124px;
+  position: relative;
+  padding-top: 174px;
   padding-bottom: 26px;
   width: 72.7%;
 }
@@ -240,8 +241,7 @@
 }
 
 .publication__slider__control {
-  top: -22px;
+  top: 103px;
   left: 15px;
 }
 
-  

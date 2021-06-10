@@ -68,6 +68,7 @@
   visibility: visible;
 }
 .projects__partners {
+  position: relative;
 }
 
 .projects__partners__subheading {

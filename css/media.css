@@ -4,16 +4,16 @@
     :root {
         --container-max-width: 926px;
     }
-    .nav__top__container {
+    .nav__top-container {
         justify-content: space-between;
     }
-    .header__nav__toggle {
+    .nav__toggle {
         display: block;
     }
-    .header__nav__burger {
+    .nav__top__block {
         display: none;
     }
-    .nav__bottom__container {
+    .nav__bottom-container {
         display: none;
     }
     .hero__container {
@@ -64,7 +64,7 @@
         height: calc((100% - 34px) / 2);
     }
 
-    .catalog__header__top {
+    .catalog__top-block {
         margin-bottom: 8px;
     }
     .catalog__languages {
