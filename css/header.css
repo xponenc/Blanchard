@@ -103,7 +103,7 @@
 }
 
 .header__logo {
-  margin-right: 183px;
+  margin-right: 11.5%;
   max-height: 39.9px;
 }
 .nav__top__block {
@@ -117,11 +117,13 @@
 .nav__top__list {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   margin-right: auto;
+  margin-bottom: 1px;
 }
 
 .nav__top__item {
-  margin-right: 56px;
+  margin-right: max(7.5%, 30px);
   font-size: 18px;
   font-weight: 600;
   line-height: 24.51px;
@@ -235,7 +237,7 @@
 }
 
 .nav__bottom__item:last-child {
-  margin-bottom: 0;
+  margin-right: 0;
 }
 
 .nav__bottom__link {

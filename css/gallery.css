@@ -69,7 +69,7 @@
 
 .choices__list {
   color: #999;
-  background-color: black;
+  background-color: transparent;
   border-color: #fff;
   border-radius: 6px;
 }
@@ -168,6 +168,8 @@
   /* margin-right: 50px;
   margin-bottom: 50px; */
   height: calc((100% - 50px) / 2);
+  background-position: center center;
+  background-size: cover;
 }
 
 .gallery__slide:nth-child(3n) {

@@ -13,9 +13,11 @@
   align-items: stretch;
 }
 
-.event {
+.events__item {
   margin-right: 50px;
   margin-bottom: 50px;
+  width: calc(100% / 3 - 100px / 3);
+
 }
 
 .events__item:nth-child(3n) {
@@ -29,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 500px;
+  width: 100%;
   min-height: 700px;
   padding: 313px 18px 40px 50px;
   border: 1px solid #CACACA;

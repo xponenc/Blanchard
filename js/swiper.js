@@ -51,9 +51,16 @@ const swiper2 = new Swiper('.gallery__slider', {
 const swiper3 = new Swiper('.publication__slider', {
     loop: true,
     loopFillGroupWithBlank: true,
-    slidesPerGroup: 3,
-    slidesPerView: 3,
-    spaceBetween: 50,
+    slidesPerGroup: 2,
+    slidesPerView: 2,
+    spaceBetween: 49,
+    breakpoints: {
+        1360: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 50,
+        }
+    },
     pagination: {
         el: ".publication__slider__control .block-pagination",
         type: "fraction",
