@@ -8,8 +8,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 124px 122px 113px 160px;
-  max-width: 682px;
+  padding: 124px 67px 104px 50px;
+  /* max-width: 42%; */
+  width: min(682px, 35.5%);
   border: 1px solid var(--muted-color);
 }
 
@@ -37,7 +38,7 @@
 
 .contact-form__input {
   padding: 5px 30px;
-  width: 400px;
+  width: 100%;
   height: 40px;
   border: 1px solid #333333;
   border-radius: 100px;
@@ -75,6 +76,7 @@
 .checkbox__text {
   display: flex;
   align-items: center;
+  padding-right: 10px;
   font-size: 10px;
   line-height: 20px;
   color: var(--text-color-muted);
@@ -130,13 +132,14 @@
   ;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   transition-property: filter;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
 }
 
 .messenger__whatsapp {
-  background-image: url('/img/whatsapp-icon.png')
+  background-image: url('/img/whatsapp-icon.svg')
 }
 
 .messenger__whatsapp:focus, .messenger__whatsapp:hover {
@@ -148,7 +151,7 @@
 }
 
 .messenger__telegram {
-  background-image: url('/img/telegram-icon.png')
+  background-image: url('/img/telegram-icon.svg')
 }
 
 .messenger__telegram:focus, .messenger__telegram:hover {
@@ -160,7 +163,7 @@
 }
 
 .contacts__map {
-  width: calc(100% - 682px);
+  width: 64.5%;
 }
 
 /* Стилизация Yandex карты */

@@ -25,22 +25,26 @@
 .hero__swiper-slide {
   width: 100%;
   height: 800px;
-  background-position: center center;
+  background-position: center;
   /* background-size: 110% 110%; */
   background-repeat: no-repeat;
 }
 
 .main_slide-1 {
   animation: animated_flow 10s linear infinite;
-  background-image: url('/img/main_banner-1_full.jpg')
+  
+  background-image: url('/img/main_banner-1_full.jpg');
 }
 .main_slide-2 {
-  animation: animated_scale 10s linear infinite;
-  background-image: url('/img/main_banner-2.jpg')
+  animation: animated_scale 10s infinite linear;
+  background-image: url('/img/main_banner-2.jpg');
+  background-size: cover;
+  /* background-attachment: scroll; */
+
 }
 .main_slide-3 {
-  animation: animated_scale 10s linear infinite;
-  background-image: url('/img/main_banner-3.jpg')
+  background-image: url('/img/main_banner-3.jpg');
+  background-size: cover;
 }
 
 .hero__info {
@@ -141,13 +145,19 @@
 
 @keyframes animated_scale {
   0% {
-    background-size: 110% auto;
+    background-size: 150%;
    }
   50% {
-    background-size: 105% auto;
+    background-size: 145%;
   }
   100% {
-    background-size: 110% auto;
+    background-size: 150%;
+  }
+}
+
+@keyframes kenburns {
+  50% {
+    transform: scale(1.3);
   }
 }
 

@@ -8,6 +8,7 @@
 
 .publication__container {
   display: flex;
+  justify-content: space-between;
   color: var(--text-color-accent);
 }
 

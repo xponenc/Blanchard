@@ -1,5 +1,5 @@
 .projects {
-  margin-bottom: 29px;
+  margin-bottom: 79px;
 }
 .projects__text {
   margin-bottom: 20px;
@@ -76,14 +76,14 @@
 }
 .partners__slider {
   height: 150px;
-  max-width: 1450px;
+  max-width: 90.5%;
   margin: 0 auto;
 }
 
 .partners__slider__control {
-  top: -100px;
+  top: 104px;
   left: 1px;
-  width: 1602px;
+  width: 100%;
 }
 
 .swiper__btn {
@@ -153,7 +153,9 @@
 .partners__swiper-slide {
   cursor: pointer;
   border: 1px solid var(--muted-color);
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-color: #885BC7;
   transition-property: filter, opacity;
   transition-duration: 0.3s;

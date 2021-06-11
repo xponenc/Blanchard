@@ -74,9 +74,26 @@ const swiper3 = new Swiper('.publication__slider', {
 
 const swiper4 = new Swiper('.partners__slider', {
     loop: true,
-    slidesPerGroup: 3,
-    slidesPerView: 3,
-    spaceBetween: 50,
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    // spaceBetween: 50,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 34,
+        },
+        1024: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 50,
+        },
+        1360: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 50,
+        }
+    },
     pagination: {
         el: ".swiper-pagination",
         type: "fraction",
