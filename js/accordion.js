@@ -1,5 +1,4 @@
 $(function () {
-  console.log('start')
     $("#accordion").accordion({
         heightStyle: "content",
         icons: false,

@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $('.nav__link, .hero__btn').on('click', function(event){
+    $('.nav__top__link, .hero__btn').on('click', function(event){
         event.preventDefault();
         
         hrefId = $(this).attr('href')
-        console.log(hrefId)
+        // console.log(hrefId)
 //если надо корректируем сдвиг высотой header
         let headerHeight = $('.header').height()
         console.log(headerHeight)

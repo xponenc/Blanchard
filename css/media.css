@@ -1,42 +1,90 @@
 @media (max-width: 1360px) {
+    .nav__top-container {
+        position: relative;
+        justify-content: flex-start;
+    }
+    .nav__toggle {
+        display: block;
+        margin-right: calc(50% - 30px - 167.2px / 2);
+    }
+    .nav__bottom-container {
+        display: none;
+    }
+    .header__logo {
+        margin-right: 0;
+    }
+    .nav__top__block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3.4% 81% 4.7% 4.7%;
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateY(-101%);
+        transition-property: transform;
+        transition-timing-function: ease-in-out;
+        transition-duration: 1s;
+    }
+    .nav__top__block_active {
+        transform: none;
+    }
+    .nav__top__btn-close {
+        margin-bottom: 35%;
+    }
+    .nav__top__list {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 131px;
+    }
+    .nav__top__item {
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .nav__top__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    .nav__top__sign-in-btn {
+        padding: 15px 85px;
+    }
+    .link_sign-in {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: white;
+    }
+    .nav__search_mini {
+        display: inline-block;
+    }
     .contacts__info {
         padding: 124px 9.3% 93px 5%;
         width: min(483px, 47.2%);
-      }
-      .contacts__map {
+    }
+    .contacts__map {
         width: 52.8%;
-      }
-      .contact-form__input-box:nth-child(2) {
-          margin-bottom: 22px;
-      }
-      .checkbox__text {
-          padding-right: 0;
-      }
-      .messenger__item:not(:last-child) {
+    }
+    .contact-form__input-box:nth-child(2) {
+        margin-bottom: 22px;
+    }
+    .checkbox__text {
+        padding-right: 0;
+    }
+    .messenger__item:not(:last-child) {
         margin-right: 30px;
-      }
-      .messenger__link {
-          width: 60px;
-          height: 60px;
-      }
-
+    }
+    .messenger__link {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 1024px) {
     :root {
         --container-max-width: 926px;
-    }
-    .nav__top-container {
-        justify-content: space-between;
-    }
-    .nav__toggle {
-        display: block;
-    }
-    .nav__top__block {
-        display: none;
-    }
-    .nav__bottom-container {
-        display: none;
     }
     .hero__container {
         min-height: 768px;
@@ -147,18 +195,13 @@
     .partners__swiper-slide {
         max-width: 384px;
     }
-
-    .footer__social {
-        transform: translateY(5px);
-    }
     .footer__social__link {
         width: 60px;
         height: 60px;
     }
     .footer__social__item:not(:last-child) {
         margin-right: 30px;
-      }
-
+    }
     @media (max-width: 768px) {}
     @media (max-width: 550px) {}
     @media (max-width: 425px) {}

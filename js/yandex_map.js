@@ -36,25 +36,4 @@ function init() {
     });
   myMap.geoObjects
     .add(myGeoObject);
-
-  // ON RESIZE
-  //Get curent center and zoom
-  var pixelCenter = myMap.getGlobalPixelCenter('map_page');
-  console.log(pixelCenter);
-
-  //
-  function onResizeMap() {
-    if ($(window).width() > '992') {
-      //Set New center
-      myMap.setCenter([55.760091893815854, 37.63869358468625]);
-      var pixelCenter2 = myMap.getGlobalPixelCenter('map_page');
-      console.log(pixelCenter2);
-    } else {
-      myMap.setCenter([55.760091893815854, 37.63869358468625]);
-    }
-  } onResizeMap();
-
-  window.onresize = function () {
-    onResizeMap();
-  };
 }
