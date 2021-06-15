@@ -11,7 +11,7 @@ function init() {
       // Описание геометрии.
       geometry: {
         type: "Point",
-        coordinates: [55.75797806898367, 37.59380849999989]
+        coordinates: [55.75846806898367,37.60108849999989]
       },
       // Свойства.
       properties: {
@@ -36,4 +36,25 @@ function init() {
     });
   myMap.geoObjects
     .add(myGeoObject);
+
+  // ON RESIZE
+  //Get curent center and zoom
+  // var pixelCenter = myMap.getGlobalPixelCenter('map_page');
+
+  //
+  function onResizeMap() {
+  if ($(window).width() > '1360') { 
+      //Set New center
+      myMap.setCenter([55.760091893815854, 37.63869358468625]);
+      // var pixelCenter2 = myMap.getGlobalPixelCenter('map_page');
+    } else if ($(window).width() > '1024') { 
+      myMap.setCenter([55.75808357148573,37.615080153259235]);
+    } else {
+      myMap.setCenter([55.75669543341636,37.60865232942189]);
+      }
+  } onResizeMap();
+
+  window.onresize = function () {
+      onResizeMap();
+  };
 }

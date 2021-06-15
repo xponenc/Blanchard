@@ -24,7 +24,7 @@ $(document).ready(function () {
         var index = $('.gallery__slide').index(this);
         // Изменение поведения модального окна от размеров экрана
         var width = screen.width
-        if (width > 1024 ) {
+        if ((width > 1024 ) || (width <= 768 )) {
             var bgImage = $(this).css('background-image');
     
             var header = $(this).children('.gallery__slide__author').text()
@@ -58,14 +58,6 @@ $(document).ready(function () {
             $('.modal-guts__img').css('background-image', bgImage);
 
             $('.gallery__content').css('position', 'relative')
-            // $('.gallery__slider').css('position', 'relative')
-
-            // $('.modal-1024').css('position', 'absolute')
-            // $('.modal-1024').css('top', '0')
-            // $('.modal-1024').css('left', '0')
-            // $('.modal-1024').css('width', '100%')
-            // $('.modal-1024').css('height', '100%')
-
             $('.modal-1024').toggleClass("closed")
 
         }
@@ -74,7 +66,7 @@ $(document).ready(function () {
     $('.modal__close-button').on('click', function () {
         console.log('click')
         var width = screen.width
-        if (width > 1024 ) {
+        if ((width > 1024 ) || (width <= 768 )) {
             $('.modal').toggleClass("closed")
             $('.modal-overlay').toggleClass("closed")
         }

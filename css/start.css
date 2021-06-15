@@ -213,6 +213,7 @@ textarea:focus, input:focus {
 
 .slider__control {
   position: absolute;
+  z-index: 10;
   top: -100px;
   left: 1px;
   display: flex;

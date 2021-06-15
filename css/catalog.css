@@ -27,6 +27,9 @@
     width: 66px;
     margin-right: 30px;
 }
+.lang-tabs__item:last-child {
+    margin-right: 0;
+}
 
 .lang-tabs__btn {
     width: 100%;

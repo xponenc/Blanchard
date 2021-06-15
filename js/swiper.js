@@ -53,8 +53,13 @@ const swiper3 = new Swiper('.publication__slider', {
     loopFillGroupWithBlank: true,
     slidesPerGroup: 2,
     slidesPerView: 2,
-    spaceBetween: 49,
+    spaceBetween: 34,
     breakpoints: {
+        1024: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 49,
+        },
         1360: {
             slidesPerView: 3,
             slidesPerGroup: 3,
