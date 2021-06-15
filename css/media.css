@@ -1,14 +1,13 @@
 @media (max-width: 1360px) {
-    .nav__top-container {
+    .nav__top-bgcolor {
         position: relative;
+    }
+    .nav__top-container {
         justify-content: flex-start;
     }
     .nav__toggle {
         display: block;
         margin-right: calc(50% - 30px - 167.2px / 2);
-    }
-    .nav__bottom-container {
-        display: none;
     }
     .header__logo {
         margin-right: 0;
@@ -56,6 +55,11 @@
         font-size: 18px;
         line-height: 25px;
         color: white;
+    }
+    .nav__bottom-bgcolor {}
+
+    .nav__bottom-container {
+        display: inline-block;
     }
     .nav__search_mini {
         display: inline-block;
