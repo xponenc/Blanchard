@@ -361,19 +361,99 @@ textarea:focus, input:focus {
   width:  16px;
   height: 16px;
   border-radius: 50%;
-  background-image: url('/img/close_btn.svg');
+  /* background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.63623' width='37.2838' height='3.72838' transform='rotate(45 2.63623 0)' fill='black'/%3E%3Crect y='26.3636' width='37.2838' height='3.72838' transform='rotate(-45 0 26.3636)' fill='black'/%3E%3C/svg%3E%0A");
   background-size: 16px 16px;
   background-repeat: no-repeat;
-  background-position: center center;
-  transition-property: transform;
+  background-position: center center; */
+  transition-property: background-color;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
 }
 
-.modal__close-button:focus, .modal__close-button:hover {
-  transform: scale(1.05);
+.modal__close-button::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width:  16px;
+  height: 16px;
+  display: inline-block;
+  opacity: 1;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.63623' width='37.2838' height='3.72838' transform='rotate(45 2.63623 0)' fill='black'/%3E%3Crect y='26.3636' width='37.2838' height='3.72838' transform='rotate(-45 0 26.3636)' fill='black'/%3E%3C/svg%3E%0A");
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.modal__close-button::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width:  16px;
+  height: 16px;
+  display: inline-block;
+  opacity: 0;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.63623' width='37.2838' height='3.72838' transform='rotate(45 2.63623 0)' fill='white'/%3E%3Crect y='26.3636' width='37.2838' height='3.72838' transform='rotate(-45 0 26.3636)' fill='white'/%3E%3C/svg%3E%0A");
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+
+}
+
+
+.modal__close-button:hover {
+  background-color: var(--accent-color);
+}
+
+.modal__close-button:active {
+  background-color: var(--active-color);
+}
+
+.modal__close-button:hover::before {
+  opacity: 0;
+}
+
+.modal__close-button:hover::after {
+  opacity: 1;
 }
 
 .modal__close-button:active {
   transform: scale(1);
+}
+
+.modal-1024 {
+  position: absolute;
+  top: 165px;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  /* transform: translate(-50%, -50%); */
+  width: 100%;
+  max-width: 100%;
+  height: calc(100% - 165px - 80px);
+  max-height: 100%;
+  color: var(--text-color-main);
+  background: white;
+  /* box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8); */
+}
+
+.modal-1024 .modal-guts__img {
+  width: 264px;
+}
+
+.modal-1024 .modal-guts__info {
+  padding: 122px 50px;
+  width: calc(100% - 264px);
+
 }

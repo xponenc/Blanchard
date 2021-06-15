@@ -43,7 +43,7 @@
       <div class="nav__top-bgcolor">
         <div class="nav__top-container container">
           <div class="nav__toggle toggle"><span class="toggle__span"></span></div>
-          <img src="img/main_logo.svg" alt="" class="header__logo">
+          <img src="img/main_logo.png" alt="" class="header__logo">
           <div class="nav__top__block">
             <button class="nav__top__btn-close"></button>
             <ul class="nav__top__list">
@@ -73,10 +73,10 @@
               <a href="#catalog" class="nav__top__link link_sign-in">Войти</a>
             </div>
           </div>
-          <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="nav__search_mini search_mini">
+          <!-- <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="nav__search_mini search_mini">
             <input required id="search" class="search_mini__input" aria-label="Поиск по сайту" aria-required="true" type="search" placeholder="Поиск" name="search-string">
             <button class="search__btn btn search_mini__btn" aria-label="Поиск по сайту" type="submit"></button>
-          </form>
+          </form> -->
         </div>
       </div>
       <div class="nav__bottom-bgcolor">
@@ -199,12 +199,11 @@
             </li>
           </ul>
           <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-            <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
-              placeholder="Поиск по сайту" name="search-string">
-            <label class="search__label" for="search" tabindex="0">
-            </label>
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
-          </form>
+            <label class="search__label" for="search" tabindex="0"></label>
+            <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
+                placeholder="Поиск по сайту" name="search-string" tabindex="-1">
+        </form>
         </div>
       </div>
     </nav>
@@ -1093,6 +1092,7 @@
   <script src="js/burger.js"></script>
   <script src="js/submenu.js"></script>
   <script src="js/site_scrolling.js"></script>
+  <script src="js/tooltip.js"></script>
 
   <!-- SimpleBar.js -->
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>

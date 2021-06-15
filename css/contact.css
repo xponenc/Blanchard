@@ -1,14 +1,14 @@
 .contacts__block {
   display: flex;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 .contacts__info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 124px 6.3% 113px 8.3%;
+  /* justify-content: flex-start; */
+  /* align-items: flex-start; */
+  padding: 124px 6.2% 113px 8.2%;
   /* max-width: 42%; */
   width: min(682px, 35.5%);
   border: 1px solid var(--muted-color);

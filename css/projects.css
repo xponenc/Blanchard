@@ -28,6 +28,7 @@
 .tooltiptext {
   position: absolute;
   opacity: 0;
+  visibility: hidden;
   display: inline-block;
   width: 264px;
   bottom: 179%;
@@ -51,7 +52,7 @@
 .tooltiptext::after {
   content: '';
   position: absolute;
-  /* visibility: hidden; */
+  visibility: hidden;
   bottom: -10px;
   left: 50%;
   border-top: 11px solid var(--muted-color);
