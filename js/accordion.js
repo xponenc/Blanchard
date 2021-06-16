@@ -1,6 +1,6 @@
 $(function () {
     $("#accordion").accordion({
-        heightStyle: "content",
+        heightStyle: "fill",
         icons: false,
         header: '.accordion__btn',
     });
