@@ -43,12 +43,14 @@
       <div class="nav__top-bgcolor">
         <div class="nav__top-container container">
           <div class="nav__toggle toggle"><span class="toggle__span"></span></div>
-          <img src="img/main_logo.png" alt="" class="header__logo">
+          <img src="img/main_logo.svg" alt="" class="header__logo">
           <div class="nav__top__block">
             <button class="nav__top__btn-close"></button>
             <ul class="nav__top__list">
               <li class="nav__top__item">
-                <a href="#about" class="nav__top__link"><nobr>О нас</nobr></a>
+                <a href="#about" class="nav__top__link">
+                  <nobr>О нас</nobr>
+                </a>
               </li>
               <li class="nav__top__item">
                 <a href="#gallery" class="nav__top__link">Галерея</a>
@@ -73,10 +75,15 @@
               <a href="#catalog" class="nav__top__link link_sign-in">Войти</a>
             </div>
           </div>
-          <!-- <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="nav__search_mini search_mini">
-            <input required id="search" class="search_mini__input" aria-label="Поиск по сайту" aria-required="true" type="search" placeholder="Поиск" name="search-string">
-            <button class="search__btn btn search_mini__btn" aria-label="Поиск по сайту" type="submit"></button>
-          </form> -->
+          <div class="nav__top__search-toogle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="5.02605" height="1.25651"
+                transform="matrix(-0.71131 0.702878 0.71131 0.702878 3.57617 11.5841)" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.75929 13.3207C5.45281 13.3207 2.89432 10.5994 2.89432 7.40037C2.89432 4.2013 5.45281 1.48007 8.75929 1.48007C12.0658 1.48007 14.6243 4.2013 14.6243 7.40037C14.6243 10.5994 12.0658 13.3207 8.75929 13.3207ZM8.75929 14.8007C4.76036 14.8007 1.51858 11.4875 1.51858 7.40037C1.51858 3.31326 4.76036 0 8.75929 0C12.7582 0 16 3.31326 16 7.40037C16 11.4875 12.7582 14.8007 8.75929 14.8007Z"
+                fill="white" />
+            </svg>
+          </div>
         </div>
       </div>
       <div class="nav__bottom-bgcolor">
@@ -202,8 +209,8 @@
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
             <label class="search__label" for="search" tabindex="0"></label>
             <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
-                placeholder="Поиск по сайту" name="search-string" tabindex="-1">
-        </form>
+              placeholder="Поиск по сайту" name="search-string" tabindex="-1">
+          </form>
         </div>
       </div>
     </nav>
@@ -407,8 +414,8 @@
           и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
           нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены
           на&nbsp;независимые элементы.</p>
-      <!-- </div> -->
-      <!-- <div class="catalog__container container"> -->
+        <!-- </div> -->
+        <!-- <div class="catalog__container container"> -->
         <div class="catalog__language" data-target="fr">
           FRANCE
         </div>
@@ -609,7 +616,7 @@
                         Пинтуриккьо
                       </button>
                     </li>
-                    
+
                   </ul>
                 </div>
               </li>
@@ -710,6 +717,7 @@
         <div class="events__slider swiper-container">
           <ul class="events__list events__slider__wrapper swiper-wrapper">
             <li class="events__item event swiper-slide">
+              <div class="event__img"></div>
               <div class="event__block">
                 <div class="event__info">
                   <span class="event__place">Музей им. Щусева</span>
@@ -725,6 +733,7 @@
             </li>
 
             <li class="events__item event swiper-slide">
+              <div class="event__img"></div>
               <div class="event__block">
                 <div class="event__info">
                   <span class="event__place">ММОМА</span>
@@ -740,6 +749,7 @@
             </li>
 
             <li class="events__item event swiper-slide">
+              <div class="event__img"></div>
               <div class="event__block">
                 <div class="event__info">
                   <span class="event__place">Еврейский музей</span>
@@ -755,6 +765,7 @@
             </li>
 
             <li class="events__item event swiper-slide">
+              <div class="event__img"></div>
               <div class="event__block">
                 <div class="event__info">
                   <span class="event__place">Третьяковка на Крымском валу</span>
@@ -769,6 +780,7 @@
             </li>
 
             <li class="events__item event swiper-slide">
+              <div class="event__img"></div>
               <div class="event__block">
                 <div class="event__info">
                   <span class="event__place">ММАМ</span>
@@ -977,7 +989,9 @@
               повысить качество </span></span> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
           представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
           очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
-          Подробнее: <a href="blanchard-art.ru/projects/about" class="http_link"><nobr>blanchard-art.ru/projects/about</nobr></a>
+          Подробнее: <a href="blanchard-art.ru/projects/about" class="http_link">
+            <nobr>blanchard-art.ru/projects/about</nobr>
+          </a>
         </p>
         <div class="projects__partners partners">
           <h3 class="projects__partners__subheading subheading">Партнёры проектов:</h3>

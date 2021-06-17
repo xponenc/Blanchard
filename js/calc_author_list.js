@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.accordion__content').each(function (index, element) {
         // console.log(this)
         // console.log(element)
+        var padding = 54
         var countItems = $(this).children('.catalog__info__list').children('.catalog__info__item').length
         var width = screen.width
         if (width > 1360 ) {
@@ -24,12 +25,13 @@ $(document).ready(function () {
         } else { 
             var columns  = 1
             var unit = 32
+            var padding = 39
         } 
         // console.log(width)
         var heightList =  Math.ceil(countItems / columns ) * unit
         // console.log(countItems)
         // console.log(heightList)
-        $(this).css('height', heightList + 54 + 'px')
+        $(this).css('height', heightList + padding + 'px')
         $(this).children('.catalog__info__list').css('height', heightList + 'px')
     })
 })
