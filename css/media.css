@@ -221,7 +221,7 @@
         height: 200px;
     }
     .event__block {
-        padding: 14px 16px 47px 35px;
+        padding: 14px 16px 105px 35px;
         height: calc(100% - 200px);
         /* background-size: auto 200px; */
     }
@@ -229,7 +229,10 @@
         /* margin-bottom: 25px; */
         padding-right: 15px;
     }
- 
+    .event__link {
+        position: absolute;
+        bottom: 47px;
+        left: 35px;}
     .publication__info {
         width: calc(100% - 629px);
     }
@@ -485,7 +488,7 @@
         /* min-width: 165px; */
     }
     .price__form {
-        width: max(300px, 41.5%);
+        width: min(279px, 41.5%);
     }
     .publication__content {
         padding: 105px 27px 0 27px;
@@ -598,18 +601,26 @@
     .events__container {
         position: relative;
     }
+    .events__slider__wrapper {
+        height: 100%;
+    }
     .events__item {
         margin: 0;
-        height: 100%;
+        height: 630px;
+        /* min-height: 630px; */
     }
     .events__item:nth-child(n+3) {
         display: inline-block;
         opacity: 1;
     }
+    .event__img {
+        height: 300px;
+    }
     .event__block {
-        padding-top: 350px;
-        background-size: 100% auto;
-        min-height: 700px;
+        padding-top: 20px;
+        background-size: contain;
+        /* min-height: 350px; */
+        height: calc(100% - 300px);
     }
     .events__pagination {
         position: absolute;
@@ -621,19 +632,38 @@
     .events__btn {
         display: none;
     }
+
+    .publication__content {
+        padding: 25px 27px 0 27px;
+    }
+
+    .publication__slider__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
     .publication__slider__control {
         display: none;
     }
-    .publication__slider {
-        height: 1166px;
-    }
+
     .publication__slide {
-        height: calc(100% / 4 - 150px / 4);
+        width: calc(100% / 2 - 20px);
+        margin-bottom: 50px;
     }
-    .publication__slide__item {
-        padding-top: 150px;
-        background-size: 100% auto;
+    .pub-item__img {
+        height: 245px;
     }
+
+    .pub-item__info {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .pub-item__btn {
+        width: 100%;
+    }
+  
 }
 
 @media (max-width: 425px) {}
