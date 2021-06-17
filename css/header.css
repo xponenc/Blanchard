@@ -22,7 +22,7 @@
 
 .nav__top-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   height: 100px
 }
@@ -128,15 +128,16 @@
 }
 
 .header__logo {
-  margin-right: 11.5%;
-  max-height: 39.9px;
+  margin-right:auto;
+  height: 39.9px;
+  width: 173px;
 }
 
 .nav__top__block {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 
@@ -144,12 +145,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-right: auto;
+  margin-right: 14vw;
   margin-bottom: 1px;
 }
 
 .nav__top__item {
-  margin-right: max(7.5%, 52px);
+  margin-right: max(3.26vw, 30px);
   font-size: 18px;
   font-weight: 600;
   line-height: 24.51px;
@@ -273,7 +274,7 @@
 
 .nav__bottom__item {
   position: relative;
-  margin-right: 94px;
+  margin-right: 92px;
   padding: 5px 5px;
   padding-left: 0;
   border: 2px solid transparent;
