@@ -21,6 +21,7 @@
   transition-property: opacity;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
+  /* min-height: 700px; */
 
 }
 
@@ -39,7 +40,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  min-height: 700px;
+  height: 100%;
   padding: 313px 18px 40px 50px;
   border: 1px solid #CACACA;
   background-position: top center;
