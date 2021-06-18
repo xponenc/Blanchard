@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
     function showChecked() {
+        console.log('Функция')
         $('.genre__form__label').each(function (index, value) {
             if ($(this).children('.genre__form__checkbox').is(':checked')) {
-                $(this).css('display', 'inline-block')
+                $(this).css('display', 'flex')
                 $(this).addClass('genre__form__label_checked')
 
             } else {
@@ -22,19 +23,22 @@ $(document).ready(function () {
 
             if ($('.publication__subheading').hasClass('pub-angle-down')) {
                 showChecked()
+                hideUnchecked()
             } else {
-                $('.genre__form__label').css('display', 'inline-block')
+                $('.genre__form__label').css('display', 'flex')
             }
         })
     }
 
-    $('.genre__form__label_checked').each(function (index, value) {
-        console.log(value)
-        $(value).on('click', function () {
-            console.log($(value).children('.genre__form__checkbox'))
-            $(value).children('.genre__form__checkbox').prop('checked', false)
-        },
-            showChecked()
-        )
-    })
+    function hideUnchecked() {
+        $('.genre__form__label_checked').each(function (index, element) {
+            console.log($(element))
+            $(element).on('click', function () {
+                console.log($(this))
+                $(this).removeClass('genre__form__label_checked')
+                $(this).children('.genre__form__checkbox').prop('checked', false)
+                $(this).hide(50)
+            })
+        })
+    }
 })

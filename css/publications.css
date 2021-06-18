@@ -70,11 +70,12 @@
 
 .genre__form__label {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   outline: none;
+  cursor: pointer;
 }
 
 .genre__form__checkbox {
