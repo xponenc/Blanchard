@@ -66,7 +66,7 @@ $(document).ready(function () {
     $('.modal__close-button').on('click', function () {
         console.log('click')
         var width = screen.width
-        if ((width > 1024 ) || (width <= 768 )) {
+        if ((width > 1024 ) || (width <= 768 ) || (window.innerWidth > 1024 ) || (window.innerWidth <= 768 ))  {
             $('.modal').toggleClass("closed")
             $('.modal-overlay').toggleClass("closed")
         }

@@ -1,11 +1,14 @@
 $(document).ready(function () {
-    console.log('768')
     var width = screen.width
-    if (width == 768 ) {
-      console.log('768')
-      $('.search__btn').on('click', function() {
-        console.log('search btn')
-        $('.nav__toggle').css('display', 'none')
-      })
+    console.log(screen.width)
+    console.log(window.innerWidth)
+    if ((width <= 768) || (window.innerWidth <= 768)) {
+        console.log('768')
+        $('.nav__top__search-toogle').on('click', function () {
+            $('.nav__bottom-bgcolor').toggleClass('nav__bottom-bgcolor_active')
+        })
+        $('.nav__bottom__search-close').on('click', function () {
+            $('.nav__bottom-bgcolor').toggleClass('nav__bottom-bgcolor_active')
+        })
     }
-  })
+})

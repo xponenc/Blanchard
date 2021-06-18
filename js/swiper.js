@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    var width = screen.width
+
+
     const swiper = new Swiper('.hero__slider', {
         loop: true,
         effect: 'fade',
@@ -99,13 +102,10 @@ $(document).ready(function () {
         slidesPerGroup: 1,
         slidesPerView: 1,
         spaceBetween: 21,
-        centeredSlides: true,
         breakpoints: {
-            // 240: {
-            //     slidesPerView: 2,
-            //     slidesPerGroup: 2,
-            //     spaceBetween: 34,
-            // },
+            240: {
+                centeredSlides: true,
+            },
             768: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
@@ -133,9 +133,7 @@ $(document).ready(function () {
         },
     });
 
-    var width = screen.width
     if (width <= 550) {
-        console.log('Стартует свайпер events')
         $('.events__list').removeClass('events__list')
         $('.events__item').addClass('swiper-slide')
         $('.events__slider').addClass('swiper-container')
