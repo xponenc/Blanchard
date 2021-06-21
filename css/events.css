@@ -118,7 +118,7 @@
 .events__pagination {
   display: none;
   position: absolute;
-  bottom: -40px;
+  /* bottom: -40px; */
 }
 
 .swiper-pagination-bullet {
@@ -126,8 +126,8 @@
   height: 10px;
 }
 
-.swiper-pagination-bullet:not(:last-child) {
-  margin-right: 15px;
+.events__pagination .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 11px;
 }
 
 .events__block-btn {

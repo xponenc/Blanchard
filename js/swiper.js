@@ -17,7 +17,7 @@ $(document).ready(function () {
         slidesPerView: 1,
         // slidesPerColumn: 2,
         // slidesPerGroup: 3,
-        // spaceBetween: 50,
+        spaceBetween: 50,
         breakpoints: {
             // // when window width is >= 320px
             // 320: {
@@ -55,8 +55,8 @@ $(document).ready(function () {
         const swiper3 = new Swiper('.publication__slider', {
             // loop: true,
             // loopFillGroupWithBlank: true,
-            
-            
+
+
             breakpoints: {
                 240: {
                     slidesPerGroup: 2,
@@ -98,12 +98,12 @@ $(document).ready(function () {
 
 
     const swiper4 = new Swiper('.partners__slider', {
-        // loop: true,
-        slidesPerGroup: 1,
-        slidesPerView: 1,
-        spaceBetween: 21,
+        loop: true,
         breakpoints: {
             240: {
+                slidesPerGroup: 1,
+                slidesPerView: 1,
+                spaceBetween: 21,
                 centeredSlides: true,
             },
             768: {
@@ -145,7 +145,7 @@ $(document).ready(function () {
             slidesPerView: 1,
             spaceBetween: 21,
             centeredSlides: true,
-            
+
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,

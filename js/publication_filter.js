@@ -14,7 +14,7 @@ $(document).ready(function () {
     }
     var width = screen.width
 
-    if ((width < 550) || (window.innerWidth < 550)) {
+    if ((width <= 550) || (window.innerWidth <= 550)) {
         showChecked()
         $('.publication__subheading').on('click', function () {
             console.log('клац')
@@ -37,7 +37,7 @@ $(document).ready(function () {
                 console.log($(this))
                 $(this).removeClass('genre__form__label_checked')
                 $(this).children('.genre__form__checkbox').prop('checked', false)
-                $(this).hide(50)
+                $(this).hide(300)
             })
         })
     }

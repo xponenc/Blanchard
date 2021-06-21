@@ -11,7 +11,7 @@ function init() {
       // Описание геометрии.
       geometry: {
         type: "Point",
-        coordinates: [55.75846806898367,37.60108849999989]
+        coordinates: [55.75846806898367, 37.60108849999989]
       },
       // Свойства.
       properties: {
@@ -43,18 +43,25 @@ function init() {
 
   //
   function onResizeMap() {
-  if ($(window).width() > '1360') { 
+    if ($(window).width() > '1360') {
       //Set New center
       myMap.setCenter([55.760091893815854, 37.63869358468625]);
       // var pixelCenter2 = myMap.getGlobalPixelCenter('map_page');
-    } else if ($(window).width() > '1024') { 
-      myMap.setCenter([55.75808357148573,37.615080153259235]);
+    } else if ($(window).width() > '1024') {
+      myMap.setCenter([55.75808357148573, 37.615080153259235]);
     } else {
-      myMap.setCenter([55.75669543341636,37.60865232942189]);
-      }
+      myMap.setCenter([55.75669543341636, 37.60865232942189]);
+    }
   } onResizeMap();
 
   window.onresize = function () {
-      onResizeMap();
+    onResizeMap();
   };
+
+
+  var width = screen.width
+  if ((width <= 550) || (window.innerWidth <= 550)) {
+    console.log('Перемещение блока карты')
+    $('.contacts__map').insertAfter($('.info__showroom'));
+  }
 }
