@@ -286,10 +286,10 @@
         border-style: none;
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z' fill='%239D5CD0'/%3E%3Cpath d='M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z' fill='white'/%3E%3Cpath d='M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z' fill='white'/%3E%3C/svg%3E%0A");
     }
-    .tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext::after, .tooltip:focus .tooltiptext, .tooltip:focus .tooltiptext::after {
+    /* .tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext::after, .tooltip:focus .tooltiptext, .tooltip:focus .tooltiptext::after {
         opacity: 1;
         visibility: visible;
-    }
+    } */
     .partners__slider__control {
         top: 94px;
     }
@@ -525,8 +525,31 @@
         top: 38px;
     }
     .projects__text {
+        position: relative;
         margin-bottom: 27px;
         max-width: 655px;
+    }
+    .tooltiptext {
+        width: 239px;
+        bottom: 23px;
+        left: 188%;
+        padding: 8px 6px;
+        transition-timing-function: ease-out;
+    }
+    .tooltiptext::after {
+        display: none;
+    }
+    .tooltip:hover, .tooltip:focus {
+        /* background-image: none; */
+    }
+    .tooltip-active {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z' fill='%239D5CD0'/%3E%3Cpath d='M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z' fill='white'/%3E%3Cpath d='M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z' fill='white'/%3E%3C/svg%3E%0A") !important;
     }
     .projects__partners__subheading {
         margin-bottom: 27px;
@@ -651,9 +674,6 @@
     .events__block-btn {
         display: none;
     }
- 
-   
-
     /* PUBLICATION:550 */
     .publication {
         margin-bottom: 50px;
@@ -719,7 +739,6 @@
     .price__form {
         width: 95%;
     }
-    
     .publication__content {
         /* padding: 25px 27px 0 27px; */
         padding: 48px 0 0 0;
@@ -737,7 +756,6 @@
         width: calc(100% / 2 - 30px / 2);
         margin-bottom: 50px;
     }
-
     .pub-item__img {
         height: 143px;
     }
@@ -856,7 +874,7 @@
         align-items: flex-start;
     }
     .modal-guts__img {
-        width:100%;
+        width: 100%;
         height: 200px;
     }
     .modal-guts__info {
@@ -1128,8 +1146,6 @@
     .events__pagination.swiper-pagination {
         bottom: 40px;
     }
-  
-    
     /* PROJECTS:425 */
     .projects {
         margin-bottom: 50px;
