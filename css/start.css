@@ -170,6 +170,7 @@ textarea:focus, input:focus {
 .btn__to-top {
   display: none;
   position: fixed;
+  z-index: 10000;
   right: 40px;
   bottom: 40px;
   padding: 10px 15px;

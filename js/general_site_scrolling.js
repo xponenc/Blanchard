@@ -6,10 +6,10 @@ $(document).ready(function(){
         // console.log(hrefId)
 //если надо корректируем сдвиг высотой header
         let headerHeight = $('.header').height()
-        console.log(headerHeight)
+        // console.log(headerHeight)
         //offset это координата картинки, top - от верха
         let offset = $(hrefId).offset().top;
-        console.log(offset)
+        // console.log(offset)
 //анимация скролла, 1000мс
         $('body,html').animate({
             scrollTop: offset,
@@ -32,4 +32,6 @@ $(document).ready(function(){
             $('.btn__to-top').css('display', 'none');
         }
     });
+
+  
 });

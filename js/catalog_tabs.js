@@ -48,5 +48,12 @@ $(document).ready(function () {
 
     $(`[data-path="${path}"]`).addClass('tabs__author-btn_active')
     $(`[data-target="${path}"]`).addClass('author_active')
+
+    if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+          let offset = $(`[data-target="${path}"]`).offset().top;
+          $('body,html').animate({
+              scrollTop: offset,
+          }, 1000);
+      }
   })
 })

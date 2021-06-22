@@ -3,17 +3,20 @@ $(document).ready(function () {
 
 
     const swiper = new Swiper('.hero__slider', {
+        preloadImages: false,
+        lazy: true,
         loop: true,
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
         autoplay: {
-            delay: 9000,
+            delay: 100000,
         },
     });
 
     const swiper2 = new Swiper('.gallery__slider', {
+        // preloadImages: false,
         slidesPerView: 1,
         // slidesPerColumn: 2,
         // slidesPerGroup: 3,
@@ -53,10 +56,9 @@ $(document).ready(function () {
 
     if (width > 550) {
         const swiper3 = new Swiper('.publication__slider', {
+            // preloadImages: false,
             // loop: true,
             // loopFillGroupWithBlank: true,
-
-
             breakpoints: {
                 240: {
                     slidesPerGroup: 2,
@@ -98,6 +100,7 @@ $(document).ready(function () {
 
 
     const swiper4 = new Swiper('.partners__slider', {
+        // preloadImages: false,
         loop: true,
         breakpoints: {
             240: {

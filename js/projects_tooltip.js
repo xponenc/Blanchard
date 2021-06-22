@@ -1,9 +1,7 @@
 $(document).ready(function () {
     shiftToopltip()
     if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
-        console.log('true')
         $('.tooltiptext').on('click', function () {
-            console.log($(this).parent())
             $(this).parent().blur()
             $(this).css('opacity', '0')
             $(this).css('visibility', 'hidden')
@@ -11,7 +9,6 @@ $(document).ready(function () {
         })
 
         $('.tooltip').blur(function () {
-            console.log('не в фокусе')
             $(this).children('.tooltiptext').css('opacity', '0')
             $(this).children('.tooltiptext').css('visibility', 'invisible')
         })

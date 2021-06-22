@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="//api-maps.yandex.ru">
+	<link rel="dns-prefetch" href="//api-maps.yandex.ru">
+
   <link rel="stylesheet" href="css/normalize.css">
   <!-- start SimpleBar.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
@@ -18,7 +21,8 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/start.css">
   <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/gallery.css">
@@ -27,7 +31,7 @@
   <link rel="stylesheet" href="css/publications.css">
   <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/footer.css"> -->
   <link rel="stylesheet" href="css/media.css">
 
 
@@ -43,12 +47,12 @@
       <div class="nav__top-bgcolor">
         <div class="nav__top-container container">
           <div class="nav__toggle toggle"><span class="toggle__span"></span></div>
-          <img src="img/main_logo.png" alt="" class="header__logo">
+          <img src="img/main_logo.png" alt="Логотип галереи Blanchard" class="header__logo">
           <div class="nav__top__block">
             <button class="nav__top__burger-close">
               <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2.63623" width="37.2838" height="3.72838" transform="rotate(45 2.63623 0)" fill="white"/>
-                <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white"/>
+                <rect x="2.63623" width="37.2838" height="3.72838" transform="rotate(45 2.63623 0)" fill="white" />
+                <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white" />
               </svg>
             </button>
             <ul class="nav__top__list">
@@ -204,10 +208,10 @@
           </ul>
           <div class="nav__bottom__blur"></div>
           <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-            <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
             <label class="search__label" for="search" tabindex="0"></label>
             <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
               placeholder="Поиск по сайту" name="search-string" tabindex="-1">
+            <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
           <div class="nav__bottom__search-close"></div>
         </div>
@@ -220,11 +224,20 @@
       <div class="hero__container">
         <div class="hero__slider swiper-container">
           <div class="hero__swiper-wrapper swiper-wrapper">
-            <div class="hero__swiper-slide swiper-slide main_slide-1">
+            <div class="hero__swiper-slide swiper-slide">
+              <!-- <div class="hero__swiper-slide__img main_slide-1"></div> -->
+              <img data-src="img/1920_banner-1.jpg" class="swiper-lazy hero__swiper-slide__img"/>
+              <div class="swiper-lazy-preloader"></div>
             </div>
-            <div class="hero__swiper-slide swiper-slide main_slide-2">
+            <div class="hero__swiper-slide swiper-slide">
+              <!-- <div class="hero__swiper-slide__img main_slide-2"></div> -->
+              <img data-src="img/1920_banner-2.jpg" class="swiper-lazy hero__swiper-slide__img"/>
+              <div class="swiper-lazy-preloader"></div>
             </div>
-            <div class="hero__swiper-slide swiper-slide main_slide-3">
+            <div class="hero__swiper-slide swiper-slide">
+              <!-- <div class="hero__swiper-slide__img main_slide-3"></div> -->
+              <img data-src="img/1920_banner-3.jpg" class="swiper-lazy hero__swiper-slide__img"/>
+              <div class="swiper-lazy-preloader"></div>
             </div>
           </div>
         </div>
@@ -1000,7 +1013,8 @@
             tabindex="0"><span class="tooltiptext">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
               вызывают у вас эмоции</span><span class="tooltiptext-mark"></span></span> исключительно в&nbsp;разрезе
           маркетинговых и&nbsp;финансовых <span class="tooltip" tabindex="0"><span class="tooltiptext">В стремлении
-              повысить качество </span><span class="tooltiptext-mark"></span></span> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также
+              повысить качество </span><span class="tooltiptext-mark"></span></span> предпосылок. Банальные,
+          но&nbsp;неопровержимые выводы, а&nbsp;также
           представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
           очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
           Подробнее: <a href="blanchard-art.ru/projects/about" class="http_link">
@@ -1051,14 +1065,15 @@
             </ul>
             <div class="contacts__block__forms">
               <h3 class="contacts__subheading subheading">Заказать обратный звонок</h3>
-              <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="contacts__form contact-form">
+              <form action="http://jsonplaceholder.typicode.com/posts" method="POST"
+                class="contacts__form contact-form">
                 <div class="contact-form__input-box just-validate-tooltip-container">
                   <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*"
                     data-validate-field="name">
                 </div>
                 <div class="contact-form__input-box just-validate-tooltip-container">
-                  <input required id="phone" type="phone" name="phone" class="contact-form__input" placeholder="Телефон*"
-                    data-validate-field="phone">
+                  <input required id="phone" type="phone" name="phone" class="contact-form__input"
+                    placeholder="Телефон*" data-validate-field="phone">
                 </div>
                 <div class="contact-form__box">
                   <label class="checkbox form__checkbox">
@@ -1087,7 +1102,7 @@
   </main>
   <footer class="footer">
     <div class="footer__container container">
-      <img src="img/main_logo.svg" alt="" class="footer__logo">
+      <img src="img/main_logo.png" alt="" class="footer__logo">
       <ul class="footer__social">
         <li class="footer__social__item">
           <a aria-label="Страница галереи Blanchard в социальной сети В Контакте" href=""
@@ -1121,13 +1136,13 @@
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
+  <script src="js/packets/jquery-3.6.0.min.js"></script>
+
   <!-- Swiper-Slider -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/general_swiper.js"></script>
   <script src="js/general_site_scrolling.js"></script>
-  
+
   <script src="js/nav_burger.js"></script>
   <script src="js/nav_search_btn.js"></script>
   <script src="js/nav_botoom_submenu.js"></script>
@@ -1172,12 +1187,12 @@
   <script src="js/catalog_calc_author_list.js"></script>
   <script src="js/catalog_tabs.js"></script>
 
-  
+
   <!-- Перестройка фильтра Категории в Изданиях на разрешениях <= 550 -->
   <script src="js/publication_filter.js"></script>
   <!-- Адатация размера картинки в Изданиях на разрешениях <= 550 -->
   <script src="js/publication_width_height_img_auto.js"></script>
-  
+
   <script src="js/projects_tooltip.js"></script>
 
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -1185,10 +1200,13 @@
 
 
   <!-- Yandex Map -->
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
-  <script src="js/contacts_yandex_map.js" type="text/javascript"></script>
+  <!-- <script async src="https://api-maps.yandex.ru/2.1/?apikey=edb7a56f-b6d2-4a63-af7c-ab1645a6e948&lang=ru_RU" type="text/javascript">
+  </script> -->
+  <!-- edb7a56f-b6d2-4a63-af7c-ab1645a6e948 -->
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=ключ&lang=ru_RU" type="text/javascript" async></script> -->
+  <!-- <script src="js/contacts_yandex_map.js" type="text/javascript"></script> -->
 
-  <!-- start Just-validate  + InputMask-->
+
   <script src="js/packets/just-validate.min.js"></script>
   <script src="js/packets/inputmask.min.js"></script>
   <script>
