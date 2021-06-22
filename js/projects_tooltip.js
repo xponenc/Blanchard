@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    shiftToopltip()
     if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
         console.log('true')
         $('.tooltiptext').on('click', function () {
@@ -16,63 +17,47 @@ $(document).ready(function () {
         })
 
     } else if ((screen.width <= 768) || (window.innerWidth <= 768)) {
-        console.log('<=768')
+        console.log('> 1024')
         $('.tooltip').on('click', function () {
             const btn = this
             $('.tooltip').each(function (index, element) {
                 if (element === btn) {
                     $(element).toggleClass('tooltip-active');
-                    console.log('Перекл')
-                    shiftToopltip.call(btn)
-                    if ($(btn).children('.tooltiptext').css('opacity') == '0') {
-                        console.log('Спрятан - показываю')
-                        $(btn).children('.tooltiptext').css('opacity', '1')
-                        $(btn).children('.tooltiptext').css('visibility', 'visible')
+                    if ($(btn).children('.tooltiptext').hasClass('tooltiptext_active')) {
+                        $(btn).children('.tooltiptext').removeClass('tooltiptext_active')
                     } else {
-                        console.log('Показан - прячу')
-                        $(btn).children('.tooltiptext').css('opacity', '0')
-                        $(btn).children('.tooltiptext').css('visibility', 'invisible')
+                        $(btn).children('.tooltiptext').addClass('tooltiptext_active')
+
                     }
                 } else {
-                    console.log('Выкл')
                     $(element).removeClass('tooltip-active')
-                    // $(btn).children('.tooltiptext').css('opacity', '0')
-                    // $(btn).children('.tooltiptext').css('visibility', 'invisible')
                 }
             })
         })
         $('.tooltip').blur(function () {
-            console.log('не в фокусе')
             $(this).removeClass('tooltip-active');
-            $(this).children('.tooltiptext').css('opacity', '0')
-            $(this).children('.tooltiptext').css('visibility', 'invisible')
+            $(this).children('.tooltiptext').removeClass('tooltiptext_active')
         })
     }
 
     function shiftToopltip() {
-        console.log($(this).innerWidth())
-        var positionX = $(this).position().left + $(this).innerWidth() / 2;
-        console.log($(this).parent())
-        console.log('позиция', positionX)
+        $('.tooltip').each(function (index, element) {
+            var positionX = $(element).position().left;
+            var widthParent = $('.projects__text').innerWidth()
+            var widthTooltip = $(element).children('.tooltiptext').innerWidth()
 
-        var widthParent = $('.projects__text').innerWidth()
-        console.log('ширина абзаца', widthParent)
-
-        console.log('запас справа', widthParent - positionX)
-
-        var widthTooltip = $(this).children('.tooltiptext').innerWidth()
-        console.log('ширина тултип', widthTooltip)
-
-        if (positionX + widthTooltip / 2 > widthParent) {
-            var left = positionX + widthTooltip / 2 - widthParent
-            console.log("Не хватает", left)
-            console.log('Вылез вправо - сдвиг')
-            var leftShift = widthTooltip / 2 + left
-            console.log(leftShift)
-            $(this).children('.tooltiptext').css('left', 1)
-        }
-
-        $(this).children('.tooltiptext').css('opacity', '1')
-        $(this).children('.tooltiptext').css('visibility', 'visible')
+            // Проверка - тултип вылез вправо
+            if (positionX + widthTooltip / 2 > widthParent) {
+                var leftOverflow = positionX + widthTooltip / 2 - widthParent + $(element).innerWidth() / 2
+                var leftShift = widthTooltip / 2 + leftOverflow
+                $(element).children('.tooltiptext').css('margin-left', - leftShift - 15)
+            }
+            // Проверка - тултип вылез влево
+            if (positionX - widthTooltip / 2 < 0) {
+                var rightOverflow = positionX - widthTooltip / 2
+                var rightShift = widthTooltip / 2 + rightOverflow
+                $(element).children('.tooltiptext').css('margin-left', - rightShift)
+            }
+        })
     }
 })

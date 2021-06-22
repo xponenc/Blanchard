@@ -31,7 +31,7 @@
   visibility: hidden;
   display: inline-block;
   width: 264px;
-  bottom: 179%;
+  bottom: 28px;
   left: 50%;
   margin-left: -142px;
   background-color: var(--muted-color);
@@ -47,6 +47,10 @@
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
+}
+.tooltiptext_active {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 
