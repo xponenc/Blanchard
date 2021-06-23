@@ -546,7 +546,7 @@
     }
     .tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext::after, .tooltip:focus .tooltiptext, .tooltip:focus .tooltiptext::after {
         opacity: 0;
-        visibility: invisible;
+        visibility: hidden;
     }
     .projects__partners__subheading {
         margin-bottom: 27px;
