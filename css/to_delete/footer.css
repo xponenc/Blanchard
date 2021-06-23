@@ -1,3 +1,5 @@
+/* FOOTER */
+
 .footer {
   background-color: var(--accent-bg-color);
 }
@@ -20,7 +22,6 @@
   align-items: center;
   padding: 0 0;
   transform: translateY(5px);
-
   /* max-height: 46px; */
 }
 
@@ -44,18 +45,19 @@
 .footer__social__link:focus, .footer__social__link:hover {
   background-color: var(--accent-color);
 }
+
 .footer__social__link:active {
   background-color: var(--active-color);
 }
 
 .link_vk {
-  background-image: url('/img/vk.png');
+  background-image: url('/img/icons/vk.png');
 }
 
 .link_instagram {
-  background-image: url('/img/instagram.png');
+  background-image: url('/img/icons/instagram.png');
 }
 
 .link_fb {
-  background-image: url('/img/fb.png');
+  background-image: url('/img/icons/fb.png');
 }

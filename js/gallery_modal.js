@@ -22,7 +22,14 @@ $(document).ready(function () {
 
     $('.gallery__slide').click(function () {
         var width = screen.width
-        var bgImage = $(this).css('background-image');
+        // var bgImage = $(this).css('background-image');
+        // var header = $(this).children('.gallery__slide__author').text()
+        // var subheader = $(this).children('.gallery__slide__pict-name').text()
+        // var subSubheader = $(this).children('.gallery__slide-create-years').text()
+        // var info = $(this).children('.gallery__slide__info').text()
+
+        var bgImage = $(this).children('.gallery__slide__image').attr("src");
+        console.log(bgImage)
         var header = $(this).children('.gallery__slide__author').text()
         var subheader = $(this).children('.gallery__slide__pict-name').text()
         var subSubheader = $(this).children('.gallery__slide-create-years').text()
@@ -34,7 +41,7 @@ $(document).ready(function () {
             $('.modal-guts__subheader').text(subheader)
             $('.modal-guts__sub-subheader').text(subSubheader)
             $('.modal-guts__description').text(info)
-            $('.modal-guts__img').css('background-image', bgImage);
+            $('.modal-guts__img').css('background-image', 'url('+ bgImage + ')');
     
             $('.modal').toggleClass("closed")
             $('.modal-overlay').toggleClass("closed")

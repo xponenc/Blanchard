@@ -1,6 +1,9 @@
+/* PROJECTS */
+
 .projects {
   margin-bottom: 79px;
 }
+
 .projects__text {
   margin-bottom: 20px;
   max-width: 1079px;
@@ -49,6 +52,7 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
+
 .tooltiptext_active {
   transition-property: opacity, visibility;
   transition-duration: 0.6s;
@@ -56,7 +60,6 @@
   visibility: visible !important;
   opacity: 1 !important;
 }
-
 
 .tooltiptext::after {
   content: '';
@@ -85,6 +88,7 @@
 .projects__partners__subheading {
   margin-bottom: 22px;
 }
+
 .partners__slider {
   height: 150px;
   max-width: 90.5%;
@@ -116,25 +120,25 @@
 .btn_prev::before {
   /* opacity: 1;
   left: 14%; */
-  background-image: url('/img/swiper_prev_dark.svg');
+  background-image: url('/img/icons/swiper_prev_dark.svg');
 }
 
 .btn_next::before {
   /* opacity: 1;
   left: 21%; */
-  background-image: url('/img/swiper_next_dark.svg');
+  background-image: url('/img/icons/swiper_next_dark.svg');
 }
 
 .btn_prev::after {
   opacity: 0;
   left: -26%;
-  background-image: url('/img/swiper_prev.svg');
+  background-image: url('/img/icons/swiper_prev.svg');
 }
 
 .btn_next::after {
   opacity: 0;
   left: -17%;
-  background-image: url('/img/swiper_next.svg');
+  background-image: url('/img/icons/swiper_next.svg');
 }
 
 /* .swiper__btn:focus {
@@ -146,13 +150,11 @@
   border-color: var(--accent-color);
 } */
 
-.btn_prev:hover::before, .btn_prev:active::before,
-.btn_next:hover::before, .btn_next:active::before {
+.btn_prev:hover::before, .btn_prev:active::before, .btn_next:hover::before, .btn_next:active::before {
   opacity: 0;
 }
 
-.btn_prev:hover::after, .btn_prev:active::after,
-.btn_next:hover::after, .btn_next:active::after {
+.btn_prev:hover::after, .btn_prev:active::after, .btn_next:hover::after, .btn_next:active::after {
   opacity: 1;
 }
 
@@ -175,37 +177,45 @@
   opacity: 0.5;
   height: 100%;
   max-width: 450px;
-
 }
 
 .partners__swiper-slide:hover {
   filter: none;
   opacity: 1;
 }
+/* 
 .partner_freelands {
   background-image: url('/img/partners/freelands.png');
 }
+
 .partner_ica {
   background-image: url('/img/partners/ica.png');
 }
+
 .partner_workhouse {
   background-image: url('/img/partners/workhouse.png');
 }
+
 .partner_1849 {
   background-image: url('/img/partners/1849.png');
 }
+
 .partner_hiscox {
   background-image: url('/img/partners/hiscox.png');
 }
+
 .partner_camden {
   background-image: url('/img/partners/camden.png');
 }
+
 .partner_stassen {
   background-image: url('/img/partners/stassen.png');
 }
+
 .partner_watts {
   background-image: url('/img/partners/watts.png');
 }
+
 .partner_esad {
   background-image: url('/img/partners/esad.png');
-}
+} */

@@ -1,6 +1,8 @@
+/* PUBLICATIONS */
+
 .publication {
   margin-bottom: 78px;
-  background-image: url('/img/publication-bgnd.jpg');
+  background-image: url('/img/bgnd/publication-bgnd.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -140,7 +142,7 @@
 }
 
 .genre__form__checkbox:checked+.genre__form__text::before {
-  background-image: url('../img/checked.png');
+  background-image: url('/img/icons/checked.png');
   border-color: var(--link-hover-color);
 }
 
@@ -213,6 +215,33 @@
   background-repeat: no-repeat;
 }
 
+.slide_1 {
+  background-image: url('/img/publication/pub-1.jpg');
+}
+
+.slide_2 {
+  background-image: url('/img/publication/pub-2.jpg');
+}
+
+.slide_3 {
+  background-image: url('/img/publication/pub-3.jpg');
+}
+
+.slide_4 {
+  background-image: url('/img/publication/pub-4.jpg');
+}
+
+.slide_5 {
+  background-image: url('/img/publication/pub-5.jpg');
+}
+
+.slide_6 {
+  background-image: url('/img/publication/pub-6.jpg');
+}
+
+.slide_7 {
+  background-image: url('/img/publication/pub-7.jpg');
+}
 .pub-item__info {
   display: flex;
   justify-content: space-between;
@@ -250,33 +279,6 @@
   color: var(--text-color-accent);
 }
 
-.slide_1 {
-  background-image: url('/img/publication/pub-1.jpg');
-}
-
-.slide_2 {
-  background-image: url('/img/publication/pub-2.jpg');
-}
-
-.slide_3 {
-  background-image: url('/img/publication/pub-3.jpg');
-}
-
-.slide_4 {
-  background-image: url('/img/publication/pub-4.jpg');
-}
-
-.slide_5 {
-  background-image: url('/img/publication/pub-5.jpg');
-}
-
-.slide_6 {
-  background-image: url('/img/publication/pub-6.jpg');
-}
-
-.slide_7 {
-  background-image: url('/img/publication/pub-7.jpg');
-}
 
 .publication__slider__control {
   top: 103px;

@@ -1,3 +1,5 @@
+/* EVENTS */
+
 .events {
   margin-bottom: 78px;
 }
@@ -61,23 +63,23 @@
 }
 
 .event:nth-child(1) .event__img {
-  background-image: url('/img/event-1.jpg');
+  background-image: url('/img/events/event-1.jpg');
 }
 
 .event:nth-child(2) .event__img {
-  background-image: url('/img/event-2.jpg');
+  background-image: url('/img/events/event-2.jpg');
 }
 
 .event:nth-child(3) .event__img {
-  background-image: url('/img/event-3.jpg');
+  background-image: url('/img/events/event-3.jpg');
 }
 
 .event:nth-child(4) .event__img {
-  background-image: url('/img/event-4.jpg');
+  background-image: url('/img/events/event-4.jpg');
 }
 
 .event:nth-child(5) .event__img {
-  background-image: url('/img/event-5.jpg');
+  background-image: url('/img/events/event-5.jpg');
 }
 
 .event__info {

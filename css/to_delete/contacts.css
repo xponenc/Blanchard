@@ -1,0 +1,197 @@
+/* CONTACTS */
+
+.contacts__block {
+    display: flex;
+    /* align-items: stretch; */
+}
+
+.contacts__info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    padding: 124px 6.2% 113px 8.2%;
+    /* max-width: 42%; */
+    width: min(682px, 35.5%);
+    border: 1px solid var(--muted-color);
+}
+
+.info__showroom__item {
+    margin-bottom: 28px;
+}
+
+.showroom__title {
+    margin-bottom: 1px;
+}
+
+.contacts__subheading {
+    margin-bottom: 16px;
+    font-weight: 400;
+    /* letter-spacing: 1px; */
+}
+
+.contact-form {
+    margin-bottom: 33px;
+}
+
+.contact-form__input-box {
+    margin-bottom: 23px;
+}
+
+.contact-form__input {
+    padding: 5px 30px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #333333;
+    border-radius: 100px;
+    transition-property: color, border-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+.contact-form__input:last-child {
+    margin-bottom: 0;
+}
+
+.contact-form__input:focus, .contact-form__input:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.contact-form__box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.checkbox {
+    position: relative;
+}
+
+.checkbox__input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkbox__text {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    font-size: 10px;
+    line-height: 20px;
+    color: var(--text-color-muted);
+}
+
+.checkbox__text::before {
+    content: '';
+    margin-right: 16px;
+    min-width: 12px;
+    min-height: 12px;
+    border: 1px solid var(--muted-color);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox__input:checked+.checkbox__text::before {
+    background-image: url('/img/icons/checked.png');
+    border-color: var(--accent-color);
+}
+
+.checkbox__text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2px;
+    right: 0;
+    opacity: 0;
+    outline: 1px solid var(--accent-color);
+}
+
+.checkbox__input:hover+.checkbox__text::after, .checkbox__input:focus+.checkbox__text::after {
+    opacity: 1;
+}
+
+.contact-form__btn {
+    margin-right: 30px;
+}
+
+.contacts__messenger {
+    display: flex;
+}
+
+.messenger__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.messenger__link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition-property: filter;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+.messenger__whatsapp {
+    background-image: url('/img/icons/whatsapp-icon.svg')
+}
+
+.messenger__whatsapp:focus, .messenger__whatsapp:hover {
+    filter: drop-shadow(0px 0px 20px rgba(73, 197, 61, 0.7));
+}
+
+.messenger__whatsapp:active {
+    filter: none;
+}
+
+.messenger__telegram {
+    background-image: url('/img/icons/telegram-icon.svg')
+}
+
+.messenger__telegram:focus, .messenger__telegram:hover {
+    filter: drop-shadow(0px 0px 20px rgba(48, 146, 211, 0.7));
+}
+
+.messenger__telegram:active {
+    filter: none;
+}
+
+.contacts__map {
+    width: 64.5%;
+}
+
+/* Стилизация Yandex карты */
+
+[class*="ground-pane"] {
+    filter: grayscale(1);
+}
+
+[class*="copyrights"] {
+    display: none;
+    ;
+}
+
+/* Стилизация JustValidate */
+
+.just-validate-tooltip-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.js-validate-error-label {
+    top: -33PX !important;
+    right: 0;
+    left: 0 !important;
+    padding-left: 20px !important;
+    /* padding: 18px 53px; */
+    font-size: 12px !important;
+    background-color: transparent !important;
+}

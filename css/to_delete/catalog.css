@@ -1,3 +1,5 @@
+/* CATALOG */
+
 .catalog {
     margin-bottom: 82px;
 }
@@ -105,12 +107,11 @@
     align-items: stretch;
     padding-top: 37px;
     width: 100%;
-    
 }
 
 .catalog__language_active {
     display: flex;
-    animation:  fadeIn ease-in 1s;
+    animation: fadeIn ease-in 1s;
 }
 
 @keyframes fadeIn {
@@ -235,7 +236,7 @@
 
 .catalog__info__accordion .accordion__item .ui-accordion-content {
     margin-bottom: -1px;
-    padding: 29px 47px 25px 3px;
+    padding: 27px 47px 25px 3px;
     border: none;
     border-radius: 0;
     border-top: 1px solid transparent;

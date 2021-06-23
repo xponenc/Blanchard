@@ -11,35 +11,31 @@ $(document).ready(function () {
             crossFade: true
         },
         autoplay: {
-            delay: 100000,
+            delay: 3000,
         },
     });
 
     const swiper2 = new Swiper('.gallery__slider', {
-        // preloadImages: false,
-        slidesPerView: 1,
-        // slidesPerColumn: 2,
-        // slidesPerGroup: 3,
-        spaceBetween: 50,
+        preloadImages: false,
+        lazy: true,
+        watchSlidesVisibility: true,
         breakpoints: {
-            // // when window width is >= 320px
-            // 320: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 20
-            // },
-            // // when window width is >= 480px
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+            },
             551: {
+
                 slidesPerView: 2,
                 slidesPerColumn: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 34,
 
             },
-            // when window width is >= 640px
             1360: {
                 slidesPerView: 3,
-                slidesPerColumn: 2,
                 slidesPerGroup: 3,
+                slidesPerColumn: 2,
                 spaceBetween: 50,
             }
         },
@@ -56,9 +52,10 @@ $(document).ready(function () {
 
     if (width > 550) {
         const swiper3 = new Swiper('.publication__slider', {
-            // preloadImages: false,
-            // loop: true,
-            // loopFillGroupWithBlank: true,
+            preloadImages: false,
+            lazy: true,
+            watchSlidesVisibility: true,
+            loop: true,
             breakpoints: {
                 240: {
                     slidesPerGroup: 2,
@@ -100,14 +97,16 @@ $(document).ready(function () {
 
 
     const swiper4 = new Swiper('.partners__slider', {
-        // preloadImages: false,
+        preloadImages: false,
+        lazy: true,
+        watchSlidesVisibility: true,
         loop: true,
         breakpoints: {
             240: {
                 slidesPerGroup: 1,
                 slidesPerView: 1,
                 spaceBetween: 21,
-                centeredSlides: true,
+                // centeredSlides: true,
             },
             768: {
                 slidesPerView: 2,
