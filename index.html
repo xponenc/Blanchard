@@ -43,7 +43,7 @@
 </head>
 
 <body>
-  <a href="#" class="btn__to-top">Наверх</a>
+  <a href="#" class="btn__to-top" aria-label="Кнопка навигации - вернуться в началу страницы">Наверх</a>
   <header class="header">
     <nav class="header__nav  nav">
       <div class="nav__top-bgcolor">
@@ -83,7 +83,7 @@
               </li>
             </ul>
             <div class="nav__top__sign-in-btn">
-              <a href="#catalog" class="nav__top__link link_sign-in">Войти</a>
+              <a href="#catalog" class="nav__top__link link_sign-in" aria-label="Ссылка на вход в личный кабинет">Войти</a>
             </div>
           </div>
           <div class="nav__top__search-toogle"></div>
@@ -211,7 +211,7 @@
           <div class="nav__bottom__blur"></div>
           <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
             <label class="search__label" for="search" tabindex="0"></label>
-            <input id="search" class="search__input" aria-label="Поиск по сайту" aria-required="true" type="search"
+            <input id="search" class="search__input" aria-label="Введите текст для поиска по сайту" aria-required="true" type="search"
               placeholder="Поиск по сайту" name="search-string" tabindex="-1">
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
@@ -299,9 +299,9 @@
         </div>
         <div class="gallery__content">
           <div class="gallery__slider__control slider__control swiper-navigation">
-            <button class="swiper__btn btn_prev"></button>
+            <button class="swiper__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
             <div class="block-pagination"></div>
-            <button class="swiper__btn btn_next"></button>
+            <button class="swiper__btn btn_next" aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="gallery__slider swiper-container">
             <div class="gallery__wrapper swiper-wrapper">
@@ -884,51 +884,51 @@
           <div class="publication__genre genre">
             <h3 class="publication__subheading pub-angle-down">Категории</h3>
             <form class="genre__form" action="http://jsonplaceholder.typicode.com/posts">
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Бестселлеры">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Бестселлеры</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Искусство">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Искусство</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Архитектура">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Архитектура</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Дизайн">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1" checked>
                 <span class="genre__form__text">Дизайн</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Мода">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Мода</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Детям">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Детям</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Художественная литература">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Художественная литература</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Публицистика">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Публицистика</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Путеводители">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Путеводители</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Философия">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Философия</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Учебная литература">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Учебная литература</span>
               </label>
-              <label class="genre__form__label" tabindex="0">
+              <label class="genre__form__label" tabindex="0" aria-label="Категория Журналы и газеты">
                 <input type="checkbox" class="genre__form__checkbox" tabindex="-1">
                 <span class="genre__form__text">Журналы и газеты</span>
               </label>
@@ -937,9 +937,9 @@
               <span class="publication__price__subheading">Цена</span>
               <form class="price__form" action="http://jsonplaceholder.typicode.com/posts">
                 <span class="price__text">От</span>
-                <input class="price__input" type="text" placeholder="50">
+                <input class="price__input" type="text" placeholder="50" aria-label="Фильтр - поле цена от">
                 <span class="price__text">до</span>
-                <input class="price__input" type="text" placeholder="25 000">
+                <input class="price__input" type="text" placeholder="25 000" aria-label="Фильтр - поле цена до">
                 <span class="price__text">руб.</span>
               </form>
             </div>
@@ -947,9 +947,9 @@
         </div>
         <div class="publication__content">
           <div class="publication__slider__control slider__control">
-            <button class="swiper__btn btn_prev"></button>
+            <button class="swiper__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
             <div class="block-pagination"></div>
-            <button class="swiper__btn btn_next"></button>
+            <button class="swiper__btn btn_next" aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="publication__slider swiper-container">
             <div class="publication__slider__wrapper swiper-wrapper">
@@ -966,7 +966,7 @@
                     </div>
                     <span class="pub-item__price">620 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -982,7 +982,7 @@
                     </div>
                     <span class="pub-item__price">2 450 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -998,7 +998,7 @@
                     </div>
                     <span class="pub-item__price">2 200 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -1014,7 +1014,7 @@
                     </div>
                     <span class="pub-item__price">1 100 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -1030,7 +1030,7 @@
                     </div>
                     <span class="pub-item__price">1 450 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -1046,7 +1046,7 @@
                     </div>
                     <span class="pub-item__price">3 200 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
               <div class="publication__slide swiper-slide">
@@ -1062,7 +1062,7 @@
                     </div>
                     <span class="pub-item__price">2 200 руб</span>
                   </div>
-                  <a href="#" class="pub-item__btn btn btn_simple">Заказать</a>
+                  <a href="#" class="pub-item__btn btn btn_simple" aria-label="Оформить заказ">Заказать</a>
                 </div>
               </div>
             </div>
@@ -1094,8 +1094,8 @@
         <div class="projects__partners partners">
           <h3 class="projects__partners__subheading subheading">Партнёры проектов:</h3>
           <div class="partners__slider__control slider__control swiper-navigation">
-            <button class="swiper__btn btn_prev"></button>
-            <button class="swiper__btn btn_next"></button>
+            <button class="swiper__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
+            <button class="swiper__btn btn_next" aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="partners__slider swiper-container">
             <div class="partners__swiper-wrapper swiper-wrapper">
@@ -1148,18 +1148,18 @@
                 class="contacts__form contact-form">
                 <div class="contact-form__input-box just-validate-tooltip-container">
                   <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*"
-                    data-validate-field="name">
+                    data-validate-field="name" aria-label="Введите имя" aria-required="true">
                 </div>
                 <div class="contact-form__input-box just-validate-tooltip-container">
                   <input required id="phone" type="tel" name="phone" class="contact-form__input"
-                    placeholder="Телефон*" data-validate-field="phone">
+                    placeholder="Телефон*" data-validate-field="phone" aria-label="Введите номер телефона" aria-required="true">
                 </div>
                 <div class="contact-form__box">
                   <label class="checkbox form__checkbox">
-                    <input required type="checkbox" class="checkbox__input">
+                    <input required type="checkbox" class="checkbox__input" aria-label="Согласие на обработку пероснальных данных" aria-required="true">
                     <span class="checkbox__text">Согласен на обработку персональных данных</span>
                   </label>
-                  <button type="submit" class="contact-form__btn btn btn_simple">Заказать</button>
+                  <button type="submit" class="contact-form__btn btn btn_simple" aria-label="Заказать обратный звонок">Заказать</button>
                 </div>
               </form>
 
@@ -1181,7 +1181,7 @@
   </main>
   <footer class="footer">
     <div class="footer__container container">
-      <img src="img/main_logo.png" alt="" class="footer__logo">
+      <img src="img/main_logo.png" alt="Логотип хкдожественной галереи Blanchard" class="footer__logo">
       <ul class="footer__social">
         <li class="footer__social__item">
           <a aria-label="Страница галереи Blanchard в социальной сети В Контакте" href=""
@@ -1199,10 +1199,9 @@
     </div>
   </footer>
   <div class="modal closed">
-    <button class="modal__close-button btn"></button>
+    <button class="modal__close-button btn" aria-label="Закрыть окно"></button>
     <div class="modal-guts">
       <div class="modal-guts__img"></div>
-      <!-- <img class="modal-guts__img" src="" alt=""/> -->
       <div class="modal-guts__info">
         <h2 class="modal-guts__header">Modal</h2>
         <h3 class="modal-guts__subheader">Modal</h3>

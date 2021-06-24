@@ -93,6 +93,15 @@ $(document).ready(function () {
         $('.publication__slide__item, .publication__slide').removeClass('swiper-slide')
         $('.publication__slider').removeClass('swiper-container')
         $('.publication__slider__wrapper').removeClass('swiper-wrapper')
+
+        $('.pub-item__img').each(function(index, element) {
+            var bgnd = $(element).attr('data-background')
+            console.log(bgnd)
+            $(element).css('background-image', 'url(' + bgnd + ')')
+            $(element).css('opacity', 1)
+            $(element).removeAttr('data-background')
+            $(element).children('.swiper-lazy-preloader').remove()
+        })
     }
 
 

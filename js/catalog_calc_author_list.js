@@ -6,11 +6,12 @@ $(document).ready(function () {
             var width = screen.width
             if (width > 1360 ) {
                 var columns = 3
-                var unit = 36.25
+                var unit = 36.625
             }
             else  if ((width <= 1360) && (width > 768 )){
                 var columns  = 2
-                var unit = 32
+                var unit = 32.5
+                var padding = 50
             } else if ((width <= 768) && (width > 667 )) {
                 var columns  = 3
                 var unit = 36.25
