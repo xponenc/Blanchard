@@ -1853,6 +1853,7 @@
 }
 
 .partners__slider {
+    padding-left: 1px;
     height: 150px;
     max-width: 90.5%;
     margin: 0 auto;
