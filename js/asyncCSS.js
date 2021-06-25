@@ -5,8 +5,8 @@ function asyncCSS(href) {
     document.head.appendChild(css);
 }
 
-asyncCSS('css/fonts.css');
-asyncCSS('css/normalize.css');
+// asyncCSS('css/fonts.css');
+// asyncCSS('css/normalize.css');
 asyncCSS('css/vendor/simplebar.css');
 asyncCSS('css/vendor/choices.min.css');
 asyncCSS('css/vendor/justValidateTooltip.min.css');

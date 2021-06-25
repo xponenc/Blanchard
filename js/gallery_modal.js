@@ -22,12 +22,6 @@ $(document).ready(function () {
 
     $('.gallery__slide').click(function () {
         var width = screen.width
-        // var bgImage = $(this).css('background-image');
-        // var header = $(this).children('.gallery__slide__author').text()
-        // var subheader = $(this).children('.gallery__slide__pict-name').text()
-        // var subSubheader = $(this).children('.gallery__slide-create-years').text()
-        // var info = $(this).children('.gallery__slide__info').text()
-
         var bgImage = $(this).children('.gallery__slide__image').attr("src");
         console.log(bgImage)
         var header = $(this).children('.gallery__slide__author').text()
