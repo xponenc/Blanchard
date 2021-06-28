@@ -14,8 +14,8 @@
 
 *, *::after, *::before {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
 }
 
 body {
@@ -74,6 +74,7 @@ textarea:focus, input:focus {
 }
 
 .heading {
+  margin: 0;
   margin-bottom: 17px;
   font-size: 48px;
   font-weight: 400;
@@ -82,6 +83,7 @@ textarea:focus, input:focus {
 }
 
 .subheading {
+  margin: 0;
   margin-bottom: 19px;
   font-weight: 600;
   font-size: 24px;
@@ -167,7 +169,7 @@ textarea:focus, input:focus {
   opacity: 1;
 }
 
-.btn__to-top {
+.btn-to-top {
   display: none;
   position: fixed;
   z-index: 10000;
@@ -185,11 +187,11 @@ textarea:focus, input:focus {
   transition-duration: 0.3s;
 }
 
-.btn__to-top:hover {
+.btn-to-top:hover {
   opacity: 1;
 }
 
-.http_link {
+.http-link {
   white-space: nowrap;
   color: var(--accent-color);
   border-bottom: 1px solid transparent;
@@ -198,16 +200,16 @@ textarea:focus, input:focus {
   transition-timing-function: ease-in-out;
 }
 
-.http_link:focus {
+.http-link:focus {
   outline: 2px solid var(--active-color);
 }
 
-.http_link:hover {
+.http-link:hover {
   border-color: var(--accent-color);
   outline: none;
 }
 
-.http_link:active {
+.http-link:active {
   color: var(--active-color);
   border-color: var(--active-color);
 }
@@ -220,7 +222,7 @@ textarea:focus, input:focus {
 
 /* Блок управления пагинацией в сладйерах */
 
-.slider__control {
+.swiper-control {
   position: absolute;
   top: -100px;
   left: 1px;
@@ -231,7 +233,7 @@ textarea:focus, input:focus {
   height: 50px;
 }
 
-.swiper__btn {
+.swiper-control__btn {
   /* top: 0; */
   z-index: 10;
   width: 30px;
@@ -250,35 +252,55 @@ textarea:focus, input:focus {
   content: '';
   position: relative;
   display: inline-block;
-  top: 0%;
+  top: 0;
   width: 10px;
   height: 10px;
+  left: 50%;
+  margin-left: -10px;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
 .btn_prev::before {
   opacity: 1;
-  left: 14%;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
 }
 
 .btn_next::before {
   opacity: 1;
-  left: 21%;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
 }
 
-.swiper__btn:focus {
+.btn_prev::after {
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
+}
+
+.btn_next::after {
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='white'/%3E%3C/svg%3E");
+}
+
+.btn_prev:hover::before, .btn_prev:active::before, .btn_next:hover::before, .btn_next:active::before {
+  opacity: 0;
+}
+
+.btn_prev:hover::after, .btn_prev:active::after, .btn_next:hover::after, .btn_next:active::after {
+  opacity: 1;
+}
+
+
+
+.swiper-control__btn:focus {
   border-color: var(--active-color);
 }
 
-.swiper__btn:hover {
+.swiper-control__btn:hover {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
-.swiper__btn:active {
+.swiper-control__btn:active {
   background-color: var(--active-color);
   border-color: #D1A9F0;
 }

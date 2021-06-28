@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $('.nav__bottom__link').on('click', function(){
+  $('.nav__bottom-link').on('click', function(){
     const btn = this
-    $('.nav__bottom__link').each(function (index, element){
+    $('.nav__bottom-link').each(function (index, element){
       if (element === btn) {
         $(element).toggleClass('angle-up');
         $(element).toggleClass('angle-down');

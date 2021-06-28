@@ -1,7 +1,7 @@
 $(document).ready(function () {
     function onResizeCalc() {
         $('.accordion__content').each(function (index, element) {
-            var padding = 54
+            var padding = 42
             var countItems = $(this).children('.catalog__info__list').children('.catalog__info__item').length
             var width = screen.width
             if (width > 1360 ) {
@@ -11,7 +11,7 @@ $(document).ready(function () {
             else  if ((width <= 1360) && (width > 768 )){
                 var columns  = 2
                 var unit = 32.5
-                var padding = 50
+                var padding = 40
             } else if ((width <= 768) && (width > 667 )) {
                 var columns  = 3
                 var unit = 36.25

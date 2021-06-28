@@ -1,10 +1,10 @@
 $(function () {
-    $("#accordion").accordion({
-        heightStyle: "fill",
-        icons: false,
-        collapsible: true,
-        header: '.accordion__btn',
-    });
+  $("#accordion").accordion({
+    heightStyle: "fill",
+    icons: false,
+    collapsible: true,
+    header: '.accordion__btn',
+  });
 });
 
 // add ARIA for accordion
@@ -12,7 +12,7 @@ $(function () {
 var accordionButtons = $('.accordion__btn');
 
 function accordionToggle() {
-  $('.accordion__btn').on('click', function(e) {
+  $('.accordion__btn').on('click', function (e) {
     $control = $(this);
 
     accordionContent = $control.attr('aria-controls');
@@ -35,7 +35,7 @@ function accordionToggle() {
 };
 
 function checkOthers(elem) {
-  for (var i=0; i<accordionButtons.length; i++) {
+  for (var i = 0; i < accordionButtons.length; i++) {
     if (accordionButtons[i] != elem) {
       if (($(accordionButtons[i]).attr('aria-expanded')) == 'true') {
         $(accordionButtons[i]).attr('aria-expanded', 'false');
@@ -49,3 +49,5 @@ function checkOthers(elem) {
 
 //call this function on page load
 accordionToggle();
+
+
