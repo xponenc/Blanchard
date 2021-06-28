@@ -10,5 +10,3 @@ function asyncCSS(href) {
 asyncCSS('css/vendor/simplebar.css');
 asyncCSS('css/vendor/choices.min.css');
 asyncCSS('css/vendor/justValidateTooltip.min.css');
-asyncCSS('css/vendor/swiper-bundle.min.css');
-asyncCSS('css/vendor/jquery-ui.css')
