@@ -41,7 +41,7 @@
     top: 14px;
     left: 0;
     width: 78.4%;
-    height: 3.5px;
+    height: 3px;
     background: var( --main-bg-color);
     transition-property: width, transform;
     transition-duration: 0.3s;
@@ -53,7 +53,7 @@
     position: absolute;
     display: block;
     left: 0;
-    height: 3.5px;
+    height: 3px;
     background: var( --main-bg-color);
     transition-property: width, transform;
     transition-duration: 0.3s;
@@ -61,12 +61,12 @@
 }
 
 .toggle__span:before {
-    top: -12.5px;
+    top: -12px;
     width: 127.6%;
 }
 
 .toggle__span:after {
-    bottom: -11.5px;
+    bottom: -11px;
     width: 85.1%;
 }
 
@@ -130,7 +130,7 @@
 
 .header__logo {
     margin-right: auto;
-    height: 39.9px;
+    height: 40px;
     width: 173px;
 }
 
@@ -153,7 +153,7 @@
     margin-right: max(3.26vw, 30px);
     font-size: 18px;
     font-weight: 600;
-    line-height: 24.51px;
+    line-height: 24px;
     color: #fff;
 }
 
@@ -190,7 +190,7 @@
 }
 
 .link_sign-in::before {
-    width: 17.5px;
+    width: 17px;
     background: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z' fill='white'/%3E%3C/svg%3E") center right no-repeat;
 }
 
@@ -231,8 +231,8 @@
     display: none;
     justify-content: center;
     align-items: center;
-    width: 29.45px;
-    height: 28.82px;
+    width: 29px;
+    height: 29px;
     border: 1px solid transparent;
     transition-property: border-color, transform;
     transition-timing-function: ease-in-out;
@@ -560,7 +560,7 @@
 }
 
 .search__label {
-    content: '';
+    /* content: ''; */
     position: absolute;
     display: block;
     top: 0;
@@ -620,8 +620,8 @@
     display: none;
     justify-content: center;
     align-items: center;
-    width: 29.45px;
-    height: 28.82px;
+    width: 29px;
+    height: 29px;
     border: 1px solid transparent;
     transition-property: border-color, transform;
     transition-timing-function: ease-in-out;
@@ -732,6 +732,7 @@
 }
 
 .hero__text {
+    margin: 0;
     margin-bottom: 92px;
     font-size: 18px;
     font-weight: 700;
@@ -741,7 +742,7 @@
 
 .hero__btn {
     position: relative;
-    padding: 19.5px 32px;
+    padding: 20px 32px;
     background-color: var(--accent-color);
     border: 3px solid var(--accent-color);
     box-sizing: border-box;
@@ -801,6 +802,7 @@
 }
 
 .about__text {
+    margin: 0;
     max-width: min(1087px, 100%);
 }
 
@@ -852,7 +854,7 @@
 }
 
 .choices__inner {
-    padding: 3px 7.5px 3px 12px;
+    padding: 3px 7px 3px 12px;
     border-radius: 6px;
     border: 1px solid #999;
     line-height: 20px;
@@ -951,7 +953,7 @@
 
 /* end Choices.js */
 
-.info__filter__text {
+.info__text {
     margin: 0;
     padding: 10px 20px 10px 0;
     letter-spacing: 0.45px;
@@ -1072,10 +1074,11 @@
     position: relative;
     width: 100%;
     height: 100%;
+    border: 2px solid transparent;
     background-position: center center;
     background-size: 46px 46px;
     background-repeat: no-repeat;
-    transition-property: background-color, filter;
+    transition-property: background-color, filter, border-color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;
 }
@@ -1112,11 +1115,7 @@
     background-image: url('/img/catalog/be.png');
 }
 
-.lang-tabs__btn:focus {
-    border-color: var(--accent-color);
-}
-
-.lang-tabs__btn:hover {
+.lang-tabs__btn:focus, .lang-tabs__btn:hover {
     filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
@@ -1161,10 +1160,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .author_active {
     display: flex;
+    animation: fadeIn ease-in 0.5s;
+    opacity: 1;
 }
 
 .author__image {
@@ -1235,7 +1238,6 @@
     margin: 0;
     margin-top: -1px;
     padding: 39px 50px 43px 0px;
-    /* height: 114px; */
     width: 100%;
     border: none;
     outline: none;
@@ -1362,15 +1364,16 @@
     font-size: 16px;
     border: none;
     border-radius: 0;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
     border-bottom: 1px solid transparent;
-    transition-property: color, border-color, outline;
+    transition-property: color, border-color, outline-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
 }
 
 .catalog__item-btn:focus {
-    outline: 2px solid var(--active-color);
-    outline-offset: 2px;
+    outline-color: var(--active-color);
 }
 
 .catalog__item-btn:hover {
@@ -1488,7 +1491,7 @@
 }
 
 .event__subheading {
-    margin-bottom: 05px;
+    margin-bottom: 5px;
 }
 
 .event__description {
@@ -1790,6 +1793,7 @@
 
 .projects__text {
     position: relative;
+    margin: 0;
     margin-bottom: 20px;
     max-width: 1079px;
 }
@@ -1886,11 +1890,11 @@
 }
 
 .partners__swiper-control .btn_prev::before {
-    background-image: url('/img/icons/swiper_prev_dark.svg');
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='black'/%3E%3C/svg%3E ");
 }
 
 .partners__swiper-control .btn_next::before {
-    background-image: url('/img/icons/swiper_next_dark.svg');
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='black'/%3E%3C/svg%3E%0A");
 }
 
 .partners__swiper-control .swiper-control__btn:focus {
@@ -2079,6 +2083,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    outline: none;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -2156,7 +2161,7 @@
 
 .footer__logo {
     margin-right: auto;
-    max-height: 39.9px;
+    max-height: 40px;
 }
 
 .footer__social {
@@ -2173,9 +2178,10 @@
 
 .footer__link {
     display: inline-block;
-    width: 45.4px;
-    height: 45.4px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    outline: none;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;

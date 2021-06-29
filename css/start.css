@@ -79,7 +79,7 @@ textarea:focus, input:focus {
   font-size: 48px;
   font-weight: 400;
   font-style: normal;
-  line-height: 65.73px;
+  line-height: 66px;
 }
 
 .subheading {
@@ -101,7 +101,7 @@ textarea:focus, input:focus {
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  line-height: 24.51px;
+  line-height: 24px;
   text-align: center;
   color: #fff;
   border-radius: 100px;
@@ -342,7 +342,7 @@ textarea:focus, input:focus {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.modal-guts {
+.modal__content {
   position: absolute;
   top: 0;
   left: 0;
@@ -354,7 +354,7 @@ textarea:focus, input:focus {
   padding: 0;
 }
 
-.modal-guts__img {
+.modal__content-img {
   width: 400px;
   height: 100%;
   background-repeat: no-repeat;
@@ -362,30 +362,30 @@ textarea:focus, input:focus {
   background-size: cover;
 }
 
-.modal-guts__info {
+.modal__content-info {
   padding: 121px 50px;
   width: calc(100% - 400px);
 }
 
-.modal-guts__header {
+.modal__content-header {
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
 }
 
-.modal-guts__subheader {
+.modal__content-subheader {
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
 }
 
-.modal-guts__sub-subheader {
+.modal__content-sub-subheader {
   font-size: 12px;
   line-height: 16px;
   color: #969696;
 }
 
-.modal__close-button {
+.modal__btn-close {
   position: absolute;
   z-index: 1;
   top: 20px;
@@ -398,7 +398,7 @@ textarea:focus, input:focus {
   transition-duration: 0.3s;
 }
 
-.modal__close-button::before {
+.modal__btn-close::before {
   content: '';
   position: absolute;
   z-index: 1;
@@ -418,7 +418,7 @@ textarea:focus, input:focus {
   transition-duration: 0.3s;
 }
 
-.modal__close-button::after {
+.modal__btn-close::after {
   content: '';
   position: absolute;
   z-index: 1;
@@ -440,46 +440,22 @@ textarea:focus, input:focus {
 }
 
 
-.modal__close-button:hover {
+.modal__btn-close:hover {
   background-color: var(--accent-color);
 }
 
-.modal__close-button:active {
+.modal__btn-close:active {
   background-color: var(--active-color);
 }
 
-.modal__close-button:hover::before {
+.modal__btn-close:hover::before {
   opacity: 0;
 }
 
-.modal__close-button:hover::after {
+.modal__btn-close:hover::after {
   opacity: 1;
 }
 
-.modal__close-button:active {
+.modal__btn-close:active {
   transform: scale(1);
-}
-
-.modal-1024 {
-  position: absolute;
-  top: 165px;
-  left: 0;
-  z-index: 100;
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-  height: calc(100% - 165px - 80px);
-  max-height: 100%;
-  color: var(--text-color-main);
-  background: white;
-}
-
-.modal-1024 .modal-guts__img {
-  width: 264px;
-}
-
-.modal-1024 .modal-guts__info {
-  padding: 122px 50px;
-  width: calc(100% - 264px);
-
 }

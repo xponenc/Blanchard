@@ -64,7 +64,7 @@
     <nav class="header__nav  nav">
       <div class="nav__top">
         <div class="nav__top-container container">
-          <div class="nav__toggle toggle"><span class="toggle__span"></span></div>
+          <button class="nav__toggle toggle btn"><span class="toggle__span"></span></button>
           <img src="img/main_logo.png" alt="Логотип галереи Blanchard" class="header__logo">
           <div class="nav__top-block">
             <button class="nav__top-burger-close">
@@ -231,7 +231,7 @@
               type="search" placeholder="Поиск по сайту" name="search-string" tabindex="-1">
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
-          <div class="nav__bottom-search-close"></div>
+          <button class="nav__bottom-search-close btn"></button>
         </div>
       </div>
     </nav>
@@ -1114,20 +1114,20 @@
         <h2 class="projects__heading heading">Проекты</h2>
         <p class="projects__text">
           Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
-          фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны
-          с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает
-          их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class="tooltip"
+          фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны
+          с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает
+          их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class="tooltip"
             tabindex="0"><span class="tooltiptext">Пример современных тенденций - современная методология
               разработки</span><span class="tooltiptext-mark"></span></span> обеспечение нашей
-          деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет
+          деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет
           сомнений, что действия представителей оппозиции могут быть рассмотрены <span class="tooltip"
             tabindex="0"><span class="tooltiptext">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы
-              вызывают у вас эмоции</span><span class="tooltiptext-mark"></span></span> исключительно в&nbsp;разрезе
-          маркетинговых и&nbsp;финансовых <span class="tooltip" tabindex="0"><span class="tooltiptext">В стремлении
+              вызывают у вас эмоции</span><span class="tooltiptext-mark"></span></span> исключительно в разрезе
+          маркетинговых и финансовых <span class="tooltip" tabindex="0"><span class="tooltiptext">В стремлении
               повысить качество </span><span class="tooltiptext-mark"></span></span> предпосылок. Банальные,
-          но&nbsp;неопровержимые выводы, а&nbsp;также
-          представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою
-          очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.
+          но неопровержимые выводы, а также
+          представители современных социальных резервов призывают нас к новым свершениям, которые, в свою
+          очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости.
           Подробнее: <a href="blanchard-art.ru/projects/about" class="http-link">blanchard-art.ru/projects/about</a>
         </p>
         <div class="projects__partners partners">
@@ -1240,14 +1240,14 @@
     </div>
   </footer>
   <div class="modal closed">
-    <button class="modal__close-button btn" aria-label="Закрыть окно"></button>
-    <div class="modal-guts">
-      <div class="modal-guts__img"></div>
-      <div class="modal-guts__info">
-        <h2 class="modal-guts__header">Modal</h2>
-        <h3 class="modal-guts__subheader">Modal</h3>
-        <h4 class="modal-guts__sub-subheader">Modal</h4>
-        <p class="modal-guts__description"></p>
+    <button class="modal__btn-close btn" aria-label="Закрыть окно"></button>
+    <div class="modal__content">
+      <div class="modal__content-img"></div>
+      <div class="modal__content-info">
+        <h2 class="modal__content-header">Modal</h2>
+        <h3 class="modal__content-subheader">Modal</h3>
+        <h4 class="modal__content-sub-subheader">Modal</h4>
+        <p class="modal__content-description"></p>
       </div>
     </div>
   </div>
@@ -1375,7 +1375,7 @@
     }
   </script>
   <!-- end Just-validate -->
-  <script defer src="js/contacts__sendform.js"></script>
+  <!-- <script defer src="js/contacts__sendform.js"></script> -->
 </body>
 
 </html>

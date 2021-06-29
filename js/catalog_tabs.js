@@ -13,16 +13,16 @@
 //       document.querySelector(`[data-target="${path}"]`).classList.add('catalog__language_active')
 //     })
 //   })
-//   document.querySelectorAll('.tabs__author-btn').forEach(function (tabsAuthor) {
+//   document.querySelectorAll('.catalog__item-btn').forEach(function (tabsAuthor) {
 //     tabsAuthor.addEventListener('click', function (event) {
 //       const path = event.currentTarget.dataset.path
-//       document.querySelectorAll('.tabs__author-btn').forEach(function (content) {
-//         content.classList.remove('tabs__author-btn_active')
+//       document.querySelectorAll('.catalog__item-btn').forEach(function (content) {
+//         content.classList.remove('catalog__item-btn_active')
 //       })
 //       document.querySelectorAll('.catalog__content__author').forEach(function (content) {
 //         content.classList.remove('author_active')
 //       })
-//       document.querySelector(`[data-path="${path}"]`).classList.add('tabs__author-btn_active')
+//       document.querySelector(`[data-path="${path}"]`).classList.add('catalog__item-btn_active')
 //       document.querySelector(`[data-target="${path}"]`).classList.add('author_active')
 //     })
 //   })
@@ -40,13 +40,13 @@ $(document).ready(function () {
     $(`[data-target="${path}"]`).addClass('catalog__language_active')
   })
 
-  $('.tabs__author-btn').on('click', function() {
+  $('.catalog__item-btn').on('click', function() {
     const path = $(this).data('path')
 
-    $('.tabs__author-btn').removeClass('tabs__author-btn_active')
-    $('.catalog__content__author').removeClass('author_active')
+    $('.catalog__item-btn').removeClass('catalog__item-btn_active')
+    $('.catalog__author').removeClass('author_active')
 
-    $(`[data-path="${path}"]`).addClass('tabs__author-btn_active')
+    $(`[data-path="${path}"]`).addClass('catalog__item-btn_active')
     $(`[data-target="${path}"]`).addClass('author_active')
 
     if ((screen.width <= 768) || (window.innerWidth <= 768)) {
