@@ -1,5 +1,6 @@
-$(document).ready(function() {
-    $('.contact-form__btn').on('click', function() {
+$(document).ready(function () {
+    // $('.contact-form__btn').on('click', function(event) {
+    //     event.preventDefault()
         let name = $('.contact-form__input-box [name="name"]').val()
         let phone = $('.contact-form__input-box [name="phone"]').val()
         phone = phone.slice(1, 2) + phone.slice(3, 6) + phone.slice(8, 11) + phone.slice(12, 14) + phone.slice(15)
@@ -19,6 +20,6 @@ $(document).ready(function() {
                 alert('Ошибка отправки формы')
             }
         })
-
-    })
+    // })
 })
+

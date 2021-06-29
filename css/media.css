@@ -123,10 +123,10 @@
     .checkbox__text {
         padding-right: 0;
     }
-    .messenger__item:not(:last-child) {
+    .messenger-list__item:not(:last-child) {
         margin-right: 30px;
     }
-    .messenger__link {
+    .messenger-list__link {
         width: 60px;
         height: 60px;
     }
@@ -173,7 +173,7 @@
         background-size: cover;
         height: calc((100% - 34px) / 2);
     }
-    .catalog__top-block {
+    .catalog__top {
         margin-bottom: 23px;
     }
     .catalog__languages {
@@ -195,18 +195,18 @@
     .catalog__info {
         width: 437px;
     }
-    .catalog__info__accordion .accordion__item .ui-accordion-content {
+    .catalog__accordion .accordion__item .ui-accordion-content {
         padding: 25px 0 25px 0;
     }
-    .catalog__info__list {
+    .catalog__list {
         columns: 2 auto;
         column-gap: 40px;
     }
-    .catalog__info__item {
+    .catalog__item {
         min-height: 32px;
         min-width: 180px;
     }
-    .catalog__info__item .tabs__author-btn {
+    .catalog__item .catalog__item-btn {
         line-height: 30px;
     }
     .events {
@@ -263,10 +263,10 @@
     .publication__slide {
         width: 290px;
     }
-    .pub-item__img {
+    .publication__slide-img {
         height: 320px;
     }
-    .pub-item__info {
+    .publication__slide-info {
         padding-top: 13px;
     }
     .tooltip:hover, .tooltip:focus {
@@ -311,11 +311,11 @@
     .contact-form__btn {
         padding: 14px 32px;
     }
-    .footer__social__link {
+    .footer__link {
         width: 60px;
         height: 60px;
     }
-    .footer__social__item:not(:last-child) {
+    .footer__item:not(:last-child) {
         margin-right: 30px;
     }
 }
@@ -451,7 +451,7 @@
     .lang-tabs__item {
         margin-right: 7vw;
     }
-    .catalog__top-block {
+    .catalog__top {
         margin-bottom: 22px;
     }
     .catalog__text {
@@ -472,11 +472,11 @@
         width: 100%;
         margin-bottom: 51px;
     }
-    .catalog__info__list {
+    .catalog__list {
         columns: 3 auto;
         column-gap: 0;
     }
-    .catalog__info__item {
+    .catalog__item {
         min-width: 150px;
     }
     .events {
@@ -587,17 +587,17 @@
         --container-max-width: 637px;
     }
  
-    .catalog__top-block {
+    .catalog__top {
         flex-direction: column;
         align-items: flex-start;
     }
     .catalog__heading {
         display: inline;
     }
-    .catalog__info__list {
+    .catalog__list {
         columns: 2 auto;
     }
-    .catalog__info__item {
+    .catalog__item {
         min-width: 240px;
     }
     .genre__form {
@@ -605,7 +605,7 @@
         columns: 2 auto;
         column-gap: 45px;
     }
-    .contacts__block {
+    .contacts__container {
         flex-direction: column;
     }
     .contacts__info {
@@ -662,7 +662,7 @@
         justify-content: space-between;
     }
 
-    .catalog__info__item .tabs__author-btn {
+    .catalog__item .catalog__item-btn {
         line-height: 31px;
     }
     .events__container {
@@ -704,7 +704,7 @@
     .publication__heading {
         margin-bottom: 12px;
     }
-    .publication__subheading {
+    .genre__heading {
         position: relative;
         padding-top: 3px;
         padding-bottom: 4px;
@@ -728,11 +728,11 @@
     .genre__form_active {
         display: flex;
     }
-    .genre__form__label {
+    .genre__label {
         padding-top: 4px;
         width: 96%;
     }
-    .genre__form__label_checked::before {
+    .genre__label_checked::before {
         content: '';
         cursor: pointer;
         position: absolute;
@@ -746,10 +746,10 @@
         background-size: contain;
         background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.63623' width='37.2838' height='3.72838' transform='rotate(45 2.63623 0)' fill='%239D5CD0'/%3E%3Crect y='26.3636' width='37.2838' height='3.72838' transform='rotate(-45 0 26.3636)' fill='%239D5CD0'/%3E%3C/svg%3E%0A");
     }
-    .genre__form__text {
+    .genre__text {
         font-size: 16px;
     }
-    .publication__price__subheading {
+    .price__subheading {
         font-size: 16px;
     }
     .price__form {
@@ -764,7 +764,7 @@
     .publication__swiper-control {
         display: none;
     }
-    .publication__swiper__wrapper {
+    .publication__swiper-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -774,26 +774,26 @@
         width: calc(100% / 2 - 30px / 2);
         margin-bottom: 50px;
     }
-    .pub-item__img {
+    .publication__slide-img {
         height: 143px;
     }
-    .pub-item__info {
+    .publication__slide-info {
         flex-direction: column;
         margin-bottom: 11px;
         padding-top: 9px;
         font-size: 12px;
     }
-    .pub-item__info__main {
+    .publication__slide-header {
         margin-bottom: 2px;
         margin-right: 0;
     }
-    .pub-item__info__title, .pub-item__info__author, .pub-item__price {
+    .publication__slide-title, .publication__slide-author, .publication__slide-price {
         line-height: 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
     }
-    .pub-item__btn {
+    .publication__slide-btn {
         padding: 10px 20px;
         width: 100%;
         max-width: 180px;
@@ -821,7 +821,7 @@
     .info__showroom {
         margin-bottom: 10px;
     }
-    .info__showroom__item {
+    .showroom__item {
         margin-bottom: 0;
     }
     .showroom__title {
@@ -829,7 +829,7 @@
         line-height: 20px;
         margin-bottom: 0;
     }
-    .showroom__adress {
+    .showroom__address {
         font-size: 13px;
         line-height: 20px;
     }
@@ -852,13 +852,13 @@
         margin-right: 20px;
         padding: 10px 37px;
     }
-    .contacts__messenger {
+    .contacts__messenger-list {
         margin-top: -10px;
     }
-    .messenger__item:not(:last-child) {
+    .messenger-list__item:not(:last-child) {
         margin-right: 23px;
     }
-    .messenger__link {
+    .messenger-list__link {
         width: 50px;
         height: 50px;
     }
@@ -884,7 +884,7 @@
     .footer__social {
         margin-bottom: 15px;
     }
-    .footer__social__link {
+    .footer__link {
         width: 50px;
         height: 50px;
     }
@@ -1080,7 +1080,7 @@
     .catalog {
         margin-bottom: 50px;
     }
-    .catalog__top-block {
+    .catalog__top {
         margin-bottom: 27px;
     }
     .catalog__heading {
@@ -1113,7 +1113,7 @@
         width: 30px;
         height: 30px;
     }
-    .catalog__info__accordion .accordion__item .ui-accordion-content {
+    .catalog__accordion .accordion__item .ui-accordion-content {
         padding: 17px 0 17px 0;
     }
     .author__image {
@@ -1170,7 +1170,7 @@
         font-size: 16px;
         line-height: 32px;
     }
-    .projects__partners__subheading {
+    .partners__subheading {
         margin-bottom: 10px;
         font-size: 18px;
         line-height: 32px;
