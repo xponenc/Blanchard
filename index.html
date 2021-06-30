@@ -243,34 +243,46 @@
         <div class="hero__swiper swiper-container">
           <div class="hero__swiper-wrapper swiper-wrapper">
             <div class="hero__swiper-slide swiper-slide">
-              <img data-srcset="
-              img/hero/1920_banner-1.jpg 1920w,
-              img/hero/1024_banner-1.jpg 1024w,
-              img/hero/768_banner-1.jpg 768w,
+              <picture>
+                <source
+                        type="image/webp"
+                        srcset="
+                        img/hero/1024_banner-1.webp 1024w,
+                        img/hero/1920_banner-1.webp 1920w,"
+                        />
+                <source
+                        type="image/jpeg"
+                        srcset="img/hero/320_banner-1.jpg 320w,
+                        img/hero/768_banner-1.jpg 768w,
+                        img/hero/1024_banner-1.jpg 1024w,
+                        img/hero/1920_banner-1.jpg 1920w,"
+                        />
+            </picture>
+              <!-- <img data-srcset=" 
               img/hero/320_banner-1.jpg 320w,
+              img/hero/768_banner-1.jpg 768w,
+              img/hero/1024_banner-1.jpg 1024w,
+              img/hero/1920_banner-1.jpg 1920w,
                 " data-src="img/hero/1920_banner-1.jpg" src="img/1x1.png" alt="Картинка с изображением замка"
-                class="swiper-lazy hero__swiper-slide-img" />
+                class="swiper-lazy hero__swiper-slide-img" /> -->
               <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="hero__swiper-slide swiper-slide">
               <img data-srcset="
-              img/hero/1920_banner-2.jpg 1920w,
-              img/hero/1024_banner-2.jpg 1024w,
-              img/hero/768_banner-2.jpg 768w,
               img/hero/320_banner-2.jpg 320w,
-                " sizes="(max-width: 425px) 320px, 
-            (max-width: 768px) 768px,
-            (max-width: 1024px) 1024px,
-            1920px" data-src="img/hero/1920_banner-2.jpg" src="img/1x1.png" alt="Картинка с изображением ангелов"
+              img/hero/768_banner-2.jpg 768w,
+              img/hero/1024_banner-2.jpg 1024w,
+              img/hero/1920_banner-2.jpg 1920w,
+                " data-src="img/hero/1920_banner-2.jpg" src="img/1x1.png" alt="Картинка с изображением ангелов"
                 class="swiper-lazy hero__swiper-slide-img" />
               <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="hero__swiper-slide swiper-slide">
               <img data-srcset="
-                img/hero/320_banner-3.jpg 320w,
-                img/hero/768_banner-3.jpg 768w,
-                img/hero/1024_banner-3.jpg 1024w,
-                img/hero/1920_banner-3.jpg 1920w,
+              img/hero/320_banner-3.jpg 320w,
+              img/hero/768_banner-3.jpg 768w,
+              img/hero/1024_banner-3.jpg 1024w,
+              img/hero/1920_banner-3.jpg 1920w,
                 " data-src="img/hero/1920_banner-3.jpg" src="img/1x1.png" alt="Картинка с изображением леса"
                 class="swiper-lazy hero__swiper-slide-img" />
               <div class="swiper-lazy-preloader"></div>
