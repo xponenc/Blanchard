@@ -181,7 +181,7 @@
     outline: none;
 }
 
-.link_sign-in {
+.nav__top-link_sign-in {
     position: relative;
     padding-left: 28px;
     font-weight: 400;
@@ -189,18 +189,18 @@
     line-height: 25px;
 }
 
-.link_sign-in::before {
+.nav__top-link_sign-in::before {
     width: 17px;
     background: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z' fill='white'/%3E%3C/svg%3E") center right no-repeat;
 }
 
-.link_sign-in::after {
+.nav__top-link_sign-in::after {
     width: 18px;
     opacity: 0;
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z' fill='%23C283F3'/%3E%3C/svg%3E%0A");
 }
 
-.link_sign-in::before, .link_sign-in::after {
+.nav__top-link_sign-in::before, .nav__top-link_sign-in::after {
     content: '';
     position: absolute;
     display: inline-block;
@@ -213,15 +213,15 @@
     transition: opacity ease-in-out 0.3s;
 }
 
-.link_sign-in:hover::before {
+.nav__top-link_sign-in:hover::before {
     opacity: 0;
 }
 
-.link_sign-in:hover::after {
+.nav__top-link_sign-in:hover::after {
     opacity: 1;
 }
 
-.link_sign-in:active::after {
+.nav__top-link_sign-in:active::after {
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.62056 9.09278L10.6389 10.1111L14.25 6.5L10.6389 2.88889L9.62056 3.90722L11.4839 5.77778H0V7.22222H11.4839L9.62056 9.09278ZM16.0556 0H5.94444C5.14278 0 4.5 0.65 4.5 1.44444V4.33333H5.94444V1.44444H16.0556V11.5556H5.94444V8.66667H4.5V11.5556C4.5 12.35 5.14278 13 5.94444 13H16.0556C16.85 13 17.5 12.35 17.5 11.5556V1.44444C17.5 0.65 16.85 0 16.0556 0Z' fill='%237943A4'/%3E%3C/svg%3E%0A");
 }
 
@@ -437,83 +437,83 @@
 
 /* end SimpleBar.js */
 
-.item_tinoretto {
+.sub-menu__item_tinoretto {
     background-image: url('/img/nav/tinoretto.jpg');
 }
 
-.item_fridrih {
+.sub-menu__item_fridrih {
     background-image: url('/img/nav/fridrih.jpg');
 }
 
-.item_leonardo {
+.sub-menu__item_leonardo {
     background-image: url('/img/nav/leonardo.jpg');
 }
 
-.item_verrokko {
+.sub-menu__item_verrokko {
     background-image: url('/img/nav/verrokko.jpg');
 }
 
-.item_mone {
+.sub-menu__item_mone {
     background-image: url('/img/nav/mone.jpg');
 }
 
-.item_sisley {
+.sub-menu__item_sisley {
     background-image: url('/img/nav/sisley.jpg');
 }
 
-.item_mane {
+.sub-menu__item_mane {
     background-image: url('/img/nav/mane.jpg');
 }
 
-.item_renuar {
+.sub-menu__item_renuar {
     background-image: url('/img/nav/renuar.jpg');
 }
 
-.item_vangog {
+.sub-menu__item_vangog {
     background-image: url('/img/nav/vangog.jpg');
 }
 
-.item_sezann {
+.sub-menu__item_sezann {
     background-image: url('/img/nav/sezann.jpg');
 }
 
-.item_gogen {
+.sub-menu__item_gogen {
     background-image: url('/img/nav/gogen.jpg');
 }
 
-.item_sera {
+.sub-menu__item_sera {
     background-image: url('/img/nav/sera.jpg');
 }
 
-.item_kandinskii {
+.sub-menu__item_kandinskii {
     background-image: url('/img/nav/kandinskii.jpg');
 }
 
-.item_marinetti {
+.sub-menu__item_marinetti {
     background-image: url('/img/nav/marinetti.jpg');
 }
 
-.item_malevich {
+.sub-menu__item_malevich {
     background-image: url('/img/nav/malevich.jpg');
 }
 
-.item_pikasso {
+.sub-menu__item_pikasso {
     background-image: url('/img/nav/pikasso.jpg');
 }
 
-.item_karra {
+.sub-menu__item_karra {
     background-image: url('/img/nav/karra.jpg');
 }
 
-.item_pratella {
+.sub-menu__item_pratella {
     background-image: url('/img/nav/pratella.jpg');
 }
 
-.item_severini {
+.sub-menu__item_severini {
     background-image: url('/img/nav/severini.jpg');
 }
 
-.item_balla {
+.sub-menu__item_balla {
     background-image: url('/img/nav/balla.jpg');
 }
 
@@ -1095,23 +1095,23 @@
     border-color: var(--accent-color);
 }
 
-.lang-tabs_fr {
+.lang-tabs__btn_fr {
     background-image: url('/img/catalog/fr.png');
 }
 
-.lang-tabs_de {
+.lang-tabs__btn_de {
     background-image: url('/img/catalog/de.png');
 }
 
-.lang-tabs_it {
+.lang-tabs__btn_it {
     background-image: url('/img/catalog/it.png');
 }
 
-.lang-tabs_ru {
+.lang-tabs__btn_ru {
     background-image: url('/img/catalog/ru.png');
 }
 
-.lang-tabs_be {
+.lang-tabs__btn_be {
     background-image: url('/img/catalog/be.png');
 }
 
@@ -1889,11 +1889,11 @@
     border: 2px solid #ECECEC;
 }
 
-.partners__swiper-control .btn_prev::before {
+.partners__swiper-control .swiper-control__btn_prev::before {
     background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='black'/%3E%3C/svg%3E ");
 }
 
-.partners__swiper-control .btn_next::before {
+.partners__swiper-control .swiper-control__btn_next::before {
     background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='black'/%3E%3C/svg%3E%0A");
 }
 
@@ -1909,25 +1909,6 @@
     background-color: var(--active-color);
     border-color: #D1A9F0;
 }
-/* .btn_prev::after {
-    opacity: 0;
-    left: -26%;
-    background-image: url('/img/icons/swiper_prev.svg');
-}
-
-.btn_next::after {
-    opacity: 0;
-    left: -17%;
-    background-image: url('/img/icons/swiper_next.svg');
-}
-
-.btn_prev:hover::before, .btn_prev:active::before, .btn_next:hover::before, .btn_next:active::before {
-    opacity: 0;
-}
-
-.btn_prev:hover::after, .btn_prev:active::after, .btn_next:hover::after, .btn_next:active::after {
-    opacity: 1;
-} */
 
 .partners__swiper-slide {
     cursor: pointer;

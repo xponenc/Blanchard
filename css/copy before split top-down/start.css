@@ -19,9 +19,8 @@
 }
 
 body {
-  /* position: relative; */
   position:relative;
-  overflow-x:hidden;
+  /* overflow-x:hidden; */
   background-color: var(--main-bg-color);
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -32,8 +31,8 @@ body {
 }
 
 html {
-  position:relative;
-  overflow-x:hidden;
+  /* position:relative; */
+  /* overflow-x:hidden; */
 }
 
 a {

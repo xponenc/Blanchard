@@ -1,5 +1,4 @@
-function showSwipers() {
-        // $(document).ready(function () {
+// function showSwipers() {
         var width = screen.width
         const swiper = new Swiper('.hero__swiper', {
             preloadImages: false,
@@ -43,8 +42,8 @@ function showSwipers() {
                 clickable: true,
             },
             navigation: {
-                nextEl: '.gallery__swiper-control .btn_next',
-                prevEl: '.gallery__swiper-control .btn_prev',
+                nextEl: '.gallery__swiper-control .swiper-control__btn_next',
+                prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
             },
         });
     
@@ -83,8 +82,8 @@ function showSwipers() {
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.publication__swiper-control .btn_next',
-                    prevEl: '.publication__swiper-control .btn_prev',
+                    nextEl: '.publication__swiper-control .swiper-control__btn_next',
+                    prevEl: '.publication__swiper-control .swiper-control__btn_prev',
                 },
             });
         } else {
@@ -137,8 +136,8 @@ function showSwipers() {
                 clickable: true,
             },
             navigation: {
-                nextEl: '.partners__swiper-control .btn_next',
-                prevEl: '.partners__swiper-control .btn_prev',
+                nextEl: '.partners__swiper-control .swiper-control__btn_next',
+                prevEl: '.partners__swiper-control .swiper-control__btn_prev',
             },
         });
     
@@ -161,7 +160,6 @@ function showSwipers() {
                 },
             });
         }
-    // })
-}
+// }
 
 

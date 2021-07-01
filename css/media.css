@@ -53,7 +53,7 @@
     .nav__top-sign-in-btn {
         padding: 15px 85px;
     }
-    .link_sign-in {
+    .nav__top-link_sign-in {
         font-weight: 600;
         font-size: 18px;
         line-height: 25px;
@@ -984,20 +984,20 @@
     .nav__top-sign-in-btn {
         padding: 12px 32px;
     }
-    .link_sign-in {
+    .nav__top-link_sign-in {
         padding-left: 10px;
         font-size: 12px;
         line-height: 1;
     }
-    .link_sign-in::before, .link_sign-in::after {
+    .nav__top-link_sign-in::before, .nav__top-link_sign-in::after {
         height: 9px;
         top: 5px;
         left: -2px;
     }
-    .link_sign-in::before {
+    .nav__top-link_sign-in::before {
         width: 9px;
     }
-    .link_sign-in::after {
+    .nav__top-link_sign-in::after {
         width: 10px;
     }
     .nav__top-search-toogle {

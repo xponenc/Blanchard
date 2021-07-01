@@ -1,9 +1,8 @@
 $(document).ready(function () {
-  let showedMap = false
+  let flagMap = false
   $(window).on('scroll', function () {
-    if (!showedMap) {
-      showedMap = true
-      console.log(showedMap)
+    if (!flagMap) {
+      flagMap = true
       showMap()
       // ymaps.ready(init);
     }

@@ -10,51 +10,48 @@
   <link rel="preconnect" href="//api-maps.yandex.ru">
   <link rel="dns-prefetch" href="//api-maps.yandex.ru">
 
-  <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <script defer src="js/packets/jquery-3.6.0.min.js"></script>
-
+  <!-- <script defer src="js/packets/jquery-3.6.0.min.js"></script>
   <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js" onload="showSwipers()"></script>
-  <!-- <script defer src="js/packets/swiper-bundle.min.js" onload="showSwipers()"></script> -->
-
-  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous" onload="showAccordion()"></script> -->
-  <!-- <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" onload="showAccordion()"></script> -->
-  <script defer src="js/packets/jquery-ui.min.js"></script>
+  <script defer src="js/packets/jquery-ui.min.js"></script> -->
 
   <link rel="preload" href="fonts/fontawesome-webfont.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/open-sans-v20-latin_cyrillic-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/open-sans-v20-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/open-sans-v20-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="css/normalize.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/vendor/swiper-bundle.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/vendor/simplebar.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/vendor/jquery-ui.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/vendor/choices.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/vendor/justValidateTooltip.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/normalize.css" as="style" onload="this.rel='stylesheet'">
+
   <link rel="stylesheet" href="css/normalize.css">
-  <!-- start SimpleBar.js -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" /> -->
+  <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/vendor/simplebar.css">
-  <!-- start Choices.js -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> -->
+  <link rel="stylesheet" href="css/vendor/jquery-ui.min.css">
   <link rel="stylesheet" href="css/vendor/choices.min.css">
-  <!-- start Just-validate -->
   <link rel="stylesheet" href="css/vendor/justValidateTooltip.min.css">
 
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
-  <!-- <link rel="stylesheet" href="css/vendor/jquery-ui.min.css"> -->
-
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-  <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+  <link rel="preload" href="css/fonts.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/start.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="css/media.css" as="style" onload="this.rel='stylesheet'">
 
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/start.css">
-  <!-- <link rel="stylesheet" href="css/top.css">
-  <link href="css/top-420px.css" rel="stylesheet" media="(max-width: 420px)"> -->
-  <!-- <link rel="preload" href="css/down.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="css/down.css">
-  </noscript> -->
-  <!-- <link rel="stylesheet" href="css/down.css"> -->
-
-  <!-- <link rel="stylesheet" href="css/down.css" media="print" onload="this.media='all'"> -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/media.css">
 
+  <noscript>
+    <style>
+      /* Reinstate scrolling for non-JS clients */
+      .simplebar-content-wrapper {
+        overflow: auto;
+      }
+    </style>
+  </noscript>
   <title>Blanchard Художественная галерея</title>
 </head>
 
@@ -99,7 +96,7 @@
               </li>
             </ul>
             <div class="nav__top-sign-in-btn">
-              <a href="#catalog" class="nav__top-link link_sign-in"
+              <a href="#catalog" class="nav__top-link nav__top-link_sign-in"
                 aria-label="Ссылка на вход в личный кабинет">Войти</a>
             </div>
           </div>
@@ -112,22 +109,22 @@
             <li class="nav__bottom-item">
               <span class="nav__bottom-link angle-down">Реализм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_tinoretto">
+                <li class="sub-menu__item sub-menu__item_tinoretto">
                   <a href="#" class="sub-menu__link">Тинторетто</a>
                 </li>
-                <li class="sub-menu__item item_fridrih">
+                <li class="sub-menu__item sub-menu__item_fridrih">
                   <a href="#" class="sub-menu__link">Фридрих</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
               </ul>
@@ -135,22 +132,22 @@
             <li class="nav__bottom-item">
               <span class="nav__bottom-link angle-down">Импрессионизм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_tinoretto">
+                <li class="sub-menu__item sub-menu__item_tinoretto">
                   <a href="#" class="sub-menu__link">Моне</a>
                 </li>
-                <li class="sub-menu__item item_fridrih">
+                <li class="sub-menu__item sub-menu__item_fridrih">
                   <a href="#" class="sub-menu__link">Сислей</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Мане</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Ренуар</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
               </ul>
@@ -158,22 +155,22 @@
             <li class="nav__bottom-item">
               <span class="nav__bottom-link angle-down">Постимпрессионизм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_vangog">
+                <li class="sub-menu__item sub-menu__item_vangog">
                   <a href="#" class="sub-menu__link">Ван Гог</a>
                 </li>
-                <li class="sub-menu__item item_sezann">
+                <li class="sub-menu__item sub-menu__item_sezann">
                   <a href="#" class="sub-menu__link">Сезанн</a>
                 </li>
-                <li class="sub-menu__item item_gogen">
+                <li class="sub-menu__item sub-menu__item_gogen">
                   <a href="#" class="sub-menu__link">Гоген</a>
                 </li>
-                <li class="sub-menu__item item_sera">
+                <li class="sub-menu__item sub-menu__item_sera">
                   <a href="#" class="sub-menu__link">Сёра</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
               </ul>
@@ -181,22 +178,22 @@
             <li class="nav__bottom-item">
               <span class="nav__bottom-link angle-down">Авангард</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_kandinskii">
+                <li class="sub-menu__item sub-menu__item_kandinskii">
                   <a href="#" class="sub-menu__link">Кандинский</a>
                 </li>
-                <li class="sub-menu__item item_marinetti">
+                <li class="sub-menu__item sub-menu__item_marinetti">
                   <a href="#" class="sub-menu__link">Маринетти</a>
                 </li>
-                <li class="sub-menu__item item_malevich">
+                <li class="sub-menu__item sub-menu__item_malevich">
                   <a href="#" class="sub-menu__link">Малевич</a>
                 </li>
-                <li class="sub-menu__item item_pikasso">
+                <li class="sub-menu__item sub-menu__item_pikasso">
                   <a href="#" class="sub-menu__link">Пикассо</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
               </ul>
@@ -204,22 +201,22 @@
             <li class="nav__bottom-item">
               <span class="nav__bottom-link angle-down">Футуризм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
-                <li class="sub-menu__item item_karra">
+                <li class="sub-menu__item sub-menu__item_karra">
                   <a href="#" class="sub-menu__link">Карра</a>
                 </li>
-                <li class="sub-menu__item item_pratella">
+                <li class="sub-menu__item sub-menu__item_pratella">
                   <a href="#" class="sub-menu__link">Прателла</a>
                 </li>
-                <li class="sub-menu__item item_severini">
+                <li class="sub-menu__item sub-menu__item_severini">
                   <a href="#" class="sub-menu__link">Северини</a>
                 </li>
-                <li class="sub-menu__item item_balla">
+                <li class="sub-menu__item sub-menu__item_balla">
                   <a href="#" class="sub-menu__link">Балла</a>
                 </li>
-                <li class="sub-menu__item item_leonardo">
+                <li class="sub-menu__item sub-menu__item_leonardo">
                   <a href="#" class="sub-menu__link">Леонардо</a>
                 </li>
-                <li class="sub-menu__item item_verrokko">
+                <li class="sub-menu__item sub-menu__item_verrokko">
                   <a href="#" class="sub-menu__link">Верроккьо</a>
                 </li>
               </ul>
@@ -243,29 +240,13 @@
         <div class="hero__swiper swiper-container">
           <div class="hero__swiper-wrapper swiper-wrapper">
             <div class="hero__swiper-slide swiper-slide">
-              <!-- <picture>
-                <source
-                        type="image/webp"
-                        srcset="
-                        img/hero/1024_banner-1.webp 1024w,
-                        img/hero/1920_banner-1.webp 1920w,"
-                        />
-                <source
-                        type="image/jpeg"
-                        srcset="img/hero/320_banner-1.jpg 320w,
-                        img/hero/768_banner-1.jpg 768w,
-                        img/hero/1024_banner-1.jpg 1024w,
-                        img/hero/1920_banner-1.jpg 1920w,"
-                        />
-            </picture> -->
-              <img data-srcset=" 
+              <img srcset=" 
               img/hero/320_banner-1.jpg 320w,
               img/hero/768_banner-1.jpg 768w,
               img/hero/1024_banner-1.jpg 1024w,
               img/hero/1920_banner-1.jpg 1920w,
-                " data-src="img/hero/1920_banner-1.jpg" src="img/1x1.png" alt="Картинка с изображением замка"
-                class="swiper-lazy hero__swiper-slide-img" />
-              <div class="swiper-lazy-preloader"></div>
+                " src="img/hero/1920_banner-1.jpg" alt="Картинка с изображением замка"
+                class="hero__swiper-slide-img"/>
             </div>
             <div class="hero__swiper-slide swiper-slide">
               <img data-srcset="
@@ -317,7 +298,7 @@
           <h2 class="gallery__heading heading">Галерея</h2>
           <div class="info__filter">
             <h3 class="info__filter-heading">Фильтровать по:</h3>
-            <select class="select" name="" id="id-filter-1"></select>
+            <select class="select" name="filter" id="id-filter-1"></select>
           </div>
           <p class="info__text">
             Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a
@@ -327,9 +308,11 @@
         </div>
         <div class="gallery__content">
           <div class="gallery__swiper-control swiper-control swiper-navigation">
-            <button class="swiper-control__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_prev"
+              aria-label="Перейти на предыдущий слайд"></button>
             <div class="block-pagination"></div>
-            <button class="swiper-control__btn btn_next" aria-label="Перейти на следующий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_next"
+              aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="gallery__swiper swiper-container">
             <div class="gallery__wrapper swiper-wrapper">
@@ -508,24 +491,24 @@
           <h2 class="catalog__heading heading">Каталог</h2>
           <ul class="catalog__languages lang-tabs">
             <li class="lang-tabs__item">
-              <button type="submit" class="btn lang-tabs__btn lang-tabs_fr" aria-label="Переключить на французский язык"
-                data-path="fr"></button>
+              <button type="submit" class="btn lang-tabs__btn lang-tabs__btn_fr"
+                aria-label="Переключить на французский язык" data-path="fr"></button>
             </li>
             <li class="lang-tabs__item">
-              <button type="submit" class="btn lang-tabs__btn lang-tabs_de" aria-label="Переключить на немецкий язык"
-                data-path="de"></button>
+              <button type="submit" class="btn lang-tabs__btn lang-tabs__btn_de"
+                aria-label="Переключить на немецкий язык" data-path="de"></button>
             </li>
             <li class="lang-tabs__item">
-              <button type="submit" class="btn lang-tabs__btn lang-tabs_it" aria-label="Переключить на итальянский язык"
-                data-path="it"></button>
+              <button type="submit" class="btn lang-tabs__btn lang-tabs__btn_it"
+                aria-label="Переключить на итальянский язык" data-path="it"></button>
             </li>
             <li class="lang-tabs__item">
-              <button type="submit" class="btn lang-tabs__btn lang-tabs_ru lang-tabs__btn_active"
+              <button type="submit" class="btn lang-tabs__btn lang-tabs__btn_ru lang-tabs__btn_active"
                 aria-label="Переключить на русский язык" data-path="ru"></button>
             </li>
             <li class="lang-tabs__item">
-              <button type="submit" class="btn lang-tabs__btn lang-tabs_be" aria-label="Переключить на бельгийский язык"
-                data-path="be"></button>
+              <button type="submit" class="btn lang-tabs__btn lang-tabs__btn_be"
+                aria-label="Переключить на бельгийский язык" data-path="be"></button>
             </li>
           </ul>
         </div>
@@ -998,9 +981,11 @@
         </div>
         <div class="publication__content">
           <div class="publication__swiper-control swiper-control">
-            <button class="swiper-control__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_prev"
+              aria-label="Перейти на предыдущий слайд"></button>
             <div class="block-pagination"></div>
-            <button class="swiper-control__btn btn_next" aria-label="Перейти на следующий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_next"
+              aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="publication__swiper swiper-container">
             <div class="publication__swiper-wrapper swiper-wrapper">
@@ -1145,8 +1130,10 @@
         <div class="projects__partners partners">
           <h3 class="partners__subheading subheading">Партнёры проектов:</h3>
           <div class="partners__swiper-control swiper-control swiper-navigation">
-            <button class="swiper-control__btn btn_prev" aria-label="Перейти на предыдущий слайд"></button>
-            <button class="swiper-control__btn btn_next" aria-label="Перейти на следующий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_prev"
+              aria-label="Перейти на предыдущий слайд"></button>
+            <button class="swiper-control__btn swiper-control__btn_next"
+              aria-label="Перейти на следующий слайд"></button>
           </div>
           <div class="partners__swiper swiper-container">
             <div class="partners__swiper-wrapper swiper-wrapper">
@@ -1266,71 +1253,18 @@
   <div class="modal-overlay closed">
   </div>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script> -->
+  <script defer src="js/packets/jquery-3.6.0.min.js"></script>
+  <!-- <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js" onload="showSwipers()"></script> -->
+  <script defer src="js/packets/swiper-bundle.min.js"></script>
+  <script defer src="js/general_swiper.js"></script>
+  <script defer src="js/packets/jquery-ui.min.js"></script>
   <script defer src="js/packets/simplebar.min.js"></script>
-
-  <script src="js/general_swiper.js"></script>
   <script defer src="js/general_site_scrolling.js"></script>
-  <script defer src="js/nav_burger.js"></script>
-  <script defer src="js/nav_search_btn.js"></script>
-  <script defer src="js/nav_botoom_submenu.js"></script>
-  <script defer src="js/nav_bottom_submenu_scroll.js"></script>
-  <noscript>
-    <style>
-      /**
-      * Reinstate scrolling for non-JS clients
-      */
-      .simplebar-content-wrapper {
-        overflow: auto;
-      }
-    </style>
-  </noscript>
-
-
-  <!-- start Choices.js -->
-  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  <!-- <script src="js/packets/choices.min.js"></script> -->
-  <script>
-    const element1 = document.querySelector('#id-filter-1');
-    const choices1 = new Choices(element1, {
-      searchEnabled: false,
-      itemSelectText: '',
-      position: 'bottom',
-    });
-    choices1.setChoices(
-      [
-        { value: 'One', label: 'Автор', selected: true },
-        { value: 'One', label: 'Направление', },
-        { value: 'Two', label: 'Техника', },
-      ],
-      'value',
-      'label',
-      false,
-    );
-  </script>
-  <!-- end Choices.js -->
-  <script defer src="js/gallery_modal.js"></script>
-
-  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> -->
-  <script defer src="js/catalog_calc_author_list.js"></script>
-  <script defer src="js/catalog_accordion.js"></script>
-  <script defer src="js/catalog_tabs.js"></script>
-
-
-  <!-- Перестройка фильтра Категории в Изданиях на разрешениях <= 550 -->
-  <script defer src="js/publication_filter.js"></script>
-  <!-- Адатация размера картинки в Изданиях на разрешениях <= 550 -->
-  <script defer src="js/publication_width_height_img_auto.js"></script>
-
-  <script defer src="js/projects_tooltip.js"></script>
-
-  <script defer src="js/events_item_show.js"></script>
-
-
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/packets/choices.min.js"></script>
+  <script defer src="js/scripts.js"></script>
   <!-- Yandex Map -->
   <script defer src="js/contacts_yandex_map.js"></script>
-
   <script defer src="js/packets/just-validate.min.js"></script>
   <script defer src="js/packets/inputmask.min.js" onload="startValidate()"></script>
   <script>

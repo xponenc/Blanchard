@@ -248,7 +248,7 @@ textarea:focus, input:focus {
   transition-timing-function: ease-out;
 }
 
-.btn_prev::before, .btn_next::before, .btn_prev::after, .btn_next::after {
+.swiper-control__btn_prev::before, .swiper-control__btn_next::before, .swiper-control__btn_prev::after, .swiper-control__btn_next::after {
   content: '';
   position: relative;
   display: inline-block;
@@ -261,31 +261,31 @@ textarea:focus, input:focus {
   background-position: center center;
 }
 
-.btn_prev::before {
+.swiper-control__btn_prev::before {
   opacity: 1;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
 }
 
-.btn_next::before {
+.swiper-control__btn_next::before {
   opacity: 1;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
 }
 
-.btn_prev::after {
+.swiper-control__btn_prev::after {
   opacity: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11L0.999995 6L6 0.999998' stroke='white'/%3E%3C/svg%3E%0A");
 }
 
-.btn_next::after {
+.swiper-control__btn_next::after {
   opacity: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 0.999998' stroke='white'/%3E%3C/svg%3E");
 }
 
-.btn_prev:hover::before, .btn_prev:active::before, .btn_next:hover::before, .btn_next:active::before {
+.swiper-control__btn_prev:hover::before, .swiper-control__btn_prev:active::before, .swiper-control__btn_next:hover::before, .swiper-control__btn_next:active::before {
   opacity: 0;
 }
 
-.btn_prev:hover::after, .btn_prev:active::after, .btn_next:hover::after, .btn_next:active::after {
+.swiper-control__btn_prev:hover::after, .swiper-control__btn_prev:active::after, .swiper-control__btn_next:hover::after, .swiper-control__btn_next:active::after {
   opacity: 1;
 }
 
