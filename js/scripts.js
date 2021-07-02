@@ -128,9 +128,8 @@ $(document).ready(function () {
     function accordionToggle() {
         $('.accordion__btn').on('click', function (e) {
             $control = $(this);
-
             accordionContent = $control.attr('aria-controls');
-            console.log(accordionContent)
+            // console.log(accordionContent)
             checkOthers($control[0]);
 
             isAriaExp = $control.attr('aria-expanded');

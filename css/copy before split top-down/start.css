@@ -460,3 +460,8 @@ textarea:focus, input:focus {
   width: calc(100% - 264px);
 
 }
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline-color: transparent;
+  transition: outline 0.3s ease-in-out;
+}

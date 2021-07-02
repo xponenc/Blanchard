@@ -38,7 +38,7 @@
   <link rel="preload" href="css/start.css" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="css/media.css" as="style" onload="this.rel='stylesheet'">
-
+  
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/start.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -56,7 +56,7 @@
 </head>
 
 <body>
-  <a href="#" class="btn-to-top" aria-label="Кнопка навигации - вернуться в началу страницы">Наверх</a>
+  <!-- <a href="#" class="btn-to-top" aria-label="Кнопка навигации - вернуться в началу страницы">Наверх</a> -->
   <header class="header">
     <nav class="header__nav  nav">
       <div class="nav__top">
@@ -107,7 +107,7 @@
         <div class="nav__bottom-container container">
           <ul class="nav__bottom-list">
             <li class="nav__bottom-item">
-              <span class="nav__bottom-link angle-down">Реализм</span>
+              <span class="nav__bottom-link angle-down" tabindex="0">Реализм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
                 <li class="sub-menu__item sub-menu__item_tinoretto">
                   <a href="#" class="sub-menu__link">Тинторетто</a>
@@ -130,7 +130,7 @@
               </ul>
             </li>
             <li class="nav__bottom-item">
-              <span class="nav__bottom-link angle-down">Импрессионизм</span>
+              <span class="nav__bottom-link angle-down" tabindex="0">Импрессионизм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
                 <li class="sub-menu__item sub-menu__item_tinoretto">
                   <a href="#" class="sub-menu__link">Моне</a>
@@ -153,7 +153,7 @@
               </ul>
             </li>
             <li class="nav__bottom-item">
-              <span class="nav__bottom-link angle-down">Постимпрессионизм</span>
+              <span class="nav__bottom-link angle-down" tabindex="0">Постимпрессионизм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
                 <li class="sub-menu__item sub-menu__item_vangog">
                   <a href="#" class="sub-menu__link">Ван Гог</a>
@@ -176,7 +176,7 @@
               </ul>
             </li>
             <li class="nav__bottom-item">
-              <span class="nav__bottom-link angle-down">Авангард</span>
+              <span class="nav__bottom-link angle-down" tabindex="0">Авангард</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
                 <li class="sub-menu__item sub-menu__item_kandinskii">
                   <a href="#" class="sub-menu__link">Кандинский</a>
@@ -199,7 +199,7 @@
               </ul>
             </li>
             <li class="nav__bottom-item">
-              <span class="nav__bottom-link angle-down">Футуризм</span>
+              <span class="nav__bottom-link angle-down" tabindex="0">Футуризм</span>
               <ul class="nav__bottom-sub-menu sub-menu" data-simplebar>
                 <li class="sub-menu__item sub-menu__item_karra">
                   <a href="#" class="sub-menu__link">Карра</a>
@@ -232,7 +232,6 @@
         </div>
       </div>
     </nav>
-    <!-- </div> -->
   </header>
   <main>
     <section class="hero">
@@ -240,13 +239,10 @@
         <div class="hero__swiper swiper-container">
           <div class="hero__swiper-wrapper swiper-wrapper">
             <div class="hero__swiper-slide swiper-slide">
-              <img srcset=" 
-              img/hero/320_banner-1.jpg 320w,
-              img/hero/768_banner-1.jpg 768w,
-              img/hero/1024_banner-1.jpg 1024w,
-              img/hero/1920_banner-1.jpg 1920w,
-                " src="img/hero/1920_banner-1.jpg" alt="Картинка с изображением замка"
-                class="hero__swiper-slide-img"/>
+              <img
+                srcset="img/hero/1920_banner-1.jpg 1920w, img/hero/1024_banner-1.jpg 1024w, img/hero/768_banner-1.jpg 768w, img/hero/320_banner-1.jpg 320w"
+                sizes="(max-width: 320px) 320px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
+                src="img/hero/1920_banner-1.jpg" alt="Картинка с изображением замка" class="hero__swiper-slide-img" />
             </div>
             <div class="hero__swiper-slide swiper-slide">
               <img data-srcset="
@@ -569,7 +565,7 @@
           </div>
           <div class="catalog__info">
             <ul id="accordion" class="catalog__accordion accordion" aria-label="Список авторов">
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-1" aria-expanded="false">
                   <span class="accordion__subheading">C 1400 по 1499 гг.</span>
                   <span class="accordion__icon"></span>
@@ -723,7 +719,7 @@
                   </ul>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-2" aria-expanded="false">
                   <span class="accordion__subheading">C 1500 по 1599 гг.</span>
                   <span class="accordion__icon"></span>
@@ -751,7 +747,7 @@
                   </ul>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-3" aria-expanded="false">
                   <span class="accordion__subheading">C 1600 по 1699 гг.</span>
                   <span class="accordion__icon"></span>
@@ -762,7 +758,7 @@
                     perspiciatis aperiam cumque! Commodi, qui.</p>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-4" aria-expanded="false">
                   <span class="accordion__subheading">C 1700 по 1799 гг.</span>
                   <span class="accordion__icon"></span>
@@ -773,7 +769,7 @@
                     perspiciatis aperiam cumque! Commodi, qui.</p>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-5" aria-expanded="false">
                   <span class="accordion__subheading">C 1800 по 1899 гг.</span>
                   <span class="accordion__icon"></span>
@@ -784,7 +780,7 @@
                     perspiciatis aperiam cumque! Commodi, qui.</p>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-6" aria-expanded="false">
                   <span class="accordion__subheading">C 1900 по 1999 гг.</span>
                   <span class="accordion__icon"></span>
@@ -795,7 +791,7 @@
                     perspiciatis aperiam cumque! Commodi, qui.</p>
                 </div>
               </li>
-              <li tabindex="0" class="accordion__item">
+              <li class="accordion__item">
                 <button class="btn accordion__btn" aria-controls="content-7" aria-expanded="false">
                   <span class="accordion__subheading">C 2000 г.</span>
                   <span class="accordion__icon"></span>
@@ -916,7 +912,7 @@
         <div class="publication__info">
           <h2 class="publication__heading heading">Издания</h2>
           <div class="publication__genre genre">
-            <h3 class="genre__heading pub-angle-down">Категории</h3>
+            <h3 class="genre__heading pub-angle-down" tabindex="0">Категории</h3>
             <form class="genre__form" action="http://jsonplaceholder.typicode.com/posts">
               <label class="genre__label" tabindex="0" aria-label="Категория Бестселлеры">
                 <input type="checkbox" class="genre__checkbox" tabindex="-1">
@@ -1260,6 +1256,7 @@
   <script defer src="js/packets/jquery-ui.min.js"></script>
   <script defer src="js/packets/simplebar.min.js"></script>
   <script defer src="js/general_site_scrolling.js"></script>
+  <script src="js/packets/focus-visible.js"></script>
   <script defer src="js/nav.js"></script>
   <script defer src="js/packets/choices.min.js"></script>
   <script defer src="js/scripts.js"></script>

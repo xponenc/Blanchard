@@ -20,8 +20,8 @@
 
 body {
   /* position: relative; */
-  position:relative;
-  overflow-x:hidden;
+  position: relative;
+  /* overflow-x: hidden; */
   background-color: var(--main-bg-color);
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -32,8 +32,8 @@ body {
 }
 
 html {
-  position:relative;
-  overflow-x:hidden;
+  position: relative;
+  /* overflow-x: hidden; */
 }
 
 a {
@@ -289,8 +289,6 @@ textarea:focus, input:focus {
   opacity: 1;
 }
 
-
-
 .swiper-control__btn:focus {
   border-color: var(--active-color);
 }
@@ -390,7 +388,7 @@ textarea:focus, input:focus {
   z-index: 1;
   top: 20px;
   right: 20px;
-  width:  16px;
+  width: 16px;
   height: 16px;
   border-radius: 50%;
   transition-property: background-color;
@@ -404,7 +402,7 @@ textarea:focus, input:focus {
   z-index: 1;
   top: 0;
   right: 0;
-  width:  16px;
+  width: 16px;
   height: 16px;
   display: inline-block;
   opacity: 1;
@@ -424,7 +422,7 @@ textarea:focus, input:focus {
   z-index: 1;
   top: 0;
   right: 0;
-  width:  16px;
+  width: 16px;
   height: 16px;
   display: inline-block;
   opacity: 0;
@@ -436,9 +434,7 @@ textarea:focus, input:focus {
   transition-property: opacity;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
-
 }
-
 
 .modal__btn-close:hover {
   background-color: var(--accent-color);
@@ -458,4 +454,8 @@ textarea:focus, input:focus {
 
 .modal__btn-close:active {
   transform: scale(1);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline-color: transparent;
 }

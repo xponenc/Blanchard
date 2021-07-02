@@ -301,9 +301,10 @@
 .nav__bottom-item {
     position: relative;
     margin-right: 92px;
-    padding: 5px 5px;
+    outline: none;
+    /* padding: 5px 5px; */
     padding-left: 0;
-    border: 2px solid transparent;
+    /* border: 2px solid transparent; */
 }
 
 .nav__bottom-item:last-child {
@@ -311,11 +312,14 @@
 }
 
 .nav__bottom-link {
+    padding: 5px 5px;
     cursor: pointer;
     color: var(--text-color-accent);
     font-size: 18px;
     line-height: 25px;
-    transition: color ease-in-out 0.3s;
+    outline: none;
+    outline: 2px solid transparent;
+    transition: color, outline-color ease-in-out 0.3s;
 }
 
 .angle-down::after, .angle-up:after {
@@ -324,18 +328,23 @@
     font-family: 'FontAwesome';
     transition: opacity ease-in-out 0.3s;
 }
+
 .angle-down::after {
     content: '\f107';
     top: 2px;
-
 }
+
 .angle-up:after {
     content: '\f106';
     top: -1px;
 }
 
-.nav__bottom-item:focus-within {
+/* .nav__bottom-item:focus-within {
     border-color: var(--active-color);
+} */
+
+.nav__bottom-link:focus {
+    outline-color: var(--active-color);
 }
 
 .nav__bottom-link:hover {
@@ -379,6 +388,10 @@
 
 .sub-menu__item:last-child {
     margin-bottom: 0;
+}
+
+.sub-menu__link {
+    outline: none;
 }
 
 .sub-menu__link:hover::before, .sub-menu__link:focus::before {
@@ -438,83 +451,83 @@
 /* end SimpleBar.js */
 
 .sub-menu__item_tinoretto {
-    background-image: url('/img/nav/tinoretto.jpg');
+    background-image: url('../img/nav/tinoretto.jpg');
 }
 
 .sub-menu__item_fridrih {
-    background-image: url('/img/nav/fridrih.jpg');
+    background-image: url('../img/nav/fridrih.jpg');
 }
 
 .sub-menu__item_leonardo {
-    background-image: url('/img/nav/leonardo.jpg');
+    background-image: url('../img/nav/leonardo.jpg');
 }
 
 .sub-menu__item_verrokko {
-    background-image: url('/img/nav/verrokko.jpg');
+    background-image: url('../img/nav/verrokko.jpg');
 }
 
 .sub-menu__item_mone {
-    background-image: url('/img/nav/mone.jpg');
+    background-image: url('../img/nav/mone.jpg');
 }
 
 .sub-menu__item_sisley {
-    background-image: url('/img/nav/sisley.jpg');
+    background-image: url('../img/nav/sisley.jpg');
 }
 
 .sub-menu__item_mane {
-    background-image: url('/img/nav/mane.jpg');
+    background-image: url('../img/nav/mane.jpg');
 }
 
 .sub-menu__item_renuar {
-    background-image: url('/img/nav/renuar.jpg');
+    background-image: url('../img/nav/renuar.jpg');
 }
 
 .sub-menu__item_vangog {
-    background-image: url('/img/nav/vangog.jpg');
+    background-image: url('../img/nav/vangog.jpg');
 }
 
 .sub-menu__item_sezann {
-    background-image: url('/img/nav/sezann.jpg');
+    background-image: url('../img/nav/sezann.jpg');
 }
 
 .sub-menu__item_gogen {
-    background-image: url('/img/nav/gogen.jpg');
+    background-image: url('../img/nav/gogen.jpg');
 }
 
 .sub-menu__item_sera {
-    background-image: url('/img/nav/sera.jpg');
+    background-image: url('../img/nav/sera.jpg');
 }
 
 .sub-menu__item_kandinskii {
-    background-image: url('/img/nav/kandinskii.jpg');
+    background-image: url('../img/nav/kandinskii.jpg');
 }
 
 .sub-menu__item_marinetti {
-    background-image: url('/img/nav/marinetti.jpg');
+    background-image: url('../img/nav/marinetti.jpg');
 }
 
 .sub-menu__item_malevich {
-    background-image: url('/img/nav/malevich.jpg');
+    background-image: url('../img/nav/malevich.jpg');
 }
 
 .sub-menu__item_pikasso {
-    background-image: url('/img/nav/pikasso.jpg');
+    background-image: url('../img/nav/pikasso.jpg');
 }
 
 .sub-menu__item_karra {
-    background-image: url('/img/nav/karra.jpg');
+    background-image: url('../img/nav/karra.jpg');
 }
 
 .sub-menu__item_pratella {
-    background-image: url('/img/nav/pratella.jpg');
+    background-image: url('../img/nav/pratella.jpg');
 }
 
 .sub-menu__item_severini {
-    background-image: url('/img/nav/severini.jpg');
+    background-image: url('../img/nav/severini.jpg');
 }
 
 .sub-menu__item_balla {
-    background-image: url('/img/nav/balla.jpg');
+    background-image: url('../img/nav/balla.jpg');
 }
 
 .header__search {
@@ -701,15 +714,15 @@
 }
 
 .main_slide-1 {
-    background-image: url('/img/1920_banner-1.jpg');
+    background-image: url('../img/1920_banner-1.jpg');
 }
 
 .main_slide-2 {
-    background-image: url('/img/1920_banner-2.jpg');
+    background-image: url('../img/1920_banner-2.jpg');
 }
 
 .main_slide-3 {
-    background-image: url('/img/1920_banner-3.jpg');
+    background-image: url('../img/1920_banner-3.jpg');
 }
 
 .hero__info {
@@ -810,7 +823,7 @@
 
 .gallery {
     margin-bottom: 82px;
-    background-image: url('/img/bgnd/1920_gallery.jpg');
+    background-image: url('../img/bgnd/1920_gallery.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -991,7 +1004,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('/img/icons/zoom.png');
+    background-image: url('../img/icons/zoom.png');
     opacity: 0;
     transition: opacity ease-in-out 0.3s;
 }
@@ -1020,6 +1033,7 @@
 .gallery__slide-author, .gallery__slide-pict-name, .gallery__slide-create-years, .gallery__slide-info {
     display: none;
 }
+
 .gallery__slide-image {
     height: 100%;
 }
@@ -1096,23 +1110,23 @@
 }
 
 .lang-tabs__btn_fr {
-    background-image: url('/img/catalog/fr.png');
+    background-image: url('../img/catalog/fr.png');
 }
 
 .lang-tabs__btn_de {
-    background-image: url('/img/catalog/de.png');
+    background-image: url('../img/catalog/de.png');
 }
 
 .lang-tabs__btn_it {
-    background-image: url('/img/catalog/it.png');
+    background-image: url('../img/catalog/it.png');
 }
 
 .lang-tabs__btn_ru {
-    background-image: url('/img/catalog/ru.png');
+    background-image: url('../img/catalog/ru.png');
 }
 
 .lang-tabs__btn_be {
-    background-image: url('/img/catalog/be.png');
+    background-image: url('../img/catalog/be.png');
 }
 
 .lang-tabs__btn:focus, .lang-tabs__btn:hover {
@@ -1189,6 +1203,7 @@
     line-height: 16px;
     color: #999999;
 }
+
 .author__about {
     margin: 0;
 }
@@ -1223,7 +1238,8 @@
     transition: border-color ease-in-out 0.3s;
 }
 
-.accordion__item:focus .accordion__btn::after {
+/* .accordion__item:focus  */
+.accordion__btn:focus::after {
     border-color: var(--accent-color);
 }
 
@@ -1365,7 +1381,7 @@
     border: none;
     border-radius: 0;
     outline: 2px solid transparent;
-    outline-offset: 2px;
+    outline-offset: 0 2px;
     border-bottom: 1px solid transparent;
     transition-property: color, border-color, outline-color;
     transition-duration: 0.3s;
@@ -1379,7 +1395,7 @@
 .catalog__item-btn:hover {
     border-color: var(--accent-color);
     color: var(--accent-color);
-    outline: none;
+    /* outline-color: transparent; */
 }
 
 .catalog__item-btn:active {
@@ -1390,7 +1406,7 @@
 .catalog__item .catalog__item-btn.catalog__item-btn_active {
     color: var(--active-color);
     font-weight: 600;
-    outline: none;
+    /* outline-color: transparent; */
 }
 
 /* EVENTS */
@@ -1453,23 +1469,23 @@
 }
 
 .event:nth-child(1) .event__img {
-    background-image: url('/img/events/event-1.jpg');
+    background-image: url('../img/events/event-1.jpg');
 }
 
 .event:nth-child(2) .event__img {
-    background-image: url('/img/events/event-2.jpg');
+    background-image: url('../img/events/event-2.jpg');
 }
 
 .event:nth-child(3) .event__img {
-    background-image: url('/img/events/event-3.jpg');
+    background-image: url('../img/events/event-3.jpg');
 }
 
 .event:nth-child(4) .event__img {
-    background-image: url('/img/events/event-4.jpg');
+    background-image: url('../img/events/event-4.jpg');
 }
 
 .event:nth-child(5) .event__img {
-    background-image: url('/img/events/event-5.jpg');
+    background-image: url('../img/events/event-5.jpg');
 }
 
 .event__info {
@@ -1526,6 +1542,7 @@
     display: flex;
     justify-content: center;
 }
+
 .events__btn {
     padding: 15px 35px;
 }
@@ -1534,7 +1551,7 @@
 
 .publication {
     margin-bottom: 78px;
-    background-image: url('/img/bgnd/1920_pub.jpg');
+    background-image: url('../img/bgnd/1920_pub.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1671,7 +1688,7 @@
 }
 
 .genre__checkbox:checked+.genre__text::before {
-    background-image: url('/img/icons/checked.png');
+    background-image: url('../img/icons/checked.png');
     border-color: var(--link-hover-color);
 }
 
@@ -1779,7 +1796,6 @@
     color: var(--text-color-accent);
 }
 
-
 .publication__swiper-control {
     top: 103px;
     left: 15px;
@@ -1836,7 +1852,7 @@
     transition: opacity 0.3s ease-out;
 }
 
-.tooltiptext_active, .tooltiptext-mark_active  {
+.tooltiptext_active, .tooltiptext-mark_active {
     transition-property: opacity, visibility;
     transition-duration: 0.6s;
     transition-timing-function: ease-out;
@@ -1900,6 +1916,7 @@
 .partners__swiper-control .swiper-control__btn:focus {
     border-color: var(--active-color);
 }
+
 .partners__swiper-control .swiper-control__btn:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
@@ -2028,7 +2045,7 @@
 }
 
 .checkbox__input:checked+.checkbox__text::before {
-    background-image: url('/img/icons/checked.png');
+    background-image: url('../img/icons/checked.png');
     border-color: var(--accent-color);
 }
 
@@ -2072,7 +2089,7 @@
 }
 
 .messenger-list__link_whatsapp {
-    background-image: url('/img/icons/whatsapp-icon.svg')
+    background-image: url('../img/icons/whatsapp-icon.svg')
 }
 
 .messenger-list__link_whatsapp:focus, .messenger-list__link_whatsapp:hover {
@@ -2084,7 +2101,7 @@
 }
 
 .messenger-list__link_telegram {
-    background-image: url('/img/icons/telegram-icon.svg')
+    background-image: url('../img/icons/telegram-icon.svg')
 }
 
 .messenger-list__link_telegram:focus, .messenger-list__link_telegram:hover {
@@ -2178,13 +2195,13 @@
 }
 
 .footer__link_vk {
-    background-image: url('/img/icons/vk.png');
+    background-image: url('../img/icons/vk.png');
 }
 
 .footer__link_instagram {
-    background-image: url('/img/icons/instagram.png');
+    background-image: url('../img/icons/instagram.png');
 }
 
 .footer__link_fb {
-    background-image: url('/img/icons/fb.png');
+    background-image: url('../img/icons/fb.png');
 }
