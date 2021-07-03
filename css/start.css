@@ -52,9 +52,9 @@ img {
   height: auto;
 }
 
-textarea:focus, input:focus {
+/* textarea:focus, input:focus {
   outline: none;
-}
+} */
 
 .visually-hidden {
   position: absolute !important;
@@ -150,6 +150,9 @@ textarea:focus, input:focus {
 .btn_simple:focus::before {
   opacity: 1;
 }
+.btn_simple:focus-visible {
+  outline: none;
+}
 
 .btn_simple:hover {
   color: var(--text-color-accent);
@@ -195,13 +198,15 @@ textarea:focus, input:focus {
   white-space: nowrap;
   color: var(--accent-color);
   border-bottom: 1px solid transparent;
-  transition-property: color, border-color, outline;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+  transition-property: color, border-color, outline-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
 
 .http-link:focus {
-  outline: 2px solid var(--active-color);
+  outline-color: var(--active-color);
 }
 
 .http-link:hover {
@@ -236,6 +241,7 @@ textarea:focus, input:focus {
 .swiper-control__btn {
   /* top: 0; */
   z-index: 10;
+  position: relative;
   width: 30px;
   height: 30px;
   outline: none;
@@ -250,13 +256,13 @@ textarea:focus, input:focus {
 
 .swiper-control__btn_prev::before, .swiper-control__btn_next::before, .swiper-control__btn_prev::after, .swiper-control__btn_next::after {
   content: '';
-  position: relative;
+  position: absolute;
   display: inline-block;
-  top: 0;
+  top: 8px;
   width: 10px;
   height: 10px;
   left: 50%;
-  margin-left: -10px;
+  margin-left: -5px;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -289,8 +295,9 @@ textarea:focus, input:focus {
   opacity: 1;
 }
 
-.swiper-control__btn:focus {
+.swiper-control__btn:focus, .swiper-control__btn:focus-visible  {
   border-color: var(--active-color);
+  outline: none;
 }
 
 .swiper-control__btn:hover {
@@ -457,5 +464,5 @@ textarea:focus, input:focus {
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
-  outline-color: transparent;
+  outline: none;
 }

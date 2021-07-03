@@ -1,4 +1,3 @@
-// function showSwipers() {
         var width = screen.width
         const swiper = new Swiper('.hero__swiper', {
             preloadImages: false,
@@ -19,7 +18,7 @@
             breakpoints: {
                 0: {
                     slidesPerView: 1,
-                    spaceBetween: 50,
+                    spaceBetween: 15,
                 },
                 551: {
     
@@ -93,7 +92,6 @@
     
             $('.publication__slide-item').each(function(index, element) {
                 var bgnd = $(element).children('.publication__slide-img').attr('data-background')
-                console.log(bgnd)
                 $(element).children('.publication__slide-img').css('background-image', 'url(' + bgnd + ')')
                 $(element).css('opacity', 1)
                 $(element).removeAttr('data-background')
@@ -160,6 +158,3 @@
                 },
             });
         }
-// }
-
-

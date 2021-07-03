@@ -53,13 +53,13 @@ $(document).ready(function () {
     // catalog
     function onResizeCalc() {
         $('.accordion__content').each(function (index, element) {
-            var padding = 40
+            var padding = 35
             var countItems = $(this).children('.catalog__list').children('.catalog__item').length
             var width = screen.width
             // var width = width.innerWidth
             if (width > 1360) {
                 var columns = 3
-                var unit = 36.625
+                var unit = 37.5
             }
             else if ((width <= 1360) && (width > 768)) {
                 var columns = 2
@@ -79,7 +79,7 @@ $(document).ready(function () {
             }
             var heightList = Math.ceil(countItems / columns) * unit
             $(this).css('height', heightList + padding + 'px')
-            $(this).children('.catalog__list').css('height', heightList + 'px')
+            $(this).children('.catalog__list').css('height', heightList + padding + 'px')
         })
     }
     onResizeCalc();
@@ -246,7 +246,7 @@ $(document).ready(function () {
             sc.async = true;
         }
         $(sc).insertAfter($('.modal-overlay.closed'));
-        var sj = new SJ();
+        // var sj = new SJ();
     }
 
     function hideUnchecked() {
@@ -260,9 +260,11 @@ $(document).ready(function () {
     }
 
     // projects
+    console.log(screen.width, window.innerWidth)
 
     shiftToopltip()
     if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
+        console.log(screen.width, window.innerWidth)
         $('.tooltiptext-mark').click(function () {
             $('.tooltiptext').css('opacity', '')
             $('.tooltiptext').css('visibility', '')
@@ -275,6 +277,7 @@ $(document).ready(function () {
             $(this).parent().children('.tooltiptext').css('visibility', 'hidden')
         })
     } else if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+        console.log(screen.width, window.innerWidth)
         $('.tooltip').click(function () {
             const btn = this
             $(this).toggleClass('tooltip-active');
@@ -317,5 +320,10 @@ $(document).ready(function () {
         $('.events__item').css('display', 'flex')
         $('.events__item').css('opacity', '1')
     })
+
+    // LazyLoad
+    var lazyLoadInstance = new LazyLoad({
+    });
+
 
 });

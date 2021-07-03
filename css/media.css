@@ -537,7 +537,7 @@
     }
     .projects__text {
         position: relative;
-        margin-bottom: 27px;
+        margin-bottom: 24px;
         max-width: 655px;
     }
     .tooltiptext {
@@ -563,7 +563,7 @@
         opacity: 0;
         visibility: hidden;
     }
-    .projects__partners__subheading {
+    .partners__subheading {
         margin-bottom: 27px;
     }
     .partners__swiper-control {
@@ -648,6 +648,7 @@
         padding: 241px 30px 100px 30px;
     }
     .hero__heading {
+        margin-left: 0;
         text-align: center;
     }
     .hero__text {
@@ -690,12 +691,16 @@
         height: 100%;
     }
     .events__item {
+        overflow: hidden;
         margin: 0;
         min-height: 630px;
     }
     .events__item:nth-child(n+3) {
         display: flex;
         opacity: 1;
+    }
+    .events__item:nth-child(3n) {
+        margin-right: 0;
     }
     .event__img {
         height: 300px;
@@ -865,7 +870,7 @@
     }
     .contact-form__btn {
         margin-right: 20px;
-        padding: 10px 37px;
+        padding: 10px 34px;
     }
     .contacts__messenger-list {
         margin-top: -10px;
@@ -923,6 +928,9 @@
 }
 
 @media (max-width: 425px) {
+    :root {
+        --container-max-width: calc(100vw - 30px);
+    }
     body {
         font-size: 14px;
         line-height: 28px;
@@ -933,8 +941,8 @@
         line-height: 38px;
     }
     .nav__top-container {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 11px;
+        padding-bottom: 11px;
     }
     .nav__toggle {
         margin-right: calc(50% - 20px - 30vw / 2);
@@ -1158,7 +1166,7 @@
         padding: 14px 11px 20px 28px;
     }
     .event__subheading {
-        margin-bottom: 39px;
+        margin-bottom: 35px;
     }
     .event__description {
         font-size: 16px;
