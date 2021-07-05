@@ -151,13 +151,16 @@ img {
 .btn_simple:focus::before {
   opacity: 1;
 }
-.btn_simple:focus-visible {
+/* .btn_simple:focus-visible {
   outline: none;
-}
+} */
 
 .btn_simple:hover {
   color: var(--text-color-accent);
   background-color: var(--accent-color);
+}
+.btn_simple:hover::before {
+  opacity: 0;
 }
 
 .btn_simple:active {
@@ -199,25 +202,27 @@ img {
   white-space: nowrap;
   color: var(--accent-color);
   border-bottom: 1px solid transparent;
-  outline-offset: 2px;
-  outline: 2px solid transparent;
-  transition-property: color, border-color, outline-color;
+  outline: none;
+  transition-property: color, border-color, background-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
 
 .http-link:focus {
-  outline-color: var(--active-color);
+  background-color: var(--accent-color);
+  color: var(--link-color-light);
 }
 
 .http-link:hover {
   border-color: var(--accent-color);
-  outline: none;
+  color: var(--accent-color);
+  background-color: transparent;
 }
 
 .http-link:active {
   color: var(--active-color);
   border-color: var(--active-color);
+  background-color: transparent;
 }
 
 .clearfix::after {
@@ -253,6 +258,10 @@ img {
   transition-property: background-color, border-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
+}
+
+.swiper-control__btn.swiper-button-disabled {
+  opacity: 0.5;
 }
 
 .swiper-control__btn_prev::before, .swiper-control__btn_next::before, .swiper-control__btn_prev::after, .swiper-control__btn_next::after {
