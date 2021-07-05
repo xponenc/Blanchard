@@ -10,6 +10,7 @@
   --active-color: #7943A4;
   --link-hover-color: #C283F3;
   --swiper-theme-color: #666;
+  --link-color-light: #fff;
 }
 
 *, *::after, *::before {
@@ -465,4 +466,5 @@ img {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+  background-color: transparent;
 }
