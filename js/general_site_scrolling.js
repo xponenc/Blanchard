@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.nav__top-link, .hero__btn, .author__gallery-link').on('click', function (event) {
+    $('.nav__top-link, .hero__btn, .author__gallery-link, .unknown__gallery-link').on('click', function (event) {
         event.preventDefault();
         hrefId = $(this).attr('href')
         let offset = $(hrefId).offset().top;

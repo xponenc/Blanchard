@@ -308,7 +308,7 @@ img {
   opacity: 1;
 }
 
-.swiper-control__btn:focus, .swiper-control__btn:focus-visible  {
+.swiper-control__btn:focus {
   border-color: var(--active-color);
   outline: none;
 }
@@ -478,5 +478,5 @@ img {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
