@@ -112,6 +112,8 @@ $(document).ready(function () {
             }, 1000);
         }
     })
+
+
     $(function () {
         $("#accordion").accordion({
             heightStyle: "fill",

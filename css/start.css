@@ -114,6 +114,7 @@ img {
 .btn_simple {
   position: relative;
   padding: 17px 35px;
+  outline: none;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
@@ -262,6 +263,8 @@ img {
 
 .swiper-control__btn.swiper-button-disabled {
   opacity: 0.5;
+  filter: grayscale(100%);
+  cursor: auto;
 }
 
 .swiper-control__btn_prev::before, .swiper-control__btn_next::before, .swiper-control__btn_prev::after, .swiper-control__btn_next::after {

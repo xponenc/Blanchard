@@ -556,13 +556,14 @@
     opacity: 1;
 }
 
+/* 
 .search__input:focus+.search__btn::before {
     opacity: 0;
 }
 
 .search__input:focus+.search__btn::after {
     opacity: 1;
-}
+} */
 
 .search__input {
     padding: 0 5px 0 0;
@@ -593,7 +594,7 @@
     height: 28px;
     margin-right: 8px;
     border-radius: 0;
-    outline: 2px solid transparent;
+    outline: none;
     outline-offset: 3px;
     transition: outline-color ease-in-out 0.3s;
 }
@@ -621,13 +622,17 @@
     opacity: 0;
 }
 
-.search__btn:focus {
-    outline-color: var(--active-color);
+.search__btn:focus::before {
+    opacity: 0;
 }
 
-.search__btn:active {
-    outline-color: transparent;
+.search__btn:focus::after {
+    opacity: 1;
 }
+
+/* .search__btn:active {
+    outline-color: transparent;
+} */
 
 .search__btn:active::after {
     background-image: url("data:image/svg+xml,%3Csvg width='23' height='22' viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='6.8678' height='1.71695' transform='matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)' fill='%237943A4'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z' fill='%237943A4'/%3E%3C/svg%3E");
@@ -1326,6 +1331,24 @@
     margin: 0;
 }
 
+.author__gallery-link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--accent-color);
+    outline: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.author__gallery-link:hover, .author__gallery-link:focus {
+    color: #555;
+}
+
+.author__gallery-link:active {
+    color: var(--active-color);
+}
+
 .catalog__info {
     width: 800px;
 }
@@ -1642,6 +1665,7 @@
     position: relative;
     padding: 0 5px 10px 5px;
     color: var(--accent-color);
+    outline: none;
     transition-property: color, background-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -2045,10 +2069,9 @@
 }
 
 .tooltiptext-mark {
-    /* content: ''; */
     position: absolute;
     visibility: hidden;
-    bottom: 17px;
+    bottom: 18px;
     left: 50%;
     margin-left: -10px;
     border-top: 11px solid var(--accent-color);
@@ -2299,6 +2322,7 @@
 /* .messenger-list__link_telegram:active {
     filter: none;
 } */
+
 .messenger-list__icon {
     width: 100%;
     height: 100%;
@@ -2312,6 +2336,7 @@
 .messenger-list__link:hover .messenger-list__icon, .messenger-list__link:focus .messenger-list__icon {
     opacity: 0.5;
 }
+
 .messenger-list__link:active .messenger-list__icon {
     border-color: #9643A4;
     opacity: 1;
@@ -2422,6 +2447,7 @@
 .footer__link:focus .footer__icon, .footer__link:hover .footer__icon {
     color: #fff;
 }
+
 .footer__link:active .footer__icon {
     color: var(--accent-color)
 }
