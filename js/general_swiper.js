@@ -45,6 +45,10 @@
                 prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
             },
         });
+
+        if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+            $('.gallery__content').insertAfter($('.info__filter'));
+          }
     
         if (width > 550) {
             const swiper3 = new Swiper('.publication__swiper', {

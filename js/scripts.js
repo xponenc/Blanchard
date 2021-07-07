@@ -8,9 +8,9 @@ $(document).ready(function () {
     });
     choices1.setChoices(
       [
-        { value: 'One', label: 'Автор', selected: true },
-        { value: 'One', label: 'Направление', },
-        { value: 'Two', label: 'Техника', },
+        { value: 'One', label: 'Живопись', selected: true },
+        { value: 'One', label: 'Рисунок', },
+        { value: 'Two', label: 'Скульптура', },
       ],
       'value',
       'label',
@@ -181,7 +181,7 @@ $(document).ready(function () {
             $control = $(this);
 
             accordionContent = $control.attr('aria-controls');
-            console.log(accordionContent)
+            // console.log(accordionContent)
             checkOthers($control[0]);
 
             isAriaExp = $control.attr('aria-expanded');
@@ -262,11 +262,10 @@ $(document).ready(function () {
     }
 
     // projects
-    console.log(screen.width, window.innerWidth)
 
     shiftToopltip()
     if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
-        console.log(screen.width, window.innerWidth)
+        // console.log(screen.width, window.innerWidth)
         $('.tooltiptext-mark').click(function () {
             $('.tooltiptext').css('opacity', '')
             $('.tooltiptext').css('visibility', '')
@@ -279,7 +278,7 @@ $(document).ready(function () {
             $(this).parent().children('.tooltiptext').css('visibility', 'hidden')
         })
     } else if ((screen.width <= 768) || (window.innerWidth <= 768)) {
-        console.log(screen.width, window.innerWidth)
+        // console.log(screen.width, window.innerWidth)
         $('.tooltip').click(function () {
             const btn = this
             $(this).toggleClass('tooltip-active');

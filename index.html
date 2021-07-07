@@ -234,7 +234,11 @@
               type="search" placeholder="Поиск по сайту" name="search-string">
             <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
           </form>
-          <button class="nav__bottom-search-close btn"></button>
+          <button class="nav__bottom-search-close btn btn-close">
+            <svg class="btn-close__icon">
+              <use xlink:href="img/icons/sprite.svg#search-close"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -299,7 +303,7 @@
         <div class="gallery__info info">
           <h2 class="gallery__heading heading">Галерея</h2>
           <div class="info__filter">
-            <h3 class="info__filter-heading">Фильтровать по:</h3>
+            <h3 class="info__filter-heading">Фильтр:</h3>
             <select class="select" name="filter" id="id-filter-1"></select>
           </div>
           <p class="info__text">
@@ -1356,32 +1360,50 @@
           </div>
           <div class="partners__swiper swiper-container">
             <div class="partners__swiper-wrapper swiper-wrapper">
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/freelands.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/freelands.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/ica.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/ica.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/workhouse.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/workhouse.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/1849.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/1849.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/hiscox.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/hiscox.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/camden.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/camden.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/stassen.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/stassen.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/watts.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/watts.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
-              <div class="partners__swiper-slide swiper-slide swiper-lazy" data-background="img/partners/esad.png">
-                <div class="swiper-lazy-preloader"></div>
+              <div class="partners__swiper-slide swiper-slide" tabindex="0">
+                <div class="partners__swiper-img swiper-lazy" data-background="img/partners/esad.png">
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -1482,7 +1504,11 @@
     </div>
   </footer>
   <div class="modal closed">
-    <button class="modal__btn-close btn" aria-label="Закрыть окно"></button>
+    <button class="modal__btn-close btn btn-close" aria-label="Закрыть окно">
+      <svg class="btn-close__icon">
+        <use xlink:href="img/icons/sprite.svg#modal-close"></use>
+      </svg>
+    </button>
     <div class="modal__content">
       <div class="modal__content-img"></div>
       <div class="modal__content-info">

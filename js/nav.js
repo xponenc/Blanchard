@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    if (window.innerWidth <= 1320) {
+    if (window.innerWidth <= 1360) {
         $('.nav__toggle').on('click', function () {
             $('.nav__top-block').toggleClass('nav__top-block_active')
             $('.nav__top-sign-in-btn').toggleClass('btn_simple btn')
