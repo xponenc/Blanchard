@@ -150,7 +150,7 @@
         padding-top: 213px;
     }
     .hero__heading {
-        margin-left: -5px;
+        /* margin-left: -5px; */
         margin-bottom: 11px;
     }
     .hero__text {
@@ -648,7 +648,6 @@
     .gallery {
         background-image: url('../img/bgnd/768_gallery.jpg');
     }
-  
     .gallery__info {
         width: 100%;
         padding-right: 0;
@@ -732,7 +731,7 @@
         height: auto;
         column-gap: unset;
         columns: unset;
-        margin-bottom: 30px;
+        margin-bottom: 29px;
     }
     .genre__form_active {
         display: flex;
@@ -768,7 +767,7 @@
         background-image: url('../img/bgnd/320_pub.jpg');
     }
     .publication__content {
-        padding: 48px 0 0 0;
+        padding: 50px 0 0 0;
     }
     .publication__swiper-control {
         display: none;
@@ -823,8 +822,7 @@
         position: relative;
     }
     .contacts__info {
-        padding: 0 5% 5px 4%;
-        min-height: 747px;
+        padding: 0 5% 21px 4%;
         border: none;
     }
     .info__showroom {
@@ -873,8 +871,8 @@
     }
     .contacts__map {
         margin-left: -5%;
-        margin-bottom: 21px;
-        width: 110%;
+        margin-bottom: 25px;
+        width: 105%;
         height: 320px;
     }
     /* FOOTER:550 */
@@ -1069,6 +1067,7 @@
         padding-top: 50px;
     }
     .info__filter {
+        z-index: 100;
         width: 100%;
     }
     .info__filter-heading {
@@ -1084,7 +1083,7 @@
         height: 367px;
     }
     .gallery__swiper-control {
-        bottom: 50px;
+        top: 103%;
         left: calc(50% - 130px / 2);
     }
     .gallery__swiper {
@@ -1129,7 +1128,7 @@
         margin-bottom: 49px;
     }
     .accordion__item .accordion__btn.ui-accordion-header {
-        padding: 21px 50px 21px 0px;
+        padding: 21px 50px 20px 0px;
         font-size: 18px;
     }
     .accordion__icon {
@@ -1137,7 +1136,12 @@
         height: 30px;
     }
     .catalog__accordion .accordion__item .ui-accordion-content {
-        padding: 17px 0 17px 0;
+        /* padding: 17px 0 17px 0; */
+        padding: 0;
+    }
+    .catalog__list {
+        padding: 19px 47px 21px 0px;
+        columns: 1;
     }
     .author__image {
         margin-bottom: 20px;
@@ -1146,6 +1150,7 @@
         margin-bottom: 14px;
     }
     .author__about {
+        max-width: 99%;
         font-size: 16px;
         line-height: 32px;
     }
@@ -1176,12 +1181,20 @@
         padding: 0 11px 0 28px;
     }
     .event__link {
+        padding-left: 0;
+        padding-right: 0;
         font-size: 16px;
+    }
+    .event__link::after {
+        left: 2px;
+        right: -5px;
     }
     .events__pagination.swiper-pagination {
         bottom: 40px;
     }
-    /* PROJECTS:425 */
+    .publication__heading {
+        margin-bottom: 12px;
+    }
     .projects {
         margin-bottom: 50px;
     }
@@ -1207,5 +1220,15 @@
     }
     .partners__swiper-slide {
         max-width: 195px;
+    }
+    .contacts__heading {
+        margin-bottom: 15px;
+    }
+    .showroom__item {
+        line-height: 20px;
+    }
+    .showroom__address {
+        display: inline-block;
+        max-height: 15px;
     }
 }

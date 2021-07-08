@@ -73,13 +73,15 @@ $(document).ready(function () {
                 var columns = 2
                 var unit = 36.25
             } else {
-                var columns = 1
-                var unit = 32
-                var padding = 30
+                // var columns = 1
+                // var unit = 32
+                // var padding = 30
             }
-            var heightList = Math.ceil(countItems / columns) * unit
-            $(this).css('height', heightList + padding + 'px')
-            $(this).children('.catalog__list').css('height', heightList + padding + 'px')
+            if (width > 550) {
+                var heightList = Math.ceil(countItems / columns) * unit
+                $(this).css('height', heightList + padding + 'px')
+                $(this).children('.catalog__list').css('height', heightList + padding + 'px')
+            }
         })
     }
     onResizeCalc();
@@ -116,7 +118,7 @@ $(document).ready(function () {
 
     $(function () {
         $("#accordion").accordion({
-            heightStyle: "fill",
+            heightStyle: "content",
             icons: false,
             collapsible: true,
             header: '.accordion__btn',
