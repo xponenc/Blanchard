@@ -2,20 +2,23 @@ $(document).ready(function () {
     // gallery select
     const element1 = document.querySelector('#id-filter-1');
     const choices1 = new Choices(element1, {
-      searchEnabled: false,
-      itemSelectText: '',
-      position: 'bottom',
+        placeholder: true,
+        searchEnabled: false,
+          itemSelectText: '',
+        position: 'bottom',
+        renderSelectedChoices: 'always',
     });
-    choices1.setChoices(
-      [
-        { value: 'One', label: 'Живопись', selected: true },
-        { value: 'One', label: 'Рисунок', },
-        { value: 'Two', label: 'Скульптура', },
-      ],
-      'value',
-      'label',
-      false,
-    );  
+    // choices1.setChoices(
+    //   [
+    //     { value: 'One', label: 'Живопись', selected: true },
+    //     { value: 'One', label: 'Рисунок', },
+    //     { value: 'Two', label: 'Скульптура', },
+    //   ],
+    //   'value',
+    //   'label',
+    //   false,
+    // );  
+
 
     // gallery modal
     $('.gallery__slide').click(function () {
@@ -53,34 +56,32 @@ $(document).ready(function () {
     // catalog
     function onResizeCalc() {
         $('.accordion__content').each(function (index, element) {
-            var padding = 35
-            var countItems = $(this).children('.catalog__list').children('.catalog__item').length
-            var width = screen.width
-            // var width = width.innerWidth
-            if (width > 1360) {
-                var columns = 3
-                var unit = 37.5
-            }
-            else if ((width <= 1360) && (width > 768)) {
-                var columns = 2
-                var unit = 32.5
-                var padding = 40
-            } else if ((width <= 768) && (width > 667)) {
-                var columns = 3
-                var unit = 36.25
-                var padding = 45
-            } else if ((width <= 667) && (width > 550)) {
-                var columns = 2
-                var unit = 36.25
-            } else {
-                // var columns = 1
-                // var unit = 32
-                // var padding = 30
-            }
-            if (width > 550) {
-                var heightList = Math.ceil(countItems / columns) * unit
-                $(this).css('height', heightList + padding + 'px')
-                $(this).children('.catalog__list').css('height', heightList + padding + 'px')
+            if ($(element).children('.catalog__list').length > 0) {
+                var countItems = $(this).children('.catalog__list').children('.catalog__item').length
+                var width = screen.width
+                if (width > 1360) {
+                    var columns = 3
+                    var unit = 37.5
+                    var padding = 40
+                }
+                else if ((width <= 1360) && (width > 768)) {
+                    var columns = 2
+                    var unit = 32.5
+                    var padding = 45
+                } else if ((width <= 768) && (width > 667)) {
+                    var columns = 3
+                    var unit = 36.25
+                    var padding = 50
+                } else {
+                    var columns = 2
+                    var unit = 36.25
+                }
+
+                if (width > 550) {
+                    var heightList = Math.ceil(countItems / columns) * unit
+                    $(this).css('height', heightList + padding + 'px')
+                    $(this).children('.catalog__list').css('height', heightList + padding + 'px')
+                }
             }
         })
     }
@@ -117,7 +118,7 @@ $(document).ready(function () {
 
 
     $(function () {
-        $("#accordion").accordion({
+        $(".accordion").accordion({
             heightStyle: "content",
             icons: false,
             collapsible: true,
@@ -132,7 +133,7 @@ $(document).ready(function () {
     function accordionToggle() {
         $('.accordion__btn').on('click', function (e) {
             $control = $(this);
-            accordionContent = $control.attr('aria-controls');
+            // accordionContent = $control.attr('aria-controls');
             // console.log(accordionContent)
             checkOthers($control[0]);
 
@@ -140,12 +141,17 @@ $(document).ready(function () {
             newAriaExp = (isAriaExp == "false") ? "true" : "false";
             $control.attr('aria-expanded', newAriaExp);
 
-            isAriaHid = $('#' + accordionContent).attr('aria-hidden');
+            // isAriaHid = $('#' + accordionContent).attr('aria-hidden');
+            isAriaHid = $(this).next().attr('aria-hidden');
             if (isAriaHid == "true") {
-                $('#' + accordionContent).attr('aria-hidden', "false");
+                // $('#' + accordionContent).attr('aria-hidden', "false");
+                $(this).next().attr('aria-hidden', "false");
+
                 // $('#' + accordionContent).css('display', 'block');
             } else {
-                $('#' + accordionContent).attr('aria-hidden', "true");
+                // $('#' + accordionContent).attr('aria-hidden', "true");
+                $(this).next().attr('aria-hidden', "true");
+
                 // $('#' + accordionContent).css('display', 'none');
             }
         });
@@ -156,58 +162,10 @@ $(document).ready(function () {
             if (accordionButtons[i] != elem) {
                 if (($(accordionButtons[i]).attr('aria-expanded')) == 'true') {
                     $(accordionButtons[i]).attr('aria-expanded', 'false');
-                    content = $(accordionButtons[i]).attr('aria-controls');
-                    $('#' + content).attr('aria-hidden', 'true');
-                    // $('#' + content).css('display', 'none');
-                }
-            }
-        }
-    };
-
-    //call this function on page load
-    accordionToggle(); $(function () {
-        $("#accordion").accordion({
-            heightStyle: "fill",
-            icons: false,
-            collapsible: true,
-            header: '.accordion__btn',
-        });
-    });
-
-    // add ARIA for accordion
-
-    var accordionButtons = $('.accordion__btn');
-
-    function accordionToggle() {
-        $('.accordion__btn').on('click', function (e) {
-            $control = $(this);
-
-            accordionContent = $control.attr('aria-controls');
-            // console.log(accordionContent)
-            checkOthers($control[0]);
-
-            isAriaExp = $control.attr('aria-expanded');
-            newAriaExp = (isAriaExp == "false") ? "true" : "false";
-            $control.attr('aria-expanded', newAriaExp);
-
-            isAriaHid = $('#' + accordionContent).attr('aria-hidden');
-            if (isAriaHid == "true") {
-                $('#' + accordionContent).attr('aria-hidden', "false");
-                // $('#' + accordionContent).css('display', 'block');
-            } else {
-                $('#' + accordionContent).attr('aria-hidden', "true");
-                // $('#' + accordionContent).css('display', 'none');
-            }
-        });
-    };
-
-    function checkOthers(elem) {
-        for (var i = 0; i < accordionButtons.length; i++) {
-            if (accordionButtons[i] != elem) {
-                if (($(accordionButtons[i]).attr('aria-expanded')) == 'true') {
-                    $(accordionButtons[i]).attr('aria-expanded', 'false');
-                    content = $(accordionButtons[i]).attr('aria-controls');
-                    $('#' + content).attr('aria-hidden', 'true');
+                    // content = $(accordionButtons[i]).attr('aria-controls');
+                    // $('#' + content).attr('aria-hidden', 'true');
+                    // content = $(accordionButtons[i]).attr('aria-controls');
+                    $(accordionButtons[i]).next().attr('aria-hidden', 'true');
                     // $('#' + content).css('display', 'none');
                 }
             }
@@ -289,7 +247,7 @@ $(document).ready(function () {
                 if (element !== btn) {
                     $(element).removeClass('tooltip-active')
                     $(element).children('.tooltiptext').removeClass('tooltiptext_active')
-                } 
+                }
             })
         })
     }
@@ -299,7 +257,7 @@ $(document).ready(function () {
             var positionX = $(element).position().left;
             var widthParent = $('.projects__text').innerWidth()
             var widthTooltip = $(element).children('.tooltiptext').innerWidth()
-            
+
             // Проверка - тултип вылез вправо
             if (positionX + widthTooltip / 2 > widthParent) {
                 var leftOverflow = positionX + widthTooltip / 2 - widthParent + $(element).innerWidth() / 2
@@ -317,7 +275,7 @@ $(document).ready(function () {
 
     // events
 
-    $('.events__btn').on('click', function(event){
+    $('.events__btn').on('click', function (event) {
         event.preventDefault();
         $(this).addClass('visually-hidden')
         $('.events__item').css('display', 'flex')

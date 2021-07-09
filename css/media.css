@@ -254,6 +254,9 @@
     .publication {
         background-image: url('../img/bgnd/1024_pub.jpg');
     }
+    .publication__info {
+        padding-bottom: 78px;
+    }
     .publication__content {
         width: 629px;
     }
@@ -313,6 +316,7 @@
     .contact-form__btn {
         padding: 14px 32px;
     }
+   
     .footer__link {
         width: 60px;
         height: 60px;
@@ -476,7 +480,7 @@
         min-width: 150px;
     }
     .events {
-        margin-bottom: 85px;
+        margin-bottom: 80px;
     }
     .events__list {
         margin-bottom: 16px;
@@ -501,9 +505,10 @@
     }
     .publication__container {
         flex-direction: column;
-        padding-bottom: 34px;
+        padding-bottom: 30px;
     }
     .publication__info {
+        padding-top: 83px;
         padding-bottom: 0;
         width: 100%;
     }
@@ -511,7 +516,7 @@
         margin-bottom: 22px;
         height: 130px;
         columns: 3 auto;
-        column-gap: 45px;
+        column-gap: 57px;
     }
     .price__form {
         width: min(279px, 41.5%);
@@ -555,7 +560,7 @@
         visibility: hidden;
     }
     .partners__subheading {
-        margin-bottom: 27px;
+        margin-bottom: 30px;
     }
     .partners__swiper-control {
         top: 88px;

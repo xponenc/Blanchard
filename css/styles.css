@@ -1196,6 +1196,8 @@
 .author__image {
     margin-bottom: 30px;
     width: 100%;
+    max-height: 470px;
+    object-fit: cover;
 }
 
 .author__name, .unknown__title {
@@ -1277,7 +1279,7 @@
     align-items: center;
     margin: 0;
     margin-top: -1px;
-    padding: 39px 50px 43px 0px;
+    padding: 39px 50px 44px 0px;
     width: 100%;
     border: none;
     outline: none;
@@ -1306,6 +1308,7 @@
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     transition: border-color ease-in-out 0.3s;
+    overflow:hidden;
 }
 
 .accordion__subheading {
@@ -2240,6 +2243,7 @@
 }
 
 .contacts__map {
+    overflow: hidden;
     width: 64.5%;
 }
 
@@ -2287,6 +2291,7 @@
 .footer__logo {
     margin-right: auto;
     max-height: 40px;
+    width: 173px;
 }
 
 .footer__social {
