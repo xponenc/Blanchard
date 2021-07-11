@@ -1,164 +1,165 @@
-        var width = screen.width
-        const swiper = new Swiper('.hero__swiper', {
-            preloadImages: false,
-            lazy: true,
-            loop: true,
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            autoplay: {
-                delay: 3000,
-            },
-        });
-        const swiper2 = new Swiper('.gallery__swiper', {
-            preloadImages: false,
-            lazy: true,
-            watchSlidesVisibility: true,
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-                551: {
-    
-                    slidesPerView: 2,
-                    slidesPerColumn: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 34,
-    
-                },
-                1360: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3,
-                    slidesPerColumn: 2,
-                    spaceBetween: 50,
-                }
-            },
-            pagination: {
-                el: ".gallery__swiper-control .block-pagination",
-                type: "fraction",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.gallery__swiper-control .swiper-control__btn_next',
-                prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
-            },
-        });
+var width = screen.width
+const swiper = new Swiper('.hero__swiper', {
+    preloadImages: false,
+    lazy: true,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    autoplay: {
+        delay: 3000,
+    },
+});
+const swiper2 = new Swiper('.gallery__swiper', {
+    preloadImages: false,
+    lazy: true,
+    watchSlidesVisibility: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        551: {
 
-        if ((screen.width <= 768) || (window.innerWidth <= 768)) {
-            $('.gallery__content').insertAfter($('.info__filter'));
-          }
-    
-        if (width > 550) {
-            const swiper3 = new Swiper('.publication__swiper', {
-                preloadImages: false,
-                lazy: true,
-                watchSlidesVisibility: true,
-                loop: true,
-                breakpoints: {
-                    240: {
-                        slidesPerGroup: 2,
-                        slidesPerColumn: 4,
-                        slidesPerView: 2,
-                        spaceBetween: 30,
-                    },
-                    551: {
-                        slidesPerView: 2,
-                        slidesPerGroup: 2,
-                        spaceBetween: 34,
-                    },
-                    1024: {
-                        slidesPerView: 2,
-                        slidesPerGroup: 2,
-                        spaceBetween: 49,
-                    },
-                    1360: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 3,
-                        spaceBetween: 50,
-                    }
-                },
-                pagination: {
-                    el: ".publication__swiper-control .block-pagination",
-                    type: "fraction",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.publication__swiper-control .swiper-control__btn_next',
-                    prevEl: '.publication__swiper-control .swiper-control__btn_prev',
-                },
-            });
-        } else {
-            $('.publication__slide').removeClass('swiper-slide')
-            $('.publication__swiper').removeClass('swiper-container')
-            $('.publication__swiper-wrapper').removeClass('swiper-wrapper')
-    
-            $('.publication__slide-item').each(function(index, element) {
-                var bgnd = $(element).children('.publication__slide-img').attr('data-background')
-                $(element).children('.publication__slide-img').css('background-image', 'url(' + bgnd + ')')
-                $(element).css('opacity', 1)
-                $(element).removeAttr('data-background')
-                $(element).children('.publication__slide-img').children('.swiper-lazy-preloader').remove()
-            })
+            slidesPerView: 2,
+            slidesPerColumn: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 34,
+
+        },
+        1360: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            slidesPerColumn: 2,
+            spaceBetween: 50,
         }
-    
-    
-        const swiper4 = new Swiper('.partners__swiper', {
-            preloadImages: false,
-            lazy: true,
-            watchSlidesVisibility: true,
-            loop: true,
-            breakpoints: {
-                240: {
-                    slidesPerGroup: 1,
-                    slidesPerView: 1,
-                    spaceBetween: 21,
-                    // centeredSlides: true,
-                },
-                768: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 34,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 50,
-                },
-                1360: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3,
-                    spaceBetween: 50,
-                }
+    },
+    pagination: {
+        el: ".gallery__swiper-control .block-pagination",
+        type: "fraction",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.gallery__swiper-control .swiper-control__btn_next',
+        prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
+    },
+});
+
+if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+    $('.gallery__content').insertAfter($('.info__filter'));
+}
+
+if (width > 550) {
+    const swiper3 = new Swiper('.publication__swiper', {
+        preloadImages: false,
+        lazy: true,
+        watchSlidesVisibility: true,
+        loop: true,
+        breakpoints: {
+            240: {
+                slidesPerGroup: 2,
+                slidesPerColumn: 4,
+                slidesPerView: 2,
+                spaceBetween: 30,
             },
-            pagination: {
-                el: ".swiper-pagination",
-                type: "fraction",
-                clickable: true,
+            551: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 34,
             },
-            navigation: {
-                nextEl: '.partners__swiper-control .swiper-control__btn_next',
-                prevEl: '.partners__swiper-control .swiper-control__btn_prev',
+            1024: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 49,
             },
-        });
-    
-        if ((width <= 550) || (window.innerWidth <= 550)){
-            $('.events__list').removeClass('events__list')
-            $('.events__item').addClass('swiper-slide')
-            $('.events__swiper').addClass('swiper-container')
-            $('.events__swiper-wrapper').addClass('swiper-wrapper')
-            $('.events__pagination').css('display', 'block')
-            const swiper5 = new Swiper('.events__swiper', {
-                loop: true,
-                slidesPerGroup: 1,
-                slidesPerView: 1,
-                spaceBetween: 21,
-                centeredSlides: true,
-    
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            });
+            1360: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 50,
+            }
+        },
+        pagination: {
+            el: ".publication__swiper-control .block-pagination",
+            type: "fraction",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.publication__swiper-control .swiper-control__btn_next',
+            prevEl: '.publication__swiper-control .swiper-control__btn_prev',
+        },
+    });
+} else {
+    $('.publication__slide').removeClass('swiper-slide')
+    $('.publication__swiper').removeClass('swiper-container')
+    $('.publication__swiper-wrapper').removeClass('swiper-wrapper')
+
+    $('.publication__slide-item').each(function (index, element) {
+        var bgnd = $(element).children('.publication__slide-img').attr('data-background')
+        $(element).children('.publication__slide-img').css('background-image', 'url(' + bgnd + ')')
+        $(element).css('opacity', 1)
+        $(element).removeAttr('data-background')
+        $(element).children('.publication__slide-img').children('.swiper-lazy-preloader').remove()
+    })
+}
+
+
+const swiper4 = new Swiper('.partners__swiper', {
+    preloadImages: false,
+    lazy: true,
+    watchSlidesVisibility: true,
+    loop: true,
+    breakpoints: {
+        240: {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 21,
+            // centeredSlides: true,
+        },
+        768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 34,
+        },
+        1024: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 50,
+        },
+        1360: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 50,
         }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.partners__swiper-control .swiper-control__btn_next',
+        prevEl: '.partners__swiper-control .swiper-control__btn_prev',
+    },
+});
+
+if ((width <= 550) || (window.innerWidth <= 550)) {
+    $('.events__list').removeClass('events__list')
+    $('.events__item').addClass('swiper-slide')
+    $('.events__swiper').addClass('swiper-container')
+    $('.events__swiper-wrapper').addClass('swiper-wrapper')
+    $('.events__pagination').css('display', 'block')
+    const swiper5 = new Swiper('.events__swiper', {
+        preloadImages: true,
+        loop: true,
+        slidesPerGroup: 1,
+        slidesPerView: 1,
+        spaceBetween: 21,
+        centeredSlides: true,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+}

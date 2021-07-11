@@ -2,23 +2,13 @@ $(document).ready(function () {
     // gallery select
     const element1 = document.querySelector('#id-filter-1');
     const choices1 = new Choices(element1, {
+        silent: true,
         placeholder: true,
         searchEnabled: false,
-          itemSelectText: '',
+        itemSelectText: '',
         position: 'bottom',
         renderSelectedChoices: 'always',
     });
-    // choices1.setChoices(
-    //   [
-    //     { value: 'One', label: 'Живопись', selected: true },
-    //     { value: 'One', label: 'Рисунок', },
-    //     { value: 'Two', label: 'Скульптура', },
-    //   ],
-    //   'value',
-    //   'label',
-    //   false,
-    // );  
-
 
     // gallery modal
     $('.gallery__slide').click(function () {
@@ -97,13 +87,21 @@ $(document).ready(function () {
 
         $(`[data-path="${path}"]`).addClass('lang-tabs__btn_active')
         $(`[data-target="${path}"]`).addClass('catalog__language_active')
+        
+        $('.catalog__language_active').find('.catalog__item-btn').removeClass('catalog__item-btn_active')
+        $('.catalog__language_active').find('.catalog__author').removeClass('author_active')
+        $('.catalog__language_active').find('.catalog__item-btn').first().addClass('catalog__item-btn_active')
+        $('.catalog__language_active').find('.catalog__author').first().addClass('author_active')
     })
 
     $('.catalog__item-btn').on('click', function () {
         const path = $(this).data('path')
+        // let parent = $(this).parents('.catalog__language')
+        $('.catalog__language_active').find('.catalog__item-btn').removeClass('catalog__item-btn_active')
+        $('.catalog__language_active').find('.catalog__author').removeClass('author_active')
 
-        $('.catalog__item-btn').removeClass('catalog__item-btn_active')
-        $('.catalog__author').removeClass('author_active')
+        // $('.catalog__item-btn').removeClass('catalog__item-btn_active')
+        // $('.catalog__author').removeClass('author_active')
 
         $(`[data-path="${path}"]`).addClass('catalog__item-btn_active')
         $(`[data-target="${path}"]`).addClass('author_active')

@@ -12,7 +12,7 @@ $(document).ready(function () {
         })
     }
     if ((screen.width <= 1024) || (window.innerWidth <= 1024)) {
-        $('.nav__top-search-toogle').on('click', function () {
+        $('.nav__top-search-toggle').on('click', function () {
             $('.nav__bottom').toggleClass('nav__bottom_active')
         })
         $('.nav__bottom-search-close').on('click', function () {
