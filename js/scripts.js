@@ -87,7 +87,7 @@ $(document).ready(function () {
 
         $(`[data-path="${path}"]`).addClass('lang-tabs__btn_active')
         $(`[data-target="${path}"]`).addClass('catalog__language_active')
-        
+
         $('.catalog__language_active').find('.catalog__item-btn').removeClass('catalog__item-btn_active')
         $('.catalog__language_active').find('.catalog__author').removeClass('author_active')
         $('.catalog__language_active').find('.catalog__item-btn').first().addClass('catalog__item-btn_active')
@@ -175,30 +175,48 @@ $(document).ready(function () {
 
     //   publication
 
-    function showChecked() {
+
+    function showCheckedGenre() {
         $('.genre__label').each(function (index, value) {
-            if ($(this).children('.genre__checkbox').is(':checked')) {
+            console.log($(this).find(':first-child')[0])
+            let checkbox = $(this).find(':first-child')[0]
+            console.log($(checkbox).prop("checked"))
+            console.log($(checkbox).is(":checked"))
+            if ($(checkbox).is(':checked')) {
+                console.log('checked')
                 $(this).css('display', 'flex')
                 $(this).addClass('genre__label_checked')
             } else {
                 $(this).css('display', 'none')
             }
         });
+        $('.genre__label_checked').each(function (index, element) {
+            $(element).on('click', function () {
+                console.log('click')
+                if ($('.genre__heading').hasClass('pub-angle-down')) {
+                $(this).removeClass('genre__label_checked')
+                $(this).children('.genre__checkbox').prop('checked', false)
+                $(this).hide(300)
+                }
+            })
+        })
     }
 
     if ((screen.width <= 550) || (window.innerWidth <= 550)) {
-        showChecked()
+        showCheckedGenre()
+        
         $('.genre__heading').on('click', function () {
             $('.genre__heading').toggleClass('pub-angle-down')
             $('.genre__heading').toggleClass('pub-angle-up')
 
             if ($('.genre__heading').hasClass('pub-angle-down')) {
-                showChecked()
-                hideUnchecked()
+                showCheckedGenre()
             } else {
                 $('.genre__label').css('display', 'flex')
+                $('.genre__label').removeClass('genre__label_checked')
             }
         })
+
         var sc = document.createElement('script');
         sc.src = 'https://sourse.xakplant.ru/lib/js/stickjaw.min.js';
         sc.type = 'text/javascript';
@@ -209,15 +227,6 @@ $(document).ready(function () {
         // var sj = new SJ();
     }
 
-    function hideUnchecked() {
-        $('.genre__label_checked').each(function (index, element) {
-            $(element).on('click', function () {
-                $(this).removeClass('genre__label_checked')
-                $(this).children('.genre__checkbox').prop('checked', false)
-                $(this).hide(300)
-            })
-        })
-    }
 
     // projects
 

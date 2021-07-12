@@ -730,7 +730,7 @@
         line-height: 32px;
         cursor: pointer;
     }
-    .pub-angle-down::after {
+    .pub-angle-down::after, .pub-angle-up::after {
         display: inline-block;
     }
     .genre__form {
@@ -738,20 +738,21 @@
         column-gap: unset;
         columns: unset;
         margin-bottom: 29px;
+        border-bottom: 1px solid rgba(255,255,255,0.5)
     }
     .genre__form_active {
         display: flex;
     }
     .genre__label {
         padding-top: 4px;
-        width: 96%;
+        width: 100%;
     }
     .genre__label_checked::before {
         content: '';
         cursor: pointer;
         position: absolute;
         top: calc(50% - 2px);
-        right: -12px;
+        right: 0;
         width: 12px;
         height: 12px;
         cursor: pointer;
@@ -760,6 +761,7 @@
         background-size: contain;
         background-image: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.63623' width='37.2838' height='3.72838' transform='rotate(45 2.63623 0)' fill='%239D5CD0'/%3E%3Crect y='26.3636' width='37.2838' height='3.72838' transform='rotate(-45 0 26.3636)' fill='%239D5CD0'/%3E%3C/svg%3E%0A");
     }
+
     .genre__text {
         font-size: 16px;
     }
@@ -893,6 +895,7 @@
     .footer__logo {
         margin-right: 0;
         height: 22px;
+        width: 97px;
     }
     .footer__social {
         margin-bottom: 15px;
@@ -961,7 +964,7 @@
     }
     .nav__top-block {
         padding: 4.5% 5% 9% 4.5%;
-        height: 355px;
+        min-height: 355px;
     }
     .nav__top-burger-close {
         width: 15px;
