@@ -144,9 +144,9 @@ const swiper4 = new Swiper('.partners__swiper', {
 });
 
 if ((width <= 550) || (window.innerWidth <= 550)) {
+    $(".events__list, .events__pagination").wrapAll("<div class='events__swiper swiper-container'></div>");
     $('.events__list').removeClass('events__list')
     $('.events__item').addClass('swiper-slide')
-    $('.events__swiper').addClass('swiper-container')
     $('.events__swiper-wrapper').addClass('swiper-wrapper')
     $('.events__pagination').css('display', 'block')
     const swiper5 = new Swiper('.events__swiper', {
