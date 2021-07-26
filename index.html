@@ -66,42 +66,24 @@
 <body>
   <a href="#" class="btn-to-top" aria-label="Кнопка навигации - вернуться в началу страницы">Наверх</a>
   <header class="header">
-    <nav class="header__nav  nav">
+    <nav class="header__nav nav">
       <div class="nav__top">
         <div class="nav__top-container container">
-          <button class="nav__toggle toggle btn"><span class="toggle__span"></span></button>
+          <button type="button" class="nav__toggle btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <img src="img/main_logo.png" alt="Логотип галереи Blanchard" class="header__logo">
           <div class="nav__top-block">
-            <button class="nav__top-burger-close">
-              <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2.63623" width="37.2838" height="3.72838" transform="rotate(45 2.63623 0)" fill="white" />
-                <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white" />
-              </svg>
-            </button>
             <ul class="nav__top-list">
-              <li class="nav__top-item">
-                <a href="#about" class="nav__top-link">
-                  О нас
-                </a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#gallery" class="nav__top-link">Галерея</a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#catalog" class="nav__top-link">Каталог</a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#events" class="nav__top-link">События</a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#publication" class="nav__top-link">Издания</a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#projects" class="nav__top-link">Проекты</a>
-              </li>
-              <li class="nav__top-item">
-                <a href="#contacts" class="nav__top-link">Контакты</a>
-              </li>
+              <li class="nav__top-item"><a href="#about" class="nav__top-link">О нас</a></li>
+              <li class="nav__top-item"><a href="#gallery" class="nav__top-link">Галерея</a></li>
+              <li class="nav__top-item"><a href="#catalog" class="nav__top-link">Каталог</a></li>
+              <li class="nav__top-item"><a href="#events" class="nav__top-link">События</a></li>
+              <li class="nav__top-item"><a href="#publication" class="nav__top-link">Издания</a></li>
+              <li class="nav__top-item"><a href="#projects" class="nav__top-link">Проекты</a></li>
+              <li class="nav__top-item"><a href="#contacts" class="nav__top-link">Контакты</a></li>
             </ul>
             <div class="nav__top-sign-in-btn">
               <a href="#catalog" class="nav__top-link nav__top-link_sign-in"
@@ -109,6 +91,19 @@
             </div>
           </div>
           <button class="nav__top-search-toggle"></button>
+          <div class="header__search-wrapper">
+            <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
+              <!-- <label class="search__label" for="search" tabindex="0"></label> -->
+              <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
+              aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
+              <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
+            </form>
+            <button class="nav__bottom-search-close btn btn-close">
+              <svg class="btn-close__icon">
+                <use xlink:href="img/icons/sprite.svg#search-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <div class="nav__bottom">
@@ -245,17 +240,7 @@
               </div>
             </li>
           </ul>
-          <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-            <!-- <label class="search__label" for="search" tabindex="0"></label> -->
-            <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
-              aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
-            <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
-          </form>
-          <button class="nav__bottom-search-close btn btn-close">
-            <svg class="btn-close__icon">
-              <use xlink:href="img/icons/sprite.svg#search-close"></use>
-            </svg>
-          </button>
+          
         </div>
       </div>
     </nav>

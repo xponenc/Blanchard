@@ -1,6 +1,30 @@
+window.onload = function () {
+    const target = document.querySelector('header')
+    target.addEventListener("click", documentActions);
+    function documentActions(e) {
+        const targetElement = e.target;
+        console.log(targetElement)
+
+        if (window.innerWidth <= 1024) {
+            if (!targetElement.closest('.header__search') && document.querySelector('.nav__top-search-toggle').classList.contains('nav__top-search-toggle_hide')) {
+                document.querySelector('.header__search-wrapper').classList.remove('header__search-wrapper_active');
+                setTimeout(function () {
+                    document.querySelector('.nav__top-search-toggle').classList.remove('nav__top-search-toggle_hide')
+                }, 150);
+            }
+            if (targetElement.classList.contains('nav__top-search-toggle')) {
+                targetElement.classList.add('nav__top-search-toggle_hide')
+                document.querySelector('.header__search-wrapper').classList.add('header__search-wrapper_active');
+            }
+        }
+    }
+}
+
+
 $(document).ready(function () {
     if (window.innerWidth <= 1360) {
         $('.nav__toggle').on('click', function () {
+            $(this).toggleClass('nav__toggle_active')
             $('.nav__top-block').toggleClass('nav__top-block_active')
             $('.nav__top-sign-in-btn').toggleClass('btn_simple btn')
             $('.nav__top-burger-close').toggleClass('nav__top-burger-close_active')
@@ -11,17 +35,6 @@ $(document).ready(function () {
             $('.nav__top-burger-close').toggleClass('nav__top-burger-close_active')
         })
     }
-    if ((screen.width <= 1024) || (window.innerWidth <= 1024)) {
-        $('.nav__top-search-toggle').on('click', function () {
-            $('.nav__bottom').toggleClass('nav__bottom_active')
-        })
-        $('.nav__bottom-search-close').on('click', function () {
-            $('.nav__bottom').toggleClass('nav__bottom_active')
-        })
-    }
-    // if (((screen.width <= 1360) && (screen.width > 768)) || ((window.innerWidth <= 1360) && (window.innerWidth > 768))) {
-    //     $('.search__btn').insertAfter($('.search__label'));
-    // }
 
     $('.nav__bottom-link').on('click', function () {
         const btn = this
