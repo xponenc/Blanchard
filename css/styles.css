@@ -1637,7 +1637,6 @@
 }
 
 .genre__checkbox {
-    display: none;
     position: absolute;
     opacity: 0;
 }
@@ -1669,28 +1668,16 @@
     outline: 1px solid var(--accent-color);
 }
 
-.genre__label:focus {
-    color: var(--accent-color);
-}
-
-.genre__label:focus, .genre__label:hover {
+.genre__label:focus-within {
     color: var(--link-hover-color);
 }
 
-.genre__label:focus .genre__text::before, .genre__label:hover .genre__text::before {
+.genre__label:hover {
+    color: var(--link-hover-color);
+}
+
+.genre__label:focus-within .genre__text::before, .genre__label:hover .genre__text::before {
     border-color: var(--link-hover-color);
-}
-
-.genre__label:active {
-    color: var(--active-color);
-}
-
-.genre__label:active .genre__text::before {
-    border-color: var(--active-color);
-}
-
-.genre__label:active .genre__text::after {
-    opacity: 0;
 }
 
 .genre__checkbox:checked+.genre__text {
