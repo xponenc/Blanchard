@@ -178,12 +178,8 @@ $(document).ready(function () {
 
     function showCheckedGenre() {
         $('.genre__label').each(function (index, value) {
-            console.log($(this).find(':first-child')[0])
             let checkbox = $(this).find(':first-child')[0]
-            console.log($(checkbox).prop("checked"))
-            console.log($(checkbox).is(":checked"))
             if ($(checkbox).is(':checked')) {
-                console.log('checked')
                 $(this).css('display', 'flex')
                 $(this).addClass('genre__label_checked')
             } else {
@@ -192,11 +188,10 @@ $(document).ready(function () {
         });
         $('.genre__label_checked').each(function (index, element) {
             $(element).on('click', function () {
-                console.log('click')
                 if ($('.genre__heading').hasClass('pub-angle-down')) {
-                $(this).removeClass('genre__label_checked')
-                $(this).children('.genre__checkbox').prop('checked', false)
-                $(this).hide(300)
+                    $(this).removeClass('genre__label_checked')
+                    $(this).children('.genre__checkbox').prop('checked', false)
+                    $(this).hide(300)
                 }
             })
         })
@@ -204,7 +199,7 @@ $(document).ready(function () {
 
     if ((screen.width <= 550) || (window.innerWidth <= 550)) {
         showCheckedGenre()
-        
+
         $('.genre__heading').on('click', function () {
             $('.genre__heading').toggleClass('pub-angle-down')
             $('.genre__heading').toggleClass('pub-angle-up')
@@ -282,16 +277,118 @@ $(document).ready(function () {
 
     // events
 
+    // Функция загрузки карточек events
+    async function getEvents() {
+        const file = 'json/events.json'
+        let response = await fetch(file, {
+            method: "GET",
+        })
+        if (response.ok) {
+            let result = await response.json();
+            loadEvents(result);
+        } else {
+            alert("Ошибка")
+        }
+    }
+
+    function loadEvents(data) {
+        let eventsItem = document.querySelector('.events__list')
+        if (!eventsItem) {
+            eventsItem = document.querySelector('.events__swiper-wrapper')
+        }
+
+        data.events.forEach(item => {
+            const eventUrl = item.url
+            const eventPlace = item.place
+            const eventDate = item.date
+            const eventSubheading = item.subheading
+            const eventImage = item.image
+            const eventDescription = item.description
+
+            let eventTemplate = `<li class="events__item event swiper-slide">
+                                    <div class="event__image ibg">
+                                        <img src="img/events/${eventImage}" alt="${eventSubheading}">
+                                    </div>
+                                    <div class="event__block">
+                                        <div class="event__info">
+                                        <span class="event__place">${eventPlace}</span>
+                                        <span class="event__date">${eventDate}</span>
+                                        </div>
+                                        <h3 class="event__subheading subheading">${eventSubheading}</h3>
+                                        <p class="event__description">${eventDescription}</p>
+                                    </div>
+                                    <div class="event__footer">
+                                        <a class="event__link" href="${eventUrl}">Подробнее</a>
+                                    </div>
+                                </li>`
+            eventsItem.insertAdjacentHTML('beforeend', eventTemplate)
+        })
+        ibg();
+        hideEvents();
+        // Инициализация свайпера на разрешении меньше 550
+        if ((width <= 550) || (window.innerWidth <= 550)) {
+            $(".events__list, .events__pagination").wrapAll("<div class='events__swiper swiper-container'></div>");
+            $('.events__list').addClass('events__swiper-wrapper')
+            $('.events__list').removeClass('events__list')
+            $('.events__swiper-wrapper').addClass('swiper-wrapper')
+            const swiper5 = new Swiper('.events__swiper', {
+                preloadImages: true,
+                loop: true,
+                slidesPerGroup: 1,
+                slidesPerView: 1,
+                spaceBetween: 21,
+                centeredSlides: true,
+                pagination: {
+                    el: ".events__pagination",
+                    clickable: true,
+                },
+            });
+        }
+    }
+
+    function hideEvents() {
+        let events = document.querySelectorAll(".events__item");
+        let showItems = 7
+        if (events) {
+            if ((window.width >= 667) || (window.innerWidth >= 768)) {
+                showItems = 2
+            } if ((window.width >= 1024) || (window.innerWidth >= 1320)) {
+                showItems = 3
+            }
+            for (var i = 0; i < events.length; i++) {
+                if (i + 1 > showItems) {
+                    events[i].classList.add('events__item_hide')
+                }
+            }
+        }
+    }
+
+    getEvents()
+
     $('.events__btn').on('click', function (event) {
         event.preventDefault();
         $(this).addClass('visually-hidden')
-        $('.events__item').css('display', 'flex')
-        $('.events__item').css('opacity', '1')
+        document.querySelectorAll('.events__item').forEach(n => n.classList.remove('events__item_hide'))
+        // $('.events__item').css('display', 'flex')
+        // $('.events__item').css('opacity', '1')
     })
+
 
     // LazyLoad
     var lazyLoadInstance = new LazyLoad({
     });
+
+    // отзывчивые изображения
+    function ibg() {
+        let ibg = document.querySelectorAll(".ibg");
+        for (var i = 0; i < ibg.length; i++) {
+            if (ibg[i].querySelector('img')) {
+                ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+            }
+        }
+    }
+
+    ibg();
 
 
 });

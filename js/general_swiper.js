@@ -142,24 +142,3 @@ const swiper4 = new Swiper('.partners__swiper', {
         prevEl: '.partners__swiper-control .swiper-control__btn_prev',
     },
 });
-
-if ((width <= 550) || (window.innerWidth <= 550)) {
-    $(".events__list, .events__pagination").wrapAll("<div class='events__swiper swiper-container'></div>");
-    $('.events__list').removeClass('events__list')
-    $('.events__item').addClass('swiper-slide')
-    $('.events__swiper-wrapper').addClass('swiper-wrapper')
-    $('.events__pagination').css('display', 'block')
-    const swiper5 = new Swiper('.events__swiper', {
-        preloadImages: true,
-        loop: true,
-        slidesPerGroup: 1,
-        slidesPerView: 1,
-        spaceBetween: 21,
-        centeredSlides: true,
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
-}
