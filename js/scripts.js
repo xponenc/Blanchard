@@ -264,7 +264,7 @@ $(document).ready(function () {
             if (positionX + widthTooltip / 2 > widthParent) {
                 var leftOverflow = positionX + widthTooltip / 2 - widthParent + $(element).innerWidth() / 2
                 var leftShift = widthTooltip / 2 + leftOverflow
-                $(element).children('.tooltiptext').css('margin-left', - leftShift - 10)
+                $(element).children('.tooltiptext').css('margin-left', - leftShift)
             }
             // Проверка - тултип вылез влево
             if (positionX - widthTooltip / 2 < 0) {
