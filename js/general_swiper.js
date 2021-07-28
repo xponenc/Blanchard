@@ -56,6 +56,7 @@ if (width > 550) {
         lazy: true,
         watchSlidesVisibility: true,
         loop: true,
+        // autoHeight: true,
         breakpoints: {
             240: {
                 slidesPerGroup: 2,
@@ -90,7 +91,6 @@ if (width > 550) {
         },
     });
 } else {
-    console.log('ПАБ')
     $('.publication__slide').removeClass('swiper-slide')
     $('.publication__swiper').removeClass('swiper-container')
     $('.publication__swiper-wrapper').removeClass('swiper-wrapper')
