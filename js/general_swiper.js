@@ -90,16 +90,19 @@ if (width > 550) {
         },
     });
 } else {
+    console.log('ПАБ')
     $('.publication__slide').removeClass('swiper-slide')
     $('.publication__swiper').removeClass('swiper-container')
     $('.publication__swiper-wrapper').removeClass('swiper-wrapper')
 
-    $('.publication__slide-item').each(function (index, element) {
-        var bgnd = $(element).children('.publication__slide-img').attr('data-background')
-        $(element).children('.publication__slide-img').css('background-image', 'url(' + bgnd + ')')
-        $(element).css('opacity', 1)
-        $(element).removeAttr('data-background')
-        $(element).children('.publication__slide-img').children('.swiper-lazy-preloader').remove()
+    $('.publication__slide-img').each(function (index, element) {
+        var bgnd = $(element).children('img').attr('data-src')
+        $(element).css('background-image', 'url(' + bgnd + ')')
+        $(element).css('background-size', 'contain')
+
+        // $(element).css('opacity', 1)
+        // $(element).removeAttr('data-background')
+        $(element).children('.swiper-lazy-preloader').remove()
     })
 }
 

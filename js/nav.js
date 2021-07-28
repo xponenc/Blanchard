@@ -1,4 +1,5 @@
 window.onload = function () {
+    console.log('скрпт')
     const target = document.querySelector('header')
     target.addEventListener("click", headerActions);
     function headerActions(e) {
@@ -38,7 +39,22 @@ window.onload = function () {
             }
         }
     }
+
+    window.addEventListener('resize', function (event) {
+        searchFormMove()
+    }, true);
+
 }
+
+// Перемещение формы поиска в subemnu при >= 1360px
+function searchFormMove() {
+    if (window.innerWidth >= 1360) {
+        const navSubTarget = document.querySelector('.nav__bottom-container')
+        const searthFormItem = document.querySelector('.header__search-wrapper')
+        navSubTarget.appendChild(searthFormItem)
+    }
+}
+searchFormMove()
 
 //Инициализация прокруток в пунктах субменю
 Array.prototype.forEach.call(

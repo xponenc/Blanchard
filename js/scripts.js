@@ -1,3 +1,13 @@
+// window.onload = function () {
+//     const target = document.querySelector('main')
+//     target.addEventListener("click", mainActions);
+//     function mainActions(e) {
+//         const targetElement = e.target;
+//         console.log(targetElement)
+//     }
+// }
+
+
 $(document).ready(function () {
     // gallery select
     const element1 = document.querySelector('#id-filter-1');
