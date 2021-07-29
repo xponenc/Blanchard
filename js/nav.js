@@ -32,7 +32,11 @@ window.onload = function () {
         // Открытие-закрытие бургера
         if (window.innerWidth <= 1360) {
             if (targetElement.classList.contains('.nav__toggle') || targetElement.closest('.nav__toggle')) {
-                targetElement.classList.toggle('nav__toggle_active')
+                if (targetElement.classList.contains('.nav__toggle')) {
+                    targetElement.classList.toggle('nav__toggle_active')
+                } else {
+                    targetElement.closest('.nav__toggle').classList.toggle('nav__toggle_active')
+                }
                 document.querySelector('.nav__top-block').classList.toggle('nav__top-block_active')
                 document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn_simple')
                 document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn')
