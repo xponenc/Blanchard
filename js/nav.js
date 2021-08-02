@@ -19,7 +19,7 @@ window.onload = function () {
             if (!targetElement.closest('.header__search') && document.querySelector('.nav__top-search-toggle').classList.contains('nav__top-search-toggle_hide')) {
                 document.querySelector('.header__search-wrapper').classList.remove('header__search-wrapper_active');
                 if (window.innerWidth <= 900 && window.innerWidth > 768) {
-                    document.querySelector('.header__logo').classList.toggle('header__logo__hide') 
+                    document.querySelector('.header__logo').classList.toggle('header__logo__hide')
                 }
                 setTimeout(function () {
                     document.querySelector('.nav__top-search-toggle').classList.remove('nav__top-search-toggle_hide')
@@ -29,7 +29,7 @@ window.onload = function () {
                 targetElement.classList.add('nav__top-search-toggle_hide')
                 document.querySelector('.header__search-wrapper').classList.add('header__search-wrapper_active');
                 if (window.innerWidth <= 900 && window.innerWidth > 768) {
-                    document.querySelector('.header__logo').classList.toggle('header__logo__hide') 
+                    document.querySelector('.header__logo').classList.toggle('header__logo__hide')
                 }
             }
         }
@@ -73,6 +73,11 @@ window.onload = function () {
         if (targetElement.classList.contains('events__btn')) {
             targetElement.classList.add('visually-hidden')
             document.querySelectorAll('.events__item').forEach(n => n.classList.remove('events__item_hide'))
+        }
+        // PUBLICATIONS: открытие/закрытие фильтра жанров при изменении поведения формы на 550px и меньше
+        if (targetElement.classList.contains('genre__heading') && ((screen.width <= 550) || (window.innerWidth <= 550))) {
+            targetElement.classList.toggle('genre__heading_open')
+            showFormGenre()
         }
         // TOTAL: Скроллинги
         // Основное меню навигации, кнопка в hero, кнопки перехода в Gallery из Catalog
@@ -373,7 +378,7 @@ window.onload = function () {
         isAriaHid = target.nextSibling.getAttribute('aria-hidden');
         newAriaHid = (isAriaHid == "true") ? "false" : "true";
         target.nextSibling.setAttribute('aria-hidden', newAriaHid);
-        
+
         for (var i = 0; i < accordionButtons.length; i++) {
             if (accordionButtons[i] != target) {
                 if (($(accordionButtons[i]).getAttribute('aria-expanded')) == 'true') {
@@ -585,5 +590,61 @@ window.onload = function () {
                 }
             }
         }
+    }
+    // PUBLICATIONS============================================================================================================
+    //  Форма фильтров Категории жанров
+    if ((screen.width <= 550) || (window.innerWidth <= 550)) {
+        showFormGenre()
+    }
+    function showFormGenre() {
+        let checkTargetIsOpen = document.querySelector('.genre__heading').classList.contains('genre__heading_open')
+        let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
+        if (checkTargetIsOpen) {
+            genreCheckboxes.forEach(e => {
+                e.style.cssText = `display: flex;`
+                e.classList.remove('checkbox-genre_checked')
+            })
+        } else {
+            genreCheckboxes.forEach(e => {
+                if (e.querySelector('.checkbox-genre__input').checked) {
+                    e.style.cssText = `display: flex;`
+                    e.classList.add('checkbox-genre_checked')
+                    e.addEventListener("click", function () {
+                        if (!document.querySelector('.genre__heading').classList.contains('genre__heading_open')) {
+                            e.classList.remove('checkbox-genre_checked')
+                            e.querySelector('.checkbox-genre__input').checked = false
+                            e.style.cssText = `display: none;`
+                        }
+                    });
+                } else {
+                    e.style.cssText = `display: none;`
+                }
+            })
+        }
+    }
+
+    // PROJECTS============================================================================================================
+    // Тултип - поправка положения тела тултипа для избежения вылета за пределы контейнера
+    shiftToopltip()
+
+    function shiftToopltip() {
+        const toopltipsList = document.querySelectorAll('.tooltip')
+        toopltipsList.forEach(element => {
+            let positionX = element.offsetLeft;
+            let widthParent = element.parentElement.offsetWidth
+            let widthTooltip = element.querySelector('.tooltiptext').offsetWidth
+            // Проверка - тултип вылез вправо
+            if (positionX + widthTooltip / 2 > widthParent) {
+                let leftOverflow = positionX + widthTooltip / 2 - widthParent + element.offsetWidth / 2
+                let leftShift = widthTooltip / 2 + leftOverflow
+                element.querySelector('.tooltiptext').style.cssText = `margin-left: -${leftShift}px;`
+            }
+            // Проверка - тултип вылез влево
+            if (positionX - widthTooltip / 2 < 0) {
+                let rightOverflow = positionX - widthTooltip / 2
+                let rightShift = widthTooltip / 2 + rightOverflow
+                element.querySelector('.tooltiptext').style.cssText = `margin-left: -${rightShift}px;`
+            }
+        })
     }
 }

@@ -178,56 +178,56 @@ $(document).ready(function () {
     //   publication
 
 
-    function showCheckedGenre() {
-        $('.genre__label').each(function (index, value) {
-            let checkbox = $(this).find(':first-child')[0]
-            if ($(checkbox).is(':checked')) {
-                $(this).css('display', 'flex')
-                $(this).addClass('genre__label_checked')
-            } else {
-                $(this).css('display', 'none')
-            }
-        });
-        $('.genre__label_checked').each(function (index, element) {
-            $(element).on('click', function () {
-                if ($('.genre__heading').hasClass('pub-angle-down')) {
-                    $(this).removeClass('genre__label_checked')
-                    $(this).children('.genre__checkbox').prop('checked', false)
-                    $(this).hide(300)
-                }
-            })
-        })
-    }
+    // function showCheckedGenre() {
+    //     $('.checkbox-genre').each(function (index, value) {
+    //         let checkbox = $(this).find(':first-child')[0]
+    //         if ($(checkbox).is(':checked')) {
+    //             $(this).css('display', 'flex')
+    //             $(this).addClass('checkbox-genre_checked')
+    //         } else {
+    //             $(this).css('display', 'none')
+    //         }
+    //     });
+    //     $('.checkbox-genre_checked').each(function (index, element) {
+    //         $(element).on('click', function () {
+    //             if (!$('.genre__heading').hasClass('genre__heading_open')) {
+    //                 $(this).removeClass('checkbox-genre_checked')
+    //                 $(this).children('.checkbox-genre__input').prop('checked', false)
+    //                 $(this).hide(300)
+    //             }
+    //         })
+    //     })
+    // }
 
-    if ((screen.width <= 550) || (window.innerWidth <= 550)) {
-        showCheckedGenre()
+    // if ((screen.width <= 550) || (window.innerWidth <= 550)) {
+    //     showCheckedGenre()
 
-        $('.genre__heading').on('click', function () {
-            $('.genre__heading').toggleClass('pub-angle-down')
-            $('.genre__heading').toggleClass('pub-angle-up')
+    //     $('.genre__heading').on('click', function () {
+    //         $('.genre__heading').toggleClass('genre__heading_open')
+    //         // $('.genre__heading').toggleClass('pub-angle-up')
 
-            if ($('.genre__heading').hasClass('pub-angle-down')) {
-                showCheckedGenre()
-            } else {
-                $('.genre__label').css('display', 'flex')
-                $('.genre__label').removeClass('genre__label_checked')
-            }
-        })
+    //         if ($('.genre__heading').hasClass('genre__heading_open')) {
+    //             $('.checkbox-genre').css('display', 'flex')
+    //             $('.checkbox-genre').removeClass('checkbox-genre_checked')
+    //         } else {
+    //             showCheckedGenre()
+    //         }
+    //     })
 
-        var sc = document.createElement('script');
-        sc.src = 'https://sourse.xakplant.ru/lib/js/stickjaw.min.js';
-        sc.type = 'text/javascript';
-        if (typeof sc['async'] !== 'undefined') {
-            sc.async = true;
-        }
-        $(sc).insertAfter($('.modal-overlay.closed'));
-        // var sj = new SJ();
-    }
+    //     var sc = document.createElement('script');
+    //     sc.src = 'https://sourse.xakplant.ru/lib/js/stickjaw.min.js';
+    //     sc.type = 'text/javascript';
+    //     if (typeof sc['async'] !== 'undefined') {
+    //         sc.async = true;
+    //     }
+    //     $(sc).insertAfter($('.modal-overlay.closed'));
+    //     // var sj = new SJ();
+    // }
 
 
     // projects
 
-    shiftToopltip()
+    // shiftToopltip()
     if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
         // console.log(screen.width, window.innerWidth)
         $('.tooltiptext-mark').click(function () {
@@ -256,26 +256,26 @@ $(document).ready(function () {
         })
     }
 
-    function shiftToopltip() {
-        $('.tooltip').each(function (index, element) {
-            var positionX = $(element).position().left;
-            var widthParent = $('.projects__text').innerWidth()
-            var widthTooltip = $(element).children('.tooltiptext').innerWidth()
+    // function shiftToopltip() {
+    //     $('.tooltip').each(function (index, element) {
+    //         var positionX = $(element).position().left;
+    //         var widthParent = $('.projects__text').innerWidth()
+    //         var widthTooltip = $(element).children('.tooltiptext').innerWidth()
 
-            // Проверка - тултип вылез вправо
-            if (positionX + widthTooltip / 2 > widthParent) {
-                var leftOverflow = positionX + widthTooltip / 2 - widthParent + $(element).innerWidth() / 2
-                var leftShift = widthTooltip / 2 + leftOverflow
-                $(element).children('.tooltiptext').css('margin-left', - leftShift)
-            }
-            // Проверка - тултип вылез влево
-            if (positionX - widthTooltip / 2 < 0) {
-                var rightOverflow = positionX - widthTooltip / 2
-                var rightShift = widthTooltip / 2 + rightOverflow
-                $(element).children('.tooltiptext').css('margin-left', - rightShift)
-            }
-        })
-    }
+    //         // Проверка - тултип вылез вправо
+    //         if (positionX + widthTooltip / 2 > widthParent) {
+    //             var leftOverflow = positionX + widthTooltip / 2 - widthParent + $(element).innerWidth() / 2
+    //             var leftShift = widthTooltip / 2 + leftOverflow
+    //             $(element).children('.tooltiptext').css('margin-left', - leftShift)
+    //         }
+    //         // Проверка - тултип вылез влево
+    //         if (positionX - widthTooltip / 2 < 0) {
+    //             var rightOverflow = positionX - widthTooltip / 2
+    //             var rightShift = widthTooltip / 2 + rightOverflow
+    //             $(element).children('.tooltiptext').css('margin-left', - rightShift)
+    //         }
+    //     })
+    // }
 
 
     // // LazyLoad

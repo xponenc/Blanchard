@@ -1582,7 +1582,7 @@
     margin-bottom: -1px;
 }
 
-.pub-angle-down::after, .pub-angle-up:after {
+/* .pub-angle-down::after, .pub-angle-up:after {
     content: '';
     display: none;
     position: absolute;
@@ -1601,7 +1601,7 @@
 
 .pub-angle-up:after {
     transform: rotate(180deg)
-}
+} */
 
 .genre__form {
     display: flex;
@@ -1611,7 +1611,7 @@
     margin-bottom: 25px;
 }
 
-.genre__label {
+/* .genre__label {
     position: relative;
     display: flex;
     align-items: center;
@@ -1619,11 +1619,6 @@
     outline: none;
     cursor: pointer;
 }
-
-/* .genre__checkbox {
-    position: absolute;
-    opacity: 0;
-} */
 
 .genre__text {
     display: flex;
@@ -1675,7 +1670,98 @@
 
 .genre__checkbox:checked .genre__text::after {
     opacity: 0;
-}
+} */
+
+.checkbox-genre {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 24px;
+    outline: none;
+    cursor: pointer;
+    /* font-size: 40px; */
+    line-height: 2;
+    transition: color 0.3s ease-in-out;
+    color: #fff;
+  }
+  
+  /* .checkbox-genre:not(:last-child) {
+    margin-bottom: 0.5em;
+  } */
+  
+  .checkbox-genre__box {
+    position: absolute;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--text-color-main);
+    border-color: inherit;
+  }
+  
+  .checkbox-genre__box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    margin-top: -2px;
+    border-radius: 50%;
+    background-color: var(--active-color);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .checkbox-genre:focus-within {
+    color: var(--link-hover-color);
+  }
+  
+  .checkbox-genre__text {
+    color: inherit;
+  }
+  .checkbox-genre__text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    right: -3px;
+    bottom: 0;
+    border: 1px solid var(--link-hover-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+  }
+  
+  .checkbox-genre:hover {
+    color: var(--link-hover-color);
+  }
+  
+  .checkbox-genre:active {
+    color: var(--active-color);
+  }
+  
+  .checkbox-genre__input:checked+.checkbox-genre__box::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .checkbox-genre__input:checked+.checkbox-genre__box {
+    color: var(--active-color);
+  }
+  
+  .checkbox-genre__input:checked~.checkbox-genre__text {
+    color: var(--active-color);
+  }
+  
+  .checkbox-genre__input:checked:focus~.checkbox-genre__text::after {
+    opacity: 1;
+  }
+  .js-focus-visible .checkbox-genre__input:checked:focus:not(.focus-visible)~.checkbox-genre__text::after {
+    opacity: 0;
+  }
 
 .price__subheading {
     display: inline-block;
