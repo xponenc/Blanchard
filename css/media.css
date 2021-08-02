@@ -706,6 +706,7 @@
         padding-right: 0;
     }
     .gallery__content {
+        margin-bottom: 60px;
         padding-top: 130px;
     }
     .gallery__swiper-control {
@@ -739,9 +740,6 @@
         margin: 0;
         min-height: 630px;
         /* height: auto; */
-    }
-    .events__pagination.swiper-pagination {
-        bottom: -5px;
     }
     .event__block {
         padding-top: 20px;
