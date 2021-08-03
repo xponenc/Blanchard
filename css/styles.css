@@ -1684,22 +1684,22 @@
     line-height: 2;
     transition: color 0.3s ease-in-out;
     color: #fff;
-  }
-  
-  /* .checkbox-genre:not(:last-child) {
+}
+
+/* .checkbox-genre:not(:last-child) {
     margin-bottom: 0.5em;
   } */
-  
-  .checkbox-genre__box {
+
+.checkbox-genre__box {
     position: absolute;
     left: 0;
     width: 12px;
     height: 12px;
     border: 1px solid var(--text-color-main);
     border-color: inherit;
-  }
-  
-  .checkbox-genre__box::after {
+}
+
+.checkbox-genre__box::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -1713,16 +1713,17 @@
     opacity: 0;
     transform: scale(0);
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .checkbox-genre:focus-within {
+}
+
+.checkbox-genre:focus-within {
     color: var(--link-hover-color);
-  }
-  
-  .checkbox-genre__text {
+}
+
+.checkbox-genre__text {
     color: inherit;
-  }
-  .checkbox-genre__text::after {
+}
+
+.checkbox-genre__text::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1732,36 +1733,36 @@
     border: 1px solid var(--link-hover-color);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+}
 
-  }
-  
-  .checkbox-genre:hover {
+.checkbox-genre:hover {
     color: var(--link-hover-color);
-  }
-  
-  .checkbox-genre:active {
+}
+
+.checkbox-genre:active {
     color: var(--active-color);
-  }
-  
-  .checkbox-genre__input:checked+.checkbox-genre__box::after {
+}
+
+.checkbox-genre__input:checked+.checkbox-genre__box::after {
     opacity: 1;
     transform: scale(1);
-  }
-  
-  .checkbox-genre__input:checked+.checkbox-genre__box {
+}
+
+.checkbox-genre__input:checked+.checkbox-genre__box {
     color: var(--active-color);
-  }
-  
-  .checkbox-genre__input:checked~.checkbox-genre__text {
+}
+
+.checkbox-genre__input:checked~.checkbox-genre__text {
     color: var(--active-color);
-  }
-  
-  .checkbox-genre__input:checked:focus~.checkbox-genre__text::after {
+}
+
+.checkbox-genre__input:checked:focus~.checkbox-genre__text::after {
     opacity: 1;
-  }
-  .js-focus-visible .checkbox-genre__input:checked:focus:not(.focus-visible)~.checkbox-genre__text::after {
+}
+
+.js-focus-visible .checkbox-genre__input:checked:focus:not(.focus-visible)~.checkbox-genre__text::after {
     opacity: 0;
-  }
+}
 
 .price__subheading {
     display: inline-block;
@@ -2036,37 +2037,31 @@
 .partners__swiper-slide {
     height: 100%;
     max-width: 448px;
-    /* border: 1px solid var(--muted-color); */
+    border: 1px solid var(--muted-color);
     outline: none;
     transition-property: border-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
+    cursor: pointer;
 }
 
 .partners__swiper-img {
     height: 100%;
     width: 100%;
-    cursor: pointer;
-    /* border: 1px solid var(--muted-color); */
-    /* background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat; */
-    /* border-color: var(--muted-color); */
-    filter: grayscale(100%);
-    opacity: 0.5;
-    transition-property: filter, opacity;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
 }
 
 .partners__swiper-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border: 1px solid red;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    object-fit: cover;
+    transition-property: filter, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
 }
 
-.partners__swiper-img:hover {
+.partners__swiper-img:hover img {
     filter: none;
     opacity: 1;
 }
@@ -2077,15 +2072,6 @@
 
 .partners__swiper-slide:active {
     border-color: #885BC7;
-}
-
-.partners__swiper-img img:active {
-    border-color: #885BC7;
-}
-
-.partners__swiper-slide:active .partners__swiper-img {
-    filter: none;
-    opacity: 1;
 }
 
 /* CONTACTS */
@@ -2135,7 +2121,7 @@
     border: 1px solid #333333;
     border-radius: 100px;
     outline: none;
-    transition-property: color, border-color;
+    transition-property: color, border-color, background-color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.3s;
 }

@@ -581,7 +581,7 @@ window.onload = function () {
         if (events) {
             if ((window.width >= 551) || (window.innerWidth >= 551)) {
                 showItems = 2
-            } if ((window.width >= 1024) || (window.innerWidth >= 1024)) {
+            } if ((window.width > 768) || (window.innerWidth > 768)) {
                 showItems = 3
             }
             for (var i = 0; i < events.length; i++) {
