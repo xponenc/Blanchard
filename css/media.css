@@ -764,7 +764,7 @@
     .genre__heading {
         position: relative;
         padding-top: 3px;
-        padding-bottom: 4px;
+        padding-bottom: 3px;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -805,7 +805,7 @@
     }
     .checkbox-genre {
         padding-top: 4px;
-        padding-bottom: 7px;
+        padding-bottom: 2px;
         width: 100%;
     }
     .checkbox-genre_checked::before {
@@ -848,7 +848,7 @@
     }
     .publication__slide {
         width: calc(100% / 2 - 30px / 2);
-        margin-bottom: 50px;
+        margin-bottom: 51px;
     }
     .publication__slide-img {
         height: 143px;
@@ -899,9 +899,7 @@
     .info__showroom {
         margin-bottom: 10px;
     }
-    .showroom__item {
-        margin-bottom: 0;
-    }
+   
     .showroom__title {
         font-size: 18px;
         line-height: 20px;
@@ -1297,7 +1295,7 @@
     .contacts__heading {
         margin-bottom: 15px;
     }
-    .showroom__item {
+    .info__showroom {
         line-height: 20px;
     }
     .showroom__address {
