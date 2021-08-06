@@ -73,7 +73,9 @@ window.onload = function () {
         // EVENTS: показ скрытых карточек по кнопке Все события
         if (targetElement.classList.contains('events__btn')) {
             targetElement.classList.add('visually-hidden')
-            document.querySelectorAll('.events__item').forEach(n => n.classList.remove('events__item_hide'))
+            // document.querySelectorAll('.events__item').forEach(n => n.classList.remove('events__item_hide'))
+            document.querySelectorAll('.events__item').forEach(n => n.classList.add('events__item_show'))
+
         }
         // PUBLICATIONS: открытие/закрытие фильтра жанров при изменении поведения формы на 550px и меньше
         if (targetElement.classList.contains('genre__heading') && ((screen.width <= 550) || (window.innerWidth <= 550))) {
@@ -127,6 +129,7 @@ window.onload = function () {
     window.addEventListener('resize', function (event) {
         searchFormMove() // NAV: Перемещение формы поиска
         catalogContentHeightCalc() // CATALOG: Временная функция для подсчета высоты размера поля контента в аккордеоне Каталога
+        gallery_slider.updateSize()
     }, true);
 
     // Реакция на скролл по странице
@@ -170,7 +173,9 @@ window.onload = function () {
         },
     });
     // SWIPER:GALLERY: swiper
-    new Swiper('.gallery__swiper', {
+    let gallery_slider = new Swiper('.gallery__swiper', {
+        observer: true,
+        observeParents: true,
         preloadImages: false,
         lazy: true,
         watchSlidesVisibility: true,
@@ -215,6 +220,8 @@ window.onload = function () {
     // Инициализируется на разрешении больше 550
     if ((screen.width > 550) || (window.innerWidth > 550)) {
         new Swiper('.publication__swiper', {
+            observer: true,
+            observeParents: true,
             preloadImages: false,
             lazy: true,
             watchSlidesVisibility: true,
@@ -256,16 +263,19 @@ window.onload = function () {
         if (publicationSlides.length > 0) {
             publicationSlides.forEach(element => {
                 let bgnd = element.querySelector('img').dataset.src
-                element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain;`
+                element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
                 element.querySelector('.swiper-lazy-preloader').remove()
             })
         }
     }
     // SWIPER:PROJECTS: swiper
-    new Swiper('.partners__swiper', {
+    new Swiper('.partners__slider-body', {
+        observer: true,
+        observeParents: true,
         preloadImages: false,
         lazy: true,
         watchSlidesVisibility: true,
+        speed: 600,
         loop: true,
         breakpoints: {
             240: {
@@ -274,7 +284,7 @@ window.onload = function () {
                 spaceBetween: 21,
                 // centeredSlides: true,
             },
-            768: {
+            551: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 34,
@@ -283,6 +293,7 @@ window.onload = function () {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 50,
+
             },
             1360: {
                 slidesPerView: 3,
@@ -296,19 +307,19 @@ window.onload = function () {
             clickable: true,
         },
         navigation: {
-            nextEl: '.partners__swiper-control .swiper-control__btn_next',
-            prevEl: '.partners__swiper-control .swiper-control__btn_prev',
+            nextEl: '.partners__slider-control .swiper-control__btn_next',
+            prevEl: '.partners__slider-control .swiper-control__btn_prev',
         },
     });
 
     // HEADER============================================================================================================
 
-    // Перемещение формы поиска в sub-menu при >= 1360px
+    // Перемещение формы поиска в sub-menu при >= 1024px
     function searchFormMove() {
         const navTarget = document.querySelector('.nav__top-container')
         const navSubTarget = document.querySelector('.nav__bottom-container')
         const searchFormItem = document.querySelector('.header__search-wrapper')
-        if (window.innerWidth >= 1360) {
+        if (window.innerWidth >= 1024) {
             navSubTarget.appendChild(searchFormItem)
         } else {
             navTarget.appendChild(searchFormItem)
@@ -615,7 +626,7 @@ window.onload = function () {
             }
             for (var i = 0; i < events.length; i++) {
                 if (i + 1 > showItems) {
-                    events[i].classList.add('events__item_hide')
+                    // events[i].classList.add('events__item_hide')
                 }
             }
         }

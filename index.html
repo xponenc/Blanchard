@@ -95,7 +95,7 @@
             <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
               <!-- <label class="search__label" for="search" tabindex="0"></label> -->
               <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
-              aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
+                aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
               <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
             </form>
             <button class="nav__bottom-search-close btn btn-close">
@@ -1507,7 +1507,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-1.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-1.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1523,7 +1523,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-2.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-2.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1539,7 +1539,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-3.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-3.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1555,7 +1555,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-4.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-4.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1571,7 +1571,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-5.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-5.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1587,7 +1587,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-6.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-6.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1603,7 +1603,7 @@
               <div class="publication__slide swiper-slide">
                 <div class="publication__slide-item pub-item">
                   <div class="publication__slide-img" data-proportion-h="1.11">
-                    <img data-src="img/publication/pub-7.jpg" class="swiper-lazy" src="img/1x1.png" alt=""/>
+                    <img data-src="img/publication/pub-7.jpg" class="swiper-lazy" src="img/1x1.png" alt="" />
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="publication__slide-info">
@@ -1644,70 +1644,81 @@
         </p>
         <div class="projects__partners partners">
           <h3 class="partners__subheading subheading">Партнёры проектов:</h3>
-          <div class="partners__swiper-control swiper-control swiper-navigation">
-            <button class="swiper-control__btn swiper-control__btn_prev"
-              aria-label="Перейти на предыдущий слайд"></button>
-            <button class="swiper-control__btn swiper-control__btn_next"
-              aria-label="Перейти на следующий слайд"></button>
-          </div>
-          <div class="partners__swiper swiper-container">
-            <div class="partners__swiper-wrapper swiper-wrapper">
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/freelands.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+          <div class="partners__slider">
+            <div class="partners__slider-control swiper-control swiper-navigation">
+              <button class="swiper-control__btn swiper-control__btn_prev"
+                aria-label="Перейти на предыдущий слайд"></button>
+              <button class="swiper-control__btn swiper-control__btn_next"
+                aria-label="Перейти на следующий слайд"></button>
+            </div>
+            <div class="partners__slider-body slider-partners swiper-container">
+              <div class="swiper-wrapper">
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/freelands.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/ica.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/ica.png" src="img/1x1.png" alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/workhouse.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/workhouse.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/1849.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/1849.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/hiscox.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/hiscox.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/camden.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/camden.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/stassen.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/stassen.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/watts.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/watts.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="partners__swiper-slide swiper-slide" tabindex="0">
-                <div class="partners__swiper-img">
-                  <img class="swiper-lazy" data-src="img/partners/esad.png" src="img/1x1.png" alt="Логотип партнера"/>
-                  <div class="swiper-lazy-preloader"></div>
+                <div class="slider-partners__slide swiper-slide" tabindex="0">
+                  <div class="slider-partners__img">
+                    <img class="swiper-lazy" data-src="img/partners/esad.png" src="img/1x1.png"
+                      alt="Логотип партнера" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -1717,10 +1728,10 @@
       <div class="contacts__container">
         <div class="contacts__info info info">
           <div class="info__showroom showroom">
-           <!--  <li class="showroom__item"> -->
-              <h3 class="showroom__title subheading">Шоурум №4</h3>
-              <span class="showroom__address">Леонтьевский переулок, дом 5, строение 1</span>
-            </div>
+            <!--  <li class="showroom__item"> -->
+            <h3 class="showroom__title subheading">Шоурум №4</h3>
+            <span class="showroom__address">Леонтьевский переулок, дом 5, строение 1</span>
+          </div>
           <!-- <div class="contacts__block"> -->
           <h3 class="contacts__subheading subheading">Заказать обратный звонок</h3>
           <!-- <div class="contacts__form contact-form"> -->
