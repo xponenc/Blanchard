@@ -30,7 +30,7 @@
     }
     /* contacts =======================================================  */
     .contacts__info {
-        padding: 124px 5% 93px 5%;
+        /* padding: 124px 5% 93px 5%; */
         width: min(483px, 47.2%);
     }
     .contacts__map {
@@ -384,6 +384,15 @@
     }
     .contact-form {
         margin-bottom: 37px;
+    }
+    .contact-form__checkbox {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkbox__lable {
+        margin-bottom: 22px;
+        margin-left: 15px;
     }
     .contact-form__btn {
         padding: 14px 32px;

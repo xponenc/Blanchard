@@ -2103,7 +2103,7 @@
 .contacts__info {
     display: flex;
     flex-direction: column;
-    padding: 124px 6.2% 113px calc((100vw - var(--container-max-width)) / 2);
+    padding: 124px 6.2% 113px max(15px, calc((100vw - var(--container-max-width)) / 2));
     width: min(682px, 35.5%);
     border: 1px solid var(--muted-color);
 }
