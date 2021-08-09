@@ -1859,6 +1859,7 @@
     align-items: flex-start;
     width: 100%;
     max-width: 350px;
+    /* height: 100%; */
 }
 
 .publication__slide-img {
@@ -1871,10 +1872,13 @@
 
 .publication__slide-info {
     display: grid;
+    /* flex: 1 1 auto; */
     grid-template-columns: 70% calc(30% - 10px);
     column-gap: 10px;
     justify-content: space-between;
+    justify-content:flex-start;
     margin-bottom: 3px;
+    margin-bottom: auto;
     width: 100%;
 }
 

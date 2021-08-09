@@ -378,7 +378,7 @@ window.onload = function () {
             document.querySelector('.modal-overlay').classList.toggle("closed")
         }
         else {
-            // document.querySelector('.gallery__swiper-control').insertAdjacentHTML('afterend', modal)
+            document.querySelector('.gallery__swiper-control').insertAdjacentElement('afterend', modal)
             modal.classList.toggle("closed")
         }
     }
