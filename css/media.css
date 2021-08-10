@@ -12,7 +12,6 @@
     .nav__bottom-item {
         margin-right: 1vw;
     }
-    
     /* catalog =======================================================  */
     .catalog__content {
         width: 40%;
@@ -61,7 +60,6 @@
         line-height: 33px;
     }
     /* header =======================================================  */
-
     .header__nav {
         position: relative;
     }
@@ -173,8 +171,7 @@
     .nav__bottom {
         display: none;
     }
-/*  */
-
+    /*  */
     .nav__toggle {
         margin-right: 0;
     }
@@ -319,7 +316,9 @@
     }
     /* publication =======================================================  */
     .publication__info {
-        width: calc(100% - 629px);
+        /* width: calc(100% - 629px); */
+        flex: 1 1 auto;
+        min-width: 270px;
     }
     .price__form {
         width: 97%;
@@ -331,7 +330,7 @@
         padding-bottom: 78px;
     }
     .publication__content {
-        width: 629px;
+        width: calc(629 /924 * 100%);
     }
     .publication__swiper-control {
         left: 0;
@@ -339,8 +338,8 @@
     .publication__swiper {
         padding-left: 0;
     }
-    .publication__slide {
-        width: 290px;
+    .publication__slide-item {
+        max-width: 290px;
     }
     .publication__slide-img {
         height: 320px;
@@ -367,9 +366,7 @@
         border-style: none;
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 16.001C12.4183 16.001 16 12.4193 16 8.00098C16 3.5827 12.4183 0.000976562 8 0.000976562C3.58172 0.000976562 0 3.5827 0 8.00098C0 12.4193 3.58172 16.001 8 16.001Z' fill='%239D5CD0'/%3E%3Cpath d='M10.9111 4.49268L11.9555 5.53702L5.20621 12.2863L4.16187 11.2419L10.9111 4.49268Z' fill='white'/%3E%3Cpath d='M11.7939 11.0811L10.7496 12.1254L4.00034 5.37613L5.04468 4.33179L11.7939 11.0811Z' fill='white'/%3E%3C/svg%3E%0A");
     }
-
     .partners__slider-body {
-       
         margin: 0 calc((100% - (818 /925 * 100%)) / 2);
     }
     .slider-partners__slide {
@@ -389,7 +386,6 @@
         flex-direction: column;
         align-items: flex-start;
     }
-
     .checkbox__lable {
         margin-bottom: 22px;
         margin-left: 15px;
@@ -564,7 +560,6 @@
         opacity: 0;
         visibility: hidden;
     }
-
     .event__image {
         padding-bottom: calc(200 / 317 * 100%);
     }
@@ -634,12 +629,10 @@
     .partners__slider-body {
         /* padding: 0 5px; */
         margin: 0 calc((290px - 195px) / 2);
-
     }
     .slider-partners__slide {
         height: 106px;
     }
-
     /* contacts =======================================================  */
     .contacts__info {
         padding: 124px 6% 95px 6%;
@@ -702,6 +695,24 @@
     .contacts__map {
         width: 100%;
         height: 50vh;
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+        
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 900px;
+        max-width: 100%;
+        height: 500px;
+        max-height: 100%;
+        background: white;
+        -webkit-box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -913,15 +924,12 @@
         max-width: 180px;
     }
     /* projects =======================================================  */
-
     .partners__slider-body {
- 
         margin: 0 calc((290px - 195px) / 2);
     }
     .slider-partners__slide {
         height: 65px;
     }
-
     /* contacts =======================================================  */
     .contacts__container {
         position: relative;
@@ -933,7 +941,6 @@
     .info__showroom {
         margin-bottom: 10px;
     }
-   
     .showroom__title {
         font-size: 18px;
         line-height: 20px;
@@ -951,9 +958,9 @@
         font-size: 18px;
         line-height: 32px;
     }
-    .contact-form__input-box:nth-child(2) {
+    /* .contact-form__input-box:nth-child(2) {
         margin-bottom: 18px;
-    }
+    } */
     .checkbox__text {
         font-size: 8px;
         line-height: 14px;
@@ -1001,6 +1008,7 @@
         height: 50px;
     }
     /* modal =======================================================  */
+ 
     .modal {
         width: calc(100% - 30px);
     }
@@ -1315,7 +1323,6 @@
         font-size: 18px;
         line-height: 32px;
     }
-
     /* contacts =======================================================  */
     .contacts__heading {
         margin-bottom: 15px;
