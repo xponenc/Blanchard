@@ -232,6 +232,8 @@ window.onload = function () {
     // SWIPER:PUBLICATIONS: swiper
     // Инициализируется на разрешении больше 550, меньше - разрушается
     let publicationsSlider = null
+    let publicationsSliderImageReady = null
+
     publicationsSliderStartEnd()
 
     function publicationsSliderStartEnd() {
@@ -239,7 +241,7 @@ window.onload = function () {
 
         if ((screen.width > 550) || (document.body.clientWidth > 550)) {
             if (!publicationsSlider) {
-                console.log('Создаем свайпер');
+                publicationsSliderImageReady = null
                 document.querySelector('.publication__swiper-wrapper').classList.add('swiper-wrapper')
                 publicationsSlider = new Swiper('.publication__swiper', {
                     observer: true,
@@ -288,18 +290,20 @@ window.onload = function () {
                     // document.querySelector('.publication__slide').classList.remove('swiper-slide')
                     // document.querySelector('.publication__swiper').classList.remove('swiper-container')
                     document.querySelector('.publication__swiper-wrapper').classList.remove('swiper-wrapper')
-    
-                    const publicationSlides = document.querySelectorAll('.publication__slide-img')
-    
-                    if (publicationSlides.length > 0) {
-                        publicationSlides.forEach(element => {
-                            let bgnd = element.querySelector('img').dataset.src
-                            element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
-                            if (element.querySelector('.swiper-lazy-preloader')) { element.querySelector('.swiper-lazy-preloader').remove() }
-                        })
-                    }
+
                 }
             }
+            const publicationSlides = document.querySelectorAll('.publication__slide-img')
+
+            if (publicationSlides.length > 0 && !publicationsSliderImageReady) {
+                publicationsSliderImageReady = true;
+                publicationSlides.forEach(element => {
+                    let bgnd = element.querySelector('img').dataset.src
+                    element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
+                    if (element.querySelector('.swiper-lazy-preloader')) { element.querySelector('.swiper-lazy-preloader').remove() }
+                })
+            }
+
         }
     }
 
