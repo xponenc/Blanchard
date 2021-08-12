@@ -1,4 +1,5 @@
 window.onload = function () {
+    console.log(document.body.clientWidth);
     //Инициализация прокруток в пунктах субменю
     document.addEventListener("click", documentActions);
     function documentActions(e) {
@@ -16,10 +17,10 @@ window.onload = function () {
             document.querySelectorAll('.nav__bottom-item_active').forEach(n => n.classList.remove('nav__bottom-item_active'))
         }
         // NAV: Открытие-закрытие формы поиска
-        if (window.innerWidth <= 1024) {
+        if (document.body.clientWidth <= 1024) {
             if (!targetElement.closest('.header__search') && document.querySelector('.nav__top-search-toggle').classList.contains('nav__top-search-toggle_hide')) {
                 document.querySelector('.header__search-wrapper').classList.remove('header__search-wrapper_active');
-                if (window.innerWidth <= 900 && window.innerWidth > 768) {
+                if (document.body.clientWidth <= 900 && document.body.clientWidth > 768) {
                     document.querySelector('.header__logo').classList.toggle('header__logo__hide')
                 }
                 setTimeout(function () {
@@ -29,13 +30,13 @@ window.onload = function () {
             if (targetElement.classList.contains('nav__top-search-toggle')) {
                 targetElement.classList.add('nav__top-search-toggle_hide')
                 document.querySelector('.header__search-wrapper').classList.add('header__search-wrapper_active');
-                if (window.innerWidth <= 900 && window.innerWidth > 768) {
+                if (document.body.clientWidth <= 900 && document.body.clientWidth > 768) {
                     document.querySelector('.header__logo').classList.toggle('header__logo__hide')
                 }
             }
         }
         // NAV: Открытие-закрытие бургера
-        if (window.innerWidth <= 1360) {
+        if (document.body.clientWidth <= 1360) {
             if (targetElement.classList.contains('nav__toggle') || targetElement.closest('.nav__toggle')) {
                 if (targetElement.classList.contains('nav__toggle')) {
                     targetElement.classList.toggle('nav__toggle_active')
@@ -78,16 +79,16 @@ window.onload = function () {
 
         }
         // PUBLICATIONS: открытие/закрытие фильтра жанров при изменении поведения формы на 550px и меньше
-        if (targetElement.classList.contains('genre__heading') && ((screen.width <= 550) || (window.innerWidth <= 550))) {
+        if (targetElement.classList.contains('genre__heading') && ((screen.width <= 550) || (document.body.clientWidth <= 550))) {
             targetElement.classList.toggle('genre__heading_open')
             showFormGenre()
         }
         // PROJECTS: открытие тултип
         if (targetElement.classList.contains('tooltip')) {
-            if (((screen.width <= 1024) || (window.innerWidth <= 1024)) && ((screen.width > 768) || (window.innerWidth > 768))) {
+            if (((screen.width <= 1024) || (document.body.clientWidth <= 1024)) && ((screen.width > 768) || (document.body.clientWidth > 768))) {
                 targetElement.querySelector('.tooltiptext').classList.add('tooltiptext_active')
                 targetElement.querySelector('.tooltiptext-mark').classList.add('tooltiptext-mark_active')
-            } else if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+            } else if ((screen.width <= 768) || (document.body.clientWidth <= 768)) {
                 targetElement.classList.toggle('tooltip_active')
                 targetElement.querySelector('.tooltiptext').classList.toggle('tooltiptext_active')
                 if (!targetElement.classList.contains('tooltip_active')) {
@@ -127,10 +128,22 @@ window.onload = function () {
 
     // Реакция на изменение размеров окна
     window.addEventListener('resize', function (event) {
+        console.log('ресайз');
+
         searchFormMove() // NAV: Перемещение формы поиска
-        catalogContentHeightCalc() // CATALOG: Временная функция для подсчета высоты размера поля контента в аккордеоне Каталога
-        gallery_slider.updateSize()
+        // catalogContentHeightCalc() // CATALOG: Временная функция для подсчета высоты размера поля контента в аккордеоне Каталога
+        gallerySliderChangePlace() // Изменение места в DOM слайдера Gallery на breakpoint 50
+        eventsSliderStart(); //Запуск/разрушение слайдера Events:Slider
+        showFormGenre() // Изменение формы Publications:Genre 
+        publicationsSliderStartEnd() //Запуск/разрушение слайдера Publications:Slider
+        shiftToopltip() // Расчет сдвига контейнера tooltip относительно края родителя
     }, true);
+    window.addEventListener('orientationchange', function (event) {
+        console.log('смена ориентации');
+        gallerySlider.update()
+        gallerySlider.updateSize()
+        gallerySlider.updateSlides()
+    })
 
     // Реакция на скролл по странице
     window.addEventListener('scroll', function () {
@@ -173,101 +186,123 @@ window.onload = function () {
         },
     });
     // SWIPER:GALLERY: swiper
-    let gallery_slider = new Swiper('.gallery__swiper', {
-        observer: true,
-        observeParents: true,
-        preloadImages: false,
-        lazy: true,
-        watchSlidesVisibility: true,
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-            },
-            551: {
+    let gallerySlider = null
+    gallerySliderStart()
 
-                slidesPerView: 2,
-                slidesPerColumn: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 34,
-
-            },
-            1360: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                slidesPerColumn: 2,
-                spaceBetween: 50,
-            }
-        },
-        pagination: {
-            el: ".gallery__swiper-control .block-pagination",
-            type: "fraction",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.gallery__swiper-control .swiper-control__btn_next',
-            prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
-        },
-    });
-    // Перенос позиции слайдера на разрешении 768 и меньше
-    if ((screen.width <= 768) || (window.innerWidth <= 768)) {
-        const target = document.querySelector('.info__filter')
-        const content = document.querySelector('.gallery__content')
-
-        target.insertAdjacentElement('afterend', content)
-    }
-    // SWIPER:PUBLICATIONS: swiper
-    // Инициализируется на разрешении больше 550
-    if ((screen.width > 550) || (window.innerWidth > 550)) {
-        new Swiper('.publication__swiper', {
+    function gallerySliderStart() {
+        gallerySlider = new Swiper('.gallery__swiper', {
             observer: true,
             observeParents: true,
             preloadImages: false,
             lazy: true,
             watchSlidesVisibility: true,
-            loop: true,
             breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
                 551: {
+
                     slidesPerView: 2,
+                    slidesPerColumn: 2,
                     slidesPerGroup: 2,
                     spaceBetween: 34,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                    spaceBetween: 49,
+
                 },
                 1360: {
                     slidesPerView: 3,
                     slidesPerGroup: 3,
+                    slidesPerColumn: 2,
                     spaceBetween: 50,
                 }
             },
             pagination: {
-                el: ".publication__swiper-control .block-pagination",
+                el: ".gallery__swiper-control .block-pagination",
                 type: "fraction",
                 clickable: true,
             },
             navigation: {
-                nextEl: '.publication__swiper-control .swiper-control__btn_next',
-                prevEl: '.publication__swiper-control .swiper-control__btn_prev',
+                nextEl: '.gallery__swiper-control .swiper-control__btn_next',
+                prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
             },
         });
-    } else {
-        document.querySelector('.publication__slide').classList.remove('swiper-slide')
-        document.querySelector('.publication__swiper').classList.remove('swiper-container')
-        document.querySelector('.publication__swiper-wrapper').classList.remove('swiper-wrapper')
+    }
 
-        const publicationSlides = document.querySelectorAll('.publication__slide-img')
 
-        if (publicationSlides.length > 0) {
-            publicationSlides.forEach(element => {
-                let bgnd = element.querySelector('img').dataset.src
-                element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
-                element.querySelector('.swiper-lazy-preloader').remove()
-            })
+    // SWIPER:PUBLICATIONS: swiper
+    // Инициализируется на разрешении больше 550, меньше - разрушается
+    let publicationsSlider = null
+    publicationsSliderStartEnd()
+
+    function publicationsSliderStartEnd() {
+        console.log('Создание publicationsSlider', publicationsSlider);
+
+        if ((screen.width > 550) || (document.body.clientWidth > 550)) {
+            if (!publicationsSlider) {
+                console.log('Создаем свайпер');
+                document.querySelector('.publication__swiper-wrapper').classList.add('swiper-wrapper')
+                publicationsSlider = new Swiper('.publication__swiper', {
+                    observer: true,
+                    observeParents: true,
+                    preloadImages: false,
+                    lazy: true,
+                    watchSlidesVisibility: true,
+                    loop: true,
+                    breakpoints: {
+                        551: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 34,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 49,
+                        },
+                        1360: {
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                            spaceBetween: 50,
+                        }
+                    },
+                    pagination: {
+                        el: ".publication__swiper-control .block-pagination",
+                        type: "fraction",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.publication__swiper-control .swiper-control__btn_next',
+                        prevEl: '.publication__swiper-control .swiper-control__btn_prev',
+                    },
+                });
+                console.log(' Создан publicationsSlider', publicationsSlider);
+
+            }
+        } else {
+            if (publicationsSlider) {
+                publicationsSlider.destroy()
+                publicationsSlider = null
+                console.log('publicationsSlider', publicationsSlider);
+
+                if (document.querySelector('.publication__slide').classList.contains('swiper-slide')) {
+                    // document.querySelector('.publication__slide').classList.remove('swiper-slide')
+                    // document.querySelector('.publication__swiper').classList.remove('swiper-container')
+                    document.querySelector('.publication__swiper-wrapper').classList.remove('swiper-wrapper')
+    
+                    const publicationSlides = document.querySelectorAll('.publication__slide-img')
+    
+                    if (publicationSlides.length > 0) {
+                        publicationSlides.forEach(element => {
+                            let bgnd = element.querySelector('img').dataset.src
+                            element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
+                            if (element.querySelector('.swiper-lazy-preloader')) { element.querySelector('.swiper-lazy-preloader').remove() }
+                        })
+                    }
+                }
+            }
         }
     }
+
     // SWIPER:PROJECTS: swiper
     new Swiper('.partners__slider-body', {
         observer: true,
@@ -319,7 +354,7 @@ window.onload = function () {
         const navTarget = document.querySelector('.nav__top-container')
         const navSubTarget = document.querySelector('.nav__bottom-container')
         const searchFormItem = document.querySelector('.header__search-wrapper')
-        if (window.innerWidth >= 1024) {
+        if (document.body.clientWidth >= 1024) {
             navSubTarget.appendChild(searchFormItem)
         } else {
             navTarget.appendChild(searchFormItem)
@@ -327,7 +362,7 @@ window.onload = function () {
     }
     searchFormMove()
 
-    // //Инициализация прокруток в пунктах субменю
+    //Инициализация прокруток в пунктах субменю
     Array.prototype.forEach.call(
         document.querySelectorAll('.nav__bottom-sub-menu'),
         el => {
@@ -351,6 +386,21 @@ window.onload = function () {
         position: 'bottom',
         renderSelectedChoices: 'always',
     });
+    // Перенос позиции слайдера на разрешении 768 и меньше
+    function gallerySliderChangePlace() {
+        const content = document.querySelector('.gallery__content')
+        if ((screen.width <= 768) || (document.body.clientWidth <= 768)) {
+            if (!content.closest('.gallery__info')) {
+                const target = document.querySelector('.info__filter')
+                target.insertAdjacentElement('afterend', content)
+            }
+        } else {
+            if (content.closest('.gallery__info')) {
+                const target = document.querySelector('.gallery__info')
+                target.insertAdjacentElement('afterend', content)
+            }
+        }
+    }
 
     // Модальное окно изображения в галерее
 
@@ -373,7 +423,7 @@ window.onload = function () {
         `
         const modal = document.querySelector('.modal')
 
-        if (((screen.width > 1024) || (screen.width <= 768)) || ((window.innerWidth > 1024) || (window.innerWidth <= 768))) {
+        if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
             modal.classList.toggle("closed")
             document.querySelector('.modal-overlay').classList.toggle("closed")
         }
@@ -386,7 +436,7 @@ window.onload = function () {
     function closeGalleryModalWindow(target) {
         const modal = document.querySelector('.modal')
 
-        if (((screen.width > 1024) || (screen.width <= 768)) || ((window.innerWidth > 1024) || (window.innerWidth <= 768))) {
+        if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
             modal.classList.toggle("closed")
             document.querySelector('.modal-overlay').classList.toggle("closed")
         }
@@ -436,24 +486,24 @@ window.onload = function () {
         accordionItems.forEach(element => {
             if (element.querySelector('.catalog__list')) {
                 let countItems = element.querySelector('.catalog__list').querySelectorAll('.catalog__item').length
-                if (screen.width > 1360 || window.innerWidth > 1360) {
+                if (screen.width > 1360 || document.body.clientWidth > 1360) {
                     var columns = 3
                     var unit = 37.5
                     var padding = 40
-                } else if ((screen.width <= 1360 || window.innerWidth <= 1360) && (screen.width > 768 || window.innerWidth > 768)) {
+                } else if ((screen.width <= 1360 || document.body.clientWidth <= 1360) && (screen.width > 768 || document.body.clientWidth > 768)) {
                     var columns = 2
                     var unit = 32.5
                     var padding = 45
-                } else if ((screen.width <= 768 || window.innerWidth <= 768) && (screen.width > 667 || window.innerWidth > 667)) {
+                } else if ((screen.width <= 768 || document.body.clientWidth <= 768) && (screen.width > 667 || document.body.clientWidth > 667)) {
                     var columns = 3
                     var unit = 36.25
                     var padding = 50
-                } else if (screen.width > 550 || window.innerWidth > 550) {
+                } else if (screen.width > 550 || document.body.clientWidth > 550) {
                     var columns = 2
                     var unit = 36.25
                 }
 
-                if (screen.width > 550 || window.innerWidth > 550) {
+                if (screen.width > 550 || document.body.clientWidth > 550) {
                     let heightItem = (Math.ceil(countItems / columns) * unit) + padding
                     element.style.cssText = `height: ${heightItem}px;`
                     element.querySelector('.catalog__list').style.cssText = `height: ${heightItem}px;`
@@ -463,7 +513,7 @@ window.onload = function () {
             }
         })
     }
-    catalogContentHeightCalc()
+    // catalogContentHeightCalc()
 
     // Переключение активного языкового блока в Gallery
     function toggleActiveLang(target) {
@@ -513,7 +563,7 @@ window.onload = function () {
         langContentActive.querySelector(`[data-author_path="${path}"]`).classList.add('catalog__item-btn_active')
         langContentActive.querySelector(`[data-author_target="${path}"]`).classList.add('author_active')
 
-        if ((screen.width <= 768) || (window.innerWidth <= 768)) {
+        if ((screen.width <= 768) || (document.body.clientWidth <= 768)) {
             let target = langContentActive.querySelector(`[data-author_target="${path}"]`)
             doScrolling(target, 1000)
         }
@@ -575,7 +625,7 @@ window.onload = function () {
             const eventDescription = item.description
 
             let eventTemplate = `<li class="events__item event swiper-slide">
-                                    <div class="event__image ibg">
+                                    <div class="event__image">
                                         <img src="img/events/${eventImage}" alt="${eventSubheading}">
                                     </div>
                                     <div class="event__block">
@@ -595,23 +645,42 @@ window.onload = function () {
         ibg();
         hideEvents();
         // Инициализация swiperа на разрешении меньше 550
-        if ((screen.width <= 550) || (window.innerWidth <= 550)) {
-            $(".events__list, .events__pagination").wrapAll("<div class='events__swiper swiper-container'></div>");
-            $('.events__list').addClass('events__swiper-wrapper')
-            $('.events__list').removeClass('events__list')
-            $('.events__swiper-wrapper').addClass('swiper-wrapper')
-            const swiper5 = new Swiper('.events__swiper', {
-                preloadImages: true,
-                loop: true,
-                slidesPerGroup: 1,
-                slidesPerView: 1,
-                spaceBetween: 21,
-                centeredSlides: true,
-                pagination: {
-                    el: ".events__pagination",
-                    clickable: true,
-                },
-            });
+        eventsSliderStart()
+    }
+
+    let eventsSlider = null
+    // Инициализация swiper на разрешении меньше 550
+    function eventsSliderStart() {
+        if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
+            if (!eventsSlider) {
+                $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
+                $('.events__list').addClass('events__swiper-wrapper')
+                $('.events__list').removeClass('events__list')
+                $('.events__swiper-wrapper').addClass('swiper-wrapper')
+                eventsSlider = new Swiper('.events__swiper', {
+                    preloadImages: true,
+                    loop: true,
+                    slidesPerGroup: 1,
+                    slidesPerView: 1,
+                    spaceBetween: 21,
+                    centeredSlides: true,
+                    pagination: {
+                        el: ".events__pagination",
+                        clickable: true,
+                    },
+                });
+            }
+        } else {
+            if (eventsSlider) {
+                eventsSlider.destroy()
+                eventsSlider = null
+                document.querySelector('.events__swiper-wrapper').classList.add('events__list')
+                document.querySelector('.events__swiper-wrapper').classList.remove('events__swiper-wrapper')
+                let content = document.querySelector('.events__list')
+                let target = document.querySelector('.events__heading')
+                target.insertAdjacentElement('afterend', content)
+                document.querySelector('.events__swiper').remove()
+            }
         }
     }
     // Функция прячет лишние карточки на разных разрешениях
@@ -619,9 +688,9 @@ window.onload = function () {
         let events = document.querySelectorAll(".events__item");
         let showItems = 7
         if (events) {
-            if ((window.width >= 551) || (window.innerWidth >= 551)) {
+            if ((window.width >= 551) || (document.body.clientWidth >= 551)) {
                 showItems = 2
-            } if ((window.width > 768) || (window.innerWidth > 768)) {
+            } if ((window.width > 768) || (document.body.clientWidth > 768)) {
                 showItems = 3
             }
             for (var i = 0; i < events.length; i++) {
@@ -633,34 +702,43 @@ window.onload = function () {
     }
     // PUBLICATIONS============================================================================================================
     //  Форма фильтров Категории жанров
-    if ((screen.width <= 550) || (window.innerWidth <= 550)) {
-        showFormGenre()
-    }
+    showFormGenre()
+    let GenreFormIsSpoiler = false
+
     function showFormGenre() {
-        let checkTargetIsOpen = document.querySelector('.genre__heading').classList.contains('genre__heading_open')
-        let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
-        if (checkTargetIsOpen) {
+        if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
+            let checkTargetIsOpen = document.querySelector('.genre__heading').classList.contains('genre__heading_open')
+            let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
+            if (checkTargetIsOpen) {
+                genreCheckboxes.forEach(e => {
+                    e.style.cssText = `display: flex;`
+                    e.classList.remove('checkbox-genre_checked')
+                })
+            } else {
+                genreCheckboxes.forEach(e => {
+                    if (e.querySelector('.checkbox-genre__input').checked) {
+                        e.style.cssText = `display: flex;`
+                        e.classList.add('checkbox-genre_checked')
+                        e.addEventListener("click", function () {
+                            if (!document.querySelector('.genre__heading').classList.contains('genre__heading_open')) {
+                                e.classList.remove('checkbox-genre_checked')
+                                e.querySelector('.checkbox-genre__input').checked = false
+                                e.style.cssText = `display: none;`
+                            }
+                        });
+                    } else {
+                        e.style.cssText = `display: none;`
+                    }
+                })
+            }
+        } else {
+            let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
             genreCheckboxes.forEach(e => {
                 e.style.cssText = `display: flex;`
                 e.classList.remove('checkbox-genre_checked')
             })
-        } else {
-            genreCheckboxes.forEach(e => {
-                if (e.querySelector('.checkbox-genre__input').checked) {
-                    e.style.cssText = `display: flex;`
-                    e.classList.add('checkbox-genre_checked')
-                    e.addEventListener("click", function () {
-                        if (!document.querySelector('.genre__heading').classList.contains('genre__heading_open')) {
-                            e.classList.remove('checkbox-genre_checked')
-                            e.querySelector('.checkbox-genre__input').checked = false
-                            e.style.cssText = `display: none;`
-                        }
-                    });
-                } else {
-                    e.style.cssText = `display: none;`
-                }
-            })
         }
+
     }
 
     // PROJECTS============================================================================================================
@@ -673,17 +751,18 @@ window.onload = function () {
             let positionX = element.offsetLeft;
             let widthParent = element.parentElement.offsetWidth
             let widthTooltip = element.querySelector('.tooltiptext').offsetWidth
+
             // Проверка - тултип вылез вправо
             if (positionX + widthTooltip / 2 > widthParent) {
                 let leftOverflow = positionX + widthTooltip / 2 - widthParent + element.offsetWidth / 2
                 let leftShift = widthTooltip / 2 + leftOverflow
                 element.querySelector('.tooltiptext').style.cssText = `margin-left: -${leftShift}px;`
-            }
-            // Проверка - тултип вылез влево
-            if (positionX - widthTooltip / 2 < 0) {
+            } else if (positionX - widthTooltip / 2 < 0) {
                 let rightOverflow = positionX - widthTooltip / 2
                 let rightShift = widthTooltip / 2 + rightOverflow
                 element.querySelector('.tooltiptext').style.cssText = `margin-left: -${rightShift}px;`
+            } else {
+                element.querySelector('.tooltiptext').style.cssText = `margin-left: -132px;`
             }
         })
     }

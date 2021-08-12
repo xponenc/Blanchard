@@ -27,10 +27,13 @@ body {
   font-weight: 400;
   line-height: 32px;
   color: var(--text-color-main);
+  /* overflow-x: hidden; */
 }
 
 html {
   position: relative;
+  /* overflow-x: hidden; */
+
 }
 
 a {
@@ -279,15 +282,12 @@ img {
   top: -100px;
   left: 1px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   width: 130px;
@@ -393,7 +393,6 @@ img {
   left: 50%;
   z-index: 100;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-transform: translate(-50%, -50%);
@@ -430,11 +429,9 @@ img {
   height: 100%;
   overflow: auto;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0;
