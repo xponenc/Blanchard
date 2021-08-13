@@ -521,6 +521,7 @@
     }
     .info__filter {
         width: 280px;
+        z-index: 5;
     }
     .gallery__content {
         margin-bottom: 20px;
@@ -883,15 +884,25 @@
         column-gap: unset;
         columns: unset;
         margin-bottom: 23px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
     }
     /* .genre__form_active {
         display: flex;
     } */
+
     .checkbox-genre {
         padding-top: 4px;
-        padding-bottom: 2px;
+        padding-bottom: 4px;
         width: 100%;
+    }
+    .checkbox-genre::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
     }
     .checkbox-genre_checked::before {
         content: "";
@@ -1023,10 +1034,10 @@
         height: 50px;
     }
     .contacts__map {
-        margin-left: -5%;
+        margin-left: -4%;
         margin-right: -5%;
         margin-bottom: 25px;
-        width: 101vw;
+        width: 100vw;
         height: 320px;
     }
     /* footer =======================================================  */

@@ -138,12 +138,6 @@ window.onload = function () {
         publicationsSliderStartEnd() //Запуск/разрушение слайдера Publications:Slider
         shiftToopltip() // Расчет сдвига контейнера tooltip относительно края родителя
     }, true);
-    window.addEventListener('orientationchange', function (event) {
-        console.log('смена ориентации');
-        gallerySlider.update()
-        gallerySlider.updateSize()
-        gallerySlider.updateSlides()
-    })
 
     // Реакция на скролл по странице
     window.addEventListener('scroll', function () {
@@ -186,20 +180,23 @@ window.onload = function () {
         },
     });
     // SWIPER:GALLERY: swiper
-    let gallerySlider = null
+    // let gallerySlider = null
     gallerySliderStart()
 
     function gallerySliderStart() {
         gallerySlider = new Swiper('.gallery__swiper', {
             observer: true,
             observeParents: true,
+            observeSlideChildren: true,
             preloadImages: false,
             lazy: true,
             watchSlidesVisibility: true,
             breakpoints: {
-                0: {
+                240: {
                     slidesPerView: 1,
                     spaceBetween: 15,
+                    slidesPerColumn: 1,
+                    slidesPerGroup: 1,
                 },
                 551: {
 
@@ -226,6 +223,7 @@ window.onload = function () {
                 prevEl: '.gallery__swiper-control .swiper-control__btn_prev',
             },
         });
+        gallerySliderChangePlace()
     }
 
 
@@ -237,11 +235,11 @@ window.onload = function () {
     publicationsSliderStartEnd()
 
     function publicationsSliderStartEnd() {
-        console.log('Создание publicationsSlider', publicationsSlider);
 
         if ((screen.width > 550) || (document.body.clientWidth > 550)) {
             if (!publicationsSlider) {
                 publicationsSliderImageReady = null
+
                 document.querySelector('.publication__swiper-wrapper').classList.add('swiper-wrapper')
                 publicationsSlider = new Swiper('.publication__swiper', {
                     observer: true,
@@ -298,8 +296,9 @@ window.onload = function () {
             if (publicationSlides.length > 0 && !publicationsSliderImageReady) {
                 publicationsSliderImageReady = true;
                 publicationSlides.forEach(element => {
-                    let bgnd = element.querySelector('img').dataset.src
-                    element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
+                    // let bgnd = element.querySelector('img').dataset.src
+                    // element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
+                    if (element.querySelector('img').dataset.src) {element.querySelector('img').src = element.querySelector('img').dataset.src}
                     if (element.querySelector('.swiper-lazy-preloader')) { element.querySelector('.swiper-lazy-preloader').remove() }
                 })
             }
@@ -393,6 +392,7 @@ window.onload = function () {
     // Перенос позиции слайдера на разрешении 768 и меньше
     function gallerySliderChangePlace() {
         const content = document.querySelector('.gallery__content')
+
         if ((screen.width <= 768) || (document.body.clientWidth <= 768)) {
             if (!content.closest('.gallery__info')) {
                 const target = document.querySelector('.info__filter')
@@ -601,7 +601,7 @@ window.onload = function () {
     getEvents()
     // Функция загрузки карточек events
     async function getEvents() {
-        const file = 'json/events.json'
+        const file = '../json/events.json'
         let response = await fetch(file, {
             method: "GET",
         })
@@ -616,9 +616,9 @@ window.onload = function () {
     // Функция формирует и вставляет в html темплейты карточек событий (events)
     function loadEvents(data) {
         let eventsItem = document.querySelector('.events__list')
-        if (!eventsItem) {
-            eventsItem = document.querySelector('.events__swiper-wrapper')
-        }
+        // if (!eventsItem) {
+        //     eventsItem = document.querySelector('.events__swiper-wrapper')
+        // }
 
         data.events.forEach(item => {
             const eventUrl = item.url
@@ -646,7 +646,7 @@ window.onload = function () {
                                 </li>`
             eventsItem.insertAdjacentHTML('beforeend', eventTemplate)
         })
-        ibg();
+        // ibg();
         hideEvents();
         // Инициализация swiperа на разрешении меньше 550
         eventsSliderStart()
@@ -657,22 +657,37 @@ window.onload = function () {
     function eventsSliderStart() {
         if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
             if (!eventsSlider) {
-                $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
-                $('.events__list').addClass('events__swiper-wrapper')
-                $('.events__list').removeClass('events__list')
-                $('.events__swiper-wrapper').addClass('swiper-wrapper')
+                let sliderContent = document.querySelector('.events__list')
+                let sliderPlace = document.querySelector('.events__heading')
+                sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
+                let slderBody = document.querySelector('.events__swiper')
+                slderBody.insertAdjacentElement("afterbegin", sliderContent);
+                sliderContent.classList.add('events__swiper-wrapper')
+                sliderContent.classList.remove('events__list')
+                sliderContent.classList.add('swiper-wrapper')
+                // $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
+                // $('.events__list').addClass('events__swiper-wrapper')
+                // $('.events__list').removeClass('events__list')
+                // $('.events__swiper-wrapper').addClass('swiper-wrapper')
+                console.log('Создай свайпер');
+                
                 eventsSlider = new Swiper('.events__swiper', {
+                    observer: true,
+                    observeParents: true,
                     preloadImages: true,
                     loop: true,
-                    slidesPerGroup: 1,
+                    // slidesPerGroup: 1,
                     slidesPerView: 1,
                     spaceBetween: 21,
-                    centeredSlides: true,
+                    // centeredSlides: true,
                     pagination: {
                         el: ".events__pagination",
                         clickable: true,
+                        type: 'bullets',
                     },
                 });
+                console.log(eventsSlider);
+                
             }
         } else {
             if (eventsSlider) {
@@ -707,7 +722,7 @@ window.onload = function () {
     // PUBLICATIONS============================================================================================================
     //  Форма фильтров Категории жанров
     showFormGenre()
-    let GenreFormIsSpoiler = false
+    // let GenreFormIsSpoiler = false
 
     function showFormGenre() {
         if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {

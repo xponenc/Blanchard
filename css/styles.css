@@ -900,6 +900,8 @@
     width: calc(100% - 450px);
 }
 
+
+
 .gallery__swiper {
     width: 100%;
     height: 750px;
@@ -910,7 +912,7 @@
 }
 
 .gallery__slide:nth-child(3n) {
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 
 .gallery__slide::before {
@@ -2106,6 +2108,7 @@
 
 /* CONTACTS */
 
+
 .contacts__heading {
     margin-right: auto;
     margin-left: auto;
@@ -2113,12 +2116,13 @@
 
 .contacts__container {
     display: flex;
+    overflow: hidden;
 }
 
 .contacts__info {
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     padding: 124px 6.2% 113px max(15px, calc((100vw - var(--container-max-width)) / 2));
     width: min(682px, 35.5%);
     border: 1px solid var(--muted-color);
@@ -2267,7 +2271,7 @@
 }
 
 .contacts__map {
-    overflow: hidden;
+    /* overflow: hidden;     */
     width: 64.5%;
 }
 
