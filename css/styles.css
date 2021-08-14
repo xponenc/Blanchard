@@ -1536,10 +1536,9 @@
     border-bottom-color: var(--text-color-main);
 }
 
-/* .events__pagination {
-    position: absolute;
-    height: 15px;
-} */
+.events__pagination {
+    display: none;
+}
 
 .swiper-pagination-bullet {
     width: 10px;

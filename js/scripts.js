@@ -1,6 +1,4 @@
 window.onload = function () {
-    console.log(document.body.clientWidth);
-    //Инициализация прокруток в пунктах субменю
     document.addEventListener("click", documentActions);
     function documentActions(e) {
         const targetElement = e.target;
@@ -19,6 +17,7 @@ window.onload = function () {
         // NAV: Открытие-закрытие формы поиска
         if (document.body.clientWidth <= 1024) {
             if (!targetElement.closest('.header__search') && document.querySelector('.nav__top-search-toggle').classList.contains('nav__top-search-toggle_hide')) {
+                enableScroll();
                 document.querySelector('.header__search-wrapper').classList.remove('header__search-wrapper_active');
                 if (document.body.clientWidth <= 900 && document.body.clientWidth > 768) {
                     document.querySelector('.header__logo').classList.toggle('header__logo__hide')
@@ -28,6 +27,7 @@ window.onload = function () {
                 }, 150);
             }
             if (targetElement.classList.contains('nav__top-search-toggle')) {
+                disableScroll();
                 targetElement.classList.add('nav__top-search-toggle_hide')
                 document.querySelector('.header__search-wrapper').classList.add('header__search-wrapper_active');
                 if (document.body.clientWidth <= 900 && document.body.clientWidth > 768) {
@@ -36,26 +36,20 @@ window.onload = function () {
             }
         }
         // NAV: Открытие-закрытие бургера
-        if (document.body.clientWidth <= 1360) {
-            if (targetElement.classList.contains('nav__toggle') || targetElement.closest('.nav__toggle')) {
-                if (targetElement.classList.contains('nav__toggle')) {
-                    targetElement.classList.toggle('nav__toggle_active')
-                } else {
-                    targetElement.closest('.nav__toggle').classList.toggle('nav__toggle_active')
-                }
-                document.querySelector('.nav__top-block').classList.toggle('nav__top-block_active')
-                document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn_simple')
-                document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn')
-            }
+        if ((targetElement.classList.contains('nav__toggle') || targetElement.closest('.nav__toggle')) && document.body.clientWidth <= 1360) {
+            burgerToggle(targetElement)
         }
+
         // GALLERY: Открытие модального окна картины в галерее
         if (targetElement.classList.contains('gallery__slide')) {
             openGalleryModalWindow(targetElement)
+            disableScroll();
         }
 
         // GALLERY: Закрытие модального окна картины в галерее
         if (targetElement.closest('.modal__btn-close')) {
             closeGalleryModalWindow(targetElement)
+            enableScroll();
         }
 
         // GALLERY: Переключение табов языков в галерее
@@ -114,6 +108,7 @@ window.onload = function () {
         if (targetElement.closest('.nav__top-item') || targetElement.classList.contains('hero__btn')
             || targetElement.classList.contains('author__gallery-link') || targetElement.classList.contains('unknown__gallery-link')) {
             e.preventDefault();
+            if (targetElement.closest('.nav__top-item')) {burgerToggle(document.querySelector('.nav__toggle'))}
             let hrefId = targetElement.getAttribute('href')
             let target = document.querySelector(hrefId)
             doScrolling(target, 1000)
@@ -128,8 +123,6 @@ window.onload = function () {
 
     // Реакция на изменение размеров окна
     window.addEventListener('resize', function (event) {
-        console.log('ресайз');
-
         searchFormMove() // NAV: Перемещение формы поиска
         // catalogContentHeightCalc() // CATALOG: Временная функция для подсчета высоты размера поля контента в аккордеоне Каталога
         gallerySliderChangePlace() // Изменение места в DOM слайдера Gallery на breakpoint 50
@@ -137,6 +130,7 @@ window.onload = function () {
         showFormGenre() // Изменение формы Publications:Genre 
         publicationsSliderStartEnd() //Запуск/разрушение слайдера Publications:Slider
         shiftToopltip() // Расчет сдвига контейнера tooltip относительно края родителя
+        moveMap() //Перемещение контейнера с картой при <=550px
     }, true);
 
     // Реакция на скролл по странице
@@ -298,7 +292,7 @@ window.onload = function () {
                 publicationSlides.forEach(element => {
                     // let bgnd = element.querySelector('img').dataset.src
                     // element.style.cssText = `background-image: url("../${bgnd}"); background-size: contain; background-repeat: no-repeat;`
-                    if (element.querySelector('img').dataset.src) {element.querySelector('img').src = element.querySelector('img').dataset.src}
+                    if (element.querySelector('img').dataset.src) { element.querySelector('img').src = element.querySelector('img').dataset.src }
                     if (element.querySelector('.swiper-lazy-preloader')) { element.querySelector('.swiper-lazy-preloader').remove() }
                 })
             }
@@ -349,8 +343,51 @@ window.onload = function () {
             prevEl: '.partners__slider-control .swiper-control__btn_prev',
         },
     });
+    // Блокировка скроллинга сайта
+    let scrollDisabled = null
+    let disableScroll = function () {
+        scrollDisabled = true
+        let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+        // console.log(window.innerWidth);
+        // console.log(document.body.clientWidth);
+        // console.log(document.body.scrollWidth);
+        // console.log( document.body.offsetWidth);
+
+        document.body.style.paddingRight = paddingOffset
+
+        let pagePosition = window.scrollY;
+        console.log('disScr', pagePosition);
+
+        document.body.classList.add('disable-scroll');
+        document.body.dataset.position = pagePosition;
+        document.body.style.top = -pagePosition + 'px';
+    }
+
+    let enableScroll = function () {
+        scrollDisabled = null
+        let pagePosition = parseInt(document.body.dataset.position, 10);
+        document.body.style.top = 'auto';
+        document.body.classList.remove('disable-scroll');
+        window.scroll({ top: pagePosition, left: 0 });
+        document.body.removeAttribute('data-position');
+
+        document.body.style.paddingRight = '0'
+
+    }
 
     // HEADER============================================================================================================
+    // Включение выключение бургера
+    function burgerToggle(element) {
+        if (element.classList.contains('nav__toggle')) {
+            element.classList.toggle('nav__toggle_active')
+        } else {
+            element.closest('.nav__toggle').classList.toggle('nav__toggle_active')
+        }
+        document.querySelector('.nav__top-block').classList.toggle('nav__top-block_active')
+        document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn_simple')
+        document.querySelector('.nav__top-sign-in-btn').classList.toggle('btn')
+        if (scrollDisabled) { enableScroll() } else { disableScroll() }
+    }
 
     // Перемещение формы поиска в sub-menu при >= 1024px
     function searchFormMove() {
@@ -409,7 +446,6 @@ window.onload = function () {
     // Модальное окно изображения в галерее
 
     function openGalleryModalWindow(target) {
-        console.log('modal')
         let bgImage = target.querySelector('.gallery__slide-image').src;
         let header = target.querySelector('.gallery__slide-author').textContent
         let subheader = target.querySelector('.gallery__slide-pict-name').textContent
@@ -427,27 +463,34 @@ window.onload = function () {
         `
         const modal = document.querySelector('.modal')
 
-        if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
-            modal.classList.toggle("closed")
-            document.querySelector('.modal-overlay').classList.toggle("closed")
-        }
-        else {
-            document.querySelector('.gallery__swiper-control').insertAdjacentElement('afterend', modal)
-            modal.classList.toggle("closed")
-        }
+        modal.classList.toggle("closed")
+        document.querySelector('.modal-overlay').classList.toggle("closed")
+
+        // В старом макете на 1024 модал открывался в теле галереи
+        // if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
+        //     modal.classList.toggle("closed")
+        //     document.querySelector('.modal-overlay').classList.toggle("closed")
+        // }
+        // else {
+        //     document.querySelector('.gallery__swiper-control').insertAdjacentElement('afterend', modal)
+        //     modal.classList.toggle("closed")
+        // }
     }
 
     function closeGalleryModalWindow(target) {
         const modal = document.querySelector('.modal')
 
-        if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
-            modal.classList.toggle("closed")
-            document.querySelector('.modal-overlay').classList.toggle("closed")
-        }
-        else {
-            // document.querySelector('.gallery__swiper-control').insertAdjacentHTML('afterend', modal)
-            modal.classList.toggle("closed")
-        }
+        modal.classList.toggle("closed")
+        document.querySelector('.modal-overlay').classList.toggle("closed")
+        // В старом макете на 1024 модал открывался в теле галереи
+        // if (((screen.width > 1024) || (screen.width <= 768)) || ((document.body.clientWidth > 1024) || (document.body.clientWidth <= 768))) {
+        //     modal.classList.toggle("closed")
+        //     document.querySelector('.modal-overlay').classList.toggle("closed")
+        // }
+        // else {
+        //     // document.querySelector('.gallery__swiper-control').insertAdjacentHTML('afterend', modal)
+        //     modal.classList.toggle("closed")
+        // }
     }
     // CATALOG=============================================================================================================
     // Инициализация accordion jQuery
@@ -670,7 +713,7 @@ window.onload = function () {
                 // $('.events__list').removeClass('events__list')
                 // $('.events__swiper-wrapper').addClass('swiper-wrapper')
                 console.log('Создай свайпер');
-                
+
                 eventsSlider = new Swiper('.events__swiper', {
                     observer: true,
                     observeParents: true,
@@ -687,7 +730,7 @@ window.onload = function () {
                     },
                 });
                 console.log(eventsSlider);
-                
+
             }
         } else {
             if (eventsSlider) {
@@ -784,5 +827,15 @@ window.onload = function () {
                 element.querySelector('.tooltiptext').style.cssText = `margin-left: -132px;`
             }
         })
+    }
+
+    // CONTACTS============================================================================================================
+    // Перемещение контейнра с картой при <=550px
+    function moveMap() {
+        if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
+            let map = document.querySelector('.contacts__map')
+            let container = document.querySelector('.info__showroom')
+            container.insertAdjacentElement('afterend', map)
+        }
     }
 }
