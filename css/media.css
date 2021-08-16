@@ -837,6 +837,8 @@
 
     .events__pagination {
         display: block;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: -40px;
     }
     .event__block {

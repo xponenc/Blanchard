@@ -108,7 +108,7 @@ window.onload = function () {
         if (targetElement.closest('.nav__top-item') || targetElement.classList.contains('hero__btn')
             || targetElement.classList.contains('author__gallery-link') || targetElement.classList.contains('unknown__gallery-link')) {
             e.preventDefault();
-            if (targetElement.closest('.nav__top-item')) { burgerToggle(document.querySelector('.nav__toggle')) }
+            if (targetElement.closest('.nav__top-item') && document.body.clientWidth <= 1024) { burgerToggle(document.querySelector('.nav__toggle')) }
             let hrefId = targetElement.getAttribute('href')
             let target = document.querySelector(hrefId)
             doScrolling(target, 1000)
@@ -276,7 +276,6 @@ window.onload = function () {
             if (publicationsSlider) {
                 publicationsSlider.destroy()
                 publicationsSlider = null
-                console.log('publicationsSlider', publicationsSlider);
 
                 if (document.querySelector('.publication__slide').classList.contains('swiper-slide')) {
                     // document.querySelector('.publication__slide').classList.remove('swiper-slide')
@@ -334,11 +333,11 @@ window.onload = function () {
                 spaceBetween: 50,
             }
         },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-            clickable: true,
-        },
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     type: "fraction",
+        //     clickable: true,
+        // },
         navigation: {
             nextEl: '.partners__slider-control .swiper-control__btn_next',
             prevEl: '.partners__slider-control .swiper-control__btn_prev',
@@ -688,8 +687,6 @@ window.onload = function () {
                                 <div class="event__footer">
                                     <a class="event__link" href="${eventUrl}">Подробнее</a>
                                 </div>`
-            console.log(eventTemplate);
-
             // let eventTemplate = `<li class="events__item event swiper-slide">
             // <div class="event__image">
             //     <img src="img/events/${eventImage}" alt="${eventSubheading}">
@@ -737,31 +734,31 @@ window.onload = function () {
         });
         // if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
         //     if (!eventsSlider) {
-                // let sliderContent = document.querySelector('.events__list')
-                // let sliderPlace = document.querySelector('.events__heading')
-                // sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
-                // let slderBody = document.querySelector('.events__swiper')
-                // slderBody.insertAdjacentElement("afterbegin", sliderContent);
-                // sliderContent.classList.add('events__swiper-wrapper')
-                // sliderContent.classList.remove('events__list')
-                // sliderContent.classList.add('swiper-wrapper')
-                // $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
-                // $('.events__list').addClass('events__swiper-wrapper')
-                // $('.events__list').removeClass('events__list')
-                // $('.events__swiper-wrapper').addClass('swiper-wrapper')
+        // let sliderContent = document.querySelector('.events__list')
+        // let sliderPlace = document.querySelector('.events__heading')
+        // sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
+        // let slderBody = document.querySelector('.events__swiper')
+        // slderBody.insertAdjacentElement("afterbegin", sliderContent);
+        // sliderContent.classList.add('events__swiper-wrapper')
+        // sliderContent.classList.remove('events__list')
+        // sliderContent.classList.add('swiper-wrapper')
+        // $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
+        // $('.events__list').addClass('events__swiper-wrapper')
+        // $('.events__list').removeClass('events__list')
+        // $('.events__swiper-wrapper').addClass('swiper-wrapper')
 
 
         //     }
         // } else {
         //     if (eventsSlider) {
-                // eventsSlider.destroy()
-                // eventsSlider = null
-                // document.querySelector('.events__swiper-wrapper').classList.add('events__list')
-                // document.querySelector('.events__swiper-wrapper').classList.remove('events__swiper-wrapper')
-                // let content = document.querySelector('.events__list')
-                // let target = document.querySelector('.events__heading')
-                // target.insertAdjacentElement('afterend', content)
-                // document.querySelector('.events__swiper').remove()
+        // eventsSlider.destroy()
+        // eventsSlider = null
+        // document.querySelector('.events__swiper-wrapper').classList.add('events__list')
+        // document.querySelector('.events__swiper-wrapper').classList.remove('events__swiper-wrapper')
+        // let content = document.querySelector('.events__list')
+        // let target = document.querySelector('.events__heading')
+        // target.insertAdjacentElement('afterend', content)
+        // document.querySelector('.events__swiper').remove()
         //     }
         // }
     }
@@ -883,10 +880,17 @@ window.onload = function () {
     // CONTACTS============================================================================================================
     // Перемещение контейнра с картой при <=550px
     function moveMap() {
+        let map = document.querySelector('.contacts__map')
         if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
-            let map = document.querySelector('.contacts__map')
-            let container = document.querySelector('.info__showroom')
-            container.insertAdjacentElement('afterend', map)
+            if (!map.closest('.contacts__info')) {
+                let container = document.querySelector('.info__showroom')
+                container.insertAdjacentElement('afterend', map)
+            }
+        } else {
+            if (map.closest('.contacts__info')) {
+                let container = document.querySelector('.contacts__container')
+                container.insertAdjacentElement('beforeend', map)
+            }
         }
     }
-}
+} 
