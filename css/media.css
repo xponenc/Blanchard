@@ -129,16 +129,17 @@
         top: 0;
         left: 0;
         width: 100%;
-        min-height: 768px;
+        /* min-height: 768px; */
         height: 100vh;
         z-index: 100;
         flex-direction: column;
         align-items: flex-start;
-        padding: 9.2% 50% 5% 4.3%;
+        padding: 9.2% 5% 5% 4.3%;
         background: rgba(0, 0, 0, 0.9);
         transform: translateY(-101%);
         opacity: 0;
         visibility: hidden;
+        overflow: auto;
         transition-property: transform, opacity, visibility;
         transition-timing-function: ease-in-out;
         transition-duration: 1s;
@@ -459,8 +460,8 @@
         justify-content: space-between;
     }
     .nav__top-block {
-        padding: 12.2% 50% 6.5% 5.3%;
-        min-height: 355px;
+        padding: 12.2% 5% 6.5% 5.3%;
+        /* min-height: 355px; */
     }
     .nav__toggle {
         margin-right: 0;
@@ -748,6 +749,11 @@
     .btn {
         font-size: 12px;
         line-height: 16px;
+    }
+    /* header =======================================================  */
+
+    .nav__top-block {
+        max-height: calc(320/355 * 100vh);
     }
     /* hero =======================================================  */
     .hero__info {
@@ -1118,7 +1124,7 @@
     }
     .nav__top-block {
         padding: 14% 5% 9% 2.5%;
-        min-height: 355px;
+        /* min-height: 355px; */
     }
     .nav__top-list {
         margin-bottom: auto;
