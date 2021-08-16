@@ -305,6 +305,23 @@ window.onload = function () {
 
         }
     }
+    // SWIPER:EVENTS: swiper
+
+    new Swiper('.events__swiper', {
+        observer: true,
+        observeParents: true,
+        preloadImages: true,
+        loop: true,
+        // slidesPerGroup: 1,
+        slidesPerView: 1,
+        spaceBetween: 21,
+        // centeredSlides: true,
+        pagination: {
+            el: ".events__pagination.swiper-pagination",
+            clickable: true,
+            type: 'bullets',
+        },
+    });
 
     // SWIPER:PROJECTS: swiper
     new Swiper('.partners__slider-body', {
@@ -357,10 +374,10 @@ window.onload = function () {
         const navTarget = document.querySelector('.nav__top-container')
         const navSubTarget = document.querySelector('.nav__bottom-container')
         const searchFormItem = document.querySelector('.header__search-wrapper')
-        if (document.body.clientWidth >= 1024) {
-            navSubTarget.appendChild(searchFormItem)
-        } else {
+        if (document.body.clientWidth <= 1024) {
             navTarget.appendChild(searchFormItem)
+        } else {
+            navSubTarget.appendChild(searchFormItem)
         }
     }
     searchFormMove()
@@ -615,7 +632,9 @@ window.onload = function () {
 
     // Функция формирует и вставляет в html темплейты карточек событий (events)
     function loadEvents(data) {
-        let eventsItem = document.querySelector('.events__list')
+        let eventsItemList = document.querySelector('.events__list')
+        let eventsItemSlider = document.querySelector('.events__swiper-wrapper')
+
         // if (!eventsItem) {
         //     eventsItem = document.querySelector('.events__swiper-wrapper')
         // }
@@ -628,23 +647,41 @@ window.onload = function () {
             const eventImage = item.image
             const eventDescription = item.description
 
-            let eventTemplate = `<li class="events__item event swiper-slide">
-                                    <div class="event__image">
-                                        <img src="img/events/${eventImage}" alt="${eventSubheading}">
+            let eventTemplate = `<div class="event__image">
+                                    <img src="img/events/${eventImage}" alt="${eventSubheading}">
+                                </div>
+                                <div class="event__block">
+                                    <div class="event__info">
+                                    <span class="event__place">${eventPlace}</span>
+                                    <span class="event__date">${eventDate}</span>
                                     </div>
-                                    <div class="event__block">
-                                        <div class="event__info">
-                                        <span class="event__place">${eventPlace}</span>
-                                        <span class="event__date">${eventDate}</span>
-                                        </div>
-                                        <h3 class="event__subheading subheading">${eventSubheading}</h3>
-                                        <p class="event__description">${eventDescription}</p>
-                                    </div>
-                                    <div class="event__footer">
-                                        <a class="event__link" href="${eventUrl}">Подробнее</a>
-                                    </div>
-                                </li>`
-            eventsItem.insertAdjacentHTML('beforeend', eventTemplate)
+                                    <h3 class="event__subheading subheading">${eventSubheading}</h3>
+                                    <p class="event__description">${eventDescription}</p>
+                                </div>
+                                <div class="event__footer">
+                                    <a class="event__link" href="${eventUrl}">Подробнее</a>
+                                </div>`
+                                console.log(eventTemplate);
+                                
+        // let eventTemplate = `<li class="events__item event swiper-slide">
+        // <div class="event__image">
+        //     <img src="img/events/${eventImage}" alt="${eventSubheading}">
+        // </div>
+        // <div class="event__block">
+        //     <div class="event__info">
+        //     <span class="event__place">${eventPlace}</span>
+        //     <span class="event__date">${eventDate}</span>
+        //     </div>
+        //     <h3 class="event__subheading subheading">${eventSubheading}</h3>
+        //     <p class="event__description">${eventDescription}</p>
+        // </div>
+        // <div class="event__footer">
+        //     <a class="event__link" href="${eventUrl}">Подробнее</a>
+        // </div>
+        // </li>`
+
+            eventsItemSlider.insertAdjacentHTML('beforeend', `<div class="events__item event swiper-slide">${eventTemplate}</div>`)
+            eventsItemList.insertAdjacentHTML('beforeend', `<li class="events__item event">${eventTemplate}</li>`)
         })
         // ibg();
         hideEvents();
@@ -657,48 +694,31 @@ window.onload = function () {
     function eventsSliderStart() {
         if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
             if (!eventsSlider) {
-                let sliderContent = document.querySelector('.events__list')
-                let sliderPlace = document.querySelector('.events__heading')
-                sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
-                let slderBody = document.querySelector('.events__swiper')
-                slderBody.insertAdjacentElement("afterbegin", sliderContent);
-                sliderContent.classList.add('events__swiper-wrapper')
-                sliderContent.classList.remove('events__list')
-                sliderContent.classList.add('swiper-wrapper')
+                // let sliderContent = document.querySelector('.events__list')
+                // let sliderPlace = document.querySelector('.events__heading')
+                // sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
+                // let slderBody = document.querySelector('.events__swiper')
+                // slderBody.insertAdjacentElement("afterbegin", sliderContent);
+                // sliderContent.classList.add('events__swiper-wrapper')
+                // sliderContent.classList.remove('events__list')
+                // sliderContent.classList.add('swiper-wrapper')
                 // $(".events__list").wrapAll("<div class='events__swiper swiper-container'></div>");
                 // $('.events__list').addClass('events__swiper-wrapper')
                 // $('.events__list').removeClass('events__list')
                 // $('.events__swiper-wrapper').addClass('swiper-wrapper')
-                console.log('Создай свайпер');
                 
-                eventsSlider = new Swiper('.events__swiper', {
-                    observer: true,
-                    observeParents: true,
-                    preloadImages: true,
-                    loop: true,
-                    // slidesPerGroup: 1,
-                    slidesPerView: 1,
-                    spaceBetween: 21,
-                    // centeredSlides: true,
-                    pagination: {
-                        el: ".events__pagination",
-                        clickable: true,
-                        type: 'bullets',
-                    },
-                });
-                console.log(eventsSlider);
-                
+           
             }
         } else {
             if (eventsSlider) {
-                eventsSlider.destroy()
-                eventsSlider = null
-                document.querySelector('.events__swiper-wrapper').classList.add('events__list')
-                document.querySelector('.events__swiper-wrapper').classList.remove('events__swiper-wrapper')
-                let content = document.querySelector('.events__list')
-                let target = document.querySelector('.events__heading')
-                target.insertAdjacentElement('afterend', content)
-                document.querySelector('.events__swiper').remove()
+                // eventsSlider.destroy()
+                // eventsSlider = null
+                // document.querySelector('.events__swiper-wrapper').classList.add('events__list')
+                // document.querySelector('.events__swiper-wrapper').classList.remove('events__swiper-wrapper')
+                // let content = document.querySelector('.events__list')
+                // let target = document.querySelector('.events__heading')
+                // target.insertAdjacentElement('afterend', content)
+                // document.querySelector('.events__swiper').remove()
             }
         }
     }
@@ -731,17 +751,13 @@ window.onload = function () {
             if (checkTargetIsOpen) {
                 genreCheckboxes.forEach(e => {
                     e.style.cssText = `display: flex;`
-                    e.classList.remove('checkbox-genre_checked')
                 })
             } else {
                 genreCheckboxes.forEach(e => {
                     if (e.querySelector('.checkbox-genre__input').checked) {
                         e.style.cssText = `display: flex;`
-                        e.classList.add('checkbox-genre_checked')
                         e.addEventListener("click", function () {
                             if (!document.querySelector('.genre__heading').classList.contains('genre__heading_open')) {
-                                e.classList.remove('checkbox-genre_checked')
-                                e.querySelector('.checkbox-genre__input').checked = false
                                 e.style.cssText = `display: none;`
                             }
                         });
@@ -754,11 +770,46 @@ window.onload = function () {
             let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
             genreCheckboxes.forEach(e => {
                 e.style.cssText = `display: flex;`
-                e.classList.remove('checkbox-genre_checked')
             })
         }
-
     }
+
+
+    // Старая функция  - показывает крестики закрытия только в закрытой форме
+    // function showFormGenre() {
+    //     if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
+    //         let checkTargetIsOpen = document.querySelector('.genre__heading').classList.contains('genre__heading_open')
+    //         let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
+    //         if (checkTargetIsOpen) {
+    //             genreCheckboxes.forEach(e => {
+    //                 e.style.cssText = `display: flex;`
+    //                 e.classList.remove('checkbox-genre_checked')
+    //             })
+    //         } else {
+    //             genreCheckboxes.forEach(e => {
+    //                 if (e.querySelector('.checkbox-genre__input').checked) {
+    //                     e.style.cssText = `display: flex;`
+    //                     e.classList.add('checkbox-genre_checked')
+    //                     e.addEventListener("click", function () {
+    //                         if (!document.querySelector('.genre__heading').classList.contains('genre__heading_open')) {
+    //                             e.classList.remove('checkbox-genre_checked')
+    //                             e.querySelector('.checkbox-genre__input').checked = false
+    //                             e.style.cssText = `display: none;`
+    //                         }
+    //                     });
+    //                 } else {
+    //                     e.style.cssText = `display: none;`
+    //                 }
+    //             })
+    //         }
+    //     } else {
+    //         let genreCheckboxes = document.querySelectorAll('.checkbox-genre')
+    //         genreCheckboxes.forEach(e => {
+    //             e.style.cssText = `display: flex;`
+    //             e.classList.remove('checkbox-genre_checked')
+    //         })
+    //     }
+    // }
 
     // PROJECTS============================================================================================================
     // Тултип - поправка положения тела тултипа для избежения вылета за пределы контейнера

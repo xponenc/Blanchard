@@ -91,19 +91,7 @@
             </div>
           </div>
           <button class="nav__top-search-toggle" aria-label="Открыть поиск"></button>
-          <div class="header__search-wrapper">
-            <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-              <!-- <label class="search__label" for="search" tabindex="0"></label> -->
-              <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
-                aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
-              <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
-            </form>
-            <button class="nav__bottom-search-close btn btn-close">
-              <svg class="btn-close__icon">
-                <use xlink:href="img/icons/sprite.svg#search-close"></use>
-              </svg>
-            </button>
-          </div>
+          
         </div>
       </div>
       <div class="nav__bottom">
@@ -260,6 +248,19 @@
               </div>
             </li>
           </ul>
+          <div class="header__search-wrapper">
+            <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
+              <!-- <label class="search__label" for="search" tabindex="0"></label> -->
+              <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
+                aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
+              <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
+            </form>
+            <button class="nav__bottom-search-close btn btn-close">
+              <svg class="btn-close__icon">
+                <use xlink:href="img/icons/sprite.svg#search-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -1343,6 +1344,9 @@
         <h2 class="events__heading heading">События</h2>
         <ul class="events__list" aria-label="События">
         </ul>
+        <div class="events__swiper swiper-container" aria-label="События">
+          <div class="events__swiper-wrapper swiper-wrapper"></div>
+        </div>
         <div class="events__pagination swiper-pagination"></div>
         <div class="events__block-btn">
           <button class="events__btn btn btn_simple">Все события</button>
@@ -1421,7 +1425,7 @@
                 <span class="checkbox-genre__box"></span>
                 <span class="checkbox-genre__text">Архитектура</span>
               </label>
-              <label class="form-genre__checkbox checkbox-genre checkbox-genre_checked" aria-label="Категория Дизайн">
+              <label class="form-genre__checkbox checkbox-genre" aria-label="Категория Дизайн">
                 <input type="checkbox" class="checkbox-genre__input visually-hidden" checked>
                 <span class="checkbox-genre__box"></span>
                 <span class="checkbox-genre__text">Дизайн</span>
