@@ -523,7 +523,7 @@
     }
 
     .choices.is-open {
-        margin-bottom: 80px;
+        margin-bottom: 120px;
     }
     .gallery__content {
         margin-bottom: 20px;
@@ -781,7 +781,7 @@
     }
     .gallery__content {
         margin-bottom: 60px;
-        padding-top: 130px;
+        padding-top: 30px;
     }
     .gallery__swiper-control {
         top: 100%;
@@ -812,7 +812,8 @@
         visibility: hidden;
     }
     .events__swiper {
-        display: flex;
+        display: block;
+        opacity: 1;
         visibility: visible;
         position: relative;
         margin-bottom: 59px;
@@ -835,6 +836,7 @@
     }
 
     .events__pagination {
+        display: block;
         bottom: -40px;
     }
     .event__block {

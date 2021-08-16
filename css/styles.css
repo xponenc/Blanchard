@@ -1426,6 +1426,7 @@
 
 .events__swiper {
     display: none;
+    opacity: 0;
     visibility: hidden;
 }
 

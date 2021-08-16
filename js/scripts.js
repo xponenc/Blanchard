@@ -108,7 +108,7 @@ window.onload = function () {
         if (targetElement.closest('.nav__top-item') || targetElement.classList.contains('hero__btn')
             || targetElement.classList.contains('author__gallery-link') || targetElement.classList.contains('unknown__gallery-link')) {
             e.preventDefault();
-            if (targetElement.closest('.nav__top-item')) {burgerToggle(document.querySelector('.nav__toggle'))}
+            if (targetElement.closest('.nav__top-item')) { burgerToggle(document.querySelector('.nav__toggle')) }
             let hrefId = targetElement.getAttribute('href')
             let target = document.querySelector(hrefId)
             doScrolling(target, 1000)
@@ -126,7 +126,7 @@ window.onload = function () {
         searchFormMove() // NAV: Перемещение формы поиска
         // catalogContentHeightCalc() // CATALOG: Временная функция для подсчета высоты размера поля контента в аккордеоне Каталога
         gallerySliderChangePlace() // Изменение места в DOM слайдера Gallery на breakpoint 50
-        eventsSliderStart(); //Запуск/разрушение слайдера Events:Slider
+        // eventsSliderStart(); //Запуск/разрушение слайдера Events:Slider
         showFormGenre() // Изменение формы Publications:Genre 
         publicationsSliderStartEnd() //Запуск/разрушение слайдера Publications:Slider
         shiftToopltip() // Расчет сдвига контейнера tooltip относительно края родителя
@@ -299,23 +299,7 @@ window.onload = function () {
 
         }
     }
-    // SWIPER:EVENTS: swiper
 
-    new Swiper('.events__swiper', {
-        observer: true,
-        observeParents: true,
-        preloadImages: true,
-        loop: true,
-        // slidesPerGroup: 1,
-        slidesPerView: 1,
-        spaceBetween: 21,
-        // centeredSlides: true,
-        pagination: {
-            el: ".events__pagination.swiper-pagination",
-            clickable: true,
-            type: 'bullets',
-        },
-    });
 
     // SWIPER:PROJECTS: swiper
     new Swiper('.partners__slider-body', {
@@ -704,24 +688,24 @@ window.onload = function () {
                                 <div class="event__footer">
                                     <a class="event__link" href="${eventUrl}">Подробнее</a>
                                 </div>`
-                                console.log(eventTemplate);
-                                
-        // let eventTemplate = `<li class="events__item event swiper-slide">
-        // <div class="event__image">
-        //     <img src="img/events/${eventImage}" alt="${eventSubheading}">
-        // </div>
-        // <div class="event__block">
-        //     <div class="event__info">
-        //     <span class="event__place">${eventPlace}</span>
-        //     <span class="event__date">${eventDate}</span>
-        //     </div>
-        //     <h3 class="event__subheading subheading">${eventSubheading}</h3>
-        //     <p class="event__description">${eventDescription}</p>
-        // </div>
-        // <div class="event__footer">
-        //     <a class="event__link" href="${eventUrl}">Подробнее</a>
-        // </div>
-        // </li>`
+            console.log(eventTemplate);
+
+            // let eventTemplate = `<li class="events__item event swiper-slide">
+            // <div class="event__image">
+            //     <img src="img/events/${eventImage}" alt="${eventSubheading}">
+            // </div>
+            // <div class="event__block">
+            //     <div class="event__info">
+            //     <span class="event__place">${eventPlace}</span>
+            //     <span class="event__date">${eventDate}</span>
+            //     </div>
+            //     <h3 class="event__subheading subheading">${eventSubheading}</h3>
+            //     <p class="event__description">${eventDescription}</p>
+            // </div>
+            // <div class="event__footer">
+            //     <a class="event__link" href="${eventUrl}">Подробнее</a>
+            // </div>
+            // </li>`
 
             eventsItemSlider.insertAdjacentHTML('beforeend', `<div class="events__item event swiper-slide">${eventTemplate}</div>`)
             eventsItemList.insertAdjacentHTML('beforeend', `<li class="events__item event">${eventTemplate}</li>`)
@@ -732,11 +716,27 @@ window.onload = function () {
         eventsSliderStart()
     }
 
-    let eventsSlider = null
+    // let eventsSlider = null
     // Инициализация swiper на разрешении меньше 550
     function eventsSliderStart() {
-        if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
-            if (!eventsSlider) {
+        // SWIPER:EVENTS: swiper
+        new Swiper('.events__swiper', {
+            observer: true,
+            observeParents: true,
+            preloadImages: true,
+            loop: true,
+            // slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 21,
+            // centeredSlides: true,
+            pagination: {
+                el: ".events__pagination",
+                clickable: true,
+                type: 'bullets',
+            },
+        });
+        // if ((screen.width <= 550) || (document.body.clientWidth <= 550)) {
+        //     if (!eventsSlider) {
                 // let sliderContent = document.querySelector('.events__list')
                 // let sliderPlace = document.querySelector('.events__heading')
                 // sliderPlace.insertAdjacentHTML("afterend", `<div class='events__swiper swiper-container'></div>`);
@@ -749,11 +749,11 @@ window.onload = function () {
                 // $('.events__list').addClass('events__swiper-wrapper')
                 // $('.events__list').removeClass('events__list')
                 // $('.events__swiper-wrapper').addClass('swiper-wrapper')
-                
-           
-            }
-        } else {
-            if (eventsSlider) {
+
+
+        //     }
+        // } else {
+        //     if (eventsSlider) {
                 // eventsSlider.destroy()
                 // eventsSlider = null
                 // document.querySelector('.events__swiper-wrapper').classList.add('events__list')
@@ -762,8 +762,8 @@ window.onload = function () {
                 // let target = document.querySelector('.events__heading')
                 // target.insertAdjacentElement('afterend', content)
                 // document.querySelector('.events__swiper').remove()
-            }
-        }
+        //     }
+        // }
     }
     // Функция прячет лишние карточки на разных разрешениях
     function hideEvents() {
