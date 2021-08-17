@@ -1397,3 +1397,19 @@
         max-height: 15px;
     }
 }
+
+@media screen and (orientation:landscape) and (max-height: 674px) and (max-width: 1024px) {
+    .nav__top-block {
+        /* background-color: red; */
+        justify-content: space-between;
+    }
+    .nav__top-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: auto;
+        margin-bottom: 15px;
+    }
+    .nav__top-item {
+        flex: 1 1 max(200px, 33.333%);
+    }
+}

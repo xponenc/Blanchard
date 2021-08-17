@@ -2,7 +2,6 @@ window.onload = function () {
     document.addEventListener("click", documentActions);
     function documentActions(e) {
         const targetElement = e.target;
-        console.log(targetElement)
         // NAV: Субменю
         if (targetElement.classList.contains('nav__bottom-link') || targetElement.closest('.nav__bottom-link')) {
             // Эта проверка блокирует одновременное открытие нескольких пунктов меню
@@ -92,7 +91,6 @@ window.onload = function () {
         }
         // PROJECTS: закрытие тултип
         if (targetElement.classList.contains('tooltiptext-mark')) {
-            console.log(targetElement.parentNode.querySelector('.tooltiptext'))
             targetElement.parentNode.querySelector('.tooltiptext').classList.remove('tooltiptext_active')
             targetElement.classList.remove('tooltiptext-mark_active')
             targetElement.parentNode.blur()
@@ -269,7 +267,6 @@ window.onload = function () {
                         prevEl: '.publication__swiper-control .swiper-control__btn_prev',
                     },
                 });
-                console.log(' Создан publicationsSlider', publicationsSlider);
 
             }
         } else {
@@ -356,7 +353,6 @@ window.onload = function () {
         document.body.style.paddingRight = paddingOffset
 
         let pagePosition = window.scrollY;
-        console.log('disScr', pagePosition);
 
         document.body.classList.add('disable-scroll');
         document.body.dataset.position = pagePosition;
@@ -588,13 +584,11 @@ window.onload = function () {
             langContentActiveAuthors.forEach(e => { e.classList.remove('author_active') })
             langContentActiveAuthors.item(0).classList.add('author_active')
         }
-        console.log(langContentActiveAuthors.item(0))
 
     }
     // Переключение автора в Gallery
     function toggleActiveAuthor(target) {
         const path = target.dataset.author_path
-        console.log(document.querySelector(`[data-author_target="${path}"]`))
         const langContentActive = document.querySelector('.catalog__language_active')
         const langContentActiveButtons = langContentActive.querySelectorAll('.catalog__item-btn')
         const langContentActiveAuthors = langContentActive.querySelectorAll('.catalog__author')
