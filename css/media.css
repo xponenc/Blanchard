@@ -975,8 +975,9 @@
         display: flex;
         grid-template-columns: unset;
         flex-direction: column;
-        margin-bottom: max(11px, auto);
+        margin-bottom: auto;
         padding-top: 9px;
+        padding-bottom: 11px;
         font-size: 12px;
     }
     .publication__slide-header {
