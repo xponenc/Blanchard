@@ -49,7 +49,11 @@
     .messenger-list__item:not(:last-child) {
         margin-right: 30px;
     }
-    .messenger-list__link {
+    /* .messenger-list__link {
+        width: 60px;
+        height: 60px;
+    } */
+    .messenger-list__icon {
         width: 60px;
         height: 60px;
     }
@@ -330,7 +334,7 @@
     }
     .publication__info {
         /* width: calc(100% - 629px); */
-        width: max(270px, calc((924-629)/924 * 100%));
+        width: max(270px, calc((924 - 629) / 924 * 100% - 9px));
         /* min-width: 270px; */
         margin-right: auto;
         padding-bottom: 78px;
@@ -338,18 +342,19 @@
     .price__form {
         width: 97%;
     }
- 
+
     .publication__content {
         /* width: min(calc(629 / 924 * 100%), calc(100% - 270px)); */
         /* flex: 1 1 auto; */
         /* width: max(calc(100% - 270px), calc(100% - (924-629)/924 * 100%)); */
-        width: max(calc(100% - 30px - 270px), calc(100% - 30px - ((924 - 629)/924 * 100%)));
+        width: max(calc(100% - 30px - 270px), calc(100% - 30px - ((924 - 629) / 924 * 100%)));
     }
     .publication__swiper-control {
         left: 0;
     }
     .publication__swiper {
         padding-left: 0;
+        padding-bottom: 126px;
     }
     .publication__slide {
     }
@@ -427,8 +432,8 @@
         margin-right: 30px;
     }
     .modal {
-       width: 594px;
-       height: 594px;
+        width: 594px;
+        height: 594px;
     }
     .modal__content-img {
         width: 264px;
@@ -618,8 +623,11 @@
         background-image: url("../img/bgnd/768_pub.jpg");
     }
     .publication__content {
-        padding: 108px 27px 46px 27px;
+        padding: 108px 27px 42px 27px;
         width: 100%;
+    }
+    .publication__swiper {
+        padding-bottom: 0;
     }
     .publication__swiper-control {
         top: 38px;
@@ -757,7 +765,7 @@
     /* header =======================================================  */
 
     .nav__top-block {
-        max-height: calc(320/355 * 100vh);
+        max-height: calc(320 / 355 * 100vh);
     }
     /* hero =======================================================  */
     .hero__info {
@@ -909,7 +917,7 @@
         width: 100%;
     }
     .checkbox-genre::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         right: 0;
@@ -917,7 +925,7 @@
         height: 1px;
         background-color: rgba(255, 255, 255, 0.5);
     }
-    
+
     .checkbox-genre_checked::before {
         content: "";
         cursor: pointer;
@@ -936,10 +944,9 @@
         font-size: 16px;
     }
 
-    
-.checkbox-genre__input:checked ~ .checkbox-genre__text::before {
-    opacity: 1;
-}
+    .checkbox-genre__input:checked ~ .checkbox-genre__text::before {
+        opacity: 1;
+    }
     .price__subheading {
         font-size: 16px;
     }
@@ -963,20 +970,33 @@
     }
     .publication__slide {
         width: calc(100% / 2 - 30px / 2);
-        margin-bottom: 51px;
-        height: auto;   
+        margin-bottom: 50px;
+        height: auto;
+    }
+
+    .publication__slide-item {
+       align-items: flex-start;
     }
     .publication__slide-img {
+        position: relative;
+        padding-top: calc(143 / 130 * 100%);
         /* height: 143px; */
         /* height: 0;
         padding-top: calc(143 / 130 * 100%); */
+    }
+    .publication__slide-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     .publication__slide-info {
         display: flex;
         grid-template-columns: unset;
         flex-direction: column;
         margin-bottom: auto;
-        padding-top: 9px;
+        /* padding-top: 9px; */
         padding-bottom: 11px;
         font-size: 12px;
     }
@@ -1050,7 +1070,7 @@
     .messenger-list__item:not(:last-child) {
         margin-right: 23px;
     }
-    .messenger-list__link {
+    .messenger-list__icon {
         width: 50px;
         height: 50px;
     }
@@ -1400,7 +1420,7 @@
     }
 }
 
-@media screen and (orientation:landscape) and (max-height: 674px) and (max-width: 1024px) {
+@media screen and (orientation: landscape) and (max-height: 674px) and (max-width: 1024px) {
     .nav__top-block {
         /* background-color: red; */
         justify-content: space-between;
