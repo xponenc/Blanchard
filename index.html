@@ -250,7 +250,6 @@
           </ul>
           <div class="header__search-wrapper">
             <form class="header__search search" action="http://jsonplaceholder.typicode.com/posts" method="POST">
-              <!-- <label class="search__label" for="search" tabindex="0"></label> -->
               <input required id="search" class="search__input" aria-label="Введите текст для поиска по сайту"
                 aria-required="true" type="search" placeholder="Поиск по сайту" name="search-string">
               <button class="search__btn btn" aria-label="Поиск по сайту" type="submit"></button>
@@ -327,9 +326,6 @@
           <div class="info__filter">
             <h3 class="info__filter-heading">Фильтр:</h3>
             <select class="info__select select" id="id-filter-1">
-              <!-- <option class="gallery__option" value="author">Автор</option>
-              <option class="gallery__option" value="type">Направление</option>
-              <option class="gallery__option" value="technique">Техника</option> -->
               <option value="">Живопись</option>
               <option value="">Рисунок</option>
               <option value="">Скульптура</option>
@@ -1361,56 +1357,6 @@
           <h2 class="publication__heading heading">Издания</h2>
           <div class="publication__genre genre">
             <h3 class="genre__heading">Категории</h3>
-            <!-- <form class="genre__form" action="http://jsonplaceholder.typicode.com/posts">
-              <label class="genre__label" aria-label="Категория Бестселлеры">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Бестселлеры</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Искусство">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Искусство</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Архитектура">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Архитектура</span>
-              </label>
-              <label class="genre__label genre__label_checked" aria-label="Категория Дизайн">
-                <input type="checkbox" class="genre__checkbox visually-hidden" checked>
-                <span class="genre__text">Дизайн</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Мода">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Мода</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Детям">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Детям</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Художественная литература">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Художественная литература</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Публицистика">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Публицистика</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Путеводители">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Путеводители</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Философия">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Философия</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Учебная литература">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Учебная литература</span>
-              </label>
-              <label class="genre__label" aria-label="Категория Журналы и газеты">
-                <input type="checkbox" class="genre__checkbox visually-hidden">
-                <span class="genre__text">Журналы и газеты</span>
-              </label>
-            </form> -->
             <form class="genre__form form-genre" action="http://jsonplaceholder.typicode.com/posts">
               <label class="form-genre__checkbox checkbox-genre" aria-label="Категория Бестселлеры">
                 <input type="checkbox" class="checkbox-genre__input visually-hidden">
@@ -1711,24 +1657,19 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
     <section class="contacts" id="contacts">
-      <!-- <div class="contacts__container"> -->
       <h2 class="contacts__heading heading container">Контакты</h2>
       <div class="contacts__container">
         <div class="contacts__info info info">
           <div class="info__showroom showroom">
-            <!--  <li class="showroom__item"> -->
             <h3 class="showroom__title subheading">Шоурум №4</h3>
             <span class="showroom__address">Леонтьевский переулок, дом 5/1</span>
           </div>
-          <!-- <div class="contacts__block"> -->
           <h3 class="contacts__subheading subheading">Заказать обратный звонок</h3>
-          <!-- <div class="contacts__form contact-form"> -->
-          <form action="http://jsonplaceholder.typicode.com/posts" method="POST" class="contacts__form contact-form">
+          <form action="api.php" method="POST" class="contacts__form contact-form">
             <div class="contact-form__input-box just-validate-tooltip-container">
               <input required id="name" type="text" name="name" class="contact-form__input" placeholder="Имя*"
                 data-validate-field="name" aria-label="Введите имя" aria-required="true">
@@ -1749,7 +1690,6 @@
                 aria-label="Заказать обратный звонок">Заказать</button>
             </div>
           </form>
-          <!-- </div> -->
           <h3 class="contacts__subheading subheading">Связаться в один клик</h3>
           <ul class="contacts__messenger-list messenger-list">
             <li class="messenger-list__item">
@@ -1769,11 +1709,9 @@
               </a>
             </li>
           </ul>
-          <!-- </div> -->
         </div>
         <div class="contacts__map map yandex" id="mapYandex"></div>
       </div>
-      <!-- </div> -->
     </section>
   </main>
   <footer class="footer">
